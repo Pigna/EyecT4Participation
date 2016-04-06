@@ -15,7 +15,7 @@ namespace EyeCT4Participation
 
         }
 
-        public void AddReaction()
+        public void AddReaction(string Description, Volunteer Author)
         {
             //Functie AddReaction
         }
