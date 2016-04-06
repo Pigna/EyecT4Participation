@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Participation
 {
-    class Needy
+    class Needy : Account
     {
+        public bool Ov { get; set; }
+
+        public Needy(bool ov)
+        {
+            this.Ov = ov;
+        }
+
+        public void AddHelpRequest(string question, string description, DateTime date, Needy author, bool urgency, bool ov)
+        {
+            
+        }
+
+        public void AddReview(int score, string description, Needy author)
+        {
+            
+        }
     }
 }
