@@ -17,12 +17,12 @@ namespace EyeCT4Participation
 
         public void AddHelpRequest(string question, string description, DateTime date, Needy author, bool urgency, bool ov)
         {
-            
+            //dit moet naar de database
         }
 
         public void AddReview(int score, string description, Needy author)
         {
-            
+            //dit moet naar de database
         }
     }
 }
