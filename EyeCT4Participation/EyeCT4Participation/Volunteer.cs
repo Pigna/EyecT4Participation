@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Participation
 {
-    class Volunteer
+    class Volunteer : Account
     {
+        public bool rijbewijs;
+
+        public Volunteer()
+        {
+
+        }
+
+        public void AddReaction()
+        {
+            //Functie AddReaction
+        }
+
     }
 }

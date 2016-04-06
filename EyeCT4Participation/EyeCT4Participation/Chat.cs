@@ -8,5 +8,16 @@ namespace EyeCT4Participation
 {
     class Chat
     {
+        public string message { get; set; }
+        public Chat()
+        {
+
+        }
+
+        public void AddMessage()
+        {
+            //functie addmessage
+        }
+
     }
 }
