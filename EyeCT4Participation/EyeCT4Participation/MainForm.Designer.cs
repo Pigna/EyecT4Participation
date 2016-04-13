@@ -636,7 +636,6 @@
             this.ClientSize = new System.Drawing.Size(974, 681);
             this.Controls.Add(this.form);
             this.Name = "MainForm";
-            this.Text = "EyeCT4Participation";
             this.form.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

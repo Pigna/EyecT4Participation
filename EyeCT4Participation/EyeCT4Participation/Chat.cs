@@ -7,12 +7,20 @@ using System.Windows.Forms;
 
 namespace EyeCT4Participation
 {
-    class Chat : MainForm
+        public class Chat : MainForm
     {
-        public string Message { get; set; }
-        public Chat(string message)
+        public string Message;
+        public string Datetime;
+        public string Sender;
+        public string Receiver;
+        public bool Active;
+        public Chat(string message, string datetime, string sender, string receiver, bool active)
         {
             Message = message;
+            Datetime = datetime;
+            Sender = sender;
+            Receiver = receiver;
+            Active = active;
         }
 
         public Chat()
@@ -20,10 +28,15 @@ namespace EyeCT4Participation
             
         }
 
+        public string TextValue
+        {
+            get { return Message; }
+            set { Message = value; }
+        }
+
         public void AddMessage()
         {
-            lbChatConversation.Items.Add(tbChatMessage.Text);
-            tbChatMessage.Clear();
+            lbChatConversation.Items.Add(TextValue);
         }
 
     }
