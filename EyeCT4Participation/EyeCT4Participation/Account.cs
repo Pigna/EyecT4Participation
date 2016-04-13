@@ -39,5 +39,10 @@ namespace EyeCT4Participation
           //database.Query = "SELECT * Gebruiker WHERE username = username AND password = password"
 
         }
+
+        public override string ToString()
+        {
+            return Name, Adress
+        }
     }
 }

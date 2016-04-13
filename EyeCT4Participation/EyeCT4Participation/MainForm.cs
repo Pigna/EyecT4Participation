@@ -12,9 +12,11 @@ namespace EyeCT4Participation
 {
     public partial class MainForm : Form
     {
+        private Administration administration;
         public MainForm()
         {
             InitializeComponent();
+            administration = new Administration();
         }
 
         public string TextValue
@@ -33,9 +35,39 @@ namespace EyeCT4Participation
             c1.AddMessage();
         }
 
-        private void lbBeheerChat_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnBeheerFilter_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BeheerRefresh()
+        {
+            lbBeheerAccount.Items.AddRange(administration.listAccounts.ToArray());
+        }
+
+        private void btnBeheerAccountDeactiveren_Click(object sender, EventArgs e)
+        {
+            administration.DeactivateAccount(lbBeheerAccount.SelectedItem as Account);
+        }
+
+        private void btnBeheerHulpaanvraagDeactiveren_Click(object sender, EventArgs e)
+        {
+            administration.DeactivateHelpRequest(lbBeheerHulpaanvraag.SelectedItem as HelpRequest);
+        }
+
+        private void btnBeheerBeoordelingDeactiveren_Click(object sender, EventArgs e)
+        {
+            administration.DeactivateReview(lbBeheerBeoordeling.SelectedItem as Review);
+        }
+
+        private void btnBeheerChatDeactiveren_Click(object sender, EventArgs e)
+        {
+            administration.DeactivateChat(lbBeheerChat.SelectedItem as Chat);
+        }
+
+        private void btnBeheerAccountAanpassen_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
