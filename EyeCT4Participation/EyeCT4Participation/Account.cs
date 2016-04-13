@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Participation
 {
-    class Account
+    abstract class Account
     {
         public string Username { get; set; }
         public string Password { get; set; }
@@ -39,7 +39,8 @@ namespace EyeCT4Participation
 
         public void LogIn(string username, string password)
         {
-          
+          //database.Query = "SELECT * Gebruiker WHERE username = username AND password = password"
+
         }
     }
 }
