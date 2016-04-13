@@ -8,10 +8,10 @@ namespace EyeCT4Participation
 {
     class Chat
     {
-        public string message { get; set; }
-        public Chat(string msg)
+        public string Message { get; set; }
+        public Chat(string message)
         {
-            message = msg;
+            Message = message;
         }
 
         public Chat()
