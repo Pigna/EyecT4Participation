@@ -19,8 +19,9 @@ namespace EyeCT4Participation
         public int PhoneNumber { get; set; }
         public int Age { get; set; }
         public bool Active { get; set; }
+        public string Geslacht { get; set; }
 
-        public Account(string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age, bool active)
+        public Account(string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age, bool active, string geslacht)
         {
             this.Username = username;
             this.Password = password;
@@ -32,17 +33,25 @@ namespace EyeCT4Participation
             this.PhoneNumber = phonenumber;
             this.Age = age;
             this.Active = active;
+            this.Geslacht = geslacht;
         }
 
         public void LogIn(string username, string password)
         {
-          //database.Query = "SELECT * Gebruiker WHERE username = username AND password = password"
-
+          // database.Query = "SELECT * Gebruiker WHERE username = variabele.username AND password = variabele.password"
+          // if("Type" = 0)
+          // {
+          //   open hulpbehoevende scherm
+          // }
+          // else if ("Type" = 1)
+          // {
+          //   open vrijwilliger scherm
+          // }
         }
 
         public override string ToString()
         {
-            return Name, Adress
+            return Name;
         }
     }
 }

@@ -19,17 +19,7 @@ namespace EyeCT4Participation
             administration = new Administration();
         }
 
-        public string TextValue
-        {
-            set { tbChatMessage.Text = value; }
-        }
-
-        public string getTextValue
-        {
-            get { return tbChatMessage.Text; }
-        }
-
-        private void btnSend_Click(object sender, EventArgs e)
+        public void btnSend_Click(object sender, EventArgs e)
         {
             Chat c1 = new Chat();
             c1.AddMessage();

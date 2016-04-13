@@ -30,6 +30,8 @@
         {
             this.form = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbRegistratieGeslacht = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbRegistratiePhonenumber = new System.Windows.Forms.TextBox();
             this.lblRegistratiePhonenumber = new System.Windows.Forms.Label();
             this.btnInloggenInloggen = new System.Windows.Forms.Button();
@@ -93,14 +95,17 @@
             this.form.Controls.Add(this.tabPage4);
             this.form.Controls.Add(this.tabPage5);
             this.form.Controls.Add(this.tabPage3);
-            this.form.Location = new System.Drawing.Point(12, 12);
+            this.form.Location = new System.Drawing.Point(16, 15);
+            this.form.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.form.Name = "form";
             this.form.SelectedIndex = 0;
-            this.form.Size = new System.Drawing.Size(950, 657);
+            this.form.Size = new System.Drawing.Size(1267, 809);
             this.form.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbRegistratieGeslacht);
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.tbRegistratiePhonenumber);
             this.tabPage1.Controls.Add(this.lblRegistratiePhonenumber);
             this.tabPage1.Controls.Add(this.btnInloggenInloggen);
@@ -126,258 +131,274 @@
             this.tabPage1.Controls.Add(this.lblRegistratieNaam);
             this.tabPage1.Controls.Add(this.lblRegistratieWW);
             this.tabPage1.Controls.Add(this.lblRegistratieGebruikersnaam);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(942, 631);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1259, 780);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Inloggen/Registreren";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cbRegistratieGeslacht
+            // 
+            this.cbRegistratieGeslacht.FormattingEnabled = true;
+            this.cbRegistratieGeslacht.Items.AddRange(new object[] {
+            "Man",
+            "Vrouw"});
+            this.cbRegistratieGeslacht.Location = new System.Drawing.Point(731, 416);
+            this.cbRegistratieGeslacht.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRegistratieGeslacht.Name = "cbRegistratieGeslacht";
+            this.cbRegistratieGeslacht.Size = new System.Drawing.Size(100, 24);
+            this.cbRegistratieGeslacht.TabIndex = 51;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(581, 420);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "Geslacht";
+            // 
             // tbRegistratiePhonenumber
             // 
-            this.tbRegistratiePhonenumber.Location = new System.Drawing.Point(548, 307);
+            this.tbRegistratiePhonenumber.Location = new System.Drawing.Point(731, 378);
+            this.tbRegistratiePhonenumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbRegistratiePhonenumber.Name = "tbRegistratiePhonenumber";
-            this.tbRegistratiePhonenumber.Size = new System.Drawing.Size(76, 20);
+            this.tbRegistratiePhonenumber.Size = new System.Drawing.Size(100, 22);
             this.tbRegistratiePhonenumber.TabIndex = 49;
             // 
             // lblRegistratiePhonenumber
             // 
             this.lblRegistratiePhonenumber.AutoSize = true;
-            this.lblRegistratiePhonenumber.Location = new System.Drawing.Point(435, 310);
+            this.lblRegistratiePhonenumber.Location = new System.Drawing.Point(580, 382);
+            this.lblRegistratiePhonenumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegistratiePhonenumber.Name = "lblRegistratiePhonenumber";
-            this.lblRegistratiePhonenumber.Size = new System.Drawing.Size(86, 13);
+            this.lblRegistratiePhonenumber.Size = new System.Drawing.Size(115, 17);
             this.lblRegistratiePhonenumber.TabIndex = 48;
             this.lblRegistratiePhonenumber.Text = "Telefoonnummer";
             // 
             // btnInloggenInloggen
             // 
-            this.btnInloggenInloggen.Location = new System.Drawing.Point(175, 142);
-            this.btnInloggenInloggen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInloggenInloggen.Location = new System.Drawing.Point(233, 175);
+            this.btnInloggenInloggen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInloggenInloggen.Name = "btnInloggenInloggen";
-            this.btnInloggenInloggen.Size = new System.Drawing.Size(67, 29);
+            this.btnInloggenInloggen.Size = new System.Drawing.Size(89, 36);
             this.btnInloggenInloggen.TabIndex = 47;
             this.btnInloggenInloggen.Text = "Inloggen";
             this.btnInloggenInloggen.UseVisualStyleBackColor = true;
             // 
             // tbInloggenWW
             // 
-            this.tbInloggenWW.Location = new System.Drawing.Point(166, 108);
-            this.tbInloggenWW.Margin = new System.Windows.Forms.Padding(2);
+            this.tbInloggenWW.Location = new System.Drawing.Point(221, 133);
+            this.tbInloggenWW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbInloggenWW.Name = "tbInloggenWW";
-            this.tbInloggenWW.Size = new System.Drawing.Size(76, 20);
+            this.tbInloggenWW.Size = new System.Drawing.Size(100, 22);
             this.tbInloggenWW.TabIndex = 46;
             // 
             // tbInloggenGnaam
             // 
-            this.tbInloggenGnaam.Location = new System.Drawing.Point(166, 67);
-            this.tbInloggenGnaam.Margin = new System.Windows.Forms.Padding(2);
+            this.tbInloggenGnaam.Location = new System.Drawing.Point(221, 82);
+            this.tbInloggenGnaam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbInloggenGnaam.Name = "tbInloggenGnaam";
-            this.tbInloggenGnaam.Size = new System.Drawing.Size(76, 20);
+            this.tbInloggenGnaam.Size = new System.Drawing.Size(100, 22);
             this.tbInloggenGnaam.TabIndex = 45;
             // 
             // lblInloggenWW
             // 
             this.lblInloggenWW.AutoSize = true;
-            this.lblInloggenWW.Location = new System.Drawing.Point(53, 110);
-            this.lblInloggenWW.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInloggenWW.Location = new System.Drawing.Point(71, 135);
             this.lblInloggenWW.Name = "lblInloggenWW";
-            this.lblInloggenWW.Size = new System.Drawing.Size(68, 13);
+            this.lblInloggenWW.Size = new System.Drawing.Size(86, 17);
             this.lblInloggenWW.TabIndex = 44;
             this.lblInloggenWW.Text = "Wachtwoord";
             // 
             // lblInloggenGebruikersnaam
             // 
             this.lblInloggenGebruikersnaam.AutoSize = true;
-            this.lblInloggenGebruikersnaam.Location = new System.Drawing.Point(53, 69);
-            this.lblInloggenGebruikersnaam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInloggenGebruikersnaam.Location = new System.Drawing.Point(71, 85);
             this.lblInloggenGebruikersnaam.Name = "lblInloggenGebruikersnaam";
-            this.lblInloggenGebruikersnaam.Size = new System.Drawing.Size(84, 13);
+            this.lblInloggenGebruikersnaam.Size = new System.Drawing.Size(113, 17);
             this.lblInloggenGebruikersnaam.TabIndex = 43;
             this.lblInloggenGebruikersnaam.Text = "Gebruikersnaam";
             // 
             // lblRegistratieRegistratie
             // 
             this.lblRegistratieRegistratie.AutoSize = true;
-            this.lblRegistratieRegistratie.Location = new System.Drawing.Point(436, 29);
-            this.lblRegistratieRegistratie.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegistratieRegistratie.Location = new System.Drawing.Point(581, 36);
             this.lblRegistratieRegistratie.Name = "lblRegistratieRegistratie";
-            this.lblRegistratieRegistratie.Size = new System.Drawing.Size(57, 13);
+            this.lblRegistratieRegistratie.Size = new System.Drawing.Size(76, 17);
             this.lblRegistratieRegistratie.TabIndex = 42;
             this.lblRegistratieRegistratie.Text = "Registratie";
             // 
             // lblInloggenInloggen
             // 
             this.lblInloggenInloggen.AutoSize = true;
-            this.lblInloggenInloggen.Location = new System.Drawing.Point(53, 29);
-            this.lblInloggenInloggen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInloggenInloggen.Location = new System.Drawing.Point(71, 36);
             this.lblInloggenInloggen.Name = "lblInloggenInloggen";
-            this.lblInloggenInloggen.Size = new System.Drawing.Size(48, 13);
+            this.lblInloggenInloggen.Size = new System.Drawing.Size(62, 17);
             this.lblInloggenInloggen.TabIndex = 41;
             this.lblInloggenInloggen.Text = "Inloggen";
             // 
             // btnRegistratieOK
             // 
-            this.btnRegistratieOK.Location = new System.Drawing.Point(568, 352);
-            this.btnRegistratieOK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegistratieOK.Location = new System.Drawing.Point(757, 474);
+            this.btnRegistratieOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistratieOK.Name = "btnRegistratieOK";
-            this.btnRegistratieOK.Size = new System.Drawing.Size(56, 19);
+            this.btnRegistratieOK.Size = new System.Drawing.Size(75, 23);
             this.btnRegistratieOK.TabIndex = 40;
             this.btnRegistratieOK.Text = "OK";
             this.btnRegistratieOK.UseVisualStyleBackColor = true;
             // 
             // btnRegistratieAnnuleren
             // 
-            this.btnRegistratieAnnuleren.Location = new System.Drawing.Point(448, 352);
-            this.btnRegistratieAnnuleren.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegistratieAnnuleren.Location = new System.Drawing.Point(597, 474);
+            this.btnRegistratieAnnuleren.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistratieAnnuleren.Name = "btnRegistratieAnnuleren";
-            this.btnRegistratieAnnuleren.Size = new System.Drawing.Size(72, 19);
+            this.btnRegistratieAnnuleren.Size = new System.Drawing.Size(96, 23);
             this.btnRegistratieAnnuleren.TabIndex = 39;
             this.btnRegistratieAnnuleren.Text = "Annuleren";
             this.btnRegistratieAnnuleren.UseVisualStyleBackColor = true;
             // 
             // tbRegistratiePcode
             // 
-            this.tbRegistratiePcode.Location = new System.Drawing.Point(548, 210);
-            this.tbRegistratiePcode.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRegistratiePcode.Location = new System.Drawing.Point(731, 258);
+            this.tbRegistratiePcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRegistratiePcode.Name = "tbRegistratiePcode";
-            this.tbRegistratiePcode.Size = new System.Drawing.Size(76, 20);
+            this.tbRegistratiePcode.Size = new System.Drawing.Size(100, 22);
             this.tbRegistratiePcode.TabIndex = 38;
             // 
             // tbRegistratieAge
             // 
-            this.tbRegistratieAge.Location = new System.Drawing.Point(548, 274);
-            this.tbRegistratieAge.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRegistratieAge.Location = new System.Drawing.Point(731, 337);
+            this.tbRegistratieAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRegistratieAge.Name = "tbRegistratieAge";
-            this.tbRegistratieAge.Size = new System.Drawing.Size(76, 20);
+            this.tbRegistratieAge.Size = new System.Drawing.Size(100, 22);
             this.tbRegistratieAge.TabIndex = 37;
             // 
             // tbRegistratieWplaats
             // 
-            this.tbRegistratieWplaats.Location = new System.Drawing.Point(548, 243);
-            this.tbRegistratieWplaats.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRegistratieWplaats.Location = new System.Drawing.Point(731, 299);
+            this.tbRegistratieWplaats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRegistratieWplaats.Name = "tbRegistratieWplaats";
-            this.tbRegistratieWplaats.Size = new System.Drawing.Size(76, 20);
+            this.tbRegistratieWplaats.Size = new System.Drawing.Size(100, 22);
             this.tbRegistratieWplaats.TabIndex = 34;
             // 
             // tbRegistratieAdres
             // 
-            this.tbRegistratieAdres.Location = new System.Drawing.Point(548, 176);
-            this.tbRegistratieAdres.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRegistratieAdres.Location = new System.Drawing.Point(731, 217);
+            this.tbRegistratieAdres.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRegistratieAdres.Name = "tbRegistratieAdres";
-            this.tbRegistratieAdres.Size = new System.Drawing.Size(76, 20);
+            this.tbRegistratieAdres.Size = new System.Drawing.Size(100, 22);
             this.tbRegistratieAdres.TabIndex = 33;
             // 
             // tbRegistratieNaam
             // 
-            this.tbRegistratieNaam.Location = new System.Drawing.Point(548, 142);
-            this.tbRegistratieNaam.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRegistratieNaam.Location = new System.Drawing.Point(731, 175);
+            this.tbRegistratieNaam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRegistratieNaam.Name = "tbRegistratieNaam";
-            this.tbRegistratieNaam.Size = new System.Drawing.Size(76, 20);
+            this.tbRegistratieNaam.Size = new System.Drawing.Size(100, 22);
             this.tbRegistratieNaam.TabIndex = 32;
             // 
             // tbRegistratieWW
             // 
-            this.tbRegistratieWW.Location = new System.Drawing.Point(548, 105);
-            this.tbRegistratieWW.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRegistratieWW.Location = new System.Drawing.Point(731, 129);
+            this.tbRegistratieWW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRegistratieWW.Name = "tbRegistratieWW";
-            this.tbRegistratieWW.Size = new System.Drawing.Size(76, 20);
+            this.tbRegistratieWW.Size = new System.Drawing.Size(100, 22);
             this.tbRegistratieWW.TabIndex = 31;
             // 
             // tbRegistratieGnaam
             // 
-            this.tbRegistratieGnaam.Location = new System.Drawing.Point(548, 69);
-            this.tbRegistratieGnaam.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRegistratieGnaam.Location = new System.Drawing.Point(731, 85);
+            this.tbRegistratieGnaam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRegistratieGnaam.Name = "tbRegistratieGnaam";
-            this.tbRegistratieGnaam.Size = new System.Drawing.Size(76, 20);
+            this.tbRegistratieGnaam.Size = new System.Drawing.Size(100, 22);
             this.tbRegistratieGnaam.TabIndex = 30;
             // 
             // lblRegistratieLeeftijd
             // 
             this.lblRegistratieLeeftijd.AutoSize = true;
-            this.lblRegistratieLeeftijd.Location = new System.Drawing.Point(436, 276);
-            this.lblRegistratieLeeftijd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegistratieLeeftijd.Location = new System.Drawing.Point(581, 340);
             this.lblRegistratieLeeftijd.Name = "lblRegistratieLeeftijd";
-            this.lblRegistratieLeeftijd.Size = new System.Drawing.Size(41, 13);
+            this.lblRegistratieLeeftijd.Size = new System.Drawing.Size(54, 17);
             this.lblRegistratieLeeftijd.TabIndex = 29;
             this.lblRegistratieLeeftijd.Text = "Leeftijd";
             // 
             // lblRegistratieWoonplaats
             // 
             this.lblRegistratieWoonplaats.AutoSize = true;
-            this.lblRegistratieWoonplaats.Location = new System.Drawing.Point(435, 247);
-            this.lblRegistratieWoonplaats.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegistratieWoonplaats.Location = new System.Drawing.Point(580, 304);
             this.lblRegistratieWoonplaats.Name = "lblRegistratieWoonplaats";
-            this.lblRegistratieWoonplaats.Size = new System.Drawing.Size(64, 13);
+            this.lblRegistratieWoonplaats.Size = new System.Drawing.Size(83, 17);
             this.lblRegistratieWoonplaats.TabIndex = 25;
             this.lblRegistratieWoonplaats.Text = "Woonplaats";
             // 
             // lblRegistratiePostcode
             // 
             this.lblRegistratiePostcode.AutoSize = true;
-            this.lblRegistratiePostcode.Location = new System.Drawing.Point(436, 212);
-            this.lblRegistratiePostcode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegistratiePostcode.Location = new System.Drawing.Point(581, 261);
             this.lblRegistratiePostcode.Name = "lblRegistratiePostcode";
-            this.lblRegistratiePostcode.Size = new System.Drawing.Size(52, 13);
+            this.lblRegistratiePostcode.Size = new System.Drawing.Size(67, 17);
             this.lblRegistratiePostcode.TabIndex = 25;
             this.lblRegistratiePostcode.Text = "Postcode";
             // 
             // lblRegistratieAdres
             // 
             this.lblRegistratieAdres.AutoSize = true;
-            this.lblRegistratieAdres.Location = new System.Drawing.Point(435, 179);
-            this.lblRegistratieAdres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegistratieAdres.Location = new System.Drawing.Point(580, 220);
             this.lblRegistratieAdres.Name = "lblRegistratieAdres";
-            this.lblRegistratieAdres.Size = new System.Drawing.Size(34, 13);
+            this.lblRegistratieAdres.Size = new System.Drawing.Size(45, 17);
             this.lblRegistratieAdres.TabIndex = 24;
             this.lblRegistratieAdres.Text = "Adres";
             // 
             // lblRegistratieNaam
             // 
             this.lblRegistratieNaam.AutoSize = true;
-            this.lblRegistratieNaam.Location = new System.Drawing.Point(435, 145);
-            this.lblRegistratieNaam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegistratieNaam.Location = new System.Drawing.Point(580, 178);
             this.lblRegistratieNaam.Name = "lblRegistratieNaam";
-            this.lblRegistratieNaam.Size = new System.Drawing.Size(35, 13);
+            this.lblRegistratieNaam.Size = new System.Drawing.Size(45, 17);
             this.lblRegistratieNaam.TabIndex = 23;
             this.lblRegistratieNaam.Text = "Naam";
             // 
             // lblRegistratieWW
             // 
             this.lblRegistratieWW.AutoSize = true;
-            this.lblRegistratieWW.Location = new System.Drawing.Point(435, 107);
-            this.lblRegistratieWW.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegistratieWW.Location = new System.Drawing.Point(580, 132);
             this.lblRegistratieWW.Name = "lblRegistratieWW";
-            this.lblRegistratieWW.Size = new System.Drawing.Size(68, 13);
+            this.lblRegistratieWW.Size = new System.Drawing.Size(86, 17);
             this.lblRegistratieWW.TabIndex = 22;
             this.lblRegistratieWW.Text = "Wachtwoord";
             // 
             // lblRegistratieGebruikersnaam
             // 
             this.lblRegistratieGebruikersnaam.AutoSize = true;
-            this.lblRegistratieGebruikersnaam.Location = new System.Drawing.Point(436, 72);
-            this.lblRegistratieGebruikersnaam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegistratieGebruikersnaam.Location = new System.Drawing.Point(581, 89);
             this.lblRegistratieGebruikersnaam.Name = "lblRegistratieGebruikersnaam";
-            this.lblRegistratieGebruikersnaam.Size = new System.Drawing.Size(84, 13);
+            this.lblRegistratieGebruikersnaam.Size = new System.Drawing.Size(113, 17);
             this.lblRegistratieGebruikersnaam.TabIndex = 21;
             this.lblRegistratieGebruikersnaam.Text = "Gebruikersnaam";
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(942, 631);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1259, 780);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Vrijwilliger";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(942, 631);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Size = new System.Drawing.Size(1259, 780);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Hulpbehoevende";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -389,46 +410,50 @@
             this.tabPage5.Controls.Add(this.lblActiveConversation);
             this.tabPage5.Controls.Add(this.btnSend);
             this.tabPage5.Controls.Add(this.lbActiveConversations);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(942, 631);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Size = new System.Drawing.Size(1259, 780);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Chat";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tbChatMessage
             // 
-            this.tbChatMessage.Location = new System.Drawing.Point(262, 434);
-            this.tbChatMessage.Margin = new System.Windows.Forms.Padding(2);
+            this.tbChatMessage.Location = new System.Drawing.Point(349, 534);
+            this.tbChatMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbChatMessage.Name = "tbChatMessage";
-            this.tbChatMessage.Size = new System.Drawing.Size(674, 159);
+            this.tbChatMessage.Size = new System.Drawing.Size(897, 195);
             this.tbChatMessage.TabIndex = 17;
             this.tbChatMessage.Text = "";
             // 
             // lbChatConversation
             // 
             this.lbChatConversation.FormattingEnabled = true;
-            this.lbChatConversation.Location = new System.Drawing.Point(262, 23);
-            this.lbChatConversation.Margin = new System.Windows.Forms.Padding(2);
+            this.lbChatConversation.ItemHeight = 16;
+            this.lbChatConversation.Location = new System.Drawing.Point(349, 28);
+            this.lbChatConversation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbChatConversation.Name = "lbChatConversation";
-            this.lbChatConversation.Size = new System.Drawing.Size(674, 407);
+            this.lbChatConversation.Size = new System.Drawing.Size(897, 500);
             this.lbChatConversation.TabIndex = 16;
             // 
             // lblActiveConversation
             // 
             this.lblActiveConversation.AutoSize = true;
-            this.lblActiveConversation.Location = new System.Drawing.Point(314, 3);
+            this.lblActiveConversation.Location = new System.Drawing.Point(419, 4);
+            this.lblActiveConversation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblActiveConversation.Name = "lblActiveConversation";
-            this.lblActiveConversation.Size = new System.Drawing.Size(83, 13);
+            this.lblActiveConversation.Size = new System.Drawing.Size(110, 17);
             this.lblActiveConversation.TabIndex = 15;
             this.lblActiveConversation.Text = "[HuidigGesprek]";
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(861, 598);
+            this.btnSend.Location = new System.Drawing.Point(1148, 736);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.Size = new System.Drawing.Size(100, 28);
             this.btnSend.TabIndex = 11;
             this.btnSend.Text = "Verstuur";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -437,10 +462,11 @@
             // lbActiveConversations
             // 
             this.lbActiveConversations.FormattingEnabled = true;
-            this.lbActiveConversations.Location = new System.Drawing.Point(8, 23);
-            this.lbActiveConversations.Margin = new System.Windows.Forms.Padding(4);
+            this.lbActiveConversations.ItemHeight = 16;
+            this.lbActiveConversations.Location = new System.Drawing.Point(11, 28);
+            this.lbActiveConversations.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.lbActiveConversations.Name = "lbActiveConversations";
-            this.lbActiveConversations.Size = new System.Drawing.Size(249, 602);
+            this.lbActiveConversations.Size = new System.Drawing.Size(331, 740);
             this.lbActiveConversations.TabIndex = 8;
             // 
             // tabPage3
@@ -475,7 +501,7 @@
             this.btnBeheerFilter.Location = new System.Drawing.Point(232, 44);
             this.btnBeheerFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerFilter.Name = "btnBeheerFilter";
-            this.btnBeheerFilter.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerFilter.Size = new System.Drawing.Size(103, 23);
             this.btnBeheerFilter.TabIndex = 59;
             this.btnBeheerFilter.Text = "Filter";
             this.btnBeheerFilter.UseVisualStyleBackColor = true;
@@ -484,9 +510,10 @@
             // lblBeheerFilter
             // 
             this.lblBeheerFilter.AutoSize = true;
-            this.lblBeheerFilter.Location = new System.Drawing.Point(6, 5);
+            this.lblBeheerFilter.Location = new System.Drawing.Point(8, 6);
+            this.lblBeheerFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBeheerFilter.Name = "lblBeheerFilter";
-            this.lblBeheerFilter.Size = new System.Drawing.Size(29, 13);
+            this.lblBeheerFilter.Size = new System.Drawing.Size(39, 17);
             this.lblBeheerFilter.TabIndex = 58;
             this.lblBeheerFilter.Text = "Filter";
             // 
@@ -495,7 +522,7 @@
             this.tbBeheerFilter.Location = new System.Drawing.Point(4, 20);
             this.tbBeheerFilter.Margin = new System.Windows.Forms.Padding(2);
             this.tbBeheerFilter.Name = "tbBeheerFilter";
-            this.tbBeheerFilter.Size = new System.Drawing.Size(305, 20);
+            this.tbBeheerFilter.Size = new System.Drawing.Size(405, 22);
             this.tbBeheerFilter.TabIndex = 57;
             this.tbBeheerFilter.Text = "[Naam]";
             // 
@@ -504,7 +531,7 @@
             this.btnBeheerChatDeactiveren.Location = new System.Drawing.Point(860, 607);
             this.btnBeheerChatDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerChatDeactiveren.Name = "btnBeheerChatDeactiveren";
-            this.btnBeheerChatDeactiveren.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerChatDeactiveren.Size = new System.Drawing.Size(103, 23);
             this.btnBeheerChatDeactiveren.TabIndex = 56;
             this.btnBeheerChatDeactiveren.Text = "Deactiveren";
             this.btnBeheerChatDeactiveren.UseVisualStyleBackColor = true;
@@ -513,36 +540,40 @@
             // lblBeheerBeoordeling
             // 
             this.lblBeheerBeoordeling.AutoSize = true;
-            this.lblBeheerBeoordeling.Location = new System.Drawing.Point(1, 395);
+            this.lblBeheerBeoordeling.Location = new System.Drawing.Point(1, 486);
+            this.lblBeheerBeoordeling.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBeheerBeoordeling.Name = "lblBeheerBeoordeling";
-            this.lblBeheerBeoordeling.Size = new System.Drawing.Size(63, 13);
+            this.lblBeheerBeoordeling.Size = new System.Drawing.Size(84, 17);
             this.lblBeheerBeoordeling.TabIndex = 54;
             this.lblBeheerBeoordeling.Text = "Beoordeling";
             // 
             // lblBeheerChat
             // 
             this.lblBeheerChat.AutoSize = true;
-            this.lblBeheerChat.Location = new System.Drawing.Point(631, 65);
+            this.lblBeheerChat.Location = new System.Drawing.Point(841, 80);
+            this.lblBeheerChat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBeheerChat.Name = "lblBeheerChat";
-            this.lblBeheerChat.Size = new System.Drawing.Size(29, 13);
+            this.lblBeheerChat.Size = new System.Drawing.Size(37, 17);
             this.lblBeheerChat.TabIndex = 53;
             this.lblBeheerChat.Text = "Chat";
             // 
             // lblBeheerHulpaanvraag
             // 
             this.lblBeheerHulpaanvraag.AutoSize = true;
-            this.lblBeheerHulpaanvraag.Location = new System.Drawing.Point(317, 65);
+            this.lblBeheerHulpaanvraag.Location = new System.Drawing.Point(423, 80);
+            this.lblBeheerHulpaanvraag.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBeheerHulpaanvraag.Name = "lblBeheerHulpaanvraag";
-            this.lblBeheerHulpaanvraag.Size = new System.Drawing.Size(74, 13);
+            this.lblBeheerHulpaanvraag.Size = new System.Drawing.Size(97, 17);
             this.lblBeheerHulpaanvraag.TabIndex = 52;
             this.lblBeheerHulpaanvraag.Text = "Hulpaanvraag";
             // 
             // lblBeheerAccount
             // 
             this.lblBeheerAccount.AutoSize = true;
-            this.lblBeheerAccount.Location = new System.Drawing.Point(3, 65);
+            this.lblBeheerAccount.Location = new System.Drawing.Point(4, 80);
+            this.lblBeheerAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBeheerAccount.Name = "lblBeheerAccount";
-            this.lblBeheerAccount.Size = new System.Drawing.Size(47, 13);
+            this.lblBeheerAccount.Size = new System.Drawing.Size(59, 17);
             this.lblBeheerAccount.TabIndex = 51;
             this.lblBeheerAccount.Text = "Account";
             // 
@@ -551,7 +582,7 @@
             this.btnBeheerBeoordelingDeactiveren.Location = new System.Drawing.Point(232, 600);
             this.btnBeheerBeoordelingDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerBeoordelingDeactiveren.Name = "btnBeheerBeoordelingDeactiveren";
-            this.btnBeheerBeoordelingDeactiveren.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerBeoordelingDeactiveren.Size = new System.Drawing.Size(103, 23);
             this.btnBeheerBeoordelingDeactiveren.TabIndex = 50;
             this.btnBeheerBeoordelingDeactiveren.Text = "Deactiveren";
             this.btnBeheerBeoordelingDeactiveren.UseVisualStyleBackColor = true;
@@ -562,7 +593,7 @@
             this.btnBeheerHulpaanvraagDeactiveren.Location = new System.Drawing.Point(546, 361);
             this.btnBeheerHulpaanvraagDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerHulpaanvraagDeactiveren.Name = "btnBeheerHulpaanvraagDeactiveren";
-            this.btnBeheerHulpaanvraagDeactiveren.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerHulpaanvraagDeactiveren.Size = new System.Drawing.Size(103, 23);
             this.btnBeheerHulpaanvraagDeactiveren.TabIndex = 48;
             this.btnBeheerHulpaanvraagDeactiveren.Text = "Deactiveren";
             this.btnBeheerHulpaanvraagDeactiveren.UseVisualStyleBackColor = true;
@@ -571,34 +602,37 @@
             // lbBeheerBeoordeling
             // 
             this.lbBeheerBeoordeling.FormattingEnabled = true;
+            this.lbBeheerBeoordeling.ItemHeight = 16;
             this.lbBeheerBeoordeling.Items.AddRange(new object[] {
             "Beoordeling - [Stuuder] [Hulpaanvraag] [Bericht] [Rating]"});
             this.lbBeheerBeoordeling.Location = new System.Drawing.Point(4, 410);
             this.lbBeheerBeoordeling.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerBeoordeling.Name = "lbBeheerBeoordeling";
-            this.lbBeheerBeoordeling.Size = new System.Drawing.Size(305, 186);
+            this.lbBeheerBeoordeling.Size = new System.Drawing.Size(405, 228);
             this.lbBeheerBeoordeling.TabIndex = 46;
             // 
             // lbBeheerChat
             // 
             this.lbBeheerChat.FormattingEnabled = true;
+            this.lbBeheerChat.ItemHeight = 16;
             this.lbBeheerChat.Items.AddRange(new object[] {
             "Chat - [Stuurder] [Bericht]"});
             this.lbBeheerChat.Location = new System.Drawing.Point(634, 80);
             this.lbBeheerChat.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerChat.Name = "lbBeheerChat";
-            this.lbBeheerChat.Size = new System.Drawing.Size(303, 524);
+            this.lbBeheerChat.Size = new System.Drawing.Size(403, 644);
             this.lbBeheerChat.TabIndex = 45;
             // 
             // lbBeheerHulpaanvraag
             // 
             this.lbBeheerHulpaanvraag.FormattingEnabled = true;
+            this.lbBeheerHulpaanvraag.ItemHeight = 16;
             this.lbBeheerHulpaanvraag.Items.AddRange(new object[] {
             "Hulp - [Aanvrager] : [Bericht]"});
             this.lbBeheerHulpaanvraag.Location = new System.Drawing.Point(320, 80);
             this.lbBeheerHulpaanvraag.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerHulpaanvraag.Name = "lbBeheerHulpaanvraag";
-            this.lbBeheerHulpaanvraag.Size = new System.Drawing.Size(303, 277);
+            this.lbBeheerHulpaanvraag.Size = new System.Drawing.Size(403, 340);
             this.lbBeheerHulpaanvraag.TabIndex = 44;
             // 
             // btnBeheerAccountDeactiveren
@@ -606,7 +640,7 @@
             this.btnBeheerAccountDeactiveren.Location = new System.Drawing.Point(151, 361);
             this.btnBeheerAccountDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerAccountDeactiveren.Name = "btnBeheerAccountDeactiveren";
-            this.btnBeheerAccountDeactiveren.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerAccountDeactiveren.Size = new System.Drawing.Size(103, 23);
             this.btnBeheerAccountDeactiveren.TabIndex = 43;
             this.btnBeheerAccountDeactiveren.Text = "Deactiveren";
             this.btnBeheerAccountDeactiveren.UseVisualStyleBackColor = true;
@@ -617,7 +651,7 @@
             this.btnBeheerAccountAanpassen.Location = new System.Drawing.Point(232, 361);
             this.btnBeheerAccountAanpassen.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerAccountAanpassen.Name = "btnBeheerAccountAanpassen";
-            this.btnBeheerAccountAanpassen.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerAccountAanpassen.Size = new System.Drawing.Size(103, 23);
             this.btnBeheerAccountAanpassen.TabIndex = 42;
             this.btnBeheerAccountAanpassen.Text = "Aanpassen";
             this.btnBeheerAccountAanpassen.UseVisualStyleBackColor = true;
@@ -626,22 +660,23 @@
             // lbBeheerAccount
             // 
             this.lbBeheerAccount.FormattingEnabled = true;
+            this.lbBeheerAccount.ItemHeight = 16;
             this.lbBeheerAccount.Items.AddRange(new object[] {
             "Account - [Naam] [Adres] [Meer]"});
             this.lbBeheerAccount.Location = new System.Drawing.Point(4, 80);
             this.lbBeheerAccount.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerAccount.Name = "lbBeheerAccount";
-            this.lbBeheerAccount.Size = new System.Drawing.Size(305, 277);
+            this.lbBeheerAccount.Size = new System.Drawing.Size(405, 340);
             this.lbBeheerAccount.TabIndex = 41;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 681);
+            this.ClientSize = new System.Drawing.Size(1299, 838);
             this.Controls.Add(this.form);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
-            this.Text = "EyeCT4Participation";
             this.form.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -707,6 +742,8 @@
         public System.Windows.Forms.RichTextBox tbChatMessage;
         private System.Windows.Forms.TextBox tbRegistratiePhonenumber;
         private System.Windows.Forms.Label lblRegistratiePhonenumber;
+        private System.Windows.Forms.ComboBox cbRegistratieGeslacht;
+        private System.Windows.Forms.Label label1;
     }
 }
 
