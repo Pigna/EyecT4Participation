@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="Accountform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accountform.Designer.cs">
+      <DependentUpon>Accountform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administration.cs" />
     <Compile Include="Chat.cs" />
     <Compile Include="Database\db.cs" />
@@ -61,6 +67,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.cs" />
     <Compile Include="Volunteer.cs" />
+    <EmbeddedResource Include="Accountform.resx">
+      <DependentUpon>Accountform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
