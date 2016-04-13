@@ -10,7 +10,7 @@ namespace EyeCT4Participation
     {
         public bool Ov { get; set; }
 
-        public Needy(bool ov,string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age) : base(username, password, name, adress, zipcode, residence, email, phonenumber, age)
+        public Needy(bool ov,string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age, bool active, string geslacht) : base(username, password, name, adress, zipcode, residence, email, phonenumber, age,active, geslacht)
         {
             this.Ov = ov;
         }
