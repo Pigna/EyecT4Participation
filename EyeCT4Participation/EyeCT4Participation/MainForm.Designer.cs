@@ -1,6 +1,6 @@
 ﻿namespace EyeCT4Participation
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,22 +35,21 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnChatDeactiveren = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnBeoordelingDeactiveren = new System.Windows.Forms.Button();
+            this.btnBeoordelingAanpassen = new System.Windows.Forms.Button();
+            this.btnHulpaanvraagDeactiveren = new System.Windows.Forms.Button();
+            this.btnHulpaanvraagAanpassen = new System.Windows.Forms.Button();
+            this.lbBeoordeling = new System.Windows.Forms.ListBox();
+            this.lbChat = new System.Windows.Forms.ListBox();
+            this.lbHulpaanvraag = new System.Windows.Forms.ListBox();
+            this.btnAccountDeactiveren = new System.Windows.Forms.Button();
+            this.btnAccountAanpassen = new System.Windows.Forms.Button();
+            this.lbAccount = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
@@ -91,22 +90,21 @@
             this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.textBox1);
-            this.tabPage3.Controls.Add(this.button8);
-            this.tabPage3.Controls.Add(this.button9);
+            this.tabPage3.Controls.Add(this.btnChatDeactiveren);
             this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.label1);
-            this.tabPage3.Controls.Add(this.button6);
-            this.tabPage3.Controls.Add(this.button7);
-            this.tabPage3.Controls.Add(this.button4);
-            this.tabPage3.Controls.Add(this.button5);
-            this.tabPage3.Controls.Add(this.listBox4);
-            this.tabPage3.Controls.Add(this.listBox3);
-            this.tabPage3.Controls.Add(this.listBox2);
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Controls.Add(this.listBox1);
+            this.tabPage3.Controls.Add(this.btnBeoordelingDeactiveren);
+            this.tabPage3.Controls.Add(this.btnBeoordelingAanpassen);
+            this.tabPage3.Controls.Add(this.btnHulpaanvraagDeactiveren);
+            this.tabPage3.Controls.Add(this.btnHulpaanvraagAanpassen);
+            this.tabPage3.Controls.Add(this.lbBeoordeling);
+            this.tabPage3.Controls.Add(this.lbChat);
+            this.tabPage3.Controls.Add(this.lbHulpaanvraag);
+            this.tabPage3.Controls.Add(this.btnAccountDeactiveren);
+            this.tabPage3.Controls.Add(this.btnAccountAanpassen);
+            this.tabPage3.Controls.Add(this.lbAccount);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -141,23 +139,14 @@
             this.textBox1.TabIndex = 57;
             this.textBox1.Text = "[Naam]";
             // 
-            // button8
+            // btnChatDeactiveren
             // 
-            this.button8.Location = new System.Drawing.Point(636, 602);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 56;
-            this.button8.Text = "Deactiveren";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(717, 602);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 55;
-            this.button9.Text = "Aanpassen";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnChatDeactiveren.Location = new System.Drawing.Point(636, 602);
+            this.btnChatDeactiveren.Name = "btnChatDeactiveren";
+            this.btnChatDeactiveren.Size = new System.Drawing.Size(75, 23);
+            this.btnChatDeactiveren.TabIndex = 56;
+            this.btnChatDeactiveren.Text = "Deactiveren";
+            this.btnChatDeactiveren.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -195,99 +184,99 @@
             this.label1.TabIndex = 51;
             this.label1.Text = "Account";
             // 
-            // button6
+            // btnBeoordelingDeactiveren
             // 
-            this.button6.Location = new System.Drawing.Point(6, 599);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 50;
-            this.button6.Text = "Deactiveren";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnBeoordelingDeactiveren.Location = new System.Drawing.Point(6, 599);
+            this.btnBeoordelingDeactiveren.Name = "btnBeoordelingDeactiveren";
+            this.btnBeoordelingDeactiveren.Size = new System.Drawing.Size(75, 23);
+            this.btnBeoordelingDeactiveren.TabIndex = 50;
+            this.btnBeoordelingDeactiveren.Text = "Deactiveren";
+            this.btnBeoordelingDeactiveren.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnBeoordelingAanpassen
             // 
-            this.button7.Location = new System.Drawing.Point(87, 599);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 49;
-            this.button7.Text = "Aanpassen";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnBeoordelingAanpassen.Location = new System.Drawing.Point(87, 599);
+            this.btnBeoordelingAanpassen.Name = "btnBeoordelingAanpassen";
+            this.btnBeoordelingAanpassen.Size = new System.Drawing.Size(75, 23);
+            this.btnBeoordelingAanpassen.TabIndex = 49;
+            this.btnBeoordelingAanpassen.Text = "Aanpassen";
+            this.btnBeoordelingAanpassen.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnHulpaanvraagDeactiveren
             // 
-            this.button4.Location = new System.Drawing.Point(321, 329);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 48;
-            this.button4.Text = "Deactiveren";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnHulpaanvraagDeactiveren.Location = new System.Drawing.Point(321, 329);
+            this.btnHulpaanvraagDeactiveren.Name = "btnHulpaanvraagDeactiveren";
+            this.btnHulpaanvraagDeactiveren.Size = new System.Drawing.Size(75, 23);
+            this.btnHulpaanvraagDeactiveren.TabIndex = 48;
+            this.btnHulpaanvraagDeactiveren.Text = "Deactiveren";
+            this.btnHulpaanvraagDeactiveren.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnHulpaanvraagAanpassen
             // 
-            this.button5.Location = new System.Drawing.Point(402, 329);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 47;
-            this.button5.Text = "Aanpassen";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnHulpaanvraagAanpassen.Location = new System.Drawing.Point(402, 329);
+            this.btnHulpaanvraagAanpassen.Name = "btnHulpaanvraagAanpassen";
+            this.btnHulpaanvraagAanpassen.Size = new System.Drawing.Size(75, 23);
+            this.btnHulpaanvraagAanpassen.TabIndex = 47;
+            this.btnHulpaanvraagAanpassen.Text = "Aanpassen";
+            this.btnHulpaanvraagAanpassen.UseVisualStyleBackColor = true;
             // 
-            // listBox4
+            // lbBeoordeling
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Items.AddRange(new object[] {
+            this.lbBeoordeling.FormattingEnabled = true;
+            this.lbBeoordeling.Items.AddRange(new object[] {
             "Beoordeling - [Stuuder] [Hulpaanvraag] [Bericht] [Rating]"});
-            this.listBox4.Location = new System.Drawing.Point(6, 368);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(300, 225);
-            this.listBox4.TabIndex = 46;
+            this.lbBeoordeling.Location = new System.Drawing.Point(6, 368);
+            this.lbBeoordeling.Name = "lbBeoordeling";
+            this.lbBeoordeling.Size = new System.Drawing.Size(300, 225);
+            this.lbBeoordeling.TabIndex = 46;
             // 
-            // listBox3
+            // lbChat
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Items.AddRange(new object[] {
+            this.lbChat.FormattingEnabled = true;
+            this.lbChat.Items.AddRange(new object[] {
             "Chat - [Stuurder] [Bericht]"});
-            this.listBox3.Location = new System.Drawing.Point(636, 98);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(300, 498);
-            this.listBox3.TabIndex = 45;
+            this.lbChat.Location = new System.Drawing.Point(636, 98);
+            this.lbChat.Name = "lbChat";
+            this.lbChat.Size = new System.Drawing.Size(300, 498);
+            this.lbChat.TabIndex = 45;
             // 
-            // listBox2
+            // lbHulpaanvraag
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Items.AddRange(new object[] {
+            this.lbHulpaanvraag.FormattingEnabled = true;
+            this.lbHulpaanvraag.Items.AddRange(new object[] {
             "Hulp - [Aanvrager] : [Bericht]"});
-            this.listBox2.Location = new System.Drawing.Point(321, 98);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(300, 225);
-            this.listBox2.TabIndex = 44;
+            this.lbHulpaanvraag.Location = new System.Drawing.Point(321, 98);
+            this.lbHulpaanvraag.Name = "lbHulpaanvraag";
+            this.lbHulpaanvraag.Size = new System.Drawing.Size(300, 225);
+            this.lbHulpaanvraag.TabIndex = 44;
             // 
-            // button2
+            // btnAccountDeactiveren
             // 
-            this.button2.Location = new System.Drawing.Point(6, 329);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 43;
-            this.button2.Text = "Deactiveren";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAccountDeactiveren.Location = new System.Drawing.Point(6, 329);
+            this.btnAccountDeactiveren.Name = "btnAccountDeactiveren";
+            this.btnAccountDeactiveren.Size = new System.Drawing.Size(75, 23);
+            this.btnAccountDeactiveren.TabIndex = 43;
+            this.btnAccountDeactiveren.Text = "Deactiveren";
+            this.btnAccountDeactiveren.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAccountAanpassen
             // 
-            this.button1.Location = new System.Drawing.Point(87, 329);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Aanpassen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAccountAanpassen.Location = new System.Drawing.Point(87, 329);
+            this.btnAccountAanpassen.Name = "btnAccountAanpassen";
+            this.btnAccountAanpassen.Size = new System.Drawing.Size(75, 23);
+            this.btnAccountAanpassen.TabIndex = 42;
+            this.btnAccountAanpassen.Text = "Aanpassen";
+            this.btnAccountAanpassen.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lbAccount
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.lbAccount.FormattingEnabled = true;
+            this.lbAccount.Items.AddRange(new object[] {
             "Account - [Naam] [Adres] [Meer]"});
-            this.listBox1.Location = new System.Drawing.Point(6, 98);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(300, 225);
-            this.listBox1.TabIndex = 41;
+            this.lbAccount.Location = new System.Drawing.Point(6, 98);
+            this.lbAccount.Name = "lbAccount";
+            this.lbAccount.Size = new System.Drawing.Size(300, 225);
+            this.lbAccount.TabIndex = 41;
             // 
             // Form1
             // 
@@ -313,22 +302,21 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnChatDeactiveren;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnBeoordelingDeactiveren;
+        private System.Windows.Forms.Button btnBeoordelingAanpassen;
+        private System.Windows.Forms.Button btnHulpaanvraagDeactiveren;
+        private System.Windows.Forms.Button btnHulpaanvraagAanpassen;
+        private System.Windows.Forms.ListBox lbBeoordeling;
+        private System.Windows.Forms.ListBox lbChat;
+        private System.Windows.Forms.ListBox lbHulpaanvraag;
+        private System.Windows.Forms.Button btnAccountDeactiveren;
+        private System.Windows.Forms.Button btnAccountAanpassen;
+        private System.Windows.Forms.ListBox lbAccount;
     }
 }
 
