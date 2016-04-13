@@ -25,7 +25,7 @@ namespace EyeCT4Participation
 
         }
 
-        public void AddReaction(string Message)
+        public void AddReaction(string message)
         {
 
         }

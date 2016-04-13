@@ -27,7 +27,7 @@ namespace EyeCT4Participation
 
         }
 
-        public void AddVolenteer(Account volenteer)
+        public void AddVolunteer(Account volunteer)
         {
 
         }

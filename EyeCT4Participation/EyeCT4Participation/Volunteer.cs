@@ -8,14 +8,14 @@ namespace EyeCT4Participation
 {
     class Volunteer : Account
     {
-        public bool rijbewijs;
+        public bool rijbewijs { get; set; }
 
-        public Volunteer()
+        public Volunteer(bool rbws)
         {
-
+            rijbewijs = rbws;
         }
 
-        public void AddReaction(string Description, Volunteer Author)
+        public void AddReaction(string description, string message, Volunteer author)
         {
             //Functie AddReaction
         }
