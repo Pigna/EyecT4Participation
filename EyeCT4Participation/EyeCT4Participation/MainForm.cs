@@ -32,5 +32,10 @@ namespace EyeCT4Participation
             Chat c1 = new Chat();
             c1.AddMessage();
         }
+
+        private void lbBeheerChat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
