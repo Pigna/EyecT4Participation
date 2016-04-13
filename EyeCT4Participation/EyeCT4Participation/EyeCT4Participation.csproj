@@ -53,6 +53,12 @@
     </Compile>
     <Compile Include="Administration.cs" />
     <Compile Include="Chat.cs" />
+    <Compile Include="ChatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatForm.Designer.cs">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\db.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -69,6 +75,9 @@
     <Compile Include="Volunteer.cs" />
     <EmbeddedResource Include="Accountform.resx">
       <DependentUpon>Accountform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChatForm.resx">
+      <DependentUpon>ChatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
