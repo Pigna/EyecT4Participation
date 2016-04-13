@@ -41,16 +41,12 @@
             this.btnAnnuleren = new System.Windows.Forms.Button();
             this.tbPcode = new System.Windows.Forms.TextBox();
             this.tbAge = new System.Windows.Forms.TextBox();
-            this.tbTnummer = new System.Windows.Forms.TextBox();
-            this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbWplaats = new System.Windows.Forms.TextBox();
             this.tbAdres = new System.Windows.Forms.TextBox();
             this.tbNaam = new System.Windows.Forms.TextBox();
             this.tbWWRegistratie = new System.Windows.Forms.TextBox();
             this.tbRegistratieGnaam = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -120,14 +116,13 @@
             this.tabPage1.Controls.Add(this.btnAnnuleren);
             this.tabPage1.Controls.Add(this.tbPcode);
             this.tabPage1.Controls.Add(this.tbAge);
-            this.tabPage1.Controls.Add(this.tbTnummer);
-            this.tabPage1.Controls.Add(this.tbEmail);
             this.tabPage1.Controls.Add(this.tbWplaats);
             this.tabPage1.Controls.Add(this.tbAdres);
             this.tabPage1.Controls.Add(this.tbNaam);
             this.tabPage1.Controls.Add(this.tbWWRegistratie);
             this.tabPage1.Controls.Add(this.tbRegistratieGnaam);
             this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label12);
@@ -243,22 +238,6 @@
             this.tbAge.Size = new System.Drawing.Size(76, 20);
             this.tbAge.TabIndex = 37;
             // 
-            // tbTnummer
-            // 
-            this.tbTnummer.Location = new System.Drawing.Point(548, 313);
-            this.tbTnummer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbTnummer.Name = "tbTnummer";
-            this.tbTnummer.Size = new System.Drawing.Size(76, 20);
-            this.tbTnummer.TabIndex = 36;
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.Location = new System.Drawing.Point(548, 280);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(76, 20);
-            this.tbEmail.TabIndex = 35;
-            // 
             // tbWplaats
             // 
             this.tbWplaats.Location = new System.Drawing.Point(548, 243);
@@ -308,24 +287,6 @@
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 29;
             this.label9.Text = "Leeftijd";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(261, 481);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 13);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Bericht";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(261, 3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Gesprek";
             // 
             // label3
             // 
@@ -650,8 +611,6 @@
             // 
             this.tabPage5.Controls.Add(this.lblActiveConversation);
             this.tabPage5.Controls.Add(this.label3);
-            this.tabPage5.Controls.Add(this.label7);
-            this.tabPage5.Controls.Add(this.label8);
             this.tabPage5.Controls.Add(this.btnSend);
             this.tabPage5.Controls.Add(this.tbMessage);
             this.tabPage5.Controls.Add(this.lbConversation);
@@ -675,7 +634,8 @@
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(861, 598);
+            this.btnSend.Location = new System.Drawing.Point(1148, 736);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(4);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 23);
             this.btnSend.TabIndex = 11;
@@ -685,7 +645,8 @@
             // 
             // tbMessage
             // 
-            this.tbMessage.Location = new System.Drawing.Point(261, 497);
+            this.tbMessage.Location = new System.Drawing.Point(348, 612);
+            this.tbMessage.Margin = new System.Windows.Forms.Padding(4);
             this.tbMessage.Multiline = true;
             this.tbMessage.Name = "tbMessage";
             this.tbMessage.Size = new System.Drawing.Size(675, 95);
@@ -694,7 +655,9 @@
             // lbConversation
             // 
             this.lbConversation.FormattingEnabled = true;
-            this.lbConversation.Location = new System.Drawing.Point(261, 19);
+            this.lbConversation.ItemHeight = 16;
+            this.lbConversation.Location = new System.Drawing.Point(348, 23);
+            this.lbConversation.Margin = new System.Windows.Forms.Padding(4);
             this.lbConversation.Name = "lbConversation";
             this.lbConversation.Size = new System.Drawing.Size(675, 459);
             this.lbConversation.TabIndex = 9;
@@ -702,10 +665,21 @@
             // lbActiveConversations
             // 
             this.lbActiveConversations.FormattingEnabled = true;
-            this.lbActiveConversations.Location = new System.Drawing.Point(6, 19);
+            this.lbActiveConversations.ItemHeight = 16;
+            this.lbActiveConversations.Location = new System.Drawing.Point(8, 23);
+            this.lbActiveConversations.Margin = new System.Windows.Forms.Padding(4);
             this.lbActiveConversations.Name = "lbActiveConversations";
             this.lbActiveConversations.Size = new System.Drawing.Size(249, 602);
             this.lbActiveConversations.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(580, 304);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Woonplaats";
             // 
             // MainForm
             // 
@@ -713,6 +687,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 681);
             this.Controls.Add(this.form);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "EyeCT4Participation";
             this.form.ResumeLayout(false);
@@ -767,17 +742,12 @@
         private System.Windows.Forms.Button btnAnnuleren;
         private System.Windows.Forms.TextBox tbPcode;
         private System.Windows.Forms.TextBox tbAge;
-        private System.Windows.Forms.TextBox tbTnummer;
-        private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbWplaats;
         private System.Windows.Forms.TextBox tbAdres;
         private System.Windows.Forms.TextBox tbNaam;
         private System.Windows.Forms.TextBox tbWWRegistratie;
         private System.Windows.Forms.TextBox tbRegistratieGnaam;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -788,6 +758,7 @@
         private System.Windows.Forms.TextBox tbMessage;
         private System.Windows.Forms.ListBox lbConversation;
         private System.Windows.Forms.ListBox lbActiveConversations;
+        private System.Windows.Forms.Label label3;
     }
 }
 
