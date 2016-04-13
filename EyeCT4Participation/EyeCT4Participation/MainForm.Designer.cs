@@ -80,6 +80,8 @@
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lblRegistratiePhonenumber = new System.Windows.Forms.Label();
             this.tbRegistratiePhonenumber = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbRegistratieGeslacht = new System.Windows.Forms.ComboBox();
             this.form.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -101,6 +103,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbRegistratieGeslacht);
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.tbRegistratiePhonenumber);
             this.tabPage1.Controls.Add(this.lblRegistratiePhonenumber);
             this.tabPage1.Controls.Add(this.btnInloggenInloggen);
@@ -202,7 +206,7 @@
             // 
             // btnRegistratieOK
             // 
-            this.btnRegistratieOK.Location = new System.Drawing.Point(568, 352);
+            this.btnRegistratieOK.Location = new System.Drawing.Point(568, 385);
             this.btnRegistratieOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistratieOK.Name = "btnRegistratieOK";
             this.btnRegistratieOK.Size = new System.Drawing.Size(56, 19);
@@ -212,7 +216,7 @@
             // 
             // btnRegistratieAnnuleren
             // 
-            this.btnRegistratieAnnuleren.Location = new System.Drawing.Point(448, 352);
+            this.btnRegistratieAnnuleren.Location = new System.Drawing.Point(448, 385);
             this.btnRegistratieAnnuleren.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistratieAnnuleren.Name = "btnRegistratieAnnuleren";
             this.btnRegistratieAnnuleren.Size = new System.Drawing.Size(72, 19);
@@ -629,6 +633,26 @@
             this.tbRegistratiePhonenumber.Size = new System.Drawing.Size(76, 20);
             this.tbRegistratiePhonenumber.TabIndex = 49;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(436, 341);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "Geslacht";
+            // 
+            // cbRegistratieGeslacht
+            // 
+            this.cbRegistratieGeslacht.FormattingEnabled = true;
+            this.cbRegistratieGeslacht.Items.AddRange(new object[] {
+            "Man",
+            "Vrouw"});
+            this.cbRegistratieGeslacht.Location = new System.Drawing.Point(548, 338);
+            this.cbRegistratieGeslacht.Name = "cbRegistratieGeslacht";
+            this.cbRegistratieGeslacht.Size = new System.Drawing.Size(76, 21);
+            this.cbRegistratieGeslacht.TabIndex = 51;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -701,6 +725,8 @@
         public System.Windows.Forms.RichTextBox tbChatMessage;
         private System.Windows.Forms.TextBox tbRegistratiePhonenumber;
         private System.Windows.Forms.Label lblRegistratiePhonenumber;
+        private System.Windows.Forms.ComboBox cbRegistratieGeslacht;
+        private System.Windows.Forms.Label label1;
     }
 }
 
