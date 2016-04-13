@@ -41,8 +41,6 @@
             this.btnAnnuleren = new System.Windows.Forms.Button();
             this.tbPcode = new System.Windows.Forms.TextBox();
             this.tbAge = new System.Windows.Forms.TextBox();
-            this.tbTnummer = new System.Windows.Forms.TextBox();
-            this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbWplaats = new System.Windows.Forms.TextBox();
             this.tbAdres = new System.Windows.Forms.TextBox();
             this.tbNaam = new System.Windows.Forms.TextBox();
@@ -87,8 +85,6 @@
             this.lbConversation = new System.Windows.Forms.ListBox();
             this.lbActiveConversations = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.form.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -123,16 +119,12 @@
             this.tabPage1.Controls.Add(this.btnAnnuleren);
             this.tabPage1.Controls.Add(this.tbPcode);
             this.tabPage1.Controls.Add(this.tbAge);
-            this.tabPage1.Controls.Add(this.tbTnummer);
-            this.tabPage1.Controls.Add(this.tbEmail);
             this.tabPage1.Controls.Add(this.tbWplaats);
             this.tabPage1.Controls.Add(this.tbAdres);
             this.tabPage1.Controls.Add(this.tbNaam);
             this.tabPage1.Controls.Add(this.tbWWRegistratie);
             this.tabPage1.Controls.Add(this.tbRegistratieGnaam);
             this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label11);
@@ -209,7 +201,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(730, 488);
+            this.btnOK.Location = new System.Drawing.Point(730, 402);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 40;
@@ -218,7 +210,7 @@
             // 
             // btnAnnuleren
             // 
-            this.btnAnnuleren.Location = new System.Drawing.Point(598, 488);
+            this.btnAnnuleren.Location = new System.Drawing.Point(598, 402);
             this.btnAnnuleren.Name = "btnAnnuleren";
             this.btnAnnuleren.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuleren.TabIndex = 39;
@@ -234,24 +226,10 @@
             // 
             // tbAge
             // 
-            this.tbAge.Location = new System.Drawing.Point(730, 423);
+            this.tbAge.Location = new System.Drawing.Point(730, 337);
             this.tbAge.Name = "tbAge";
             this.tbAge.Size = new System.Drawing.Size(100, 22);
             this.tbAge.TabIndex = 37;
-            // 
-            // tbTnummer
-            // 
-            this.tbTnummer.Location = new System.Drawing.Point(730, 385);
-            this.tbTnummer.Name = "tbTnummer";
-            this.tbTnummer.Size = new System.Drawing.Size(100, 22);
-            this.tbTnummer.TabIndex = 36;
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.Location = new System.Drawing.Point(730, 344);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(100, 22);
-            this.tbEmail.TabIndex = 35;
             // 
             // tbWplaats
             // 
@@ -291,7 +269,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(581, 426);
+            this.label9.Location = new System.Drawing.Point(581, 340);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 17);
             this.label9.TabIndex = 29;
@@ -714,24 +692,6 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "Woonplaats";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(580, 349);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 17);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Postcode";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(581, 390);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 17);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Postcode";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -795,8 +755,6 @@
         private System.Windows.Forms.Button btnAnnuleren;
         private System.Windows.Forms.TextBox tbPcode;
         private System.Windows.Forms.TextBox tbAge;
-        private System.Windows.Forms.TextBox tbTnummer;
-        private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbWplaats;
         private System.Windows.Forms.TextBox tbAdres;
         private System.Windows.Forms.TextBox tbNaam;
@@ -813,8 +771,6 @@
         private System.Windows.Forms.TextBox tbMessage;
         private System.Windows.Forms.ListBox lbConversation;
         private System.Windows.Forms.ListBox lbActiveConversations;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
     }
 }
