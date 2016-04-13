@@ -47,6 +47,7 @@
             this.tbWWRegistratie = new System.Windows.Forms.TextBox();
             this.tbRegistratieGnaam = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@
             this.tbMessage = new System.Windows.Forms.TextBox();
             this.lbConversation = new System.Windows.Forms.ListBox();
             this.lbActiveConversations = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.form.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -274,6 +274,15 @@
             this.label9.Size = new System.Drawing.Size(54, 17);
             this.label9.TabIndex = 29;
             this.label9.Text = "Leeftijd";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(580, 304);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Woonplaats";
             // 
             // label10
             // 
@@ -683,15 +692,6 @@
             this.lbActiveConversations.Size = new System.Drawing.Size(331, 740);
             this.lbActiveConversations.TabIndex = 8;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(580, 304);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Woonplaats";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -768,10 +768,10 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lblActiveConversation;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.TextBox tbMessage;
-        private System.Windows.Forms.ListBox lbConversation;
         private System.Windows.Forms.ListBox lbActiveConversations;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox tbMessage;
+        public System.Windows.Forms.ListBox lbConversation;
     }
 }
 
