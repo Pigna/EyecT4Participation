@@ -82,6 +82,8 @@
             this.tbRegistratiePhonenumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbRegistratieGeslacht = new System.Windows.Forms.ComboBox();
+            this.lblRegistratieType = new System.Windows.Forms.Label();
+            this.cbRegistratieType = new System.Windows.Forms.ComboBox();
             this.form.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -103,6 +105,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbRegistratieType);
+            this.tabPage1.Controls.Add(this.lblRegistratieType);
             this.tabPage1.Controls.Add(this.cbRegistratieGeslacht);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.tbRegistratiePhonenumber);
@@ -147,6 +151,7 @@
             this.btnInloggenInloggen.TabIndex = 47;
             this.btnInloggenInloggen.Text = "Inloggen";
             this.btnInloggenInloggen.UseVisualStyleBackColor = true;
+            this.btnInloggenInloggen.Click += new System.EventHandler(this.btnInloggenInloggen_Click);
             // 
             // tbInloggenWW
             // 
@@ -206,7 +211,7 @@
             // 
             // btnRegistratieOK
             // 
-            this.btnRegistratieOK.Location = new System.Drawing.Point(568, 385);
+            this.btnRegistratieOK.Location = new System.Drawing.Point(568, 409);
             this.btnRegistratieOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistratieOK.Name = "btnRegistratieOK";
             this.btnRegistratieOK.Size = new System.Drawing.Size(56, 19);
@@ -216,7 +221,7 @@
             // 
             // btnRegistratieAnnuleren
             // 
-            this.btnRegistratieAnnuleren.Location = new System.Drawing.Point(448, 385);
+            this.btnRegistratieAnnuleren.Location = new System.Drawing.Point(448, 409);
             this.btnRegistratieAnnuleren.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistratieAnnuleren.Name = "btnRegistratieAnnuleren";
             this.btnRegistratieAnnuleren.Size = new System.Drawing.Size(72, 19);
@@ -653,6 +658,26 @@
             this.cbRegistratieGeslacht.Size = new System.Drawing.Size(76, 21);
             this.cbRegistratieGeslacht.TabIndex = 51;
             // 
+            // lblRegistratieType
+            // 
+            this.lblRegistratieType.AutoSize = true;
+            this.lblRegistratieType.Location = new System.Drawing.Point(436, 377);
+            this.lblRegistratieType.Name = "lblRegistratieType";
+            this.lblRegistratieType.Size = new System.Drawing.Size(31, 13);
+            this.lblRegistratieType.TabIndex = 52;
+            this.lblRegistratieType.Text = "Type";
+            // 
+            // cbRegistratieType
+            // 
+            this.cbRegistratieType.FormattingEnabled = true;
+            this.cbRegistratieType.Items.AddRange(new object[] {
+            "Hulpbehoevende",
+            "Vrijwilliger"});
+            this.cbRegistratieType.Location = new System.Drawing.Point(548, 374);
+            this.cbRegistratieType.Name = "cbRegistratieType";
+            this.cbRegistratieType.Size = new System.Drawing.Size(76, 21);
+            this.cbRegistratieType.TabIndex = 53;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -728,6 +753,8 @@
         private System.Windows.Forms.Label lblRegistratiePhonenumber;
         private System.Windows.Forms.ComboBox cbRegistratieGeslacht;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbRegistratieType;
+        private System.Windows.Forms.Label lblRegistratieType;
     }
 }
 

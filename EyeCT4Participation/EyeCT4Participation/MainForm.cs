@@ -37,5 +37,25 @@ namespace EyeCT4Participation
         {
 
         }
+
+        public void LogIn(string username, string password)
+        {
+            // database.Query = "SELECT * FROM Gebruiker WHERE username = variabele.username AND password = variabele.password"
+            // if("Type" = 0)
+            // {
+            
+            tabPage4.Show();  // open hulpbehoevende scherm
+            // }
+            // else if ("Type" = 1)
+            // {
+            tabPage2.Show();  // open vrijwilliger scherm
+            // }
+        }
+
+        private void btnInloggenInloggen_Click(object sender, EventArgs e)
+        {
+            LogIn(tbInloggenGnaam.Text, tbInloggenWW.Text);
+        }
+
     }
 }

@@ -35,18 +35,5 @@ namespace EyeCT4Participation
             this.Active = active;
             this.Geslacht = geslacht;
         }
-
-        public void LogIn(string username, string password)
-        {
-          // database.Query = "SELECT * Gebruiker WHERE username = variabele.username AND password = variabele.password"
-          // if("Type" = 0)
-          // {
-          //   open hulpbehoevende scherm
-          // }
-          // else if ("Type" = 1)
-          // {
-          //   open vrijwilliger scherm
-          // }
-        }
     }
 }
