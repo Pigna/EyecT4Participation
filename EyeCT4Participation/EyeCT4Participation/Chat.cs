@@ -10,14 +10,14 @@ namespace EyeCT4Participation
         public class Chat : MainForm
     {
         public string Message;
-        public string Datetime;
+        public DateTime Date;
         public string Sender;
         public string Receiver;
         public bool Active;
-        public Chat(string message, string datetime, string sender, string receiver, bool active)
+        public Chat(string message, DateTime date, string sender, string receiver, bool active)
         {
             Message = message;
-            Datetime = datetime;
+            Date = date;
             Sender = sender;
             Receiver = receiver;
             Active = active;
@@ -36,7 +36,7 @@ namespace EyeCT4Participation
 
         public void AddMessage()
         {
-            lbChatConversation.Items.Add(TextValue);
+            lbChatConversation.Items.Add(Message);
         }
 
     }

@@ -22,7 +22,7 @@ namespace EyeCT4Participation
             this.Question = question;
             this.Description = description;
             this.Date = date;
-            this.Urgency = Urgency;
+            this.Urgency = urgency;
             this.Active = active;
         }
 

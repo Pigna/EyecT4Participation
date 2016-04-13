@@ -19,7 +19,7 @@ namespace EyeCT4Participation
 
         public void btnSend_Click(object sender, EventArgs e)
         {
-            Chat c1 = new Chat(tbChatMessage.Text);
+            Chat c1 = new Chat();
             c1.TextValue = tbChatMessage.Text;
             c1.AddMessage();
             tbChatMessage.Clear();
