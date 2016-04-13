@@ -22,8 +22,8 @@ namespace EyeCT4Participation
 
         public void AddMessage()
         {
-            lbConversation.Items.Add(tbMessage.Text);
-            tbMessage.Clear();
+            lbChatConversation.Items.Add(tbChatMessage.Text);
+            tbChatMessage.Clear();
         }
 
     }

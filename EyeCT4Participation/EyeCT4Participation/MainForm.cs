@@ -19,12 +19,12 @@ namespace EyeCT4Participation
 
         public string TextValue
         {
-            set { tbMessage.Text = value; }
+            set { tbChatMessage.Text = value; }
         }
 
         public string getTextValue
         {
-            get { return tbMessage.Text; }
+            get { return tbChatMessage.Text; }
         }
 
         private void btnSend_Click(object sender, EventArgs e)
