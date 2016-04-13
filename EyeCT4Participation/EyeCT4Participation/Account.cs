@@ -18,6 +18,7 @@ namespace EyeCT4Participation
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
         public int Age { get; set; }
+        public string Geslacht { get; set; }
 
         public Account(string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age)
         {
@@ -39,8 +40,15 @@ namespace EyeCT4Participation
 
         public void LogIn(string username, string password)
         {
-          //database.Query = "SELECT * Gebruiker WHERE username = username AND password = password"
-
+          // database.Query = "SELECT * Gebruiker WHERE username = variabele.username AND password = variabele.password"
+          // if("Type" = 0)
+          // {
+          //   open hulpbehoevende scherm
+          // }
+          // else if ("Type" = 1)
+          // {
+          //   open vrijwilliger scherm
+          // }
         }
     }
 }

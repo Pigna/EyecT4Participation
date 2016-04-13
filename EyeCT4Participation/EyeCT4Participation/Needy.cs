@@ -18,11 +18,13 @@ namespace EyeCT4Participation
         public void AddHelpRequest(string question, string description, DateTime date, Needy author, bool urgency, bool ov)
         {
             //dit moet naar de database
+            //INSERT INTO hulpvraag(question, description, date, author, urgency, ov) VALUES ( string, string, datetime, needy, bool, bool)
         }
 
         public void AddReview(int score, string description, Needy author)
         {
             //dit moet naar de database
+            //INSERT INTO review(score, description, author) VALUES (score, string, author)
         }
     }
 }
