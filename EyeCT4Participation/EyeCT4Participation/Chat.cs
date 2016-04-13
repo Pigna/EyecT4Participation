@@ -11,12 +11,17 @@ namespace EyeCT4Participation
         public string message { get; set; }
         public Chat(string msg)
         {
-            this.message = msg;
+            message = msg;
+        }
+
+        public Chat()
+        { 
+            
         }
 
         public void AddMessage(Account sender, string message, DateTime time)
         {
-            //functie addmessage
+            
         }
 
     }
