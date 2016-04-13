@@ -36,8 +36,14 @@ namespace EyeCT4Participation
 
         public void AddMessage()
         {
-            lbChatConversation.Items.Add(Message);
+            lbChatConversation.Items.Add(tbChatMessage.Text);
         }
+
+        //public override string ToString()
+        //{
+        //    string info = Date + ": " + Message;
+        //    return info;
+        //}
 
     }
 }
