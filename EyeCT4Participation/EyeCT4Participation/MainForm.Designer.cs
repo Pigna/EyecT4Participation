@@ -31,6 +31,11 @@
             this.form = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,16 +55,20 @@
             this.btnAccountDeactiveren = new System.Windows.Forms.Button();
             this.btnAccountAanpassen = new System.Windows.Forms.Button();
             this.lbAccount = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.lblActiveConversation = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.tbMessage = new System.Windows.Forms.TextBox();
+            this.lbConversation = new System.Windows.Forms.ListBox();
+            this.lbActiveConversations = new System.Windows.Forms.ListBox();
             this.form.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // form
@@ -99,6 +108,55 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Beheer Overzicht";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Alles",
+            "Chat",
+            "Hulpaanvraag",
+            "Beoordelingen",
+            "Accounts"});
+            this.comboBox1.Location = new System.Drawing.Point(6, 10);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(265, 21);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(196, 318);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Deactiveren";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(277, 318);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Aanpassen";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(6, 38);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(346, 274);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(277, 9);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Chat";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -293,55 +351,6 @@
             this.lbAccount.Size = new System.Drawing.Size(300, 225);
             this.lbAccount.TabIndex = 41;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Alles",
-            "Chat",
-            "Hulpaanvraag",
-            "Beoordelingen",
-            "Accounts"});
-            this.comboBox1.Location = new System.Drawing.Point(6, 10);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(265, 21);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(196, 318);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Deactiveren";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(277, 318);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Aanpassen";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 38);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(346, 274);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(277, 9);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Chat";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -354,13 +363,91 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.lblActiveConversation);
+            this.tabPage5.Controls.Add(this.label3);
+            this.tabPage5.Controls.Add(this.label7);
+            this.tabPage5.Controls.Add(this.label8);
+            this.tabPage5.Controls.Add(this.btnSend);
+            this.tabPage5.Controls.Add(this.tbMessage);
+            this.tabPage5.Controls.Add(this.lbConversation);
+            this.tabPage5.Controls.Add(this.lbActiveConversations);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(942, 631);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.Text = "Chat";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // lblActiveConversation
+            // 
+            this.lblActiveConversation.AutoSize = true;
+            this.lblActiveConversation.Location = new System.Drawing.Point(314, 3);
+            this.lblActiveConversation.Name = "lblActiveConversation";
+            this.lblActiveConversation.Size = new System.Drawing.Size(83, 13);
+            this.lblActiveConversation.TabIndex = 15;
+            this.lblActiveConversation.Text = "[HuidigGesprek]";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Actieve gesprekken";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(261, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Gesprek";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(261, 481);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Bericht";
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(861, 598);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 11;
+            this.btnSend.Text = "Verstuur";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // tbMessage
+            // 
+            this.tbMessage.Location = new System.Drawing.Point(261, 497);
+            this.tbMessage.Multiline = true;
+            this.tbMessage.Name = "tbMessage";
+            this.tbMessage.Size = new System.Drawing.Size(675, 95);
+            this.tbMessage.TabIndex = 10;
+            // 
+            // lbConversation
+            // 
+            this.lbConversation.FormattingEnabled = true;
+            this.lbConversation.Location = new System.Drawing.Point(261, 19);
+            this.lbConversation.Name = "lbConversation";
+            this.lbConversation.Size = new System.Drawing.Size(675, 459);
+            this.lbConversation.TabIndex = 9;
+            // 
+            // lbActiveConversations
+            // 
+            this.lbActiveConversations.FormattingEnabled = true;
+            this.lbActiveConversations.Location = new System.Drawing.Point(6, 19);
+            this.lbActiveConversations.Name = "lbActiveConversations";
+            this.lbActiveConversations.Size = new System.Drawing.Size(249, 602);
+            this.lbActiveConversations.TabIndex = 8;
             // 
             // MainForm
             // 
@@ -369,11 +456,13 @@
             this.ClientSize = new System.Drawing.Size(974, 681);
             this.Controls.Add(this.form);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "EyeCT4Participation";
             this.form.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -409,6 +498,14 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Label lblActiveConversation;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.TextBox tbMessage;
+        private System.Windows.Forms.ListBox lbConversation;
+        private System.Windows.Forms.ListBox lbActiveConversations;
     }
 }
 
