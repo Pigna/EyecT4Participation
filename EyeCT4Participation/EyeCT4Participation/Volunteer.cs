@@ -15,7 +15,7 @@ namespace EyeCT4Participation
             Rijbewijs = rijbewijs;
         }
 
-        public void AddReaction(string description, string message, Volunteer author)
+        public void AddReaction(string description, string message, Volunteer author, DateTime date)
         {
             
         }

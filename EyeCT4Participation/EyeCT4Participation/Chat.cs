@@ -19,7 +19,7 @@ namespace EyeCT4Participation
             
         }
 
-        public void AddMessage(Account sender, string message, DateTime time)
+        public void AddMessage(Account sender, string message, DateTime date)
         {
             
         }
