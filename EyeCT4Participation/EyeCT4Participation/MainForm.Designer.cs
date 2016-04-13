@@ -675,8 +675,6 @@
         private System.Windows.Forms.Label lblRegistratieGebruikersnaam;
         private System.Windows.Forms.Label lblActiveConversation;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.TextBox tbMessage;
-        private System.Windows.Forms.ListBox lbConversation;
         private System.Windows.Forms.ListBox lbActiveConversations;
         private System.Windows.Forms.Label lblRegistratieWoonplaats;
     }

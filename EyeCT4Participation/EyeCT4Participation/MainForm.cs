@@ -17,9 +17,20 @@ namespace EyeCT4Participation
             InitializeComponent();
         }
 
+        public string TextValue
+        {
+            set { tbMessage.Text = value; }
+        }
+
+        public string getTextValue
+        {
+            get { return tbMessage.Text; }
+        }
+
         private void btnSend_Click(object sender, EventArgs e)
         {
-
+            Chat c1 = new Chat();
+            c1.AddMessage();
         }
 
         private void lbBeheerChat_SelectedIndexChanged(object sender, EventArgs e)
