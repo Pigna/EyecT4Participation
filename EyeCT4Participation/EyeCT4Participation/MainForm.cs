@@ -16,5 +16,10 @@ namespace EyeCT4Participation
         {
             InitializeComponent();
         }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
