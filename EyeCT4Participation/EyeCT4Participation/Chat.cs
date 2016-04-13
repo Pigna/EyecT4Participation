@@ -21,7 +21,8 @@ namespace EyeCT4Participation
 
         public void AddMessage(Account sender, string message, DateTime date)
         {
-            
+            lbText.Items.Add(tbTekst.text);
+            tbTekst.tekst.Clear();
         }
 
     }
