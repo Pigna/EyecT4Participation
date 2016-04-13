@@ -8,24 +8,36 @@ namespace EyeCT4Participation
 {
     class Administration
     {
-        public void AddNeedy(string name, string adres, string zipcode, string residence, int phoneNumber, int Age, string email)
+        List<Account> listaccounts = new List<Account>();
+        public void AddNeedy(string name, string adres, string zipcode, string residence, int phonenumber, int age, string email)
         {
-            
+            Needy newNeedy = new Needy(false, name, adres, zipcode, residence, phonenumber, age, email);
+            listaccounts.Add(newNeedy);
         }
-
-        public void AddVolunteer(string name, string adress, string zipcode, string residence, int phonenumber, int age, string email)
+        public void AddNeedy(string name, string adres, string zipcode, string residence, int phonenumber, int age, string email, bool active)
         {
-            
+            Needy newNeedy = new Needy(false, name, adres, zipcode, residence, phonenumber, age, email, active);
+            listaccounts.Add(newNeedy);
+        }
+        public void AddVolunteer(string name, string adres, string zipcode, string residence, int phonenumber, int age, string email)
+        {
+            Needy newNeedy = new Needy(false, name, adres, zipcode, residence, phonenumber, age, email);
+            listaccounts.Add(newNeedy);
+        }
+        public void AddVolunteer(string name, string adres, string zipcode, string residence, int phonenumber, int age, string email, bool active)
+        {
+            Needy newNeedy = new Needy(false, name, adres, zipcode, residence, phonenumber, age, email, active);
+            listaccounts.Add(newNeedy);
         }
 
         public void DeactivateAccount(Account account)
         {
-
+            account.Active = false;
         }
 
         public void DeactivateChat(Chat chat)
         {
-            
+            chat.
         }
 
         public void DeactivateHelpRequest(HelpRequest helprequest)

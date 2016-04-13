@@ -18,9 +18,10 @@ namespace EyeCT4Participation
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
         public int Age { get; set; }
+        public bool Active { get; set; }
         public string Geslacht { get; set; }
 
-        public Account(string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age)
+        public Account(string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age, bool active)
         {
             this.Username = username;
             this.Password = password;
@@ -31,11 +32,7 @@ namespace EyeCT4Participation
             this.Email = email;
             this.PhoneNumber = phonenumber;
             this.Age = age;
-        }
-
-        public Account()
-        {
-            
+            this.Active = active;
         }
 
         public void LogIn(string username, string password)
