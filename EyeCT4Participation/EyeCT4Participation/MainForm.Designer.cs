@@ -30,6 +30,33 @@
         {
             this.form = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnInloggen = new System.Windows.Forms.Button();
+            this.tbWWLogin = new System.Windows.Forms.TextBox();
+            this.tbInloggenGnaam = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnAnnuleren = new System.Windows.Forms.Button();
+            this.tbPcode = new System.Windows.Forms.TextBox();
+            this.tbAge = new System.Windows.Forms.TextBox();
+            this.tbTnummer = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.tbWplaats = new System.Windows.Forms.TextBox();
+            this.tbAdres = new System.Windows.Forms.TextBox();
+            this.tbNaam = new System.Windows.Forms.TextBox();
+            this.tbWWRegistratie = new System.Windows.Forms.TextBox();
+            this.tbRegistratieGnaam = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -56,14 +83,12 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.lblActiveConversation = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.tbMessage = new System.Windows.Forms.TextBox();
             this.lbConversation = new System.Windows.Forms.ListBox();
             this.lbActiveConversations = new System.Windows.Forms.ListBox();
             this.form.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -84,13 +109,282 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnInloggen);
+            this.tabPage1.Controls.Add(this.tbWWLogin);
+            this.tabPage1.Controls.Add(this.tbInloggenGnaam);
+            this.tabPage1.Controls.Add(this.label18);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.btnOK);
+            this.tabPage1.Controls.Add(this.btnAnnuleren);
+            this.tabPage1.Controls.Add(this.tbPcode);
+            this.tabPage1.Controls.Add(this.tbAge);
+            this.tabPage1.Controls.Add(this.tbTnummer);
+            this.tabPage1.Controls.Add(this.tbEmail);
+            this.tabPage1.Controls.Add(this.tbWplaats);
+            this.tabPage1.Controls.Add(this.tbAdres);
+            this.tabPage1.Controls.Add(this.tbNaam);
+            this.tabPage1.Controls.Add(this.tbWWRegistratie);
+            this.tabPage1.Controls.Add(this.tbRegistratieGnaam);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage1.Size = new System.Drawing.Size(942, 631);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Inloggen/Registreren";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnInloggen
+            // 
+            this.btnInloggen.Location = new System.Drawing.Point(175, 145);
+            this.btnInloggen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInloggen.Name = "btnInloggen";
+            this.btnInloggen.Size = new System.Drawing.Size(56, 19);
+            this.btnInloggen.TabIndex = 47;
+            this.btnInloggen.Text = "Inloggen";
+            this.btnInloggen.UseVisualStyleBackColor = true;
+            // 
+            // tbWWLogin
+            // 
+            this.tbWWLogin.Location = new System.Drawing.Point(166, 108);
+            this.tbWWLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbWWLogin.Name = "tbWWLogin";
+            this.tbWWLogin.Size = new System.Drawing.Size(76, 20);
+            this.tbWWLogin.TabIndex = 46;
+            // 
+            // tbInloggenGnaam
+            // 
+            this.tbInloggenGnaam.Location = new System.Drawing.Point(166, 67);
+            this.tbInloggenGnaam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbInloggenGnaam.Name = "tbInloggenGnaam";
+            this.tbInloggenGnaam.Size = new System.Drawing.Size(76, 20);
+            this.tbInloggenGnaam.TabIndex = 45;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(53, 110);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(68, 13);
+            this.label18.TabIndex = 44;
+            this.label18.Text = "Wachtwoord";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(53, 69);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(84, 13);
+            this.label17.TabIndex = 43;
+            this.label17.Text = "Gebruikersnaam";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(436, 29);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(57, 13);
+            this.label16.TabIndex = 42;
+            this.label16.Text = "Registratie";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(53, 29);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(48, 13);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "Inloggen";
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(548, 396);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(56, 19);
+            this.btnOK.TabIndex = 40;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            // 
+            // btnAnnuleren
+            // 
+            this.btnAnnuleren.Location = new System.Drawing.Point(448, 396);
+            this.btnAnnuleren.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnnuleren.Name = "btnAnnuleren";
+            this.btnAnnuleren.Size = new System.Drawing.Size(72, 19);
+            this.btnAnnuleren.TabIndex = 39;
+            this.btnAnnuleren.Text = "Annuleren";
+            this.btnAnnuleren.UseVisualStyleBackColor = true;
+            // 
+            // tbPcode
+            // 
+            this.tbPcode.Location = new System.Drawing.Point(548, 210);
+            this.tbPcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPcode.Name = "tbPcode";
+            this.tbPcode.Size = new System.Drawing.Size(76, 20);
+            this.tbPcode.TabIndex = 38;
+            // 
+            // tbAge
+            // 
+            this.tbAge.Location = new System.Drawing.Point(548, 344);
+            this.tbAge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAge.Name = "tbAge";
+            this.tbAge.Size = new System.Drawing.Size(76, 20);
+            this.tbAge.TabIndex = 37;
+            // 
+            // tbTnummer
+            // 
+            this.tbTnummer.Location = new System.Drawing.Point(548, 313);
+            this.tbTnummer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTnummer.Name = "tbTnummer";
+            this.tbTnummer.Size = new System.Drawing.Size(76, 20);
+            this.tbTnummer.TabIndex = 36;
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(548, 280);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(76, 20);
+            this.tbEmail.TabIndex = 35;
+            // 
+            // tbWplaats
+            // 
+            this.tbWplaats.Location = new System.Drawing.Point(548, 243);
+            this.tbWplaats.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbWplaats.Name = "tbWplaats";
+            this.tbWplaats.Size = new System.Drawing.Size(76, 20);
+            this.tbWplaats.TabIndex = 34;
+            // 
+            // tbAdres
+            // 
+            this.tbAdres.Location = new System.Drawing.Point(548, 176);
+            this.tbAdres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAdres.Name = "tbAdres";
+            this.tbAdres.Size = new System.Drawing.Size(76, 20);
+            this.tbAdres.TabIndex = 33;
+            // 
+            // tbNaam
+            // 
+            this.tbNaam.Location = new System.Drawing.Point(548, 142);
+            this.tbNaam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNaam.Name = "tbNaam";
+            this.tbNaam.Size = new System.Drawing.Size(76, 20);
+            this.tbNaam.TabIndex = 32;
+            // 
+            // tbWWRegistratie
+            // 
+            this.tbWWRegistratie.Location = new System.Drawing.Point(548, 105);
+            this.tbWWRegistratie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbWWRegistratie.Name = "tbWWRegistratie";
+            this.tbWWRegistratie.Size = new System.Drawing.Size(76, 20);
+            this.tbWWRegistratie.TabIndex = 31;
+            // 
+            // tbRegistratieGnaam
+            // 
+            this.tbRegistratieGnaam.Location = new System.Drawing.Point(548, 69);
+            this.tbRegistratieGnaam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbRegistratieGnaam.Name = "tbRegistratieGnaam";
+            this.tbRegistratieGnaam.Size = new System.Drawing.Size(76, 20);
+            this.tbRegistratieGnaam.TabIndex = 30;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(436, 346);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Leeftijd";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(261, 481);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Bericht";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(261, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Gesprek";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Actieve gesprekken";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(436, 212);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Postcode";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(435, 179);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Adres";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(435, 145);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Naam";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(435, 107);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 13);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Wachtwoord";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(436, 72);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 13);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Gebruikersnaam";
             // 
             // tabPage2
             // 
@@ -101,7 +395,7 @@
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage2.Size = new System.Drawing.Size(942, 631);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Beheer Overzicht";
@@ -175,8 +469,9 @@
             this.tabPage3.Controls.Add(this.btnBeheerAccountAanpassen);
             this.tabPage3.Controls.Add(this.lbBeheerAccount);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage3.Size = new System.Drawing.Size(942, 631);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Beheer";
@@ -184,9 +479,10 @@
             // 
             // btnBeheerFilter
             // 
-            this.btnBeheerFilter.Location = new System.Drawing.Point(8, 51);
+            this.btnBeheerFilter.Location = new System.Drawing.Point(232, 44);
+            this.btnBeheerFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBeheerFilter.Name = "btnBeheerFilter";
-            this.btnBeheerFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnBeheerFilter.Size = new System.Drawing.Size(77, 19);
             this.btnBeheerFilter.TabIndex = 59;
             this.btnBeheerFilter.Text = "Filter";
             this.btnBeheerFilter.UseVisualStyleBackColor = true;
@@ -194,7 +490,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(280, 9);
+            this.label6.Location = new System.Drawing.Point(280, 5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 58;
@@ -202,17 +498,19 @@
             // 
             // tbBeheerFilter
             // 
-            this.tbBeheerFilter.Location = new System.Drawing.Point(9, 25);
+            this.tbBeheerFilter.Location = new System.Drawing.Point(4, 20);
+            this.tbBeheerFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbBeheerFilter.Name = "tbBeheerFilter";
-            this.tbBeheerFilter.Size = new System.Drawing.Size(300, 20);
+            this.tbBeheerFilter.Size = new System.Drawing.Size(305, 20);
             this.tbBeheerFilter.TabIndex = 57;
             this.tbBeheerFilter.Text = "[Naam]";
             // 
             // btnBeheerChatDeactiveren
             // 
-            this.btnBeheerChatDeactiveren.Location = new System.Drawing.Point(636, 602);
+            this.btnBeheerChatDeactiveren.Location = new System.Drawing.Point(860, 607);
+            this.btnBeheerChatDeactiveren.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBeheerChatDeactiveren.Name = "btnBeheerChatDeactiveren";
-            this.btnBeheerChatDeactiveren.Size = new System.Drawing.Size(75, 23);
+            this.btnBeheerChatDeactiveren.Size = new System.Drawing.Size(77, 19);
             this.btnBeheerChatDeactiveren.TabIndex = 56;
             this.btnBeheerChatDeactiveren.Text = "Deactiveren";
             this.btnBeheerChatDeactiveren.UseVisualStyleBackColor = true;
@@ -220,7 +518,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(243, 352);
+            this.label5.Location = new System.Drawing.Point(1, 395);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 54;
@@ -229,7 +527,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(907, 82);
+            this.label4.Location = new System.Drawing.Point(631, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 53;
@@ -238,7 +536,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(547, 82);
+            this.label2.Location = new System.Drawing.Point(317, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 52;
@@ -247,7 +545,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(259, 82);
+            this.label1.Location = new System.Drawing.Point(3, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 51;
@@ -255,18 +553,20 @@
             // 
             // btnBeheerBeoordelingDeactiveren
             // 
-            this.btnBeheerBeoordelingDeactiveren.Location = new System.Drawing.Point(6, 599);
+            this.btnBeheerBeoordelingDeactiveren.Location = new System.Drawing.Point(232, 600);
+            this.btnBeheerBeoordelingDeactiveren.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBeheerBeoordelingDeactiveren.Name = "btnBeheerBeoordelingDeactiveren";
-            this.btnBeheerBeoordelingDeactiveren.Size = new System.Drawing.Size(75, 23);
+            this.btnBeheerBeoordelingDeactiveren.Size = new System.Drawing.Size(77, 19);
             this.btnBeheerBeoordelingDeactiveren.TabIndex = 50;
             this.btnBeheerBeoordelingDeactiveren.Text = "Deactiveren";
             this.btnBeheerBeoordelingDeactiveren.UseVisualStyleBackColor = true;
             // 
             // btnBeheerHulpaanvraagDeactiveren
             // 
-            this.btnBeheerHulpaanvraagDeactiveren.Location = new System.Drawing.Point(321, 329);
+            this.btnBeheerHulpaanvraagDeactiveren.Location = new System.Drawing.Point(546, 361);
+            this.btnBeheerHulpaanvraagDeactiveren.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBeheerHulpaanvraagDeactiveren.Name = "btnBeheerHulpaanvraagDeactiveren";
-            this.btnBeheerHulpaanvraagDeactiveren.Size = new System.Drawing.Size(75, 23);
+            this.btnBeheerHulpaanvraagDeactiveren.Size = new System.Drawing.Size(77, 19);
             this.btnBeheerHulpaanvraagDeactiveren.TabIndex = 48;
             this.btnBeheerHulpaanvraagDeactiveren.Text = "Deactiveren";
             this.btnBeheerHulpaanvraagDeactiveren.UseVisualStyleBackColor = true;
@@ -276,9 +576,10 @@
             this.lbBeheerBeoordeling.FormattingEnabled = true;
             this.lbBeheerBeoordeling.Items.AddRange(new object[] {
             "Beoordeling - [Stuuder] [Hulpaanvraag] [Bericht] [Rating]"});
-            this.lbBeheerBeoordeling.Location = new System.Drawing.Point(6, 368);
+            this.lbBeheerBeoordeling.Location = new System.Drawing.Point(4, 410);
+            this.lbBeheerBeoordeling.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbBeheerBeoordeling.Name = "lbBeheerBeoordeling";
-            this.lbBeheerBeoordeling.Size = new System.Drawing.Size(300, 225);
+            this.lbBeheerBeoordeling.Size = new System.Drawing.Size(305, 186);
             this.lbBeheerBeoordeling.TabIndex = 46;
             // 
             // lbBeheerChat
@@ -286,35 +587,40 @@
             this.lbBeheerChat.FormattingEnabled = true;
             this.lbBeheerChat.Items.AddRange(new object[] {
             "Chat - [Stuurder] [Bericht]"});
-            this.lbBeheerChat.Location = new System.Drawing.Point(636, 98);
+            this.lbBeheerChat.Location = new System.Drawing.Point(634, 80);
+            this.lbBeheerChat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbBeheerChat.Name = "lbBeheerChat";
-            this.lbBeheerChat.Size = new System.Drawing.Size(300, 498);
+            this.lbBeheerChat.Size = new System.Drawing.Size(303, 524);
             this.lbBeheerChat.TabIndex = 45;
+            this.lbBeheerChat.SelectedIndexChanged += new System.EventHandler(this.lbBeheerChat_SelectedIndexChanged);
             // 
             // lbBeheerHulpaanvraag
             // 
             this.lbBeheerHulpaanvraag.FormattingEnabled = true;
             this.lbBeheerHulpaanvraag.Items.AddRange(new object[] {
             "Hulp - [Aanvrager] : [Bericht]"});
-            this.lbBeheerHulpaanvraag.Location = new System.Drawing.Point(321, 98);
+            this.lbBeheerHulpaanvraag.Location = new System.Drawing.Point(320, 80);
+            this.lbBeheerHulpaanvraag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbBeheerHulpaanvraag.Name = "lbBeheerHulpaanvraag";
-            this.lbBeheerHulpaanvraag.Size = new System.Drawing.Size(300, 225);
+            this.lbBeheerHulpaanvraag.Size = new System.Drawing.Size(303, 277);
             this.lbBeheerHulpaanvraag.TabIndex = 44;
             // 
             // btnBeheerAccountDeactiveren
             // 
-            this.btnBeheerAccountDeactiveren.Location = new System.Drawing.Point(6, 329);
+            this.btnBeheerAccountDeactiveren.Location = new System.Drawing.Point(151, 361);
+            this.btnBeheerAccountDeactiveren.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBeheerAccountDeactiveren.Name = "btnBeheerAccountDeactiveren";
-            this.btnBeheerAccountDeactiveren.Size = new System.Drawing.Size(75, 23);
+            this.btnBeheerAccountDeactiveren.Size = new System.Drawing.Size(77, 19);
             this.btnBeheerAccountDeactiveren.TabIndex = 43;
             this.btnBeheerAccountDeactiveren.Text = "Deactiveren";
             this.btnBeheerAccountDeactiveren.UseVisualStyleBackColor = true;
             // 
             // btnBeheerAccountAanpassen
             // 
-            this.btnBeheerAccountAanpassen.Location = new System.Drawing.Point(87, 329);
+            this.btnBeheerAccountAanpassen.Location = new System.Drawing.Point(232, 361);
+            this.btnBeheerAccountAanpassen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBeheerAccountAanpassen.Name = "btnBeheerAccountAanpassen";
-            this.btnBeheerAccountAanpassen.Size = new System.Drawing.Size(75, 23);
+            this.btnBeheerAccountAanpassen.Size = new System.Drawing.Size(77, 19);
             this.btnBeheerAccountAanpassen.TabIndex = 42;
             this.btnBeheerAccountAanpassen.Text = "Aanpassen";
             this.btnBeheerAccountAanpassen.UseVisualStyleBackColor = true;
@@ -324,16 +630,17 @@
             this.lbBeheerAccount.FormattingEnabled = true;
             this.lbBeheerAccount.Items.AddRange(new object[] {
             "Account - [Naam] [Adres] [Meer]"});
-            this.lbBeheerAccount.Location = new System.Drawing.Point(6, 98);
+            this.lbBeheerAccount.Location = new System.Drawing.Point(4, 80);
+            this.lbBeheerAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbBeheerAccount.Name = "lbBeheerAccount";
-            this.lbBeheerAccount.Size = new System.Drawing.Size(300, 225);
+            this.lbBeheerAccount.Size = new System.Drawing.Size(305, 277);
             this.lbBeheerAccount.TabIndex = 41;
             // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage4.Size = new System.Drawing.Size(942, 631);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
@@ -351,7 +658,7 @@
             this.tabPage5.Controls.Add(this.lbActiveConversations);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage5.Size = new System.Drawing.Size(942, 631);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Chat";
@@ -365,33 +672,6 @@
             this.lblActiveConversation.Size = new System.Drawing.Size(83, 13);
             this.lblActiveConversation.TabIndex = 15;
             this.lblActiveConversation.Text = "[HuidigGesprek]";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Actieve gesprekken";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(261, 3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Gesprek";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(261, 481);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 13);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Bericht";
             // 
             // btnSend
             // 
@@ -436,6 +716,8 @@
             this.Name = "MainForm";
             this.Text = "EyeCT4Participation";
             this.form.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -474,10 +756,34 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Label lblActiveConversation;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnInloggen;
+        private System.Windows.Forms.TextBox tbWWLogin;
+        private System.Windows.Forms.TextBox tbInloggenGnaam;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnAnnuleren;
+        private System.Windows.Forms.TextBox tbPcode;
+        private System.Windows.Forms.TextBox tbAge;
+        private System.Windows.Forms.TextBox tbTnummer;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox tbWplaats;
+        private System.Windows.Forms.TextBox tbAdres;
+        private System.Windows.Forms.TextBox tbNaam;
+        private System.Windows.Forms.TextBox tbWWRegistratie;
+        private System.Windows.Forms.TextBox tbRegistratieGnaam;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblActiveConversation;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.TextBox tbMessage;
         private System.Windows.Forms.ListBox lbConversation;

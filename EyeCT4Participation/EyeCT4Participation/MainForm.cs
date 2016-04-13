@@ -21,5 +21,10 @@ namespace EyeCT4Participation
         {
 
         }
+
+        private void lbBeheerChat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
