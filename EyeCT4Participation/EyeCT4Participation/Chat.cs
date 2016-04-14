@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EyeCT4Participation
 {
-    class Chat
+        public class Chat : MainForm
     {
-        public string Message { get; set; }
-        public Chat(string message)
+        public string Message;
+        public DateTime Date;
+        public string Sender;
+        public string Receiver;
+        public bool Active;
+        public Chat(string message, DateTime date, string sender, string receiver, bool active)
         {
             Message = message;
+            Date = date;
+            Sender = sender;
+            Receiver = receiver;
+            Active = active;
         }
 
         public Chat()
@@ -19,11 +28,22 @@ namespace EyeCT4Participation
             
         }
 
-        public void AddMessage(Account sender, string message, DateTime date)
+        public string TextValue
         {
-            lbText.Items.Add(tbTekst.text);
-            tbTekst.tekst.Clear();
+            get { return Message; }
+            set { Message = value; }
         }
+
+        public void AddMessage()
+        {
+            lbChatConversation.Items.Add(tbChatMessage.Text);
+        }
+
+        //public override string ToString()
+        //{
+        //    string info = Date + ": " + Message;
+        //    return info;
+        //}
 
     }
 }
