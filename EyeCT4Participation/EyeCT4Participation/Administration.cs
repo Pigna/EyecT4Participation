@@ -17,9 +17,9 @@ namespace EyeCT4Participation
             Needy newNeedy = new Needy(ov, name, adres, zipcode, residence, phonenumber, age, email, active);
             listAccounts.Add(newNeedy);
         }
-        public void AddVolunteer(bool licence, string name, string adres, string zipcode, string residence, int phonenumber, int age, string email, bool active)
+        public void AddVolunteer(bool license, string name, string adres, string zipcode, string residence, int phonenumber, int age, string email, bool active)
         {
-            Volunteer newVolunteer = new Volunteer(licence, name, adres, zipcode, residence, phonenumber, age, email, active);
+            Volunteer newVolunteer = new Volunteer(license, name, adres, zipcode, residence, phonenumber, age, email, active);
             listAccounts.Add(newVolunteer);
         }
 

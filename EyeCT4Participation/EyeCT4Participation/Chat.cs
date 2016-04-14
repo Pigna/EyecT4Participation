@@ -11,10 +11,10 @@ namespace EyeCT4Participation
     {
         public string Message;
         public DateTime Date;
-        public string Sender;
-        public string Receiver;
+        public Account Sender;
+        public Account Receiver;
         public bool Active;
-        public Chat(string message, DateTime date, string sender, string receiver, bool active)
+        public Chat(string message, DateTime date, Account sender, Account receiver, bool active)
         {
             Message = message;
             Date = date;
