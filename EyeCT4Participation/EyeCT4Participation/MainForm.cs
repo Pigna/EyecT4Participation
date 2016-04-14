@@ -21,8 +21,7 @@ namespace EyeCT4Participation
 
         public void btnSend_Click(object sender, EventArgs e)
         {
-            Chat c1 = new Chat();
-            c1.AddMessage();
+            lbChatConversation.Items.Add(tbChatMessage.Text);
         }
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)

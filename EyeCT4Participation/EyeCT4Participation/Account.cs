@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Participation
 {
-    abstract class Account
+        public abstract class Account
     {
         public string Username { get; set; }
         public string Password { get; set; }
