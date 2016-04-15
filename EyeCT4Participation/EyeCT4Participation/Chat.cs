@@ -37,6 +37,8 @@ namespace EyeCT4Participation
         public void AddMessage()
         {
             lbChatConversation.Items.Add(tbChatMessage.Text);
+            lbChatConversation.Refresh();
+            tbChatMessage.Clear();
         }
 
         //public override string ToString()
