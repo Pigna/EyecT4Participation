@@ -28,11 +28,11 @@ namespace EyeCT4Participation
             
         }
 
-        public string TextValue
-        {
-            get { return Message; }
-            set { Message = value; }
-        }
+        //public string TextValue
+        //{
+        //    get { return Message; }
+        //    set { Message = value; }
+        //}
 
         public void AddMessage()
         {

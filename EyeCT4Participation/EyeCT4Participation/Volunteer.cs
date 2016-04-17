@@ -20,5 +20,10 @@ namespace EyeCT4Participation
             
         }
 
+        public void JoinHelpRequest()
+        {
+
+        }
+
     }
 }
