@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Participation.Database
 {
-    class DBadministratie :db
+    class DBadministratie :DB
     {
     }
 }
