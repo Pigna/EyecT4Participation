@@ -8,16 +8,21 @@ namespace EyeCT4Participation
 {
     class Volunteer : Account
     {
-        public bool Rijbewijs { get; set; }
+        public bool License { get; set; }
 
-        public Volunteer(bool rijbewijs)
+        public Volunteer(bool license,string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age, bool active, string geslacht) : base(username, password, name, adress, zipcode, residence, email, phonenumber, age,active, geslacht)
         {
-            Rijbewijs = rijbewijs;
+            License = license;
         }
 
         public void AddReaction(string description, string message, Volunteer author, DateTime date)
         {
             
+        }
+
+        public void JoinHelpRequest()
+        {
+
         }
 
     }
