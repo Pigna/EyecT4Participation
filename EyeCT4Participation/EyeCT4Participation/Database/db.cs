@@ -8,7 +8,7 @@ using Oracle.ManagedDataAccess.Types;
 
 namespace EyeCT4Participation.Database
 {
-    class db
+    class DB
     {
 
         //fields
@@ -18,7 +18,7 @@ namespace EyeCT4Participation.Database
         /// constructor
         /// </summary>
 
-        public db()
+        public DB()
         {
         }
 
