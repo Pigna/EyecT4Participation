@@ -61,6 +61,11 @@
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tbChatMessage = new System.Windows.Forms.RichTextBox();
             this.lbChatConversation = new System.Windows.Forms.ListBox();
@@ -84,17 +89,12 @@
             this.btnBeheerAccountDeactiveren = new System.Windows.Forms.Button();
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
             this.form.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // form
@@ -445,6 +445,52 @@
             this.tabPage4.Text = "Hulpbehoevende";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(609, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Beoordeel";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(609, 35);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 14;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(399, 6);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(204, 290);
+            this.listBox1.TabIndex = 13;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(308, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Verstuur";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(6, 6);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(296, 289);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "Help mij met..";
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.tbChatMessage);
@@ -535,7 +581,7 @@
             // 
             // btnBeheerFilter
             // 
-            this.btnBeheerFilter.Location = new System.Drawing.Point(174, 36);
+            this.btnBeheerFilter.Location = new System.Drawing.Point(234, 40);
             this.btnBeheerFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerFilter.Name = "btnBeheerFilter";
             this.btnBeheerFilter.Size = new System.Drawing.Size(77, 19);
@@ -547,7 +593,7 @@
             // lblBeheerFilter
             // 
             this.lblBeheerFilter.AutoSize = true;
-            this.lblBeheerFilter.Location = new System.Drawing.Point(6, 5);
+            this.lblBeheerFilter.Location = new System.Drawing.Point(3, 2);
             this.lblBeheerFilter.Name = "lblBeheerFilter";
             this.lblBeheerFilter.Size = new System.Drawing.Size(29, 13);
             this.lblBeheerFilter.TabIndex = 58;
@@ -555,7 +601,7 @@
             // 
             // tbBeheerFilter
             // 
-            this.tbBeheerFilter.Location = new System.Drawing.Point(3, 16);
+            this.tbBeheerFilter.Location = new System.Drawing.Point(6, 16);
             this.tbBeheerFilter.Margin = new System.Windows.Forms.Padding(2);
             this.tbBeheerFilter.Name = "tbBeheerFilter";
             this.tbBeheerFilter.Size = new System.Drawing.Size(305, 20);
@@ -564,7 +610,7 @@
             // 
             // btnBeheerChatDeactiveren
             // 
-            this.btnBeheerChatDeactiveren.Location = new System.Drawing.Point(645, 493);
+            this.btnBeheerChatDeactiveren.Location = new System.Drawing.Point(860, 608);
             this.btnBeheerChatDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerChatDeactiveren.Name = "btnBeheerChatDeactiveren";
             this.btnBeheerChatDeactiveren.Size = new System.Drawing.Size(77, 19);
@@ -611,7 +657,7 @@
             // 
             // btnBeheerBeoordelingDeactiveren
             // 
-            this.btnBeheerBeoordelingDeactiveren.Location = new System.Drawing.Point(174, 488);
+            this.btnBeheerBeoordelingDeactiveren.Location = new System.Drawing.Point(232, 600);
             this.btnBeheerBeoordelingDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerBeoordelingDeactiveren.Name = "btnBeheerBeoordelingDeactiveren";
             this.btnBeheerBeoordelingDeactiveren.Size = new System.Drawing.Size(77, 19);
@@ -622,7 +668,7 @@
             // 
             // btnBeheerHulpaanvraagDeactiveren
             // 
-            this.btnBeheerHulpaanvraagDeactiveren.Location = new System.Drawing.Point(410, 293);
+            this.btnBeheerHulpaanvraagDeactiveren.Location = new System.Drawing.Point(546, 361);
             this.btnBeheerHulpaanvraagDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerHulpaanvraagDeactiveren.Name = "btnBeheerHulpaanvraagDeactiveren";
             this.btnBeheerHulpaanvraagDeactiveren.Size = new System.Drawing.Size(77, 19);
@@ -636,7 +682,7 @@
             this.lbBeheerBeoordeling.FormattingEnabled = true;
             this.lbBeheerBeoordeling.Items.AddRange(new object[] {
             "Beoordeling - [Stuuder] [Hulpaanvraag] [Bericht] [Rating]"});
-            this.lbBeheerBeoordeling.Location = new System.Drawing.Point(3, 333);
+            this.lbBeheerBeoordeling.Location = new System.Drawing.Point(4, 410);
             this.lbBeheerBeoordeling.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerBeoordeling.Name = "lbBeheerBeoordeling";
             this.lbBeheerBeoordeling.Size = new System.Drawing.Size(305, 186);
@@ -647,7 +693,7 @@
             this.lbBeheerChat.FormattingEnabled = true;
             this.lbBeheerChat.Items.AddRange(new object[] {
             "Chat - [Stuurder] [Bericht]"});
-            this.lbBeheerChat.Location = new System.Drawing.Point(476, 65);
+            this.lbBeheerChat.Location = new System.Drawing.Point(634, 80);
             this.lbBeheerChat.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerChat.Name = "lbBeheerChat";
             this.lbBeheerChat.Size = new System.Drawing.Size(303, 524);
@@ -658,7 +704,7 @@
             this.lbBeheerHulpaanvraag.FormattingEnabled = true;
             this.lbBeheerHulpaanvraag.Items.AddRange(new object[] {
             "Hulp - [Aanvrager] : [Bericht]"});
-            this.lbBeheerHulpaanvraag.Location = new System.Drawing.Point(240, 65);
+            this.lbBeheerHulpaanvraag.Location = new System.Drawing.Point(320, 80);
             this.lbBeheerHulpaanvraag.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerHulpaanvraag.Name = "lbBeheerHulpaanvraag";
             this.lbBeheerHulpaanvraag.Size = new System.Drawing.Size(303, 277);
@@ -666,7 +712,7 @@
             // 
             // btnBeheerAccountDeactiveren
             // 
-            this.btnBeheerAccountDeactiveren.Location = new System.Drawing.Point(113, 293);
+            this.btnBeheerAccountDeactiveren.Location = new System.Drawing.Point(153, 361);
             this.btnBeheerAccountDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerAccountDeactiveren.Name = "btnBeheerAccountDeactiveren";
             this.btnBeheerAccountDeactiveren.Size = new System.Drawing.Size(77, 19);
@@ -677,7 +723,7 @@
             // 
             // btnBeheerAccountAanpassen
             // 
-            this.btnBeheerAccountAanpassen.Location = new System.Drawing.Point(174, 293);
+            this.btnBeheerAccountAanpassen.Location = new System.Drawing.Point(234, 361);
             this.btnBeheerAccountAanpassen.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerAccountAanpassen.Name = "btnBeheerAccountAanpassen";
             this.btnBeheerAccountAanpassen.Size = new System.Drawing.Size(77, 19);
@@ -691,57 +737,11 @@
             this.lbBeheerAccount.FormattingEnabled = true;
             this.lbBeheerAccount.Items.AddRange(new object[] {
             "Account - [Naam] [Adres] [Meer]"});
-            this.lbBeheerAccount.Location = new System.Drawing.Point(3, 65);
+            this.lbBeheerAccount.Location = new System.Drawing.Point(6, 80);
             this.lbBeheerAccount.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerAccount.Name = "lbBeheerAccount";
             this.lbBeheerAccount.Size = new System.Drawing.Size(305, 277);
             this.lbBeheerAccount.TabIndex = 41;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 6);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(296, 289);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "Help mij met..";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(308, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Verstuur";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(399, 6);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(204, 290);
-            this.listBox1.TabIndex = 13;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(609, 35);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 14;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(609, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Beoordeel";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -754,11 +754,11 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
