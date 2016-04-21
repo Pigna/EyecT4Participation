@@ -46,13 +46,13 @@
             this.btnRegistratieOK = new System.Windows.Forms.Button();
             this.btnRegistratieAnnuleren = new System.Windows.Forms.Button();
             this.tbRegistratiePcode = new System.Windows.Forms.TextBox();
-            this.tbRegistratieAge = new System.Windows.Forms.TextBox();
+            this.tbRegistratieGeboortedatum = new System.Windows.Forms.TextBox();
             this.tbRegistratieWplaats = new System.Windows.Forms.TextBox();
             this.tbRegistratieAdres = new System.Windows.Forms.TextBox();
             this.tbRegistratieNaam = new System.Windows.Forms.TextBox();
             this.tbRegistratieWW = new System.Windows.Forms.TextBox();
             this.tbRegistratieGnaam = new System.Windows.Forms.TextBox();
-            this.lblRegistratieLeeftijd = new System.Windows.Forms.Label();
+            this.lblRegistratieGeboortedatum = new System.Windows.Forms.Label();
             this.lblRegistratieWoonplaats = new System.Windows.Forms.Label();
             this.lblRegistratiePostcode = new System.Windows.Forms.Label();
             this.lblRegistratieAdres = new System.Windows.Forms.Label();
@@ -131,13 +131,13 @@
             this.tabPage1.Controls.Add(this.btnRegistratieOK);
             this.tabPage1.Controls.Add(this.btnRegistratieAnnuleren);
             this.tabPage1.Controls.Add(this.tbRegistratiePcode);
-            this.tabPage1.Controls.Add(this.tbRegistratieAge);
+            this.tabPage1.Controls.Add(this.tbRegistratieGeboortedatum);
             this.tabPage1.Controls.Add(this.tbRegistratieWplaats);
             this.tabPage1.Controls.Add(this.tbRegistratieAdres);
             this.tabPage1.Controls.Add(this.tbRegistratieNaam);
             this.tabPage1.Controls.Add(this.tbRegistratieWW);
             this.tabPage1.Controls.Add(this.tbRegistratieGnaam);
-            this.tabPage1.Controls.Add(this.lblRegistratieLeeftijd);
+            this.tabPage1.Controls.Add(this.lblRegistratieGeboortedatum);
             this.tabPage1.Controls.Add(this.lblRegistratieWoonplaats);
             this.tabPage1.Controls.Add(this.lblRegistratiePostcode);
             this.tabPage1.Controls.Add(this.lblRegistratieAdres);
@@ -159,8 +159,8 @@
             this.cbRegistratieType.Items.AddRange(new object[] {
             "Hulpbehoevende",
             "Vrijwilliger"});
-            this.cbRegistratieType.Location = new System.Drawing.Point(731, 454);
-            this.cbRegistratieType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbRegistratieType.Location = new System.Drawing.Point(548, 338);
+            this.cbRegistratieType.Margin = new System.Windows.Forms.Padding(2);
             this.cbRegistratieType.Name = "cbRegistratieType";
             this.cbRegistratieType.Size = new System.Drawing.Size(100, 24);
             this.cbRegistratieType.TabIndex = 53;
@@ -178,10 +178,9 @@
             // 
             this.cbRegistratieGeslacht.FormattingEnabled = true;
             this.cbRegistratieGeslacht.Items.AddRange(new object[] {
-            "Man",
-            "Vrouw"});
-            this.cbRegistratieGeslacht.Location = new System.Drawing.Point(731, 416);
-            this.cbRegistratieGeslacht.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            "0",
+            "1"});
+            this.cbRegistratieGeslacht.Location = new System.Drawing.Point(548, 369);
             this.cbRegistratieGeslacht.Name = "cbRegistratieGeslacht";
             this.cbRegistratieGeslacht.Size = new System.Drawing.Size(100, 24);
             this.cbRegistratieGeslacht.TabIndex = 51;
@@ -286,6 +285,7 @@
             this.btnRegistratieOK.TabIndex = 40;
             this.btnRegistratieOK.Text = "OK";
             this.btnRegistratieOK.UseVisualStyleBackColor = true;
+            this.btnRegistratieOK.Click += new System.EventHandler(this.btnRegistratieOK_Click);
             // 
             // btnRegistratieAnnuleren
             // 
@@ -305,13 +305,13 @@
             this.tbRegistratiePcode.Size = new System.Drawing.Size(100, 22);
             this.tbRegistratiePcode.TabIndex = 38;
             // 
-            // tbRegistratieAge
+            // tbRegistratieGeboortedatum
             // 
-            this.tbRegistratieAge.Location = new System.Drawing.Point(731, 337);
-            this.tbRegistratieAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbRegistratieAge.Name = "tbRegistratieAge";
-            this.tbRegistratieAge.Size = new System.Drawing.Size(100, 22);
-            this.tbRegistratieAge.TabIndex = 37;
+            this.tbRegistratieGeboortedatum.Location = new System.Drawing.Point(548, 274);
+            this.tbRegistratieGeboortedatum.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRegistratieGeboortedatum.Name = "tbRegistratieGeboortedatum";
+            this.tbRegistratieGeboortedatum.Size = new System.Drawing.Size(76, 20);
+            this.tbRegistratieGeboortedatum.TabIndex = 37;
             // 
             // tbRegistratieWplaats
             // 
@@ -353,14 +353,15 @@
             this.tbRegistratieGnaam.Size = new System.Drawing.Size(100, 22);
             this.tbRegistratieGnaam.TabIndex = 30;
             // 
-            // lblRegistratieLeeftijd
+            // lblRegistratieGeboortedatum
             // 
-            this.lblRegistratieLeeftijd.AutoSize = true;
-            this.lblRegistratieLeeftijd.Location = new System.Drawing.Point(581, 340);
-            this.lblRegistratieLeeftijd.Name = "lblRegistratieLeeftijd";
-            this.lblRegistratieLeeftijd.Size = new System.Drawing.Size(54, 17);
-            this.lblRegistratieLeeftijd.TabIndex = 29;
-            this.lblRegistratieLeeftijd.Text = "Leeftijd";
+            this.lblRegistratieGeboortedatum.AutoSize = true;
+            this.lblRegistratieGeboortedatum.Location = new System.Drawing.Point(436, 276);
+            this.lblRegistratieGeboortedatum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegistratieGeboortedatum.Name = "lblRegistratieGeboortedatum";
+            this.lblRegistratieGeboortedatum.Size = new System.Drawing.Size(80, 13);
+            this.lblRegistratieGeboortedatum.TabIndex = 29;
+            this.lblRegistratieGeboortedatum.Text = "Geboortedatum";
             // 
             // lblRegistratieWoonplaats
             // 
@@ -827,13 +828,13 @@
         private System.Windows.Forms.Button btnRegistratieOK;
         private System.Windows.Forms.Button btnRegistratieAnnuleren;
         private System.Windows.Forms.TextBox tbRegistratiePcode;
-        private System.Windows.Forms.TextBox tbRegistratieAge;
+        private System.Windows.Forms.TextBox tbRegistratieGeboortedatum;
         private System.Windows.Forms.TextBox tbRegistratieWplaats;
         private System.Windows.Forms.TextBox tbRegistratieAdres;
         private System.Windows.Forms.TextBox tbRegistratieNaam;
         private System.Windows.Forms.TextBox tbRegistratieWW;
         private System.Windows.Forms.TextBox tbRegistratieGnaam;
-        private System.Windows.Forms.Label lblRegistratieLeeftijd;
+        private System.Windows.Forms.Label lblRegistratieGeboortedatum;
         private System.Windows.Forms.Label lblRegistratiePostcode;
         private System.Windows.Forms.Label lblRegistratieAdres;
         private System.Windows.Forms.Label lblRegistratieNaam;
