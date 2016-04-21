@@ -21,7 +21,7 @@ namespace EyeCT4Participation.Database
                 ret.Add((Convert.ToString(results["naam"]))); //add each result to the created list, if the list if for a class, u need to add 'new class_name' infront of the convert
             }
 
-            return ret;     //this will return the list as result from the query.
+            return ret;      //this will return the list as result from the query.
         }
 
 
