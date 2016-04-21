@@ -135,11 +135,11 @@ namespace EyeCT4Participation
             
             if (type == "Hulpbehoevende")
             {
-                databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, postcode, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
+                databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, postcode, woonplaats, geboortedatum, telefoonnummer, 0, geslacht);
             }
             else if (type == "Vrijwilliger")
             {
-                
+                databaseVolunteer.DoQueryAddVolunteer(gebruikersnaam, wachtwoord, naam, adres, postcode, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
             }
         }
 
