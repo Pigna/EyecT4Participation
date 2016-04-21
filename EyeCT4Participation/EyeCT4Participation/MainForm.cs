@@ -19,6 +19,7 @@ namespace EyeCT4Participation
         DBvolunteer databaseVolunteer = new DBvolunteer();
 
         private Administration administration;
+        private Chat chat;
         public MainForm()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace EyeCT4Participation
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            List<string> listChats = lbChatConversation.Items.Cast<string>().ToList();
+            //chat.ListChatmessage();
         }
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)
