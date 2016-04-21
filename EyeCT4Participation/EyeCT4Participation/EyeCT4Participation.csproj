@@ -50,9 +50,7 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Administration.cs" />
-    <Compile Include="Chat.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Chat.cs" />
     <Compile Include="Database\db.cs" />
     <Compile Include="Database\DBaccount.cs" />
     <Compile Include="Database\DBadministratie.cs" />
@@ -88,6 +86,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -4,11 +4,15 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using EyeCT4Participation.Database;
 
 namespace EyeCT4Participation
 {
         public abstract class Account
     {
+        
+
         public string Username { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
