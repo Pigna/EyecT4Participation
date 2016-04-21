@@ -27,7 +27,11 @@ namespace EyeCT4Participation
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)
         {
-
+            string filter = tbBeheerFilter.Text;
+            if (filter.Contains(';'))
+            {
+                filter.Split(';');
+            }
         }
 
         private void BeheerRefresh()

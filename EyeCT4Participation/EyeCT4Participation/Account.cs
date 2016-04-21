@@ -17,7 +17,7 @@ namespace EyeCT4Participation
         public string Residence { get; set; }
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
-        public int Age { get; set; }
+        public DateTime Birthdate { get; set; }
         public bool Active { get; set; }
         public string Geslacht { get; set; }
 

@@ -607,7 +607,7 @@
             this.tbBeheerFilter.Name = "tbBeheerFilter";
             this.tbBeheerFilter.Size = new System.Drawing.Size(305, 20);
             this.tbBeheerFilter.TabIndex = 57;
-            this.tbBeheerFilter.Text = "[Naam]";
+            this.tbBeheerFilter.Text = "naam (Scheiden met \';\')";
             // 
             // btnBeheerChatDeactiveren
             // 
