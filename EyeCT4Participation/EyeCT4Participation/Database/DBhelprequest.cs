@@ -8,5 +8,19 @@ namespace EyeCT4Participation.Database
 {
     class DBhelprequest : DB
     {
+        public bool DoQueryAddHelpRequest(string query) // replace user with the data u want to add/ change to the table
+        {
+            try
+            {
+                string Query; // the query will end up in here
+                Query = query;  //replace with INSERT if needed
+                doQuery(Query); //query will be activated
+                return true;
+            }
+            catch
+            {
+                return false;   // if query fails, return a false.
+            }
+        }
     }
 }
