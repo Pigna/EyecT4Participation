@@ -21,7 +21,17 @@ namespace EyeCT4Participation
 
         public void btnSend_Click(object sender, EventArgs e)
         {
+            //string message = tbChatMessage.Text;
+            //if (message != null && message != "")
+            //{
+            //    Chat chat = new Chat(message, date, msgSender, active);       !!!!!! Constructor Aanpassen 
+            //    lbChatConversation.Items.Add(chat);
+            //}
 
+            //else
+            //{
+            //    MessageBox.Show("Voer iets in, veld is nog leeg!");
+            //}
         }
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)
@@ -109,6 +119,11 @@ namespace EyeCT4Participation
             {
                 BeheerRefresh();
             }
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+
         }
 
     }
