@@ -23,6 +23,23 @@ namespace EyeCT4Participation
             Active = active;
         }
 
+        public List<Account> ListChatmessage(List<string> filter)
+        {
+            Administration administration = new Administration();
+            List<Account> chat = new List<Account>();
+            foreach (string chatstring in filter)
+            {
+                foreach (Account account in chat)
+                {
+                    if (account.Name == chatstring)
+                    {
+                        chat.Add(account);
+                    }
+                }
+            }
+            return chat;
+        }
+        
         public override string ToString()
         {
             return Date + " " + Sender.Name + ": " + Message;
