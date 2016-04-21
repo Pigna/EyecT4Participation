@@ -22,14 +22,14 @@ namespace EyeCT4Participation
             ListHelpRequest();
             ListReview();
         }
-        public void AddNeedy(bool ov, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age, string geslacht, bool active)
+        public void AddNeedy(bool ov, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active)
         {
-            Needy newNeedy = new Needy(ov, username, password, name, adress, zipcode, residence, email, phonenumber, age, geslacht, active);
+            Needy newNeedy = new Needy(ov, username, password, name, adress, zipcode, residence, email, phonenumber, birthdate, geslacht, active);
             listAccounts.Add(newNeedy);
         }
-        public void AddVolunteer(bool licence, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age, string geslacht, bool active)
+        public void AddVolunteer(bool licence, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active)
         {
-            Volunteer newVolunteer = new Volunteer(licence, username, password, name, adress, zipcode, residence, email, phonenumber, age, geslacht, active);
+            Volunteer newVolunteer = new Volunteer(licence, username, password, name, adress, zipcode, residence, email, phonenumber, birthdate, geslacht, active);
             listAccounts.Add(newVolunteer);
         }
         public void ListAccount()
