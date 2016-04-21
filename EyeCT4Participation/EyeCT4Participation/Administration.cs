@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.VisualStyles;
 using EyeCT4Participation.Database;
 
 namespace EyeCT4Participation
@@ -15,7 +16,7 @@ namespace EyeCT4Participation
         public List<Review> listReviews = new List<Review>();
         private DBadministratie dbadministration = new DBadministratie();
 
-        public Administration()
+        public void ListRefresh()
         {
             ListAccount();
             ListChat();
@@ -53,6 +54,22 @@ namespace EyeCT4Participation
         {
             listReviews.Clear();
             listReviews = dbadministration.ListReview();
+        }
+
+        public List<Account> ListFilterAccount(string[] filter)
+        {
+            List<Account> filterlist = new List<Account>();
+            foreach (string filterstring in filter)
+            {
+                foreach (Account account in listAccounts)
+                {
+                    if (account.Name == filterstring)
+                    {
+                        filterlist.Add(account);
+                    }
+                }
+            }
+            return filterlist;
         }
         public void DeactivateAccount(Account account)
         {
