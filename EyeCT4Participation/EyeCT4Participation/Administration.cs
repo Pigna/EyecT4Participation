@@ -16,6 +16,7 @@ namespace EyeCT4Participation
         public List<Review> listReviews = new List<Review>();
         private DBadministratie dbadministration = new DBadministratie();
         public Account LoggedinUser;
+        DBaccount databaseAcc = new DBaccount();
 
         public void ListRefresh()
         {
@@ -97,13 +98,22 @@ namespace EyeCT4Participation
 
         public bool LoginUser(string username, string password)
         {
-            //if db rturn = user
-            //db return user
-            //insert user in -> administration.LoggedinUser
-            //true
-            //else
-            //return false
+            if (databaseAcc.GetQueryLogIn(username, password) == LoggedinUser)
+            {
+                return true;
+            }
+            else if (databaseAcc.GetQueryLogIn(username, password) != LoggedinUser)
+            {
+                
+                return false;
+            }
             return false;
         }
+        //if db rturn = user
+        //db return user
+        //insert user in -> administration.LoggedinUser
+        //true
+        //else
+        //return false
     }
 }

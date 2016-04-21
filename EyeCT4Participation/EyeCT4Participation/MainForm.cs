@@ -115,22 +115,6 @@ namespace EyeCT4Participation
             
         }
 
-        public void LogIn(string username, string password)
-        {
-            
-            int retvalue = databaseAcc.GetQueryLogIn(username, password);
-
-            if (retvalue == 1)
-            {
-                tabPage4.Show();        // open hulpbehoevende scherm
-            }
-            else if (retvalue == 2)
-            {
-                tabPage2.Show();        // open vrijwilliger scherm
-            }
-              
-        }
-
         public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string postcode, string woonplaats, string geboortedatum, int telefoonnummer,string type,int geslacht)
         {
             
@@ -146,7 +130,7 @@ namespace EyeCT4Participation
 
         private void btnInloggenInloggen_Click(object sender, EventArgs e)
         {
-            LogIn(tbInloggenGnaam.Text, tbInloggenWW.Text);
+            administration.LoginUser(tbInloggenGnaam.Text, tbInloggenWW.Text);
         }
 
         private void btnRegistratieOK_Click(object sender, EventArgs e)
