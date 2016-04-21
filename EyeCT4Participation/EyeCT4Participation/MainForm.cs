@@ -31,7 +31,7 @@ namespace EyeCT4Participation
             //string message = tbChatMessage.Text;
             //if (message != null && message != "")
             //{
-            //    Chat chat = new Chat(message, date, sender, receiver, active);       !!!!!! Constructor Aanpassen 
+            //    Chat chat = new Chat(message, date, sender, receiver, active);
             //    lbChatConversation.Items.Add(chat);
             //}
 
