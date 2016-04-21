@@ -36,7 +36,7 @@ namespace EyeCT4Participation
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            List<string> ChatList = lbChatConversation.Items.Cast<string>().ToList();
+            List<string> listChats = lbChatConversation.Items.Cast<string>().ToList();
         }
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)
