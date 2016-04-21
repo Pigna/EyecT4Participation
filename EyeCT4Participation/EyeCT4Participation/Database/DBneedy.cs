@@ -13,7 +13,7 @@ namespace EyeCT4Participation.Database
             try
             {
                 string query; // the query will end up in here
-                query = "INSERT INTO Hulpbehoevende (Gebruikersnaam, Wachtwoord, Naam, Adres, Postcode, Woonplaats, Geboortedatum, Telefoonnummer, Type, Geslacht) VALUES ("+ gebruikersnaam + "," + wachtwoord + "," + naam + "," + adres + "," + postcode + "," + woonplaats + ","+ geboortedatum + "," + telefoonnummer + "," + type + "," + geslacht + ")";  //replace with INSERT if needed
+                query = "INSERT INTO Gebruiker (Gebruikersnaam, Wachtwoord, Naam, Adres, Postcode, Woonplaats, Geboortedatum, Telefoonnummer, Type, Geslacht) VALUES ("+ gebruikersnaam + "," + wachtwoord + "," + naam + "," + adres + "," + postcode + "," + woonplaats + ","+ geboortedatum + "," + telefoonnummer + "," + type + "," + geslacht + ")";  //replace with INSERT if needed
                 doQuery(query); //query will be activated
                 return true;
             }

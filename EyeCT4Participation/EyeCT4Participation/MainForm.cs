@@ -30,7 +30,7 @@ namespace EyeCT4Participation
             //string message = tbChatMessage.Text;
             //if (message != null && message != "")
             //{
-            //    Chat chat = new Chat(message, date, msgSender, active);       !!!!!! Constructor Aanpassen 
+            //    Chat chat = new Chat(message, date, sender, receiver, active);       !!!!!! Constructor Aanpassen 
             //    lbChatConversation.Items.Add(chat);
             //}
 
@@ -135,11 +135,11 @@ namespace EyeCT4Participation
             
             if (type == "Hulpbehoevende")
             {
-                databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, postcode, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
+                databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, postcode, woonplaats, geboortedatum, telefoonnummer, 0, geslacht);
             }
             else if (type == "Vrijwilliger")
             {
-                
+                databaseVolunteer.DoQueryAddVolunteer(gebruikersnaam, wachtwoord, naam, adres, postcode, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
             }
         }
 
