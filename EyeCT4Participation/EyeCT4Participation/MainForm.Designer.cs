@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.form = new System.Windows.Forms.TabControl();
+            this.TabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cbRegistratieType = new System.Windows.Forms.ComboBox();
             this.lblRegistratieType = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@
             this.btnBeheerAccountDeactiveren = new System.Windows.Forms.Button();
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
-            this.form.SuspendLayout();
+            this.TabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -97,18 +97,19 @@
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // form
+            // TabControl
             // 
-            this.form.Controls.Add(this.tabPage1);
-            this.form.Controls.Add(this.tabPage2);
-            this.form.Controls.Add(this.tabPage4);
-            this.form.Controls.Add(this.tabPage5);
-            this.form.Controls.Add(this.tabPage3);
-            this.form.Location = new System.Drawing.Point(12, 12);
-            this.form.Name = "form";
-            this.form.SelectedIndex = 0;
-            this.form.Size = new System.Drawing.Size(950, 657);
-            this.form.TabIndex = 0;
+            this.TabControl.Controls.Add(this.tabPage1);
+            this.TabControl.Controls.Add(this.tabPage2);
+            this.TabControl.Controls.Add(this.tabPage4);
+            this.TabControl.Controls.Add(this.tabPage5);
+            this.TabControl.Controls.Add(this.tabPage3);
+            this.TabControl.Location = new System.Drawing.Point(12, 12);
+            this.TabControl.Name = "TabControl";
+            this.TabControl.SelectedIndex = 0;
+            this.TabControl.Size = new System.Drawing.Size(950, 657);
+            this.TabControl.TabIndex = 0;
+            this.TabControl.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -606,7 +607,7 @@
             this.tbBeheerFilter.Name = "tbBeheerFilter";
             this.tbBeheerFilter.Size = new System.Drawing.Size(305, 20);
             this.tbBeheerFilter.TabIndex = 57;
-            this.tbBeheerFilter.Text = "[Naam]";
+            this.tbBeheerFilter.Text = "naam (Scheiden met \';\')";
             // 
             // btnBeheerChatDeactiveren
             // 
@@ -748,9 +749,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 681);
-            this.Controls.Add(this.form);
+            this.Controls.Add(this.TabControl);
             this.Name = "MainForm";
-            this.form.ResumeLayout(false);
+            this.TabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -765,7 +766,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl form;
+        private System.Windows.Forms.TabControl TabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
