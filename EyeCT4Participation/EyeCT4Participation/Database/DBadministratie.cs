@@ -132,7 +132,10 @@ namespace EyeCT4Participation.Database
 
         public List<HelpRequest> ListHelpRequest()
         {
+            HelpRequest newHelpRequest = null;
             return null;
+
+
         }
 
         public List<Review> ListReview()
