@@ -32,7 +32,22 @@ namespace EyeCT4Participation
 
         private void BeheerRefresh()
         {
-            lbBeheerAccount.Items.AddRange(administration.listAccounts.ToArray());
+            foreach (Account account in administration.listAccounts)
+            {
+                lbBeheerAccount.Items.Add(account);
+            }
+            foreach (Chat chat in administration.listChats)
+            {
+                lbBeheerChat.Items.Add((chat));
+            }
+            foreach (HelpRequest helprequest in administration.listHelprequests)
+            {
+                lbBeheerHulpaanvraag.Items.Add(helprequest);
+            }
+            foreach (Review review in administration.listReviews)
+            {
+                lbBeheerBeoordeling.Items.Add(review);
+            }
         }
 
         private void btnBeheerAccountDeactiveren_Click(object sender, EventArgs e)
@@ -77,6 +92,14 @@ namespace EyeCT4Participation
         private void btnInloggenInloggen_Click(object sender, EventArgs e)
         {
             LogIn(tbInloggenGnaam.Text, tbInloggenWW.Text);
+        }
+
+        private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TabControl.SelectedTab.Name == "Beheer")
+            {
+                BeheerRefresh();
+            }
         }
 
     }
