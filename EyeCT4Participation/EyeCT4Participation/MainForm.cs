@@ -34,17 +34,28 @@ namespace EyeCT4Participation
             //}
         }
 
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            List<string> ChatList = lbChatConversation.Items.Cast<string>().ToList();
+        }
+
         private void btnBeheerFilter_Click(object sender, EventArgs e)
         {
             string filter = tbBeheerFilter.Text;
             if (filter.Contains(';'))
             {
-                filter.Split(';');
+                lbBeheerAccount.Items.Clear();
+                string[] filterinput = filter.Split(';');
+                foreach (Account account in administration.ListFilterAccount(filterinput))
+                {
+                    lbBeheerAccount.Items.Add(account);
+                }
             }
         }
 
         private void BeheerRefresh()
         {
+            administration.ListRefresh();
             foreach (Account account in administration.listAccounts)
             {
                 lbBeheerAccount.Items.Add(account);
@@ -109,16 +120,10 @@ namespace EyeCT4Participation
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TabControl.SelectedTab.Name == "Beheer")
+            if (TabControl.SelectedTab.Text == "Beheer")
             {
                 BeheerRefresh();
             }
         }
-
-        private void btnOpen_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
