@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Participation
 {
-    class Manager
+    class Manager : Account
     {
+        public Manager(bool license, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, DateTime BIRTHDATE, string geslacht, bool active) : base(username, password, name, adress, zipcode, residence, email, phonenumber, BIRTHDATE, active, geslacht)
+        {
+          
+        }
     }
 }
