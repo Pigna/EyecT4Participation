@@ -11,22 +11,20 @@ namespace EyeCT4Participation
     {
         public string Message;
         public DateTime Date;
-        public Account Sender;
-        public Account Receiver;
+        public Account MsgSender;
         public bool Active;
-        public Chat(string message, DateTime date, Account sender, Account receiver, bool active)
+        public Chat(string message, DateTime date, Account msgSender, bool active)
         {
             Message = message;
             Date = date;
-            Sender = sender;
-            Receiver = receiver;
+            MsgSender = msgSender;
             Active = active;
         }
 
 
         public override string ToString()
         {
-            return Date + " " + Sender.Name + ": " + Message;
+            return Date + " " + MsgSender.Name + ": " + Message;
         }
 
     }
