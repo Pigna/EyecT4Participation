@@ -119,11 +119,11 @@ namespace EyeCT4Participation
             
             int retvalue = databaseAcc.GetQueryLogIn(username, password);
 
-            if (retvalue == 0)
+            if (retvalue == 1)
             {
                 tabPage4.Show();        // open hulpbehoevende scherm
             }
-            else if (retvalue == 1)
+            else if (retvalue == 2)
             {
                 tabPage2.Show();        // open vrijwilliger scherm
             }
