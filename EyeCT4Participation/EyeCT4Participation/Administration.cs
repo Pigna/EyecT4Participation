@@ -15,6 +15,7 @@ namespace EyeCT4Participation
         public List<HelpRequest> listHelprequests = new List<HelpRequest>();
         public List<Review> listReviews = new List<Review>();
         private DBadministratie dbadministration = new DBadministratie();
+        public Account LoggedinUser;
 
         public void ListRefresh()
         {
@@ -92,6 +93,17 @@ namespace EyeCT4Participation
         {
             
             dbadministration.DeactivateReview(review);
+        }
+
+        public bool LoginUser(string username, string password)
+        {
+            //if db rturn = user
+            //db return user
+            //insert user in -> administration.LoggedinUser
+            //true
+            //else
+            //return false
+            return false;
         }
     }
 }
