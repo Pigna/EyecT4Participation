@@ -10,7 +10,7 @@ namespace EyeCT4Participation
     {
         public bool License { get; set; }
 
-        public Volunteer(bool license, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age, string geslacht, bool active) : base(username, password, name, adress, zipcode, residence, email, phonenumber, age, active, geslacht)
+        public Volunteer(bool license, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active) : base(username, password, name, adress, zipcode, residence, email, phonenumber, birthdate, active, geslacht)
         {
             License = license;
         }
