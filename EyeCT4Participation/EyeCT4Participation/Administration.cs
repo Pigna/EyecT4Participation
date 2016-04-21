@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.VisualStyles;
 using EyeCT4Participation.Database;
 
 namespace EyeCT4Participation
@@ -15,21 +16,21 @@ namespace EyeCT4Participation
         public List<Review> listReviews = new List<Review>();
         private DBadministratie dbadministration = new DBadministratie();
 
-        public Administration()
+        public void ListRefresh()
         {
             ListAccount();
             ListChat();
             ListHelpRequest();
             ListReview();
         }
-        public void AddNeedy(bool ov, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age, string geslacht, bool active)
+        public void AddNeedy(bool ov, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active)
         {
-            Needy newNeedy = new Needy(ov, username, password, name, adress, zipcode, residence, email, phonenumber, age, geslacht, active);
+            Needy newNeedy = new Needy(ov, username, password, name, adress, zipcode, residence, email, phonenumber, birthdate, geslacht, active);
             listAccounts.Add(newNeedy);
         }
-        public void AddVolunteer(bool licence, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, int age, string geslacht, bool active)
+        public void AddVolunteer(bool licence, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active)
         {
-            Volunteer newVolunteer = new Volunteer(licence, username, password, name, adress, zipcode, residence, email, phonenumber, age, geslacht, active);
+            Volunteer newVolunteer = new Volunteer(licence, username, password, name, adress, zipcode, residence, email, phonenumber, birthdate, geslacht, active);
             listAccounts.Add(newVolunteer);
         }
         public void ListAccount()
@@ -54,6 +55,22 @@ namespace EyeCT4Participation
             listReviews.Clear();
             listReviews = dbadministration.ListReview();
         }
+
+        public List<Account> ListFilterAccount(string[] filter)
+        {
+            List<Account> filterlist = new List<Account>();
+            foreach (string filterstring in filter)
+            {
+                foreach (Account account in listAccounts)
+                {
+                    if (account.Name == filterstring)
+                    {
+                        filterlist.Add(account);
+                    }
+                }
+            }
+            return filterlist;
+        }
         public void DeactivateAccount(Account account)
         {
             account.Active = false;
@@ -73,6 +90,7 @@ namespace EyeCT4Participation
 
         public void DeactivateReview(Review review)
         {
+            
             dbadministration.DeactivateReview(review);
         }
     }

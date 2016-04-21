@@ -27,18 +27,57 @@ namespace EyeCT4Participation
 
         public void btnSend_Click(object sender, EventArgs e)
         {
-            Chat c1 = new Chat();
-            c1.AddMessage();
+            //string message = tbChatMessage.Text;
+            //if (message != null && message != "")
+            //{
+            //    Chat chat = new Chat(message, date, msgSender, active);       !!!!!! Constructor Aanpassen 
+            //    lbChatConversation.Items.Add(chat);
+            //}
+
+            //else
+            //{
+            //    MessageBox.Show("Voer iets in, veld is nog leeg!");
+            //}
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            List<string> ChatList = lbChatConversation.Items.Cast<string>().ToList();
         }
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)
         {
-
+            string filter = tbBeheerFilter.Text;
+            if (filter.Contains(';'))
+            {
+                lbBeheerAccount.Items.Clear();
+                string[] filterinput = filter.Split(';');
+                foreach (Account account in administration.ListFilterAccount(filterinput))
+                {
+                    lbBeheerAccount.Items.Add(account);
+                }
+            }
         }
 
         private void BeheerRefresh()
         {
-            lbBeheerAccount.Items.AddRange(administration.listAccounts.ToArray());
+            administration.ListRefresh();
+            foreach (Account account in administration.listAccounts)
+            {
+                lbBeheerAccount.Items.Add(account);
+            }
+            foreach (Chat chat in administration.listChats)
+            {
+                lbBeheerChat.Items.Add((chat));
+            }
+            foreach (HelpRequest helprequest in administration.listHelprequests)
+            {
+                lbBeheerHulpaanvraag.Items.Add(helprequest);
+            }
+            foreach (Review review in administration.listReviews)
+            {
+                lbBeheerBeoordeling.Items.Add(review);
+            }
         }
 
         private void btnBeheerAccountDeactiveren_Click(object sender, EventArgs e)
@@ -84,7 +123,7 @@ namespace EyeCT4Participation
 
         public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string postcode, string woonplaats, string geboortedatum, int telefoonnummer,string type,int geslacht)
         {
-
+            
             if (type == "Hulpbehoevende")
             {
                 databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, postcode, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
@@ -105,5 +144,12 @@ namespace EyeCT4Participation
             Registreer(tbRegistratieGnaam.Text,tbRegistratieWW.Text,tbRegistratieNaam.Text,tbRegistratieAdres.Text,tbRegistratiePcode.Text,tbRegistratieWplaats.Text,tbRegistratieGeboortedatum.Text,Convert.ToInt32(tbRegistratiePhonenumber.Text),cbRegistratieType.SelectedText,cbRegistratieGeslacht.SelectedIndex);
         }
 
+        private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TabControl.SelectedTab.Text == "Beheer")
+            {
+                BeheerRefresh();
+            }
+        }
     }
 }
