@@ -50,11 +50,14 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Administration.cs" />
-    <Compile Include="Chat.cs" />
+    <Compile Include="Chat.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Database\db.cs" />
     <Compile Include="Database\DBaccount.cs" />
     <Compile Include="Database\DBadministratie.cs" />
     <Compile Include="Database\DBchat.cs" />
+    <Compile Include="Database\DBexample.cs" />
     <Compile Include="Database\DBhelprequest.cs" />
     <Compile Include="Database\DBmanager.cs" />
     <Compile Include="Database\DBneedy.cs" />
