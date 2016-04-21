@@ -26,8 +26,7 @@ namespace EyeCT4Participation
 
         public override string ToString()
         {
-            string info = Date + ": " + Message;
-            return info;
+            return Date + " " + Sender.Name + ": " + Message;
         }
 
     }
