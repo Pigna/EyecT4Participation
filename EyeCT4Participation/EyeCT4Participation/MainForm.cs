@@ -42,15 +42,24 @@ namespace EyeCT4Participation
         private void btnBeheerFilter_Click(object sender, EventArgs e)
         {
             string filter = tbBeheerFilter.Text;
-            if (filter.Contains(';'))
+            if (filter != "")
             {
-                lbBeheerAccount.Items.Clear();
-                string[] filterinput = filter.Split(';');
-                foreach (Account account in administration.ListFilterAccount(filterinput))
+                List<string> filterinput = new List<string>();
+                if (filter.Contains(';'))
                 {
-                    lbBeheerAccount.Items.Add(account);
+                    lbBeheerAccount.Items.Clear();
+                    filterinput.AddRange(filter.Split(';'));
+                    foreach (Account account in administration.ListFilterAccount(filterinput))
+                    {
+                        lbBeheerAccount.Items.Add(account);
+                    }
+                }
+                else
+                {
+                    filterinput.Add(filter);
                 }
             }
+
         }
 
         private void BeheerRefresh()

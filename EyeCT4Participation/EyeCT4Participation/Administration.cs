@@ -56,7 +56,7 @@ namespace EyeCT4Participation
             listReviews = dbadministration.ListReview();
         }
 
-        public List<Account> ListFilterAccount(string[] filter)
+        public List<Account> ListFilterAccount(List<string> filter)
         {
             List<Account> filterlist = new List<Account>();
             foreach (string filterstring in filter)
