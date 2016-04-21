@@ -43,7 +43,7 @@ namespace EyeCT4Participation
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            //chat.ListChatmessage();
+            //chat.ListFilterChatmessage();
         }
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)
