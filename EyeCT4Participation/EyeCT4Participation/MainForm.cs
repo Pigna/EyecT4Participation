@@ -24,7 +24,11 @@ namespace EyeCT4Participation
         {
             InitializeComponent();
             administration = new Administration();
-            TabControl.TabPages[0].Enabled = false;
+
+            TabControl.TabPages[1].Enabled = false;
+            TabControl.TabPages[2].Enabled = false;
+            TabControl.TabPages[3].Enabled = false;
+            TabControl.TabPages[4].Enabled = false;
         }
 
         public void btnSend_Click(object sender, EventArgs e)
@@ -132,6 +136,22 @@ namespace EyeCT4Participation
         private void btnInloggenInloggen_Click(object sender, EventArgs e)
         {
             administration.LoginUser(tbInloggenGnaam.Text, tbInloggenWW.Text);
+            if (administration.LoggedinUser != null)
+            {
+                if (administration.LoggedinUser.GetType() == typeof (Manager))
+                {
+                    TabControl.TabPages[4].Enabled = true;
+                }
+                if (administration.LoggedinUser.GetType() == typeof (Volunteer))
+                {
+                    TabControl.TabPages[1].Enabled = false;
+                    TabControl.TabPages[3].Enabled = false;
+                }
+                if (administration.LoggedinUser.GetType() == typeof (Needy))
+                {
+                    TabControl.TabPages[2].Enabled = false;
+                }
+            }
         }
 
         private void btnRegistratieOK_Click(object sender, EventArgs e)
