@@ -13,13 +13,14 @@ namespace EyeCT4Participation
 {
     public partial class MainForm : Form
     {
-        
+
         DBaccount databaseAcc = new DBaccount();
         DBneedy databaseneedy = new DBneedy();
         DBvolunteer databaseVolunteer = new DBvolunteer();
 
         private Administration administration;
         private Chat chat;
+        private Account account;
         public MainForm()
         {
             InitializeComponent();
@@ -39,22 +40,35 @@ namespace EyeCT4Participation
 
         public void btnSend_Click(object sender, EventArgs e)
         {
-            //string message = tbChatMessage.Text;
-            //if (message != null && message != "")
-            //{
-            //    Chat chat = new Chat(message, date, sender, receiver, active);
-            //    lbChatConversation.Items.Add(chat);
-            //}
-
-            //else
-            //{
-            //    MessageBox.Show("Voer iets in, veld is nog leeg!");
-            //}
+            foreach (Chat chat in administration.listChats)
+            {
+                if (administration.LoggedinUser == chat.Receiver)
+                {
+                    foreach (Chat p in administration.listChats)
+                    { lbChatConversation.Items.Add(p);
+                    }
+                }
+                else { MessageBox.Show("Verkeerde gebruiker"); }
+                return false;
+            }
         }
+
+
+        //string message = tbChatMessage.Text;
+        //if (message != null && message != "")
+        //{
+        //    Chat chat = new Chat(message, date, sender, receiver, active);
+        //    lbChatConversation.Items.Add(chat);
+        //}
+
+        //else
+        //{
+        //    MessageBox.Show("Voer iets in, veld is nog leeg!");
+        //}
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            //chat.ListFilterChatmessage();
+
         }
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)
@@ -123,36 +137,36 @@ namespace EyeCT4Participation
 
         private void btnBeheerAccountAanpassen_Click(object sender, EventArgs e)
         {
-            
+
         }
 
-        public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string woonplaats, string geboortedatum, int telefoonnummer,string type,int geslacht)
+        public void Registreer(string gebruikersnaam, string wachtwoord, string naam, string adres, string woonplaats, string geboortedatum, int telefoonnummer, string type, int geslacht)
         {
-            
+
             if (type == "Hulpbehoevende")
             {
                 bool doqueryNeedy = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
-                
+
                 if (doqueryNeedy == true)
                 {
-                   lblRegistratieGelukt.Text = "Registratie is gelukt";
+                    lblRegistratieGelukt.Text = "Registratie is gelukt";
                 }
                 if (doqueryNeedy == false)
                 {
-                  lblRegistratieGelukt.Text = "Registratie is mislukt";
+                    lblRegistratieGelukt.Text = "Registratie is mislukt";
                 }
             }
             else if (type == "Vrijwilliger")
             {
                 bool doqueryVrijwilliger = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
-               
+
                 if (doqueryVrijwilliger == true)
                 {
                     lblRegistratieGelukt.Text = "Registratie is gelukt";
                 }
                 if (doqueryVrijwilliger == false)
                 {
-                   lblRegistratieGelukt.Text = "Registratie is mislukt";
+                    lblRegistratieGelukt.Text = "Registratie is mislukt";
                 }
             }
             tbRegistratieGnaam.Clear();
@@ -171,12 +185,12 @@ namespace EyeCT4Participation
             administration.LoginUser(tbInloggenGnaam.Text, tbInloggenWW.Text);
             if (administration.LoggedinUser != null)
             {
-                if (administration.LoggedinUser.GetType() == typeof (Manager))
+                if (administration.LoggedinUser.GetType() == typeof(Manager))
                 {
                     TabControl.TabPages[4].Enabled = true;
                     //TabControl.TabPages.Add(tabpageBeheer);
                 }
-                if (administration.LoggedinUser.GetType() == typeof (Volunteer))
+                if (administration.LoggedinUser.GetType() == typeof(Volunteer))
                 {
 
                     TabControl.TabPages[1].Enabled = true;
@@ -184,7 +198,7 @@ namespace EyeCT4Participation
                     //TabControl.TabPages.Remove(tabpageChat);
                     //TabControl.TabPages.Remove(tabpageVrijwilliger);
                 }
-                if (administration.LoggedinUser.GetType() == typeof (Needy))
+                if (administration.LoggedinUser.GetType() == typeof(Needy))
                 {
                     TabControl.TabPages[2].Enabled = true;
                     TabControl.TabPages[3].Enabled = true;
@@ -204,10 +218,10 @@ namespace EyeCT4Participation
             }
             else if (Convert.ToString(cbRegistratieGeslacht.SelectedItem) == "Vrouw")
             {
-                 registratiegeslacht = 1;
+                registratiegeslacht = 1;
             }
-            Registreer(tbRegistratieGnaam.Text,tbRegistratieWW.Text,tbRegistratieNaam.Text,tbRegistratieAdres.Text,tbRegistratieWplaats.Text,tbRegistratieGeboortedatum.Text,Convert.ToInt32(tbRegistratiePhonenumber.Text),Convert.ToString(cbRegistratieType.SelectedItem),registratiegeslacht);
-            
+            Registreer(tbRegistratieGnaam.Text, tbRegistratieWW.Text, tbRegistratieNaam.Text, tbRegistratieAdres.Text, tbRegistratieWplaats.Text, tbRegistratieGeboortedatum.Text, Convert.ToInt32(tbRegistratiePhonenumber.Text), Convert.ToString(cbRegistratieType.SelectedItem), registratiegeslacht);
+
         }
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -220,7 +234,10 @@ namespace EyeCT4Participation
 
         private void BTHelpSend_Click(object sender, EventArgs e)
         {
-            if 
+            if()
+            {
+
+            }
         }
     }
 }
