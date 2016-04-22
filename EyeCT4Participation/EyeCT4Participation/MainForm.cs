@@ -76,10 +76,10 @@ namespace EyeCT4Participation
             string filter = tbBeheerFilter.Text;
             if (filter != "")
             {
+                lbBeheerAccount.Items.Clear();
                 List<string> filterinput = new List<string>();
                 if (filter.Contains(';'))
                 {
-                    lbBeheerAccount.Items.Clear();
                     filterinput.AddRange(filter.Split(';'));
                     foreach (Account account in administration.ListFilterAccount(filterinput))
                     {
@@ -89,6 +89,10 @@ namespace EyeCT4Participation
                 else
                 {
                     filterinput.Add(filter);
+                    foreach (Account account in administration.ListFilterAccount(filterinput))
+                    {
+                        lbBeheerAccount.Items.Add(account);
+                    }
                 }
             }
 
@@ -97,6 +101,10 @@ namespace EyeCT4Participation
         private void BeheerRefresh()
         {
             administration.ListRefresh();
+            lbBeheerAccount.Items.Clear();
+            lbBeheerChat.Items.Clear();
+            lbBeheerHulpaanvraag.Items.Clear();
+            lbBeheerBeoordeling.Items.Clear();
             foreach (Account account in administration.listAccounts)
             {
                 lbBeheerAccount.Items.Add(account);

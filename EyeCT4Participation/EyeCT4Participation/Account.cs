@@ -65,5 +65,10 @@ namespace EyeCT4Participation
             return chat;*/
             return null;
         }
+
+            public override string ToString()
+            {
+                return id + " " + Name + " ";
+            }
     }
 }
