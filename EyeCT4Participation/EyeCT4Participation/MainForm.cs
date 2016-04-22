@@ -29,6 +29,11 @@ namespace EyeCT4Participation
             TabControl.TabPages[2].Enabled = false;
             TabControl.TabPages[3].Enabled = false;
             TabControl.TabPages[4].Enabled = false;
+
+            TabControl.TabPages.Remove(tabpageBeheer);
+            TabControl.TabPages.Remove(tabpageChat);
+            TabControl.TabPages.Remove(tabpageHulpbehoevende);
+            TabControl.TabPages.Remove(tabpageVrijwilliger);
              */
         }
 
@@ -142,15 +147,22 @@ namespace EyeCT4Participation
                 if (administration.LoggedinUser.GetType() == typeof (Manager))
                 {
                     TabControl.TabPages[4].Enabled = true;
+                    //TabControl.TabPages.Add(tabpageBeheer);
                 }
                 if (administration.LoggedinUser.GetType() == typeof (Volunteer))
                 {
-                    TabControl.TabPages[1].Enabled = false;
-                    TabControl.TabPages[3].Enabled = false;
+
+                    TabControl.TabPages[1].Enabled = true;
+                    TabControl.TabPages[3].Enabled = true;
+                    //TabControl.TabPages.Remove(tabpageChat);
+                    //TabControl.TabPages.Remove(tabpageVrijwilliger);
                 }
                 if (administration.LoggedinUser.GetType() == typeof (Needy))
                 {
-                    TabControl.TabPages[2].Enabled = false;
+                    TabControl.TabPages[2].Enabled = true;
+                    TabControl.TabPages[3].Enabled = true;
+                    //TabControl.TabPages.Remove(tabpageChat);
+                    //TabControl.TabPages.Remove(tabpageHulpbehoevende);
                 }
             }
         }
