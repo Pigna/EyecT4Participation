@@ -16,6 +16,7 @@ namespace EyeCT4Participation
         public Account Receiver;
         public bool Active;
         DBchat databaseC = new DBchat();
+        private Administration administration;
         public Chat(string message, DateTime date, Account sender, Account receiver, bool active)
         {
             Message = message;
@@ -27,18 +28,18 @@ namespace EyeCT4Participation
 
         //public List<Chat> ListFilterChatmessage(List<string> filter)
         //{
-        //    List<Chat> chat = new List<Chat>();
-        //    foreach (string chatstring in filter)
+        //    List<Account> accountfilter = new List<Account>();
+        //    foreach (string filterstring in filter)
         //    {
-        //        foreach (Account account in chat)
+        //        foreach (Account account in administration.listAccounts)
         //        {
-        //            if (account.Name == chatstring)
+        //            if (account.Name == filterstring)
         //            {
-        //                chat.Add(account);
+        //                accountfilter.Add(account);
         //            }
         //        }
         //    }
-        //    return chat;
+        //    return accountfilter;
         //}
         
         public override string ToString()

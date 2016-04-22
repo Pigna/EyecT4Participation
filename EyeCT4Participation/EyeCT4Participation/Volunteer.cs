@@ -12,15 +12,20 @@ namespace EyeCT4Participation
         //DBReview databaseR = new DBReview();
         public bool License { get; set; }
 
-        public Volunteer(bool license, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active) : base(username, password, name, adress, zipcode, residence, email, phonenumber, birthdate, active, geslacht)
+        public Volunteer(bool license, string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active) : base(username, password, name, adress, residence, email, phonenumber, birthdate, active, geslacht)
         {
             License = license;
         }
 
-        public void AddReaction(string description, string message, Volunteer author, DateTime date)
+        public void AddReaction(string name, string message, Volunteer author, DateTime date)
         {
-            //string query = "INSERT INTO review(description, message, author, date) VALUES (" + description + "," + message + "," + Convert.ToString(author) + "," + Convert.ToString(date) + ")";
+            //string query = "INSERT INTO review(name, message, author, date) VALUES (" + name + "," + message + "," + Convert.ToString(author) + "," + Convert.ToString(date) + ")";
             //databaseR.DoQueryAddReaction(query);
+        }
+
+        public void JoinHelpRequest(string name, Volunteer author, DateTime date)
+        {
+
         }
 
     }
