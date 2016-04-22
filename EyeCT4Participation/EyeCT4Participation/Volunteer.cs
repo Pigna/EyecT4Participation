@@ -17,10 +17,15 @@ namespace EyeCT4Participation
             License = license;
         }
 
-        public void AddReaction(string description, string message, Volunteer author, DateTime date)
+        public void AddReaction(string name, string message, Volunteer author, DateTime date)
         {
-            //string query = "INSERT INTO review(description, message, author, date) VALUES (" + description + "," + message + "," + Convert.ToString(author) + "," + Convert.ToString(date) + ")";
+            //string query = "INSERT INTO review(name, message, author, date) VALUES (" + name + "," + message + "," + Convert.ToString(author) + "," + Convert.ToString(date) + ")";
             //databaseR.DoQueryAddReaction(query);
+        }
+
+        public void JoinHelpRequest(string name, Volunteer author, DateTime date)
+        {
+
         }
 
     }
