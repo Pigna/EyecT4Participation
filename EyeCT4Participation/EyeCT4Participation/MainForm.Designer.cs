@@ -61,9 +61,10 @@
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
             this.tabpageVrijwilliger = new System.Windows.Forms.TabPage();
             this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabpageChat = new System.Windows.Forms.TabPage();
@@ -91,14 +92,13 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageHulpbehoevende.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabpageChat.SuspendLayout();
             this.tabpageBeheer.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -160,7 +160,7 @@
             this.cbRegistratieType.Items.AddRange(new object[] {
             "Hulpbehoevende",
             "Vrijwilliger"});
-            this.cbRegistratieType.Location = new System.Drawing.Point(411, 275);
+            this.cbRegistratieType.Location = new System.Drawing.Point(548, 338);
             this.cbRegistratieType.Margin = new System.Windows.Forms.Padding(2);
             this.cbRegistratieType.Name = "cbRegistratieType";
             this.cbRegistratieType.Size = new System.Drawing.Size(76, 21);
@@ -182,7 +182,7 @@
             this.cbRegistratieGeslacht.Items.AddRange(new object[] {
             "0",
             "1"});
-            this.cbRegistratieGeslacht.Location = new System.Drawing.Point(411, 300);
+            this.cbRegistratieGeslacht.Location = new System.Drawing.Point(548, 369);
             this.cbRegistratieGeslacht.Margin = new System.Windows.Forms.Padding(2);
             this.cbRegistratieGeslacht.Name = "cbRegistratieGeslacht";
             this.cbRegistratieGeslacht.Size = new System.Drawing.Size(76, 21);
@@ -311,10 +311,10 @@
             // 
             // tbRegistratieGeboortedatum
             // 
-            this.tbRegistratieGeboortedatum.Location = new System.Drawing.Point(411, 223);
+            this.tbRegistratieGeboortedatum.Location = new System.Drawing.Point(548, 275);
             this.tbRegistratieGeboortedatum.Margin = new System.Windows.Forms.Padding(2);
             this.tbRegistratieGeboortedatum.Name = "tbRegistratieGeboortedatum";
-            this.tbRegistratieGeboortedatum.Size = new System.Drawing.Size(58, 20);
+            this.tbRegistratieGeboortedatum.Size = new System.Drawing.Size(76, 20);
             this.tbRegistratieGeboortedatum.TabIndex = 37;
             // 
             // tbRegistratieWplaats
@@ -360,7 +360,7 @@
             // lblRegistratieGeboortedatum
             // 
             this.lblRegistratieGeboortedatum.AutoSize = true;
-            this.lblRegistratieGeboortedatum.Location = new System.Drawing.Point(327, 224);
+            this.lblRegistratieGeboortedatum.Location = new System.Drawing.Point(436, 278);
             this.lblRegistratieGeboortedatum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRegistratieGeboortedatum.Name = "lblRegistratieGeboortedatum";
             this.lblRegistratieGeboortedatum.Size = new System.Drawing.Size(80, 13);
@@ -450,14 +450,25 @@
             this.tabpageHulpbehoevende.Text = "Hulpbehoevende";
             this.tabpageHulpbehoevende.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // groupBox1
             // 
-            this.button1.Location = new System.Drawing.Point(216, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Beoordeel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(563, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(373, 547);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 19);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(204, 290);
+            this.listBox1.TabIndex = 13;
             // 
             // numericUpDown1
             // 
@@ -471,13 +482,14 @@
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 14;
             // 
-            // listBox1
+            // button1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 19);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(204, 290);
-            this.listBox1.TabIndex = 13;
+            this.button1.Location = new System.Drawing.Point(216, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Beoordeel";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -760,18 +772,6 @@
             this.lbBeheerAccount.Size = new System.Drawing.Size(305, 277);
             this.lbBeheerAccount.TabIndex = 41;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(563, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(373, 547);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -783,12 +783,12 @@
             this.tabpageLogin.ResumeLayout(false);
             this.tabpageLogin.PerformLayout();
             this.tabpageHulpbehoevende.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabpageChat.ResumeLayout(false);
             this.tabpageChat.PerformLayout();
             this.tabpageBeheer.ResumeLayout(false);
             this.tabpageBeheer.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
