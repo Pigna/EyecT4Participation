@@ -126,12 +126,12 @@ namespace EyeCT4Participation
             
         }
 
-        public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string postcode, string woonplaats, string geboortedatum, int telefoonnummer,string type,int geslacht)
+        public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string woonplaats, string geboortedatum, int telefoonnummer,string type,int geslacht)
         {
             
             if (type == "Hulpbehoevende")
             {
-                bool doqueryNeedy = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, postcode, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
+                bool doqueryNeedy = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
                 
                 if (doqueryNeedy == true)
                 {
@@ -144,7 +144,7 @@ namespace EyeCT4Participation
             }
             else if (type == "Vrijwilliger")
             {
-                bool doqueryVrijwilliger = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres,postcode, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
+                bool doqueryVrijwilliger = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
                
                 if (doqueryVrijwilliger == true)
                 {
@@ -159,7 +159,6 @@ namespace EyeCT4Participation
             tbRegistratieWW.Clear();
             tbRegistratieNaam.Clear();
             tbRegistratieAdres.Clear();
-            tbRegistratiePcode.Clear();
             tbRegistratieWplaats.Clear();
             tbRegistratieGeboortedatum.Clear();
             tbRegistratiePhonenumber.Clear();
@@ -207,7 +206,7 @@ namespace EyeCT4Participation
             {
                  registratiegeslacht = 1;
             }
-            Registreer(tbRegistratieGnaam.Text,tbRegistratieWW.Text,tbRegistratieNaam.Text,tbRegistratieAdres.Text,tbRegistratiePcode.Text,tbRegistratieWplaats.Text,tbRegistratieGeboortedatum.Text,Convert.ToInt32(tbRegistratiePhonenumber.Text),Convert.ToString(cbRegistratieType.SelectedItem),registratiegeslacht);
+            Registreer(tbRegistratieGnaam.Text,tbRegistratieWW.Text,tbRegistratieNaam.Text,tbRegistratieAdres.Text,tbRegistratieWplaats.Text,tbRegistratieGeboortedatum.Text,Convert.ToInt32(tbRegistratiePhonenumber.Text),Convert.ToString(cbRegistratieType.SelectedItem),registratiegeslacht);
             
         }
 
