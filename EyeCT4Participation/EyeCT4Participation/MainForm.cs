@@ -31,7 +31,7 @@ namespace EyeCT4Participation
             //string message = tbChatMessage.Text;
             //if (message != null && message != "")
             //{
-            //    Chat chat = new Chat(message, date, sender, receiver, active);       !!!!!! Constructor Aanpassen 
+            //    Chat chat = new Chat(message, date, sender, receiver, active);
             //    lbChatConversation.Items.Add(chat);
             //}
 
@@ -43,7 +43,7 @@ namespace EyeCT4Participation
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            //chat.ListChatmessage();
+            //chat.ListFilterChatmessage();
         }
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)

@@ -67,7 +67,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.btnOpen = new System.Windows.Forms.Button();
             this.tbChatMessage = new System.Windows.Forms.RichTextBox();
             this.lbChatConversation = new System.Windows.Forms.ListBox();
             this.lblActiveConversation = new System.Windows.Forms.Label();
@@ -90,6 +89,7 @@
             this.btnBeheerAccountDeactiveren = new System.Windows.Forms.Button();
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
+            this.btnOpen = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -106,7 +106,7 @@
             this.TabControl.Controls.Add(this.tabPage5);
             this.TabControl.Controls.Add(this.tabPage3);
             this.TabControl.Location = new System.Drawing.Point(16, 15);
-            this.TabControl.Margin = new System.Windows.Forms.Padding(4);
+            this.TabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
             this.TabControl.Size = new System.Drawing.Size(1267, 809);
@@ -145,9 +145,9 @@
             this.tabPage1.Controls.Add(this.lblRegistratieWW);
             this.tabPage1.Controls.Add(this.lblRegistratieGebruikersnaam);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Size = new System.Drawing.Size(1259, 780);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Inloggen/Registreren";
@@ -198,7 +198,7 @@
             // tbRegistratiePhonenumber
             // 
             this.tbRegistratiePhonenumber.Location = new System.Drawing.Point(731, 378);
-            this.tbRegistratiePhonenumber.Margin = new System.Windows.Forms.Padding(4);
+            this.tbRegistratiePhonenumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbRegistratiePhonenumber.Name = "tbRegistratiePhonenumber";
             this.tbRegistratiePhonenumber.Size = new System.Drawing.Size(100, 22);
             this.tbRegistratiePhonenumber.TabIndex = 49;
@@ -310,7 +310,7 @@
             this.tbRegistratieGeboortedatum.Location = new System.Drawing.Point(548, 274);
             this.tbRegistratieGeboortedatum.Margin = new System.Windows.Forms.Padding(2);
             this.tbRegistratieGeboortedatum.Name = "tbRegistratieGeboortedatum";
-            this.tbRegistratieGeboortedatum.Size = new System.Drawing.Size(76, 22);
+            this.tbRegistratieGeboortedatum.Size = new System.Drawing.Size(76, 20);
             this.tbRegistratieGeboortedatum.TabIndex = 37;
             // 
             // tbRegistratieWplaats
@@ -359,7 +359,7 @@
             this.lblRegistratieGeboortedatum.Location = new System.Drawing.Point(436, 276);
             this.lblRegistratieGeboortedatum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRegistratieGeboortedatum.Name = "lblRegistratieGeboortedatum";
-            this.lblRegistratieGeboortedatum.Size = new System.Drawing.Size(107, 17);
+            this.lblRegistratieGeboortedatum.Size = new System.Drawing.Size(80, 13);
             this.lblRegistratieGeboortedatum.TabIndex = 29;
             this.lblRegistratieGeboortedatum.Text = "Geboortedatum";
             // 
@@ -420,9 +420,9 @@
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Size = new System.Drawing.Size(1259, 780);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Vrijwilliger";
@@ -436,9 +436,9 @@
             this.tabPage4.Controls.Add(this.button2);
             this.tabPage4.Controls.Add(this.richTextBox1);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Size = new System.Drawing.Size(1259, 780);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Hulpbehoevende";
@@ -447,7 +447,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(812, 7);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 15;
@@ -457,7 +457,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(812, 43);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             5,
             0,
@@ -472,7 +472,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(532, 7);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(271, 356);
             this.listBox1.TabIndex = 13;
@@ -480,7 +480,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(411, 7);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 12;
@@ -490,7 +490,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(8, 7);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(393, 355);
             this.richTextBox1.TabIndex = 6;
@@ -505,23 +505,13 @@
             this.tabPage5.Controls.Add(this.btnSend);
             this.tabPage5.Controls.Add(this.lbActiveConversations);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage5.Size = new System.Drawing.Size(1259, 780);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Chat";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // btnOpen
-            // 
-            this.btnOpen.Location = new System.Drawing.Point(11, 728);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 23);
-            this.btnOpen.TabIndex = 18;
-            this.btnOpen.Text = "Open";
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // tbChatMessage
             // 
@@ -555,7 +545,7 @@
             // btnSend
             // 
             this.btnSend.Location = new System.Drawing.Point(1148, 736);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(100, 28);
             this.btnSend.TabIndex = 11;
@@ -568,7 +558,7 @@
             this.lbActiveConversations.FormattingEnabled = true;
             this.lbActiveConversations.ItemHeight = 16;
             this.lbActiveConversations.Location = new System.Drawing.Point(11, 28);
-            this.lbActiveConversations.Margin = new System.Windows.Forms.Padding(5);
+            this.lbActiveConversations.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.lbActiveConversations.Name = "lbActiveConversations";
             this.lbActiveConversations.Size = new System.Drawing.Size(331, 692);
             this.lbActiveConversations.TabIndex = 8;
@@ -773,13 +763,23 @@
             this.lbBeheerAccount.Size = new System.Drawing.Size(405, 340);
             this.lbBeheerAccount.TabIndex = 41;
             // 
+            // btnOpen
+            // 
+            this.btnOpen.Location = new System.Drawing.Point(11, 728);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.TabIndex = 18;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1299, 838);
             this.Controls.Add(this.TabControl);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.TabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -844,6 +844,7 @@
         private System.Windows.Forms.ListBox lbActiveConversations;
         private System.Windows.Forms.Label lblRegistratieWoonplaats;
         public System.Windows.Forms.Button btnSend;
+        public System.Windows.Forms.ListBox lbChatConversation;
         public System.Windows.Forms.RichTextBox tbChatMessage;
         private System.Windows.Forms.TextBox tbRegistratiePhonenumber;
         private System.Windows.Forms.Label lblRegistratiePhonenumber;
@@ -857,7 +858,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.ListBox lbChatConversation;
     }
 }
 

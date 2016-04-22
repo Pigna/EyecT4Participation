@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EyeCT4Participation.Database;
 
 namespace EyeCT4Participation
 {
     class Volunteer : Account
     {
+        //DBReview databaseR = new DBReview();
         public bool License { get; set; }
 
         public Volunteer(bool license, string username, string password, string name, string adress, string zipcode, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active) : base(username, password, name, adress, zipcode, residence, email, phonenumber, birthdate, active, geslacht)
@@ -17,12 +19,8 @@ namespace EyeCT4Participation
 
         public void AddReaction(string description, string message, Volunteer author, DateTime date)
         {
-            
-        }
-
-        public void JoinHelpRequest()
-        {
-
+            //string query = "INSERT INTO review(description, message, author, date) VALUES (" + description + "," + message + "," + Convert.ToString(author) + "," + Convert.ToString(date) + ")";
+            //databaseR.DoQueryAddReaction(query);
         }
 
     }

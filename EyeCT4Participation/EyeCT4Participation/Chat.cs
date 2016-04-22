@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EyeCT4Participation.Database;
 
 namespace EyeCT4Participation
 {
@@ -14,6 +15,7 @@ namespace EyeCT4Participation
         public Account Sender;
         public Account Receiver;
         public bool Active;
+        DBchat databaseC = new DBchat();
         public Chat(string message, DateTime date, Account sender, Account receiver, bool active)
         {
             Message = message;
@@ -23,22 +25,21 @@ namespace EyeCT4Participation
             Active = active;
         }
 
-        public List<Account> ListChatmessage(List<string> filter)
-        {
-            Administration administration = new Administration();
-            List<Account> chat = new List<Account>();
-            foreach (string chatstring in filter)
-            {
-                foreach (Account account in chat)
-                {
-                    if (account.Name == chatstring)
-                    {
-                        chat.Add(account);
-                    }
-                }
-            }
-            return chat;
-        }
+        //public List<Chat> ListFilterChatmessage(List<string> filter)
+        //{
+        //    List<Chat> chat = new List<Chat>();
+        //    foreach (string chatstring in filter)
+        //    {
+        //        foreach (Account account in chat)
+        //        {
+        //            if (account.Name == chatstring)
+        //            {
+        //                chat.Add(account);
+        //            }
+        //        }
+        //    }
+        //    return chat;
+        //}
         
         public override string ToString()
         {
