@@ -290,12 +290,34 @@ namespace EyeCT4Participation.Database
 
         public bool DeactivateAccount(Account account)
         {
-            return false;
+            try
+            {
+                string query; // the query will end up in here
+                query = "UPDATE GEBRUIKER SET";
+                query += " ACTIEF = 0 WHERE NAAM = " + account.Username;
+                doQuery(query); //query will be activated
+                return true;
+            }
+            catch
+            {
+                return false;   // if query fails, return a false.
+            }
         }
 
         public bool DeactivateChat(Chat chat)
         {
-            return false;
+            try
+            {
+                string query; // the query will end up in here
+                query = "UPDATE CHAT SET";
+                query += " ACTIEF = 0 WHERE TIJDSTIP = " + chat.Date + " AND VERZENDERID = ";
+                doQuery(query); //query will be activated
+                return true;
+            }
+            catch
+            {
+                return false;   // if query fails, return a false.
+            }
         }
 
         public bool DeactivateHelpRequest(HelpRequest helprequest)

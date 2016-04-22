@@ -28,7 +28,7 @@ namespace EyeCT4Participation.Database
                         retAccount = new Manager(Convert.ToBoolean(results["Auto"]),
                             Convert.ToString(results["Gebruikersnaam"]), Convert.ToString(results["Wachtwoord"]),
                             Convert.ToString(results["Naam"]), Convert.ToString(results["Adres"]),
-                            Convert.ToString(results["Postcode"]), Convert.ToString(results["Woonplaats"]),
+                            Convert.ToString(results["Woonplaats"]),
                             Convert.ToString(results["Email"]), Convert.ToInt32(results["Telefoonnummer"]),
                             Convert.ToDateTime(results["Geboortedatum"]), Convert.ToString(results["Geslacht"]),
                             Convert.ToBoolean(results["Actief"]));
@@ -38,7 +38,7 @@ namespace EyeCT4Participation.Database
                         retAccount = new Needy(Convert.ToBoolean(results["OVkaart"]),
                             Convert.ToString(results["Gebruikersnaam"]), Convert.ToString(results["Wachtwoord"]),
                             Convert.ToString(results["Naam"]), Convert.ToString(results["Adres"]),
-                            Convert.ToString(results["Postcode"]), Convert.ToString(results["Woonplaats"]),
+                            Convert.ToString(results["Woonplaats"]),
                             Convert.ToString(results["Email"]), Convert.ToInt32(results["Telefoonnummer"]),
                             Convert.ToDateTime(results["Geboortedatum"]), Convert.ToString(results["Geslacht"]),
                             Convert.ToBoolean(results["Actief"]));
@@ -48,7 +48,7 @@ namespace EyeCT4Participation.Database
                         retAccount = new Volunteer(Convert.ToBoolean(results["Auto"]),
                             Convert.ToString(results["Gebruikersnaam"]), Convert.ToString(results["Wachtwoord"]),
                             Convert.ToString(results["Naam"]), Convert.ToString(results["Adres"]),
-                            Convert.ToString(results["Postcode"]), Convert.ToString(results["Woonplaats"]),
+                            Convert.ToString(results["Woonplaats"]),
                             Convert.ToString(results["Email"]), Convert.ToInt32(results["Telefoonnummer"]),
                             Convert.ToDateTime(results["Geboortedatum"]), Convert.ToString(results["Geslacht"]),
                             Convert.ToBoolean(results["Actief"]));
