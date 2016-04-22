@@ -17,9 +17,11 @@ namespace EyeCT4Participation
         DBaccount databaseAcc = new DBaccount();
         DBneedy databaseneedy = new DBneedy();
         DBvolunteer databaseVolunteer = new DBvolunteer();
+        
 
         private Administration administration;
         private Chat chat;
+        private Account account;
         public MainForm()
         {
             InitializeComponent();
@@ -39,6 +41,20 @@ namespace EyeCT4Participation
 
         public void btnSend_Click(object sender, EventArgs e)
         {
+            foreach (Chat chat in administration.listChats)
+            {
+                if (administration.LoggedinUser == chat.Receiver)
+                {
+                    foreach (Chat p in administration.listChats)
+                    { lbChatConversation.Items.Add(p);
+                    }
+                }
+                else { MessageBox.Show("Verkeerde gebruiker"); }
+                return false;
+            }
+        }
+
+
             //string message = tbChatMessage.Text;
             //if (message != null && message != "")
             //{
@@ -50,11 +66,10 @@ namespace EyeCT4Participation
             //{
             //    MessageBox.Show("Voer iets in, veld is nog leeg!");
             //}
-        }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            //chat.ListFilterChatmessage();
+
         }
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)
@@ -126,33 +141,37 @@ namespace EyeCT4Participation
             
         }
 
-        public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string woonplaats, string geboortedatum, int telefoonnummer,string type,int geslacht)
+        public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string woonplaats, string email, string geboortedatum, int telefoonnummer,string type,int geslacht, int auto, int ov)
         {
-            
+
             if (type == "Hulpbehoevende")
             {
-                bool doqueryNeedy = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
+                bool doqueryNeedy = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
                 
                 if (doqueryNeedy == true)
                 {
                    lblRegistratieGelukt.Text = "Registratie is gelukt";
+                    lblRegistratieGelukt.Visible = true;
                 }
                 if (doqueryNeedy == false)
                 {
                   lblRegistratieGelukt.Text = "Registratie is mislukt";
+                    lblRegistratieGelukt.Visible = true;
                 }
             }
             else if (type == "Vrijwilliger")
             {
-                bool doqueryVrijwilliger = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, woonplaats, geboortedatum, telefoonnummer, 1, geslacht);
+                bool doqueryVrijwilliger = databaseVolunteer.DoQueryAddVolunteer(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
                
                 if (doqueryVrijwilliger == true)
                 {
                     lblRegistratieGelukt.Text = "Registratie is gelukt";
+                    lblRegistratieGelukt.Visible = true;
                 }
                 if (doqueryVrijwilliger == false)
                 {
                    lblRegistratieGelukt.Text = "Registratie is mislukt";
+                   lblRegistratieGelukt.Visible = true;
                 }
             }
             tbRegistratieGnaam.Clear();
@@ -164,6 +183,8 @@ namespace EyeCT4Participation
             tbRegistratiePhonenumber.Clear();
             cbRegistratieGeslacht.Text = "";
             cbRegistratieType.Text = "";
+            tbRegistratieEmail.Clear();
+            cbRegistratieAuto.Checked = false;
         }
 
         private void btnInloggenInloggen_Click(object sender, EventArgs e)
@@ -171,12 +192,12 @@ namespace EyeCT4Participation
             administration.LoginUser(tbInloggenGnaam.Text, tbInloggenWW.Text);
             if (administration.LoggedinUser != null)
             {
-                if (administration.LoggedinUser.GetType() == typeof (Manager))
+                if (administration.LoggedinUser.GetType() == typeof(Manager))
                 {
                     TabControl.TabPages[4].Enabled = true;
                     //TabControl.TabPages.Add(tabpageBeheer);
                 }
-                if (administration.LoggedinUser.GetType() == typeof (Volunteer))
+                if (administration.LoggedinUser.GetType() == typeof(Volunteer))
                 {
 
                     TabControl.TabPages[1].Enabled = true;
@@ -184,7 +205,7 @@ namespace EyeCT4Participation
                     //TabControl.TabPages.Remove(tabpageChat);
                     //TabControl.TabPages.Remove(tabpageVrijwilliger);
                 }
-                if (administration.LoggedinUser.GetType() == typeof (Needy))
+                if (administration.LoggedinUser.GetType() == typeof(Needy))
                 {
                     TabControl.TabPages[2].Enabled = true;
                     TabControl.TabPages[3].Enabled = true;
@@ -197,6 +218,24 @@ namespace EyeCT4Participation
         private void btnRegistratieOK_Click(object sender, EventArgs e)
         {
             int registratiegeslacht = 2;
+            int auto = 0;
+            int ov = 0;
+            if (cbRegistratieAuto.Checked)
+            {
+                auto = 1;
+            }
+            if (cbRegistratieAuto.Checked == false)
+            {
+                auto = 0;
+            }
+            if (cbRegistratieOv.Checked)
+            {
+                ov = 1;
+            }
+            if (cbRegistratieOv.Checked == false)
+            {
+                ov = 0;
+            }
 
             if (Convert.ToString(cbRegistratieGeslacht.SelectedItem) == "Man")
             {
@@ -206,7 +245,7 @@ namespace EyeCT4Participation
             {
                  registratiegeslacht = 1;
             }
-            Registreer(tbRegistratieGnaam.Text,tbRegistratieWW.Text,tbRegistratieNaam.Text,tbRegistratieAdres.Text,tbRegistratieWplaats.Text,tbRegistratieGeboortedatum.Text,Convert.ToInt32(tbRegistratiePhonenumber.Text),Convert.ToString(cbRegistratieType.SelectedItem),registratiegeslacht);
+            Registreer(tbRegistratieGnaam.Text,tbRegistratieWW.Text,tbRegistratieNaam.Text,tbRegistratieAdres.Text,tbRegistratieWplaats.Text,tbRegistratieEmail.Text,tbRegistratieGeboortedatum.Text,Convert.ToInt32(tbRegistratiePhonenumber.Text),Convert.ToString(cbRegistratieType.SelectedItem),registratiegeslacht, auto, ov);
             
         }
 
@@ -216,6 +255,12 @@ namespace EyeCT4Participation
             {
                 BeheerRefresh();
             }
+        }
+
+        private void BTHelpSend_Click(object sender, EventArgs e)
+        {
+            //if()
+
         }
     }
 }

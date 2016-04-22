@@ -30,7 +30,7 @@ namespace EyeCT4Participation.Database
                     Account newvoluenteer = new Volunteer(Convert.ToInt32(results["id"]), Convert.ToBoolean(results["auto"]), Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]), Convert.ToString(results["naam"]), Convert.ToString(results["adres"]), Convert.ToString(results["woonplaats"]), Convert.ToString(results["email"]), Convert.ToInt32(results["telefoonnummer"]), Convert.ToDateTime(results["geboortedatum"]), Convert.ToString(results["geslacht"]), Convert.ToBoolean(results["actief"]));
                     ret.Add((newvoluenteer));
                 }
-
+                
                 //  ret.Add(); 
             }
             //(Convert.ToString(results["naam"]

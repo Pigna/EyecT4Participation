@@ -11,7 +11,7 @@ namespace EyeCT4Participation
 {
         public abstract class Account
     {
-        
+        private Administration administration;
         public string Username { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
@@ -24,7 +24,7 @@ namespace EyeCT4Participation
         public string Geslacht { get; set; }
         public int id { get; private set; }
 
-        public Account(int id, string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, bool active, string geslacht)
+        public Account(string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, bool active, string geslacht)
         {
             this.id = id;
             this.Username = username;
@@ -37,6 +37,32 @@ namespace EyeCT4Participation
             this.Birthdate = birthdate;
             this.Active = active;
             this.Geslacht = geslacht;
+        }
+        public List<Account> Conversation() //fix needed
+        {
+            foreach (Chat chat in administration.listChats)
+            {
+                if (administration.LoggedinUser == chat.Receiver)
+                {
+                    foreach (Chat p in administration.listChats)
+                    {
+                        
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Verkeerde gebruiker");
+                }
+                return false;
+            }
+            return null;
+            /*
+                foreach (Account account in administration.listAccounts)
+                {
+
+                }
+            }
+            return chat;*/
         }
     }
 }
