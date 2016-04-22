@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.TabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabpageLogin = new System.Windows.Forms.TabPage();
             this.cbRegistratieType = new System.Windows.Forms.ComboBox();
             this.lblRegistratieType = new System.Windows.Forms.Label();
             this.cbRegistratieGeslacht = new System.Windows.Forms.ComboBox();
@@ -59,21 +59,21 @@
             this.lblRegistratieNaam = new System.Windows.Forms.Label();
             this.lblRegistratieWW = new System.Windows.Forms.Label();
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabpageVrijwilliger = new System.Windows.Forms.TabPage();
+            this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabpageChat = new System.Windows.Forms.TabPage();
             this.btnOpen = new System.Windows.Forms.Button();
             this.tbChatMessage = new System.Windows.Forms.RichTextBox();
             this.lbChatConversation = new System.Windows.Forms.ListBox();
             this.lblActiveConversation = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.lbActiveConversations = new System.Windows.Forms.ListBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabpageBeheer = new System.Windows.Forms.TabPage();
             this.btnBeheerFilter = new System.Windows.Forms.Button();
             this.lblBeheerFilter = new System.Windows.Forms.Label();
             this.tbBeheerFilter = new System.Windows.Forms.TextBox();
@@ -92,20 +92,20 @@
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lblRegistratieGelukt = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.tabpageLogin.SuspendLayout();
+            this.tabpageHulpbehoevende.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabpageChat.SuspendLayout();
+            this.tabpageBeheer.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
             // 
-            this.TabControl.Controls.Add(this.tabPage1);
-            this.TabControl.Controls.Add(this.tabPage2);
-            this.TabControl.Controls.Add(this.tabPage4);
-            this.TabControl.Controls.Add(this.tabPage5);
-            this.TabControl.Controls.Add(this.tabPage3);
+            this.TabControl.Controls.Add(this.tabpageLogin);
+            this.TabControl.Controls.Add(this.tabpageVrijwilliger);
+            this.TabControl.Controls.Add(this.tabpageHulpbehoevende);
+            this.TabControl.Controls.Add(this.tabpageChat);
+            this.TabControl.Controls.Add(this.tabpageBeheer);
             this.TabControl.Location = new System.Drawing.Point(12, 12);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
@@ -113,45 +113,44 @@
             this.TabControl.TabIndex = 0;
             this.TabControl.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
             // 
-            // tabPage1
+            // tabpageLogin
             // 
-            this.tabPage1.Controls.Add(this.lblRegistratieGelukt);
-            this.tabPage1.Controls.Add(this.cbRegistratieType);
-            this.tabPage1.Controls.Add(this.lblRegistratieType);
-            this.tabPage1.Controls.Add(this.cbRegistratieGeslacht);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.tbRegistratiePhonenumber);
-            this.tabPage1.Controls.Add(this.lblRegistratiePhonenumber);
-            this.tabPage1.Controls.Add(this.btnInloggenInloggen);
-            this.tabPage1.Controls.Add(this.tbInloggenWW);
-            this.tabPage1.Controls.Add(this.tbInloggenGnaam);
-            this.tabPage1.Controls.Add(this.lblInloggenWW);
-            this.tabPage1.Controls.Add(this.lblInloggenGebruikersnaam);
-            this.tabPage1.Controls.Add(this.lblRegistratieRegistratie);
-            this.tabPage1.Controls.Add(this.lblInloggenInloggen);
-            this.tabPage1.Controls.Add(this.btnRegistratieOK);
-            this.tabPage1.Controls.Add(this.btnRegistratieAnnuleren);
-            this.tabPage1.Controls.Add(this.tbRegistratiePcode);
-            this.tabPage1.Controls.Add(this.tbRegistratieGeboortedatum);
-            this.tabPage1.Controls.Add(this.tbRegistratieWplaats);
-            this.tabPage1.Controls.Add(this.tbRegistratieAdres);
-            this.tabPage1.Controls.Add(this.tbRegistratieNaam);
-            this.tabPage1.Controls.Add(this.tbRegistratieWW);
-            this.tabPage1.Controls.Add(this.tbRegistratieGnaam);
-            this.tabPage1.Controls.Add(this.lblRegistratieGeboortedatum);
-            this.tabPage1.Controls.Add(this.lblRegistratieWoonplaats);
-            this.tabPage1.Controls.Add(this.lblRegistratiePostcode);
-            this.tabPage1.Controls.Add(this.lblRegistratieAdres);
-            this.tabPage1.Controls.Add(this.lblRegistratieNaam);
-            this.tabPage1.Controls.Add(this.lblRegistratieWW);
-            this.tabPage1.Controls.Add(this.lblRegistratieGebruikersnaam);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(942, 631);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Inloggen/Registreren";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabpageLogin.Controls.Add(this.cbRegistratieType);
+            this.tabpageLogin.Controls.Add(this.lblRegistratieType);
+            this.tabpageLogin.Controls.Add(this.cbRegistratieGeslacht);
+            this.tabpageLogin.Controls.Add(this.label1);
+            this.tabpageLogin.Controls.Add(this.tbRegistratiePhonenumber);
+            this.tabpageLogin.Controls.Add(this.lblRegistratiePhonenumber);
+            this.tabpageLogin.Controls.Add(this.btnInloggenInloggen);
+            this.tabpageLogin.Controls.Add(this.tbInloggenWW);
+            this.tabpageLogin.Controls.Add(this.tbInloggenGnaam);
+            this.tabpageLogin.Controls.Add(this.lblInloggenWW);
+            this.tabpageLogin.Controls.Add(this.lblInloggenGebruikersnaam);
+            this.tabpageLogin.Controls.Add(this.lblRegistratieRegistratie);
+            this.tabpageLogin.Controls.Add(this.lblInloggenInloggen);
+            this.tabpageLogin.Controls.Add(this.btnRegistratieOK);
+            this.tabpageLogin.Controls.Add(this.btnRegistratieAnnuleren);
+            this.tabpageLogin.Controls.Add(this.tbRegistratiePcode);
+            this.tabpageLogin.Controls.Add(this.tbRegistratieGeboortedatum);
+            this.tabpageLogin.Controls.Add(this.tbRegistratieWplaats);
+            this.tabpageLogin.Controls.Add(this.tbRegistratieAdres);
+            this.tabpageLogin.Controls.Add(this.tbRegistratieNaam);
+            this.tabpageLogin.Controls.Add(this.tbRegistratieWW);
+            this.tabpageLogin.Controls.Add(this.tbRegistratieGnaam);
+            this.tabpageLogin.Controls.Add(this.lblRegistratieGeboortedatum);
+            this.tabpageLogin.Controls.Add(this.lblRegistratieWoonplaats);
+            this.tabpageLogin.Controls.Add(this.lblRegistratiePostcode);
+            this.tabpageLogin.Controls.Add(this.lblRegistratieAdres);
+            this.tabpageLogin.Controls.Add(this.lblRegistratieNaam);
+            this.tabpageLogin.Controls.Add(this.lblRegistratieWW);
+            this.tabpageLogin.Controls.Add(this.lblRegistratieGebruikersnaam);
+            this.tabpageLogin.Location = new System.Drawing.Point(4, 22);
+            this.tabpageLogin.Name = "tabpageLogin";
+            this.tabpageLogin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabpageLogin.Size = new System.Drawing.Size(942, 631);
+            this.tabpageLogin.TabIndex = 0;
+            this.tabpageLogin.Text = "Inloggen/Registreren";
+            this.tabpageLogin.UseVisualStyleBackColor = true;
             // 
             // cbRegistratieType
             // 
@@ -159,7 +158,7 @@
             this.cbRegistratieType.Items.AddRange(new object[] {
             "Hulpbehoevende",
             "Vrijwilliger"});
-            this.cbRegistratieType.Location = new System.Drawing.Point(548, 338);
+            this.cbRegistratieType.Location = new System.Drawing.Point(411, 275);
             this.cbRegistratieType.Margin = new System.Windows.Forms.Padding(2);
             this.cbRegistratieType.Name = "cbRegistratieType";
             this.cbRegistratieType.Size = new System.Drawing.Size(96, 21);
@@ -426,30 +425,30 @@
             this.lblRegistratieGebruikersnaam.TabIndex = 21;
             this.lblRegistratieGebruikersnaam.Text = "Gebruikersnaam";
             // 
-            // tabPage2
+            // tabpageVrijwilliger
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(942, 631);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Vrijwilliger";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabpageVrijwilliger.Location = new System.Drawing.Point(4, 22);
+            this.tabpageVrijwilliger.Name = "tabpageVrijwilliger";
+            this.tabpageVrijwilliger.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabpageVrijwilliger.Size = new System.Drawing.Size(942, 631);
+            this.tabpageVrijwilliger.TabIndex = 1;
+            this.tabpageVrijwilliger.Text = "Vrijwilliger";
+            this.tabpageVrijwilliger.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // tabpageHulpbehoevende
             // 
-            this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Controls.Add(this.numericUpDown1);
-            this.tabPage4.Controls.Add(this.listBox1);
-            this.tabPage4.Controls.Add(this.button2);
-            this.tabPage4.Controls.Add(this.richTextBox1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage4.Size = new System.Drawing.Size(942, 631);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Hulpbehoevende";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabpageHulpbehoevende.Controls.Add(this.button1);
+            this.tabpageHulpbehoevende.Controls.Add(this.numericUpDown1);
+            this.tabpageHulpbehoevende.Controls.Add(this.listBox1);
+            this.tabpageHulpbehoevende.Controls.Add(this.button2);
+            this.tabpageHulpbehoevende.Controls.Add(this.richTextBox1);
+            this.tabpageHulpbehoevende.Location = new System.Drawing.Point(4, 22);
+            this.tabpageHulpbehoevende.Name = "tabpageHulpbehoevende";
+            this.tabpageHulpbehoevende.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabpageHulpbehoevende.Size = new System.Drawing.Size(942, 631);
+            this.tabpageHulpbehoevende.TabIndex = 3;
+            this.tabpageHulpbehoevende.Text = "Hulpbehoevende";
+            this.tabpageHulpbehoevende.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -497,21 +496,32 @@
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "Help mij met..";
             // 
-            // tabPage5
+            // tabpageChat
             // 
-            this.tabPage5.Controls.Add(this.btnOpen);
-            this.tabPage5.Controls.Add(this.tbChatMessage);
-            this.tabPage5.Controls.Add(this.lbChatConversation);
-            this.tabPage5.Controls.Add(this.lblActiveConversation);
-            this.tabPage5.Controls.Add(this.btnSend);
-            this.tabPage5.Controls.Add(this.lbActiveConversations);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage5.Size = new System.Drawing.Size(942, 631);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Chat";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabpageChat.Controls.Add(this.btnOpen);
+            this.tabpageChat.Controls.Add(this.tbChatMessage);
+            this.tabpageChat.Controls.Add(this.lbChatConversation);
+            this.tabpageChat.Controls.Add(this.lblActiveConversation);
+            this.tabpageChat.Controls.Add(this.btnSend);
+            this.tabpageChat.Controls.Add(this.lbActiveConversations);
+            this.tabpageChat.Location = new System.Drawing.Point(4, 22);
+            this.tabpageChat.Name = "tabpageChat";
+            this.tabpageChat.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabpageChat.Size = new System.Drawing.Size(942, 631);
+            this.tabpageChat.TabIndex = 4;
+            this.tabpageChat.Text = "Chat";
+            this.tabpageChat.UseVisualStyleBackColor = true;
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Location = new System.Drawing.Point(8, 592);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(56, 19);
+            this.btnOpen.TabIndex = 18;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnOpen
             // 
@@ -570,32 +580,32 @@
             this.lbActiveConversations.Size = new System.Drawing.Size(249, 563);
             this.lbActiveConversations.TabIndex = 8;
             // 
-            // tabPage3
+            // tabpageBeheer
             // 
-            this.tabPage3.Controls.Add(this.btnBeheerFilter);
-            this.tabPage3.Controls.Add(this.lblBeheerFilter);
-            this.tabPage3.Controls.Add(this.tbBeheerFilter);
-            this.tabPage3.Controls.Add(this.btnBeheerChatDeactiveren);
-            this.tabPage3.Controls.Add(this.lblBeheerBeoordeling);
-            this.tabPage3.Controls.Add(this.lblBeheerChat);
-            this.tabPage3.Controls.Add(this.lblBeheerHulpaanvraag);
-            this.tabPage3.Controls.Add(this.lblBeheerAccount);
-            this.tabPage3.Controls.Add(this.btnBeheerBeoordelingDeactiveren);
-            this.tabPage3.Controls.Add(this.btnBeheerHulpaanvraagDeactiveren);
-            this.tabPage3.Controls.Add(this.lbBeheerBeoordeling);
-            this.tabPage3.Controls.Add(this.lbBeheerChat);
-            this.tabPage3.Controls.Add(this.lbBeheerHulpaanvraag);
-            this.tabPage3.Controls.Add(this.btnBeheerAccountDeactiveren);
-            this.tabPage3.Controls.Add(this.btnBeheerAccountAanpassen);
-            this.tabPage3.Controls.Add(this.lbBeheerAccount);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage3.Size = new System.Drawing.Size(942, 631);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Beheer";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabpageBeheer.Controls.Add(this.btnBeheerFilter);
+            this.tabpageBeheer.Controls.Add(this.lblBeheerFilter);
+            this.tabpageBeheer.Controls.Add(this.tbBeheerFilter);
+            this.tabpageBeheer.Controls.Add(this.btnBeheerChatDeactiveren);
+            this.tabpageBeheer.Controls.Add(this.lblBeheerBeoordeling);
+            this.tabpageBeheer.Controls.Add(this.lblBeheerChat);
+            this.tabpageBeheer.Controls.Add(this.lblBeheerHulpaanvraag);
+            this.tabpageBeheer.Controls.Add(this.lblBeheerAccount);
+            this.tabpageBeheer.Controls.Add(this.btnBeheerBeoordelingDeactiveren);
+            this.tabpageBeheer.Controls.Add(this.btnBeheerHulpaanvraagDeactiveren);
+            this.tabpageBeheer.Controls.Add(this.lbBeheerBeoordeling);
+            this.tabpageBeheer.Controls.Add(this.lbBeheerChat);
+            this.tabpageBeheer.Controls.Add(this.lbBeheerHulpaanvraag);
+            this.tabpageBeheer.Controls.Add(this.btnBeheerAccountDeactiveren);
+            this.tabpageBeheer.Controls.Add(this.btnBeheerAccountAanpassen);
+            this.tabpageBeheer.Controls.Add(this.lbBeheerAccount);
+            this.tabpageBeheer.Location = new System.Drawing.Point(4, 22);
+            this.tabpageBeheer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpageBeheer.Name = "tabpageBeheer";
+            this.tabpageBeheer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpageBeheer.Size = new System.Drawing.Size(942, 631);
+            this.tabpageBeheer.TabIndex = 2;
+            this.tabpageBeheer.Text = "Beheer";
+            this.tabpageBeheer.UseVisualStyleBackColor = true;
             // 
             // btnBeheerFilter
             // 
@@ -777,14 +787,14 @@
             this.Controls.Add(this.TabControl);
             this.Name = "MainForm";
             this.TabControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
+            this.tabpageLogin.ResumeLayout(false);
+            this.tabpageLogin.PerformLayout();
+            this.tabpageHulpbehoevende.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tabpageChat.ResumeLayout(false);
+            this.tabpageChat.PerformLayout();
+            this.tabpageBeheer.ResumeLayout(false);
+            this.tabpageBeheer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -792,9 +802,9 @@
         #endregion
 
         private System.Windows.Forms.TabControl TabControl;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabpageLogin;
+        private System.Windows.Forms.TabPage tabpageVrijwilliger;
+        private System.Windows.Forms.TabPage tabpageBeheer;
         private System.Windows.Forms.Button btnBeheerFilter;
         private System.Windows.Forms.Label lblBeheerFilter;
         private System.Windows.Forms.TextBox tbBeheerFilter;
@@ -811,8 +821,8 @@
         private System.Windows.Forms.Button btnBeheerAccountDeactiveren;
         private System.Windows.Forms.Button btnBeheerAccountAanpassen;
         private System.Windows.Forms.ListBox lbBeheerAccount;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabpageHulpbehoevende;
+        private System.Windows.Forms.TabPage tabpageChat;
         private System.Windows.Forms.Button btnInloggenInloggen;
         private System.Windows.Forms.TextBox tbInloggenWW;
         private System.Windows.Forms.TextBox tbInloggenGnaam;
