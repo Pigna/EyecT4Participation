@@ -39,7 +39,7 @@ namespace EyeCT4Participation
         //            }
         //        }
         //    }
-        //    return accountfilter      
+        //    return accountfilter;
         //}
         
         public override string ToString()
