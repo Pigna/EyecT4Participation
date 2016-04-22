@@ -217,5 +217,10 @@ namespace EyeCT4Participation
                 BeheerRefresh();
             }
         }
+
+        private void BTHelpSend_Click(object sender, EventArgs e)
+        {
+            if 
+        }
     }
 }
