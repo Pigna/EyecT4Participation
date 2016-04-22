@@ -24,11 +24,12 @@ namespace EyeCT4Participation
         {
             InitializeComponent();
             administration = new Administration();
-
+            /*
             TabControl.TabPages[1].Enabled = false;
             TabControl.TabPages[2].Enabled = false;
             TabControl.TabPages[3].Enabled = false;
             TabControl.TabPages[4].Enabled = false;
+             */
         }
 
         public void btnSend_Click(object sender, EventArgs e)
