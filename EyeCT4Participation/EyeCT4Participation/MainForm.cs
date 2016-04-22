@@ -24,7 +24,17 @@ namespace EyeCT4Participation
         {
             InitializeComponent();
             administration = new Administration();
-            TabControl.TabPages[0].Enabled = false;
+            /*
+            TabControl.TabPages[1].Enabled = false;
+            TabControl.TabPages[2].Enabled = false;
+            TabControl.TabPages[3].Enabled = false;
+            TabControl.TabPages[4].Enabled = false;
+
+            TabControl.TabPages.Remove(tabpageBeheer);
+            TabControl.TabPages.Remove(tabpageChat);
+            TabControl.TabPages.Remove(tabpageHulpbehoevende);
+            TabControl.TabPages.Remove(tabpageVrijwilliger);
+             */
         }
 
         public void btnSend_Click(object sender, EventArgs e)
@@ -132,6 +142,29 @@ namespace EyeCT4Participation
         private void btnInloggenInloggen_Click(object sender, EventArgs e)
         {
             administration.LoginUser(tbInloggenGnaam.Text, tbInloggenWW.Text);
+            if (administration.LoggedinUser != null)
+            {
+                if (administration.LoggedinUser.GetType() == typeof (Manager))
+                {
+                    TabControl.TabPages[4].Enabled = true;
+                    //TabControl.TabPages.Add(tabpageBeheer);
+                }
+                if (administration.LoggedinUser.GetType() == typeof (Volunteer))
+                {
+
+                    TabControl.TabPages[1].Enabled = true;
+                    TabControl.TabPages[3].Enabled = true;
+                    //TabControl.TabPages.Remove(tabpageChat);
+                    //TabControl.TabPages.Remove(tabpageVrijwilliger);
+                }
+                if (administration.LoggedinUser.GetType() == typeof (Needy))
+                {
+                    TabControl.TabPages[2].Enabled = true;
+                    TabControl.TabPages[3].Enabled = true;
+                    //TabControl.TabPages.Remove(tabpageChat);
+                    //TabControl.TabPages.Remove(tabpageHulpbehoevende);
+                }
+            }
         }
 
         private void btnRegistratieOK_Click(object sender, EventArgs e)
