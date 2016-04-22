@@ -22,5 +22,20 @@ namespace EyeCT4Participation.Database
                 return false;   // if query fails, return a false.
             }
         }
+
+        public bool DoQueryAddReaction(string query)
+        {
+            try
+            {
+                string Query;
+                Query = query;
+                doQuery(Query);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
