@@ -130,5 +130,20 @@ namespace EyeCT4Participation.Database
 
             return ret;     //this will return the list as result from the query.
         }
+        public int getLatestId(String table)
+        {
+            List<Dictionary<string, object>> data = getQuery("SELECT MAX(Id) + 1 AS ID FROM " + table);
+
+            if (data == null)
+                return 0;
+
+            if (data.Count > 0)
+                return Convert.ToInt16(data[0]["id"]);
+            return -1;
+        }
     }
+
+
+
+
 }
