@@ -24,6 +24,7 @@ namespace EyeCT4Participation
         {
             InitializeComponent();
             administration = new Administration();
+            TabControl.TabPages[0].Enabled = false;
         }
 
         public void btnSend_Click(object sender, EventArgs e)

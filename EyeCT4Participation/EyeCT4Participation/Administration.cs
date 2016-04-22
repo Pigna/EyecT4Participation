@@ -16,7 +16,7 @@ namespace EyeCT4Participation
         public List<Review> listReviews = new List<Review>();
         private DBadministratie dbadministration = new DBadministratie();
         public Account LoggedinUser;
-        DBaccount databaseAcc = new DBaccount();
+        private DBaccount databaseAcc = new DBaccount();
 
         public void ListRefresh()
         {
