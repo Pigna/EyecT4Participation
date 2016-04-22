@@ -27,7 +27,6 @@ namespace EyeCT4Participation.Database
                     {
                         retAccount = new Manager(
                             Convert.ToInt32(results["id"]),
-                            Convert.ToBoolean(results["Auto"]),
                             Convert.ToString(results["Gebruikersnaam"]), Convert.ToString(results["Wachtwoord"]),
                             Convert.ToString(results["Naam"]), Convert.ToString(results["Adres"]),
                             Convert.ToString(results["Woonplaats"]),

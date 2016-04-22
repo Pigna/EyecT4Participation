@@ -43,14 +43,13 @@ namespace EyeCT4Participation
         {
             foreach (Chat chat in administration.listChats)
             {
-                if (administration.LoggedinUser == chat.Receiver)
+                if (administration.LoggedinUser == chat.receiver)
                 {
                     foreach (Chat p in administration.listChats)
                     { lbChatConversation.Items.Add(p);
                     }
                 }
                 else { MessageBox.Show("Verkeerde gebruiker"); }
-                return false;
             }
         }
 

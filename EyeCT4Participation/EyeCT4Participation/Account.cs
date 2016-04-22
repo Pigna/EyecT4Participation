@@ -24,7 +24,7 @@ namespace EyeCT4Participation
         public string Geslacht { get; set; }
         public int id { get; private set; }
 
-        public Account(string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, bool active, string geslacht)
+        public Account(int id, string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, bool active, string geslacht)
         {
             this.id = id;
             this.Username = username;
@@ -39,10 +39,10 @@ namespace EyeCT4Participation
             this.Geslacht = geslacht;
         }
         public List<Account> Conversation() //fix needed
-        {
+        {/*
             foreach (Chat chat in administration.listChats)
             {
-                if (administration.LoggedinUser == chat.Receiver)
+                if (administration.LoggedinUser == chat)
                 {
                     foreach (Chat p in administration.listChats)
                     {
@@ -53,9 +53,9 @@ namespace EyeCT4Participation
                 {
                     MessageBox.Show("Verkeerde gebruiker");
                 }
-                return false;
+                return null;
             }
-            return null;
+            return null;*/
             /*
                 foreach (Account account in administration.listAccounts)
                 {
@@ -63,6 +63,7 @@ namespace EyeCT4Participation
                 }
             }
             return chat;*/
+            return null;
         }
     }
 }
