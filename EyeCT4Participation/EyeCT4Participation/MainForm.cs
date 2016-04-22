@@ -127,12 +127,12 @@ namespace EyeCT4Participation
             
         }
 
-        public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string woonplaats, string email, string geboortedatum, int telefoonnummer,string type,int geslacht, int auto)
+        public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string woonplaats, string email, string geboortedatum, int telefoonnummer,string type,int geslacht, int auto, int ov)
         {
 
             if (type == "Hulpbehoevende")
             {
-                bool doqueryNeedy = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1);
+                bool doqueryNeedy = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
                 
                 if (doqueryNeedy == true)
                 {
@@ -147,7 +147,7 @@ namespace EyeCT4Participation
             }
             else if (type == "Vrijwilliger")
             {
-                bool doqueryVrijwilliger = databaseVolunteer.DoQueryAddVolunteer(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1);
+                bool doqueryVrijwilliger = databaseVolunteer.DoQueryAddVolunteer(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
                
                 if (doqueryVrijwilliger == true)
                 {
@@ -205,6 +205,7 @@ namespace EyeCT4Participation
         {
             int registratiegeslacht = 2;
             int auto = 0;
+            int ov = 0;
             if (cbRegistratieAuto.Checked)
             {
                 auto = 1;
@@ -212,6 +213,14 @@ namespace EyeCT4Participation
             if (cbRegistratieAuto.Checked == false)
             {
                 auto = 0;
+            }
+            if (cbRegistratieOv.Checked)
+            {
+                ov = 1;
+            }
+            if (cbRegistratieOv.Checked == false)
+            {
+                ov = 0;
             }
 
             if (Convert.ToString(cbRegistratieGeslacht.SelectedItem) == "Man")
@@ -222,7 +231,7 @@ namespace EyeCT4Participation
             {
                  registratiegeslacht = 1;
             }
-            Registreer(tbRegistratieGnaam.Text,tbRegistratieWW.Text,tbRegistratieNaam.Text,tbRegistratieAdres.Text,tbRegistratieWplaats.Text,tbRegistratieEmail.Text,tbRegistratieGeboortedatum.Text,Convert.ToInt32(tbRegistratiePhonenumber.Text),Convert.ToString(cbRegistratieType.SelectedItem),registratiegeslacht, auto);
+            Registreer(tbRegistratieGnaam.Text,tbRegistratieWW.Text,tbRegistratieNaam.Text,tbRegistratieAdres.Text,tbRegistratieWplaats.Text,tbRegistratieEmail.Text,tbRegistratieGeboortedatum.Text,Convert.ToInt32(tbRegistratiePhonenumber.Text),Convert.ToString(cbRegistratieType.SelectedItem),registratiegeslacht, auto, ov);
             
         }
 
@@ -236,7 +245,8 @@ namespace EyeCT4Participation
 
         private void BTHelpSend_Click(object sender, EventArgs e)
         {
-            if 
+            //if()
+
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabpageLogin = new System.Windows.Forms.TabPage();
+            this.lblRegistratieGelukt = new System.Windows.Forms.Label();
             this.cbRegistratieAuto = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbRegistratieEmail = new System.Windows.Forms.TextBox();
@@ -63,6 +64,7 @@
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
             this.tabpageVrijwilliger = new System.Windows.Forms.TabPage();
             this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
+            this.CBUrgent = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -92,8 +94,8 @@
             this.btnBeheerAccountDeactiveren = new System.Windows.Forms.Button();
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
-            this.lblRegistratieGelukt = new System.Windows.Forms.Label();
-            this.CBUrgent = new System.Windows.Forms.CheckBox();
+            this.lblRegistratieOv = new System.Windows.Forms.Label();
+            this.cbRegistratieOv = new System.Windows.Forms.CheckBox();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageHulpbehoevende.SuspendLayout();
@@ -118,6 +120,8 @@
             // 
             // tabpageLogin
             // 
+            this.tabpageLogin.Controls.Add(this.cbRegistratieOv);
+            this.tabpageLogin.Controls.Add(this.lblRegistratieOv);
             this.tabpageLogin.Controls.Add(this.lblRegistratieGelukt);
             this.tabpageLogin.Controls.Add(this.cbRegistratieAuto);
             this.tabpageLogin.Controls.Add(this.label2);
@@ -157,6 +161,16 @@
             this.tabpageLogin.TabIndex = 0;
             this.tabpageLogin.Text = "Inloggen/Registreren";
             this.tabpageLogin.UseVisualStyleBackColor = true;
+            // 
+            // lblRegistratieGelukt
+            // 
+            this.lblRegistratieGelukt.AutoSize = true;
+            this.lblRegistratieGelukt.Location = new System.Drawing.Point(660, 484);
+            this.lblRegistratieGelukt.Name = "lblRegistratieGelukt";
+            this.lblRegistratieGelukt.Size = new System.Drawing.Size(35, 13);
+            this.lblRegistratieGelukt.TabIndex = 58;
+            this.lblRegistratieGelukt.Text = "label3";
+            this.lblRegistratieGelukt.Visible = false;
             // 
             // cbRegistratieAuto
             // 
@@ -321,7 +335,7 @@
             // 
             // btnRegistratieOK
             // 
-            this.btnRegistratieOK.Location = new System.Drawing.Point(573, 447);
+            this.btnRegistratieOK.Location = new System.Drawing.Point(573, 481);
             this.btnRegistratieOK.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistratieOK.Name = "btnRegistratieOK";
             this.btnRegistratieOK.Size = new System.Drawing.Size(56, 19);
@@ -332,7 +346,7 @@
             // 
             // btnRegistratieAnnuleren
             // 
-            this.btnRegistratieAnnuleren.Location = new System.Drawing.Point(444, 447);
+            this.btnRegistratieAnnuleren.Location = new System.Drawing.Point(444, 481);
             this.btnRegistratieAnnuleren.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistratieAnnuleren.Name = "btnRegistratieAnnuleren";
             this.btnRegistratieAnnuleren.Size = new System.Drawing.Size(72, 19);
@@ -473,6 +487,16 @@
             this.tabpageHulpbehoevende.TabIndex = 3;
             this.tabpageHulpbehoevende.Text = "Hulpbehoevende";
             this.tabpageHulpbehoevende.UseVisualStyleBackColor = true;
+            // 
+            // CBUrgent
+            // 
+            this.CBUrgent.AutoSize = true;
+            this.CBUrgent.Location = new System.Drawing.Point(115, 143);
+            this.CBUrgent.Name = "CBUrgent";
+            this.CBUrgent.Size = new System.Drawing.Size(58, 17);
+            this.CBUrgent.TabIndex = 16;
+            this.CBUrgent.Text = "Urgent";
+            this.CBUrgent.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -785,25 +809,24 @@
             this.lbBeheerAccount.Size = new System.Drawing.Size(305, 277);
             this.lbBeheerAccount.TabIndex = 41;
             // 
-            // lblRegistratieGelukt
+            // lblRegistratieOv
             // 
-            this.lblRegistratieGelukt.AutoSize = true;
-            this.lblRegistratieGelukt.Location = new System.Drawing.Point(660, 450);
-            this.lblRegistratieGelukt.Name = "lblRegistratieGelukt";
-            this.lblRegistratieGelukt.Size = new System.Drawing.Size(35, 13);
-            this.lblRegistratieGelukt.TabIndex = 58;
-            this.lblRegistratieGelukt.Text = "label3";
-            this.lblRegistratieGelukt.Visible = false;
+            this.lblRegistratieOv.AutoSize = true;
+            this.lblRegistratieOv.Location = new System.Drawing.Point(436, 441);
+            this.lblRegistratieOv.Name = "lblRegistratieOv";
+            this.lblRegistratieOv.Size = new System.Drawing.Size(22, 13);
+            this.lblRegistratieOv.TabIndex = 59;
+            this.lblRegistratieOv.Text = "OV";
             // 
-            // CBUrgent
+            // cbRegistratieOv
             // 
-            this.CBUrgent.AutoSize = true;
-            this.CBUrgent.Location = new System.Drawing.Point(115, 143);
-            this.CBUrgent.Name = "CBUrgent";
-            this.CBUrgent.Size = new System.Drawing.Size(58, 17);
-            this.CBUrgent.TabIndex = 16;
-            this.CBUrgent.Text = "Urgent";
-            this.CBUrgent.UseVisualStyleBackColor = true;
+            this.cbRegistratieOv.AutoSize = true;
+            this.cbRegistratieOv.Location = new System.Drawing.Point(548, 440);
+            this.cbRegistratieOv.Name = "cbRegistratieOv";
+            this.cbRegistratieOv.Size = new System.Drawing.Size(122, 17);
+            this.cbRegistratieOv.TabIndex = 60;
+            this.cbRegistratieOv.Text = "Ik heb een OV-kaart";
+            this.cbRegistratieOv.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -894,6 +917,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblRegistratieGelukt;
         private System.Windows.Forms.CheckBox CBUrgent;
+        private System.Windows.Forms.CheckBox cbRegistratieOv;
+        private System.Windows.Forms.Label lblRegistratieOv;
     }
 }
 

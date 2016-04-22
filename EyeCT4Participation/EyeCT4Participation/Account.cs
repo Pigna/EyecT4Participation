@@ -55,7 +55,7 @@ namespace EyeCT4Participation
                 }
                 //return false;
             }
-
+            return null;
             /*
                 foreach (Account account in administration.listAccounts)
                 {
