@@ -19,7 +19,7 @@ namespace EyeCT4Participation
         public Needy Needy { get; set; }
         List<Volunteer> ListVolunteers = new List<Volunteer>();
 
-        public HelpRequest(string question, string description, DateTime date, bool urgency, bool active, Needy needy)
+        public HelpRequest(string question, string description, DateTime date, bool urgency, bool active, Needy needy, List<Volunteer> ListVolunteers)
         {
             this.Question = question;
             this.Description = description;
@@ -27,6 +27,10 @@ namespace EyeCT4Participation
             this.Urgency = urgency;
             this.Active = active;
             this.Needy = needy;
+            foreach (Volunteer volunteer in ListVolunteers)
+            {
+                AddVolunteer(volunteer);
+            }
         }
 
         public void AddVolunteer(Volunteer volunteer)
