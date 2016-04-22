@@ -53,7 +53,7 @@ namespace EyeCT4Participation
                 {
                     MessageBox.Show("Verkeerde gebruiker");
                 }
-                //return false;
+                return false;
             }
             return null;
             /*

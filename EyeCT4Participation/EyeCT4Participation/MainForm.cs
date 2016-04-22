@@ -21,6 +21,7 @@ namespace EyeCT4Participation
 
         private Administration administration;
         private Chat chat;
+        private Account account;
         public MainForm()
         {
             InitializeComponent();
@@ -40,6 +41,20 @@ namespace EyeCT4Participation
 
         public void btnSend_Click(object sender, EventArgs e)
         {
+            foreach (Chat chat in administration.listChats)
+            {
+                if (administration.LoggedinUser == chat.Receiver)
+                {
+                    foreach (Chat p in administration.listChats)
+                    { lbChatConversation.Items.Add(p);
+                    }
+                }
+                else { MessageBox.Show("Verkeerde gebruiker"); }
+                return false;
+            }
+        }
+
+
             //string message = tbChatMessage.Text;
             //if (message != null && message != "")
             //{
@@ -51,11 +66,10 @@ namespace EyeCT4Participation
             //{
             //    MessageBox.Show("Voer iets in, veld is nog leeg!");
             //}
-        }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            //chat.ListFilterChatmessage();
+
         }
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)
@@ -178,12 +192,12 @@ namespace EyeCT4Participation
             administration.LoginUser(tbInloggenGnaam.Text, tbInloggenWW.Text);
             if (administration.LoggedinUser != null)
             {
-                if (administration.LoggedinUser.GetType() == typeof (Manager))
+                if (administration.LoggedinUser.GetType() == typeof(Manager))
                 {
                     TabControl.TabPages[4].Enabled = true;
                     //TabControl.TabPages.Add(tabpageBeheer);
                 }
-                if (administration.LoggedinUser.GetType() == typeof (Volunteer))
+                if (administration.LoggedinUser.GetType() == typeof(Volunteer))
                 {
 
                     TabControl.TabPages[1].Enabled = true;
@@ -191,7 +205,7 @@ namespace EyeCT4Participation
                     //TabControl.TabPages.Remove(tabpageChat);
                     //TabControl.TabPages.Remove(tabpageVrijwilliger);
                 }
-                if (administration.LoggedinUser.GetType() == typeof (Needy))
+                if (administration.LoggedinUser.GetType() == typeof(Needy))
                 {
                     TabControl.TabPages[2].Enabled = true;
                     TabControl.TabPages[3].Enabled = true;

@@ -24,11 +24,10 @@ namespace EyeCT4Participation
             Active = active;
         }
 
-        
-        //public override string ToString()
-        //{
-        //    return Date + " " + Sender.Name + ": " + Message;
-        //}
+        public override string ToString()
+        {
+            return Date + " " + Sender.Name + ": " + Message;
+        }
 
     }
 }
