@@ -98,14 +98,12 @@ namespace EyeCT4Participation
 
         public bool LoginUser(string username, string password)
         {
-            if (databaseAcc.GetQueryLogIn(username, password) == LoggedinUser)
+            Account loginAccount = databaseAcc.GetQueryLogIn(username, password);
+
+            if (loginAccount != null)
             {
+                LoggedinUser = loginAccount;
                 return true;
-            }
-            else if (databaseAcc.GetQueryLogIn(username, password) != LoggedinUser)
-            {
-                
-                return false;
             }
             return false;
         }
