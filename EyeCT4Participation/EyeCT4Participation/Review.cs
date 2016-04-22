@@ -13,19 +13,24 @@ namespace EyeCT4Participation
         public string Description { get; set; }
         public string Reaction { get; set; }
         public bool Active { get; set; }
+        public DateTime Date { get; set; }
+        public Account Needy { get; set; }
+        public Account Volunteer { get; set; }
+        public int id { get; private set; }
 
-        public Review(int score, string description, string reaction, bool active)
+
+        public Review(int id, int score, string description, string reaction, bool active, DateTime date, Account needy, Account volunteer)
         {
+            this.id = id;
             this.Score = score;
             this.Description = description;
             this.Reaction = reaction;
             this.Active = active;
+            this.Date = date;
+            this.Needy = needy;
+            this.Volunteer = volunteer;
         }
 
-        public Review()
-        {
-
-        }
 
         public void AddReaction(Account sender, string message, DateTime date)
         {

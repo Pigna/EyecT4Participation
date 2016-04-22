@@ -10,18 +10,20 @@ namespace EyeCT4Participation
 {
         public class Chat
     {
-        public string Message;
-        public DateTime Date;
-        public Account Sender;
-        public Account Receiver;
+        public string message;
+        public DateTime date;
+        public Account sender;
+        public Account receiver;
         public bool Active;
-        public Chat(string message, DateTime date, Account sender, Account receiver, bool active)
+        public int id { get; private set; }
+        public Chat(int id, string message, DateTime date, Account sender, Account receiver, bool active)
         {
-            Message = message;
-            Date = date;
-            Sender = sender;
-            Receiver = receiver;
-            Active = active;
+            this.id = id;
+            this.message = message;
+            this.date = date;
+            this.sender = sender;
+            this.receiver = receiver;
+            this.Active = active;
         }
 
         

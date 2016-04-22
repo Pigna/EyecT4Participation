@@ -22,9 +22,11 @@ namespace EyeCT4Participation
         public DateTime Birthdate { get; set; }
         public bool Active { get; set; }
         public string Geslacht { get; set; }
+        public int id { get; private set; }
 
-        public Account(string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, bool active, string geslacht)
+        public Account(int id, string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, bool active, string geslacht)
         {
+            this.id = id;
             this.Username = username;
             this.Password = password;
             this.Name = name;

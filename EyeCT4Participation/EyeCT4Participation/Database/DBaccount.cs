@@ -25,7 +25,9 @@ namespace EyeCT4Participation.Database
 
                     if (returnvalue == 0)
                     {
-                        retAccount = new Manager(Convert.ToBoolean(results["Auto"]),
+                        retAccount = new Manager(
+                            Convert.ToInt32(results["id"]),
+                            Convert.ToBoolean(results["Auto"]),
                             Convert.ToString(results["Gebruikersnaam"]), Convert.ToString(results["Wachtwoord"]),
                             Convert.ToString(results["Naam"]), Convert.ToString(results["Adres"]),
                             Convert.ToString(results["Woonplaats"]),
@@ -35,7 +37,9 @@ namespace EyeCT4Participation.Database
                     }
                     else if (returnvalue == 1)
                     {
-                        retAccount = new Needy(Convert.ToBoolean(results["OVkaart"]),
+                        retAccount = new Needy(
+                            Convert.ToInt32(results["id"]),
+                            Convert.ToBoolean(results["OVkaart"]),
                             Convert.ToString(results["Gebruikersnaam"]), Convert.ToString(results["Wachtwoord"]),
                             Convert.ToString(results["Naam"]), Convert.ToString(results["Adres"]),
                             Convert.ToString(results["Woonplaats"]),
@@ -45,7 +49,9 @@ namespace EyeCT4Participation.Database
                     }
                     else if (returnvalue == 2)
                     {
-                        retAccount = new Volunteer(Convert.ToBoolean(results["Auto"]),
+                        retAccount = new Volunteer(
+                            Convert.ToInt32(results["id"]),
+                            Convert.ToBoolean(results["Auto"]),
                             Convert.ToString(results["Gebruikersnaam"]), Convert.ToString(results["Wachtwoord"]),
                             Convert.ToString(results["Naam"]), Convert.ToString(results["Adres"]),
                             Convert.ToString(results["Woonplaats"]),
