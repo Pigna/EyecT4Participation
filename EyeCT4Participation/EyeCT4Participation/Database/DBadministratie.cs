@@ -167,7 +167,7 @@ namespace EyeCT4Participation.Database
                                   Convert.ToString(needyObjects["geslacht"]), Convert.ToBoolean(needyObjects["actief"]));
                     needyAccount = newneedy;
                 }
-                HelpRequest newHelpRequest = new HelpRequest(Convert.ToString(results["omschrijving"]), null, Convert.ToDateTime(results["startdatum"]), Convert.ToBoolean(results["urgent"]), Convert.ToBoolean(results["actief"]), needyAccount, acccountList);
+                HelpRequest newHelpRequest = new HelpRequest(Convert.ToString(results["omschrijving"]), Convert.ToDateTime(results["startdatum"]), Convert.ToBoolean(results["urgent"]), Convert.ToBoolean(results["actief"]), needyAccount, acccountList);
                 requestslist.Add((newHelpRequest));
 
 
@@ -309,8 +309,11 @@ namespace EyeCT4Participation.Database
             try
             {
                 string query; // the query will end up in here
-                query = "UPDATE CHAT SET";
-                query += " ACTIEF = 0 WHERE TIJDSTIP = " + chat.Date + " AND VERZENDERID = ";
+                query = "UPDATE CHAT ";
+                query += "SET ACTIEF = 0 ";
+                query += "WHERE TIJDSTIP = '" + chat.Date + "' ";
+                query += "AND VERZENDERID = (SELECT ID FROM GEBRUIKER WHERE NAAM = '" + chat.Sender.Name + "') ";
+                query += "AND ONTVANGERID = (SELECT ID FROM GEBRUIKER WHERE NAAM = '" + chat.Receiver.Name + "') ";
                 doQuery(query); //query will be activated
                 return true;
             }
@@ -322,7 +325,21 @@ namespace EyeCT4Participation.Database
 
         public bool DeactivateHelpRequest(HelpRequest helprequest)
         {
-            return false;
+            try
+            {
+                string query; // the query will end up in here
+                query = "UPDATE HULPVRAAG ";
+                query += "SET ACTIEF = 0 ";
+                query += "WHERE STARTDATUM = '" + helprequest.Date + "' ";
+                query += "AND HULPBEHOEVENDEID = (SELECT ID FROM GEBRUIKER WHERE NAAM = '" + helprequest.Needy.Name + "') ";
+                query += "AND OMSCHRIJVING = '" + helprequest.Question + "' ";
+                doQuery(query); //query will be activated
+                return true;
+            }
+            catch
+            {
+                return false;   // if query fails, return a false.
+            }
         }
 
         public bool DeactivateReview(Review review)
