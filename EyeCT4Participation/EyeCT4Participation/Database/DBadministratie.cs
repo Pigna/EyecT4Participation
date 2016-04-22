@@ -17,7 +17,7 @@ namespace EyeCT4Participation.Database
             {
                 if ((Convert.ToInt32(results["type"])) == 0)
                 {
-                    Account newmaManager = new Manager(Convert.ToBoolean(results["gebruikersnaam"]), Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]), Convert.ToString(results["naam"]), Convert.ToString(results["adres"]), null, Convert.ToString(results["woonplaats"]), Convert.ToString(results["email"]), Convert.ToInt32(results["telefoonnummer"]), Convert.ToDateTime(results["geboortedatum"]), Convert.ToString(results["geslacht"]), Convert.ToBoolean(results["actief"]));
+                    Account newmaManager = new Manager(Convert.ToBoolean(results["auto"]), Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]), Convert.ToString(results["naam"]), Convert.ToString(results["adres"]), null, Convert.ToString(results["woonplaats"]), Convert.ToString(results["email"]), Convert.ToInt32(results["telefoonnummer"]), Convert.ToDateTime(results["geboortedatum"]), Convert.ToString(results["geslacht"]), Convert.ToBoolean(results["actief"]));
                     ret.Add(newmaManager);
                 }
                 else if ((Convert.ToInt32(results["type"])) == 1)
@@ -58,7 +58,7 @@ namespace EyeCT4Participation.Database
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
-                            Account newmaManager = new Manager(Convert.ToBoolean(results["gebruikersnaam"]),
+                            Account newmaManager = new Manager(Convert.ToBoolean(results["auto"]),
                                 Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
                                 Convert.ToString(results["naam"]), Convert.ToString(results["adres"]), null,
                                 Convert.ToString(results["woonplaats"]), Convert.ToString(results["email"]),
@@ -68,7 +68,7 @@ namespace EyeCT4Participation.Database
                         }
                         else if ((Convert.ToInt32(results["type"])) == 1)
                         {
-                            Account newNeedy = new Needy(Convert.ToBoolean(results[""]),
+                            Account newNeedy = new Needy(Convert.ToBoolean(results["ovkaart"]),
                                 Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
                                 Convert.ToString(results["naam"]), Convert.ToString(results["adres"]), null,
                                 Convert.ToString(results["woonplaats"]), Convert.ToString(results["email"]),
@@ -91,7 +91,7 @@ namespace EyeCT4Participation.Database
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
-                            Account newmaManager = new Manager(Convert.ToBoolean(results["gebruikersnaam"]),
+                            Account newmaManager = new Manager(Convert.ToBoolean(results["auto"]),
                                 Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
                                 Convert.ToString(results["naam"]), Convert.ToString(results["adres"]), null,
                                 Convert.ToString(results["woonplaats"]), Convert.ToString(results["email"]),
@@ -101,7 +101,7 @@ namespace EyeCT4Participation.Database
                         }
                         else if ((Convert.ToInt32(results["type"])) == 1)
                         {
-                            Account newNeedy = new Needy(Convert.ToBoolean(results[""]),
+                            Account newNeedy = new Needy(Convert.ToBoolean(results["ovkaart"]),
                                 Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
                                 Convert.ToString(results["naam"]), Convert.ToString(results["adres"]), null,
                                 Convert.ToString(results["woonplaats"]), Convert.ToString(results["email"]),
@@ -205,7 +205,7 @@ namespace EyeCT4Participation.Database
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
-                            Account newmaManager = new Manager(Convert.ToBoolean(results["gebruikersnaam"]),
+                            Account newmaManager = new Manager(Convert.ToBoolean(results["auto"]),
                                 Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
                                 Convert.ToString(results["naam"]), Convert.ToString(results["adres"]), null,
                                 Convert.ToString(results["woonplaats"]), Convert.ToString(results["email"]),
@@ -215,7 +215,7 @@ namespace EyeCT4Participation.Database
                         }
                         else if ((Convert.ToInt32(results["type"])) == 1)
                         {
-                            Account newNeedy = new Needy(Convert.ToBoolean(results[""]),
+                            Account newNeedy = new Needy(Convert.ToBoolean(results["ovkaart"]),
                                 Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
                                 Convert.ToString(results["naam"]), Convert.ToString(results["adres"]), null,
                                 Convert.ToString(results["woonplaats"]), Convert.ToString(results["email"]),
@@ -238,7 +238,7 @@ namespace EyeCT4Participation.Database
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
-                            Account newmaManager = new Manager(Convert.ToBoolean(results["gebruikersnaam"]),
+                            Account newmaManager = new Manager(Convert.ToBoolean(results["auto"]),
                                 Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
                                 Convert.ToString(results["naam"]), Convert.ToString(results["adres"]), null,
                                 Convert.ToString(results["woonplaats"]), Convert.ToString(results["email"]),
@@ -248,7 +248,7 @@ namespace EyeCT4Participation.Database
                         }
                         else if ((Convert.ToInt32(results["type"])) == 1)
                         {
-                            Account newNeedy = new Needy(Convert.ToBoolean(results[""]),
+                            Account newNeedy = new Needy(Convert.ToBoolean(results["ovkaart"]),
                                 Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
                                 Convert.ToString(results["naam"]), Convert.ToString(results["adres"]), null,
                                 Convert.ToString(results["woonplaats"]), Convert.ToString(results["email"]),
