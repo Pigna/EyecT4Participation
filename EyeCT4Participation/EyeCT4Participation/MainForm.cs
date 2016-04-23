@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using EyeCT4Participation.Database;
 
 namespace EyeCT4Participation
@@ -17,7 +19,7 @@ namespace EyeCT4Participation
         DBaccount dbAccount = new DBaccount();
         DBhelprequest databaseHelprequest = new DBhelprequest();
         DBchat dbChat = new DBchat();
-
+        private Account currentConversation;
         private Administration administration;
         public MainForm()
         {
@@ -122,8 +124,7 @@ namespace EyeCT4Participation
         /// </summary>
         private void VolunteerRefresh()
         {
-            Account account = administration.LoggedinUser;
-            if (account != null)
+            if (administration.LoggedinUser != null)
             {
                 if (administration.LoggedinUser.GetType() == typeof (Volunteer))
                 {
@@ -154,8 +155,26 @@ namespace EyeCT4Participation
 
         private void ChatRefresh()
         {
-            lbChatConversations.Items.Clear();
-            lbChatConversation.Items.Clear();
+            if (administration.LoggedinUser != null)
+            {
+                lbChatConversations.Items.Clear();
+                lbChatConversation.Items.Clear();
+                if (administration.LoggedinUser.GetType() == typeof(Needy))
+                {
+                    foreach (Account account in dbChat.ListConversationVolunteers(administration.LoggedinUser as Needy))
+                    {
+                        lbChatConversations.Items.Add(account);
+                    }
+                }
+                else if (administration.LoggedinUser.GetType() == typeof(Volunteer))
+                {
+                    foreach (Account account in dbChat.ListConversationNeedys(administration.LoggedinUser as Volunteer))
+                    {
+                        lbChatConversations.Items.Add(account);
+                    }
+                }
+            }
+
             
         }
 
@@ -364,22 +383,27 @@ namespace EyeCT4Participation
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TabControl.SelectedTab.Text == "Beheer")
+            Account loggedinaccount = administration.LoggedinUser;
+            if (loggedinaccount != null)
             {
-                BeheerRefresh();
+                if (TabControl.SelectedTab.Text == "Beheer" && loggedinaccount.GetType() == typeof(Manager))
+                {
+                    BeheerRefresh();
+                }
+                if (TabControl.SelectedTab.Text == "Vrijwilliger" && loggedinaccount.GetType() == typeof(Volunteer))
+                {
+                    VolunteerRefresh();
+                }
+                if (TabControl.SelectedTab.Text == "Hulpbehoevende" && loggedinaccount.GetType() == typeof(Needy))
+                {
+                    hulpRefresh();
+                }
+                if (TabControl.SelectedTab.Text == "Chat")
+                {
+                    ChatRefresh();
+                }
             }
-            if (TabControl.SelectedTab.Text == "Vrijwilliger")
-            {
-                VolunteerRefresh();
-            }
-            if (TabControl.SelectedTab.Text == "Hulpbehoevende")
-            {
-                hulpRefresh();
-            }
-            if (TabControl.SelectedTab.Text == "Chat")
-            {
-                hulpRefresh();
-            }
+
         }
 
         private void BTHelpSend_Click(object sender, EventArgs e)
@@ -424,12 +448,15 @@ namespace EyeCT4Participation
 
         private void btnChatSend_Click(object sender, EventArgs e)
         {
-            //string message = tbChatMessage.Text;
-            //if (message != null && message != "")
-            //{
-            //    Chat chat = new Chat(message, date, sender, receiver, active);
-            //    lbChatConversation.Items.Add(chat);
-            //}
+            string message = tbChatMessage.Text;
+            if (message != "" && currentConversation != null)
+            {
+                Chat chat = new Chat(dbChat.getLatestId("Chat"), message, DateTime.Now, administration.LoggedinUser, currentConversation, true);
+                if (dbChat.SendMessage(chat))
+                {
+                    lbChatConversation.Items.Add(chat);
+                }
+            }
 
             //else
             //{
@@ -439,16 +466,15 @@ namespace EyeCT4Participation
 
         private void btnChatOpen_Click(object sender, EventArgs e)
         {
-            foreach (Chat chat in administration.listChats)
+            if (lbChatConversations.SelectedItem != null)
             {
-                if (administration.LoggedinUser == chat.receiver)
+                currentConversation = lbChatConversations.SelectedItem as Account;
+                lblActiveConversation.Text = Convert.ToString(currentConversation.Name);
+                lbChatConversation.Items.Clear();
+                foreach (Chat chat in dbChat.Conversation(administration.LoggedinUser, currentConversation))
                 {
-                    foreach (Chat p in administration.listChats)
-                    {
-                        lbChatConversation.Items.Add(p);
-                    }
+                    lbChatConversation.Items.Add(chat);
                 }
-                else { MessageBox.Show("Verkeerde gebruiker"); }
             }
         }
 
