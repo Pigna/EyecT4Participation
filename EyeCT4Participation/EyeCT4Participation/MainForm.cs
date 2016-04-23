@@ -16,7 +16,7 @@ namespace EyeCT4Participation
         
         DBaccount dbAccount = new DBaccount();
         DBhelprequest databaseHelprequest = new DBhelprequest();
-        
+        DBchat dbChat = new DBchat();
 
         private Administration administration;
         public MainForm()
@@ -142,7 +142,6 @@ namespace EyeCT4Participation
                 }
             }
         }
-
         private void hulpRefresh()
         {
 
@@ -151,6 +150,13 @@ namespace EyeCT4Participation
             {
                 lbhulpvragen.Items.Add(helprequest.ToString());
             }
+        }
+
+        private void ChatRefresh()
+        {
+            lbChatConversations.Items.Clear();
+            lbChatConversation.Items.Clear();
+            
         }
 
         private void btnBeheerAccountDeactiveren_Click(object sender, EventArgs e)
@@ -367,6 +373,10 @@ namespace EyeCT4Participation
                 VolunteerRefresh();
             }
             if (TabControl.SelectedTab.Text == "Hulpbehoevende")
+            {
+                hulpRefresh();
+            }
+            if (TabControl.SelectedTab.Text == "Chat")
             {
                 hulpRefresh();
             }
