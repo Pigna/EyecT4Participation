@@ -108,6 +108,8 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
+            this.btnHulpUitloggen = new System.Windows.Forms.Button();
+            this.btnVrijwilligerUitloggen = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -285,6 +287,7 @@
             // tbRegistratiePhonenumber
             // 
             this.tbRegistratiePhonenumber.Location = new System.Drawing.Point(548, 272);
+            this.tbRegistratiePhonenumber.MaxLength = 10;
             this.tbRegistratiePhonenumber.Name = "tbRegistratiePhonenumber";
             this.tbRegistratiePhonenumber.Size = new System.Drawing.Size(96, 20);
             this.tbRegistratiePhonenumber.TabIndex = 49;
@@ -496,6 +499,7 @@
             // 
             // tabpageVrijwilliger
             // 
+            this.tabpageVrijwilliger.Controls.Add(this.btnVrijwilligerUitloggen);
             this.tabpageVrijwilliger.Controls.Add(this.btnVolunteerReviewReact);
             this.tabpageVrijwilliger.Controls.Add(this.btnVolunteerHelprequestRegister);
             this.tabpageVrijwilliger.Controls.Add(this.lblVolunteerReview);
@@ -575,6 +579,7 @@
             // 
             // tabpageHulpbehoevende
             // 
+            this.tabpageHulpbehoevende.Controls.Add(this.btnHulpUitloggen);
             this.tabpageHulpbehoevende.Controls.Add(this.cbUsers);
             this.tabpageHulpbehoevende.Controls.Add(this.rtdreviewtxt);
             this.tabpageHulpbehoevende.Controls.Add(this.dthelprequest);
@@ -953,6 +958,26 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
+            // btnHulpUitloggen
+            // 
+            this.btnHulpUitloggen.Location = new System.Drawing.Point(460, 6);
+            this.btnHulpUitloggen.Name = "btnHulpUitloggen";
+            this.btnHulpUitloggen.Size = new System.Drawing.Size(103, 45);
+            this.btnHulpUitloggen.TabIndex = 22;
+            this.btnHulpUitloggen.Text = "Uitloggen";
+            this.btnHulpUitloggen.UseVisualStyleBackColor = true;
+            this.btnHulpUitloggen.Click += new System.EventHandler(this.btnHulpUitloggen_Click);
+            // 
+            // btnVrijwilligerUitloggen
+            // 
+            this.btnVrijwilligerUitloggen.Location = new System.Drawing.Point(675, 23);
+            this.btnVrijwilligerUitloggen.Name = "btnVrijwilligerUitloggen";
+            this.btnVrijwilligerUitloggen.Size = new System.Drawing.Size(103, 45);
+            this.btnVrijwilligerUitloggen.TabIndex = 13;
+            this.btnVrijwilligerUitloggen.Text = "Uitloggen";
+            this.btnVrijwilligerUitloggen.UseVisualStyleBackColor = true;
+            this.btnVrijwilligerUitloggen.Click += new System.EventHandler(this.btnVrijwilligerUitloggen_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1058,6 +1083,8 @@
         private System.Windows.Forms.ListBox lbVolunteerHelprequest;
         private System.Windows.Forms.RichTextBox rtdreviewtxt;
         private System.Windows.Forms.ComboBox cbUsers;
+        private System.Windows.Forms.Button btnVrijwilligerUitloggen;
+        private System.Windows.Forms.Button btnHulpUitloggen;
     }
 }
 
