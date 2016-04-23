@@ -96,7 +96,7 @@
             this.btnBeheerAccountDeactiveren = new System.Windows.Forms.Button();
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
-            this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
+            this.lbVolunteerHelprequest = new System.Windows.Forms.ListBox();
             this.lbVolunteerReview = new System.Windows.Forms.ListBox();
             this.tbVolunteerReviewReaction = new System.Windows.Forms.TextBox();
             this.lblVolunteerVolunteer = new System.Windows.Forms.Label();
@@ -497,7 +497,7 @@
             this.tabpageVrijwilliger.Controls.Add(this.lblVolunteerVolunteer);
             this.tabpageVrijwilliger.Controls.Add(this.tbVolunteerReviewReaction);
             this.tabpageVrijwilliger.Controls.Add(this.lbVolunteerReview);
-            this.tabpageVrijwilliger.Controls.Add(this.lbVolunteerVolunteer);
+            this.tabpageVrijwilliger.Controls.Add(this.lbVolunteerHelprequest);
             this.tabpageVrijwilliger.Location = new System.Drawing.Point(4, 22);
             this.tabpageVrijwilliger.Name = "tabpageVrijwilliger";
             this.tabpageVrijwilliger.Padding = new System.Windows.Forms.Padding(3);
@@ -843,13 +843,13 @@
             this.lbBeheerAccount.Size = new System.Drawing.Size(305, 277);
             this.lbBeheerAccount.TabIndex = 41;
             // 
-            // lbVolunteerVolunteer
+            // lbVolunteerHelprequest
             // 
-            this.lbVolunteerVolunteer.FormattingEnabled = true;
-            this.lbVolunteerVolunteer.Location = new System.Drawing.Point(6, 23);
-            this.lbVolunteerVolunteer.Name = "lbVolunteerVolunteer";
-            this.lbVolunteerVolunteer.Size = new System.Drawing.Size(305, 277);
-            this.lbVolunteerVolunteer.TabIndex = 0;
+            this.lbVolunteerHelprequest.FormattingEnabled = true;
+            this.lbVolunteerHelprequest.Location = new System.Drawing.Point(6, 23);
+            this.lbVolunteerHelprequest.Name = "lbVolunteerHelprequest";
+            this.lbVolunteerHelprequest.Size = new System.Drawing.Size(305, 277);
+            this.lbVolunteerHelprequest.TabIndex = 0;
             // 
             // lbVolunteerReview
             // 
@@ -1002,7 +1002,7 @@
         private System.Windows.Forms.Label lblVolunteerVolunteer;
         private System.Windows.Forms.TextBox tbVolunteerReviewReaction;
         private System.Windows.Forms.ListBox lbVolunteerReview;
-        private System.Windows.Forms.ListBox lbVolunteerVolunteer;
+        private System.Windows.Forms.ListBox lbVolunteerHelprequest;
     }
 }
 

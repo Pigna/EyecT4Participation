@@ -20,8 +20,6 @@ namespace EyeCT4Participation
         
 
         private Administration administration;
-        private Chat chat;
-        private Account account;
         public MainForm()
         {
             InitializeComponent();
@@ -126,7 +124,9 @@ namespace EyeCT4Participation
             }
 
         }
-
+        /// <summary>
+        /// Refresh interface of Manager
+        /// </summary>
         private void BeheerRefresh()
         {
             administration.ListRefresh();
@@ -149,6 +149,19 @@ namespace EyeCT4Participation
             foreach (Review review in administration.listReviews)
             {
                 lbBeheerBeoordeling.Items.Add(review);
+            }
+        }
+        /// <summary>
+        /// Refresh interface of Volunteer
+        /// </summary>
+        private void VolunteerRefresh()
+        {
+            administration.ListRefresh();
+            lbVolunteerReview.Items.Clear();
+            lbVolunteerHelprequest.Items.Clear();
+            foreach (HelpRequest helprequest in administration.listHelprequests)
+            {
+                lbVolunteerHelprequest.Items.Add(helprequest);
             }
         }
 
@@ -318,6 +331,10 @@ namespace EyeCT4Participation
             if (TabControl.SelectedTab.Text == "Beheer")
             {
                 BeheerRefresh();
+            }
+            if (TabControl.SelectedTab.Text == "Vrijwilliger")
+            {
+                VolunteerRefresh();
             }
         }
 
