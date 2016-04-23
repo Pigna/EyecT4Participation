@@ -14,7 +14,7 @@ namespace EyeCT4Participation
         public DateTime date;
         public Account sender;
         public Account receiver;
-        public bool Active;
+        public bool active;
         public int id { get; private set; }
         public Chat(int id, string message, DateTime date, Account sender, Account receiver, bool active)
         {
@@ -23,7 +23,7 @@ namespace EyeCT4Participation
             this.date = date;
             this.sender = sender;
             this.receiver = receiver;
-            this.Active = active;
+            this.active = active;
         }
 
         public override string ToString()

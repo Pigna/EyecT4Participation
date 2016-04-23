@@ -81,7 +81,7 @@ namespace EyeCT4Participation
 
         public bool DeactivateChat(Chat chat)
         {
-            chat.Active = false;
+            chat.active = false;
             return dbadministration.DeactivateChat(chat);
         }
 
