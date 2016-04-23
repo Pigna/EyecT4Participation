@@ -23,12 +23,12 @@ namespace EyeCT4Participation
         {
             InitializeComponent();
             administration = new Administration();
-            /*
+            
             TabControl.TabPages[1].Enabled = false;
             TabControl.TabPages[2].Enabled = false;
             TabControl.TabPages[3].Enabled = false;
             TabControl.TabPages[4].Enabled = false;
-
+            /*
             TabControl.TabPages.Remove(tabpageBeheer);
             TabControl.TabPages.Remove(tabpageChat);
             TabControl.TabPages.Remove(tabpageHulpbehoevende);
@@ -299,7 +299,7 @@ namespace EyeCT4Participation
 
                     TabControl.TabPages[4].Enabled = true;
                     TabControl.SelectTab(4);
-                        MessageBox.Show("u bent ingelogd welkom");
+                        MessageBox.Show("U bent ingelogd welkom");
                     //TabControl.TabPages.Add(tabpageBeheer);
                 }
                     if (administration.LoggedinUser.GetType() == typeof (Volunteer))
@@ -311,7 +311,7 @@ namespace EyeCT4Participation
                     TabControl.TabPages[1].Enabled = true;
                     TabControl.TabPages[3].Enabled = true;
                     TabControl.SelectTab(1);
-                        MessageBox.Show("u bent ingelogd welkom");
+                        MessageBox.Show("U bent ingelogd welkom");
                     //TabControl.TabPages.Remove(tabpageChat);
                     //TabControl.TabPages.Remove(tabpageVrijwilliger);
                 }
@@ -324,7 +324,7 @@ namespace EyeCT4Participation
                     TabControl.TabPages[2].Enabled = true;
                     TabControl.TabPages[3].Enabled = true;
                     TabControl.SelectTab(2);
-                        MessageBox.Show("u bent ingelogd welkom");
+                        MessageBox.Show("U bent ingelogd welkom");
                     //TabControl.TabPages.Remove(tabpageChat);
                     //TabControl.TabPages.Remove(tabpageHulpbehoevende);
                 }
@@ -334,7 +334,7 @@ namespace EyeCT4Participation
             }
             else
             {
-                MessageBox.Show("wachtwoord of inlognaam is niet correct");
+                MessageBox.Show("Wachtwoord of inlognaam is niet correct");
             }
         }
 
@@ -414,9 +414,9 @@ namespace EyeCT4Participation
 
             if(databaseHelprequest.DoQueryAddHelpRequest(newHelpRequested))
             {
-                MessageBox.Show("hulpvraag verzonden");
+                MessageBox.Show("Hulpvraag verzonden");
             }
-            MessageBox.Show("hulpvraag niet verzonden, is alles goed ingevult?");
+            MessageBox.Show("Hulpvraag niet verzonden, is alles goed ingevult?");
 
 
 
@@ -442,6 +442,36 @@ namespace EyeCT4Participation
                 {
                     MessageBox.Show("Reactie geplaatst.");
                 }
+            }
+        }
+
+        private void btnHulpUitloggen_Click(object sender, EventArgs e)
+        {
+            if (administration.LoggedinUser != null)
+            {
+                administration.LoggedinUser = null;
+                TabControl.TabPages[0].Enabled = true;
+                TabControl.TabPages[1].Enabled = false;
+                TabControl.TabPages[2].Enabled = false;
+                TabControl.TabPages[3].Enabled = false;
+                TabControl.TabPages[4].Enabled = false;
+                TabControl.SelectTab(0);
+                MessageBox.Show("U bent uitgelogd");
+            }
+        }
+
+        private void btnVrijwilligerUitloggen_Click(object sender, EventArgs e)
+        {
+            if (administration.LoggedinUser != null)
+            {
+                administration.LoggedinUser = null;
+                TabControl.TabPages[0].Enabled = true;
+                TabControl.TabPages[1].Enabled = false;
+                TabControl.TabPages[2].Enabled = false;
+                TabControl.TabPages[3].Enabled = false;
+                TabControl.TabPages[4].Enabled = false;
+                TabControl.SelectTab(0);
+                MessageBox.Show("U bent uitgelogd");
             }
         }
     }
