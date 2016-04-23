@@ -21,9 +21,6 @@ namespace EyeCT4Participation
         
 
         private Administration administration;
-        private HelpRequest helpRequest;
-        private Chat chat;
-        private Account account;
         public MainForm()
         {
             InitializeComponent();
@@ -128,7 +125,9 @@ namespace EyeCT4Participation
             }
 
         }
-
+        /// <summary>
+        /// Refresh interface of Manager
+        /// </summary>
         private void BeheerRefresh()
         {
             administration.ListRefresh();
@@ -151,6 +150,19 @@ namespace EyeCT4Participation
             foreach (Review review in administration.listReviews)
             {
                 lbBeheerBeoordeling.Items.Add(review);
+            }
+        }
+        /// <summary>
+        /// Refresh interface of Volunteer
+        /// </summary>
+        private void VolunteerRefresh()
+        {
+            administration.ListRefresh();
+            lbVolunteerReview.Items.Clear();
+            lbVolunteerHelprequest.Items.Clear();
+            foreach (HelpRequest helprequest in administration.listHelprequests)
+            {
+                lbVolunteerHelprequest.Items.Add(helprequest);
             }
         }
 
@@ -257,31 +269,31 @@ namespace EyeCT4Participation
         {
             if (administration.LoginUser(tbInloggenGnaam.Text, tbInloggenWW.Text))
             {
-                if (administration.LoggedinUser != null)
-                {
+            if (administration.LoggedinUser != null)
+            {
                     if (administration.LoggedinUser.GetType() == typeof (Manager))
-                    {
-                        TabControl.TabPages[4].Enabled = true;
+                {
+                    TabControl.TabPages[4].Enabled = true;
                         MessageBox.Show("u bent ingelogd welkom");
-                        //TabControl.TabPages.Add(tabpageBeheer);
-                    }
+                    //TabControl.TabPages.Add(tabpageBeheer);
+                }
                     if (administration.LoggedinUser.GetType() == typeof (Volunteer))
-                    {
+                {
 
-                        TabControl.TabPages[1].Enabled = true;
-                        TabControl.TabPages[3].Enabled = true;
+                    TabControl.TabPages[1].Enabled = true;
+                    TabControl.TabPages[3].Enabled = true;
                         MessageBox.Show("u bent ingelogd welkom");
-                        //TabControl.TabPages.Remove(tabpageChat);
-                        //TabControl.TabPages.Remove(tabpageVrijwilliger);
-                    }
+                    //TabControl.TabPages.Remove(tabpageChat);
+                    //TabControl.TabPages.Remove(tabpageVrijwilliger);
+                }
                     if (administration.LoggedinUser.GetType() == typeof (Needy))
-                    {
-                        TabControl.TabPages[2].Enabled = true;
-                        TabControl.TabPages[3].Enabled = true;
+                {
+                    TabControl.TabPages[2].Enabled = true;
+                    TabControl.TabPages[3].Enabled = true;
                         MessageBox.Show("u bent ingelogd welkom");
-                        //TabControl.TabPages.Remove(tabpageChat);
-                        //TabControl.TabPages.Remove(tabpageHulpbehoevende);
-                    }
+                    //TabControl.TabPages.Remove(tabpageChat);
+                    //TabControl.TabPages.Remove(tabpageHulpbehoevende);
+                }
                 }
             }
             else
@@ -329,6 +341,10 @@ namespace EyeCT4Participation
             if (TabControl.SelectedTab.Text == "Beheer")
             {
                 BeheerRefresh();
+            }
+            if (TabControl.SelectedTab.Text == "Vrijwilliger")
+            {
+                VolunteerRefresh();
             }
         }
 

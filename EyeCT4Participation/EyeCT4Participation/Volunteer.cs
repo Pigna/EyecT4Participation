@@ -9,24 +9,44 @@ namespace EyeCT4Participation
 {
     class Volunteer : Account
     {
-        DBReview databaseR = new DBReview();
+        DBReview dbReview = new DBReview();
+        DBhelprequest dbHelprequest = new DBhelprequest();
         public bool License { get; set; }
+        private List<Review> reviewList = new List<Review>();
 
         public Volunteer(int id, bool license, string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active) : base(id, username, password, name, adress, residence, email, phonenumber, birthdate, active, geslacht)
         {
             License = license;
+            Reviews();
         }
 
         public void AddReaction(string name, string message, Volunteer author, DateTime date)
         {
             string query = "INSERT INTO review(name, message, author, date) VALUES (" + name + "," + message + "," + Convert.ToString(author) + "," + Convert.ToString(date) + ")";
-            databaseR.DoQueryAddReaction(query);
+            dbReview.DoQueryAddReaction(query);
         }
-
-        public void JoinHelpRequest(string name, Volunteer author, DateTime date)
+        /// <summary>
+        /// Inschrijven op hulpvraag
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="author"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public bool JoinHelpRequest(HelpRequest helprequest, Volunteer volunteer)
         {
-
+            if (dbHelprequest.JoinHelprequest(helprequest, volunteer))
+            {
+                return true;
+            }
+            return false;
         }
-
+        private void Reviews()
+        {
+            reviewList = dbReview.GetReview(this);
+        }
+        public List<Review> getListReview()
+        {
+            return reviewList;
+        } 
     }
 }

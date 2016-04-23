@@ -54,7 +54,7 @@ namespace EyeCT4Participation.Database
                 foreach (Dictionary<string, object> results in QueryX)
                 //look for all posseble results in the query result.
                 {
-                    if (Convert.ToInt32(results2["verzenderid"]) == Convert.ToInt32(results["ID"]))
+                    if (Convert.ToInt32(results2["verzenderid"]) == Convert.ToInt32(results["id"]))
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
@@ -155,8 +155,8 @@ namespace EyeCT4Participation.Database
 
             foreach (Dictionary<string, object> results in Query1) //look for all posseble results in the query result.
             {
-                List<Dictionary<string, object>> Query2 = getQuery("SELECT * FROM GEBRUIKER WHERE actief != 0 AND type = 1 AND ID IN (SELECT HULPBEHOEVENDEID FROM HULPVRAAG WHERE ID = " + Convert.ToInt32(results["ID"]) + ")");
-                List<Dictionary<string, object>> Query3 = getQuery("SELECT * FROM GEBRUIKER WHERE actief != 0 AND ID IN (SELECT GEBRUIKERID FROM GEBRUIKER_HULPVRAAG WHERE HULPVRAAGID = " + Convert.ToInt32(results["ID"]) + ") AND type = 2 ");
+                List<Dictionary<string, object>> Query2 = getQuery("SELECT * FROM GEBRUIKER WHERE actief != 0 AND type = 1 AND ID IN (SELECT HULPBEHOEVENDEID FROM HULPVRAAG WHERE ID = " + Convert.ToInt32(results["id"]) + ")");
+                List<Dictionary<string, object>> Query3 = getQuery("SELECT * FROM GEBRUIKER WHERE actief != 0 AND ID IN (SELECT GEBRUIKERID FROM GEBRUIKER_HULPVRAAG WHERE HULPVRAAGID = " + Convert.ToInt32(results["id"]) + ") AND type = 2 ");
                 foreach (Dictionary<string, object> volunteer in Query3)
                 {
                     Volunteer newvoluenteer = new Volunteer(
@@ -215,7 +215,7 @@ namespace EyeCT4Participation.Database
                 //look for all posseble results in the query result.
                 {
 
-                    if (Convert.ToInt32(results2["verzenderid"]) == Convert.ToInt32(results["ID"]))
+                    if (Convert.ToInt32(results2["verzenderid"]) == Convert.ToInt32(results["id"]))
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
@@ -253,7 +253,7 @@ namespace EyeCT4Participation.Database
                             verzender = newvoluenteer;
                         }
                     }
-                    if (Convert.ToInt32(results["ontvangerid"]) == Convert.ToInt32(results2["ID"]))
+                    if (Convert.ToInt32(results["ontvangerid"]) == Convert.ToInt32(results2["id"]))
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
@@ -297,7 +297,7 @@ namespace EyeCT4Participation.Database
 
                 foreach (Dictionary<string, object> subreview in Query8)
                 {
-                    if (Convert.ToString(subreview["ID"]) == Convert.ToString(results2["reactieopid"]))
+                    if (Convert.ToString(subreview["id"]) == Convert.ToString(results2["reactieopid"]))
                     {
                         subreviewtxt = Convert.ToString(subreview["opmerking"]);
                     }

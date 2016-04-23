@@ -42,5 +42,21 @@ namespace EyeCT4Participation.Database
                 return false;   // if query fails, return a false.
             }
         }
+
+        public bool JoinHelprequest(HelpRequest helprequest, Volunteer volunteer)
+        {
+            try
+            {
+                string query; // the query will end up in here
+                query = "INSERT INTO GEBRUIKER_HULPVRAAG";  //replace with INSERT if needed
+                query += "(GEBRUIKERID, HULPVRAAGID) VALUES ('" + volunteer.id +"', '" + helprequest + "')"; //replace 'user.X' with the data u need.
+                doQuery(query); //query will be activated
+                return true;
+            }
+            catch
+            {
+                return false;   // if query fails, return a false.
+            }
+        }
     }
 }
