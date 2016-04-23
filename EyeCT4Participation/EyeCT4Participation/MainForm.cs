@@ -166,6 +166,16 @@ namespace EyeCT4Participation
             }
         }
 
+        private void hulpRefresh()
+        {
+
+            lbhulpvragen.Items.Clear();
+            foreach (HelpRequest helprequest in administration.listHelprequests)
+            {
+                lbhulpvragen.Items.Add(helprequest.ToString());
+            }
+        }
+
         private void btnBeheerAccountDeactiveren_Click(object sender, EventArgs e)
         {
             if (administration.DeactivateAccount(lbBeheerAccount.SelectedItem as Account))
@@ -345,6 +355,10 @@ namespace EyeCT4Participation
             if (TabControl.SelectedTab.Text == "Vrijwilliger")
             {
                 VolunteerRefresh();
+            }
+            if (TabControl.SelectedTab.Text == "Hulpbehoevende")
+            {
+                hulpRefresh();
             }
         }
 
