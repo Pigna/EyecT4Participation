@@ -65,13 +65,20 @@
             this.lblRegistratieWW = new System.Windows.Forms.Label();
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
             this.tabpageVrijwilliger = new System.Windows.Forms.TabPage();
+            this.btnVolunteerReviewReact = new System.Windows.Forms.Button();
+            this.btnVolunteerVolunteerRegister = new System.Windows.Forms.Button();
+            this.lblVolunteerReview = new System.Windows.Forms.Label();
+            this.lblVolunteerVolunteer = new System.Windows.Forms.Label();
+            this.tbVolunteerReviewReaction = new System.Windows.Forms.TextBox();
+            this.lbVolunteerReview = new System.Windows.Forms.ListBox();
+            this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
             this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
             this.CBUrgent = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.BTHelpSend = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbhelpvraag = new System.Windows.Forms.RichTextBox();
             this.tabpageChat = new System.Windows.Forms.TabPage();
             this.btnOpen = new System.Windows.Forms.Button();
             this.tbChatMessage = new System.Windows.Forms.RichTextBox();
@@ -96,13 +103,9 @@
             this.btnBeheerAccountDeactiveren = new System.Windows.Forms.Button();
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
-            this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
-            this.lbVolunteerReview = new System.Windows.Forms.ListBox();
-            this.tbVolunteerReviewReaction = new System.Windows.Forms.TextBox();
-            this.lblVolunteerVolunteer = new System.Windows.Forms.Label();
-            this.lblVolunteerReview = new System.Windows.Forms.Label();
-            this.btnVolunteerVolunteerRegister = new System.Windows.Forms.Button();
-            this.btnVolunteerReviewReact = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dthelprequest = new System.Windows.Forms.DateTimePicker();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -506,14 +509,77 @@
             this.tabpageVrijwilliger.Text = "Vrijwilliger";
             this.tabpageVrijwilliger.UseVisualStyleBackColor = true;
             // 
+            // btnVolunteerReviewReact
+            // 
+            this.btnVolunteerReviewReact.Location = new System.Drawing.Point(545, 405);
+            this.btnVolunteerReviewReact.Name = "btnVolunteerReviewReact";
+            this.btnVolunteerReviewReact.Size = new System.Drawing.Size(77, 19);
+            this.btnVolunteerReviewReact.TabIndex = 6;
+            this.btnVolunteerReviewReact.Text = "Reageren";
+            this.btnVolunteerReviewReact.UseVisualStyleBackColor = true;
+            // 
+            // btnVolunteerVolunteerRegister
+            // 
+            this.btnVolunteerVolunteerRegister.Location = new System.Drawing.Point(234, 306);
+            this.btnVolunteerVolunteerRegister.Name = "btnVolunteerVolunteerRegister";
+            this.btnVolunteerVolunteerRegister.Size = new System.Drawing.Size(77, 19);
+            this.btnVolunteerVolunteerRegister.TabIndex = 5;
+            this.btnVolunteerVolunteerRegister.Text = "Inschrijven";
+            this.btnVolunteerVolunteerRegister.UseVisualStyleBackColor = true;
+            // 
+            // lblVolunteerReview
+            // 
+            this.lblVolunteerReview.AutoSize = true;
+            this.lblVolunteerReview.Location = new System.Drawing.Point(314, 7);
+            this.lblVolunteerReview.Name = "lblVolunteerReview";
+            this.lblVolunteerReview.Size = new System.Drawing.Size(75, 13);
+            this.lblVolunteerReview.TabIndex = 4;
+            this.lblVolunteerReview.Text = "Beoordelingen";
+            // 
+            // lblVolunteerVolunteer
+            // 
+            this.lblVolunteerVolunteer.AutoSize = true;
+            this.lblVolunteerVolunteer.Location = new System.Drawing.Point(3, 7);
+            this.lblVolunteerVolunteer.Name = "lblVolunteerVolunteer";
+            this.lblVolunteerVolunteer.Size = new System.Drawing.Size(80, 13);
+            this.lblVolunteerVolunteer.TabIndex = 3;
+            this.lblVolunteerVolunteer.Text = "Hulpaanvragen";
+            // 
+            // tbVolunteerReviewReaction
+            // 
+            this.tbVolunteerReviewReaction.Location = new System.Drawing.Point(317, 306);
+            this.tbVolunteerReviewReaction.Multiline = true;
+            this.tbVolunteerReviewReaction.Name = "tbVolunteerReviewReaction";
+            this.tbVolunteerReviewReaction.Size = new System.Drawing.Size(305, 93);
+            this.tbVolunteerReviewReaction.TabIndex = 2;
+            // 
+            // lbVolunteerReview
+            // 
+            this.lbVolunteerReview.FormattingEnabled = true;
+            this.lbVolunteerReview.Location = new System.Drawing.Point(317, 23);
+            this.lbVolunteerReview.Name = "lbVolunteerReview";
+            this.lbVolunteerReview.Size = new System.Drawing.Size(305, 277);
+            this.lbVolunteerReview.TabIndex = 1;
+            // 
+            // lbVolunteerVolunteer
+            // 
+            this.lbVolunteerVolunteer.FormattingEnabled = true;
+            this.lbVolunteerVolunteer.Location = new System.Drawing.Point(6, 23);
+            this.lbVolunteerVolunteer.Name = "lbVolunteerVolunteer";
+            this.lbVolunteerVolunteer.Size = new System.Drawing.Size(305, 277);
+            this.lbVolunteerVolunteer.TabIndex = 0;
+            // 
             // tabpageHulpbehoevende
             // 
+            this.tabpageHulpbehoevende.Controls.Add(this.dthelprequest);
+            this.tabpageHulpbehoevende.Controls.Add(this.button2);
+            this.tabpageHulpbehoevende.Controls.Add(this.listBox2);
             this.tabpageHulpbehoevende.Controls.Add(this.CBUrgent);
             this.tabpageHulpbehoevende.Controls.Add(this.button1);
             this.tabpageHulpbehoevende.Controls.Add(this.numericUpDown1);
             this.tabpageHulpbehoevende.Controls.Add(this.listBox1);
             this.tabpageHulpbehoevende.Controls.Add(this.BTHelpSend);
-            this.tabpageHulpbehoevende.Controls.Add(this.richTextBox1);
+            this.tabpageHulpbehoevende.Controls.Add(this.rtbhelpvraag);
             this.tabpageHulpbehoevende.Location = new System.Drawing.Point(4, 22);
             this.tabpageHulpbehoevende.Name = "tabpageHulpbehoevende";
             this.tabpageHulpbehoevende.Padding = new System.Windows.Forms.Padding(3);
@@ -571,13 +637,13 @@
             this.BTHelpSend.UseVisualStyleBackColor = true;
             this.BTHelpSend.Click += new System.EventHandler(this.BTHelpSend_Click);
             // 
-            // richTextBox1
+            // rtbhelpvraag
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 6);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(296, 131);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "Help mij met..";
+            this.rtbhelpvraag.Location = new System.Drawing.Point(6, 6);
+            this.rtbhelpvraag.Name = "rtbhelpvraag";
+            this.rtbhelpvraag.Size = new System.Drawing.Size(296, 131);
+            this.rtbhelpvraag.TabIndex = 6;
+            this.rtbhelpvraag.Text = "Help mij met..";
             // 
             // tabpageChat
             // 
@@ -843,65 +909,29 @@
             this.lbBeheerAccount.Size = new System.Drawing.Size(305, 277);
             this.lbBeheerAccount.TabIndex = 41;
             // 
-            // lbVolunteerVolunteer
+            // listBox2
             // 
-            this.lbVolunteerVolunteer.FormattingEnabled = true;
-            this.lbVolunteerVolunteer.Location = new System.Drawing.Point(6, 23);
-            this.lbVolunteerVolunteer.Name = "lbVolunteerVolunteer";
-            this.lbVolunteerVolunteer.Size = new System.Drawing.Size(305, 277);
-            this.lbVolunteerVolunteer.TabIndex = 0;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(3, 225);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(299, 212);
+            this.listBox2.TabIndex = 17;
             // 
-            // lbVolunteerReview
+            // button2
             // 
-            this.lbVolunteerReview.FormattingEnabled = true;
-            this.lbVolunteerReview.Location = new System.Drawing.Point(317, 23);
-            this.lbVolunteerReview.Name = "lbVolunteerReview";
-            this.lbVolunteerReview.Size = new System.Drawing.Size(305, 277);
-            this.lbVolunteerReview.TabIndex = 1;
+            this.button2.Location = new System.Drawing.Point(0, 443);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 45);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // tbVolunteerReviewReaction
+            // dthelprequest
             // 
-            this.tbVolunteerReviewReaction.Location = new System.Drawing.Point(317, 306);
-            this.tbVolunteerReviewReaction.Multiline = true;
-            this.tbVolunteerReviewReaction.Name = "tbVolunteerReviewReaction";
-            this.tbVolunteerReviewReaction.Size = new System.Drawing.Size(305, 93);
-            this.tbVolunteerReviewReaction.TabIndex = 2;
-            // 
-            // lblVolunteerVolunteer
-            // 
-            this.lblVolunteerVolunteer.AutoSize = true;
-            this.lblVolunteerVolunteer.Location = new System.Drawing.Point(3, 7);
-            this.lblVolunteerVolunteer.Name = "lblVolunteerVolunteer";
-            this.lblVolunteerVolunteer.Size = new System.Drawing.Size(80, 13);
-            this.lblVolunteerVolunteer.TabIndex = 3;
-            this.lblVolunteerVolunteer.Text = "Hulpaanvragen";
-            // 
-            // lblVolunteerReview
-            // 
-            this.lblVolunteerReview.AutoSize = true;
-            this.lblVolunteerReview.Location = new System.Drawing.Point(314, 7);
-            this.lblVolunteerReview.Name = "lblVolunteerReview";
-            this.lblVolunteerReview.Size = new System.Drawing.Size(75, 13);
-            this.lblVolunteerReview.TabIndex = 4;
-            this.lblVolunteerReview.Text = "Beoordelingen";
-            // 
-            // btnVolunteerVolunteerRegister
-            // 
-            this.btnVolunteerVolunteerRegister.Location = new System.Drawing.Point(234, 306);
-            this.btnVolunteerVolunteerRegister.Name = "btnVolunteerVolunteerRegister";
-            this.btnVolunteerVolunteerRegister.Size = new System.Drawing.Size(77, 19);
-            this.btnVolunteerVolunteerRegister.TabIndex = 5;
-            this.btnVolunteerVolunteerRegister.Text = "Inschrijven";
-            this.btnVolunteerVolunteerRegister.UseVisualStyleBackColor = true;
-            // 
-            // btnVolunteerReviewReact
-            // 
-            this.btnVolunteerReviewReact.Location = new System.Drawing.Point(545, 405);
-            this.btnVolunteerReviewReact.Name = "btnVolunteerReviewReact";
-            this.btnVolunteerReviewReact.Size = new System.Drawing.Size(77, 19);
-            this.btnVolunteerReviewReact.TabIndex = 6;
-            this.btnVolunteerReviewReact.Text = "Reageren";
-            this.btnVolunteerReviewReact.UseVisualStyleBackColor = true;
+            this.dthelprequest.Location = new System.Drawing.Point(115, 166);
+            this.dthelprequest.Name = "dthelprequest";
+            this.dthelprequest.Size = new System.Drawing.Size(187, 20);
+            this.dthelprequest.TabIndex = 19;
             // 
             // MainForm
             // 
@@ -986,7 +1016,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button BTHelpSend;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbhelpvraag;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.TextBox tbRegistratieEmail;
         private System.Windows.Forms.Label lblRegistratieEmail;
@@ -1003,6 +1033,9 @@
         private System.Windows.Forms.TextBox tbVolunteerReviewReaction;
         private System.Windows.Forms.ListBox lbVolunteerReview;
         private System.Windows.Forms.ListBox lbVolunteerVolunteer;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.DateTimePicker dthelprequest;
     }
 }
 

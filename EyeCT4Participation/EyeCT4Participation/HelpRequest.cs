@@ -33,6 +33,16 @@ namespace EyeCT4Participation
                 AddVolunteer(volunteer);
             }
         }
+        public HelpRequest(int id, string question, DateTime date, bool urgency, bool active, Needy needy)
+        {
+            this.id = id;
+            this.Question = question;
+            this.Date = date;
+            this.Urgency = urgency;
+            this.Active = active;
+            this.Needy = needy;
+          
+        }
 
         public void AddVolunteer(Volunteer volunteer)
         {

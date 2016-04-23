@@ -17,9 +17,11 @@ namespace EyeCT4Participation
         DBaccount databaseAcc = new DBaccount();
         DBneedy databaseneedy = new DBneedy();
         DBvolunteer databaseVolunteer = new DBvolunteer();
+        DBhelprequest databaseHelprequest = new DBhelprequest();
         
 
         private Administration administration;
+        private HelpRequest helpRequest;
         private Chat chat;
         private Account account;
         public MainForm()
@@ -253,29 +255,38 @@ namespace EyeCT4Participation
 
         private void btnInloggenInloggen_Click(object sender, EventArgs e)
         {
-            administration.LoginUser(tbInloggenGnaam.Text, tbInloggenWW.Text);
-            if (administration.LoggedinUser != null)
+            if (administration.LoginUser(tbInloggenGnaam.Text, tbInloggenWW.Text))
             {
-                if (administration.LoggedinUser.GetType() == typeof(Manager))
+                if (administration.LoggedinUser != null)
                 {
-                    TabControl.TabPages[4].Enabled = true;
-                    //TabControl.TabPages.Add(tabpageBeheer);
-                }
-                if (administration.LoggedinUser.GetType() == typeof(Volunteer))
-                {
+                    if (administration.LoggedinUser.GetType() == typeof (Manager))
+                    {
+                        TabControl.TabPages[4].Enabled = true;
+                        MessageBox.Show("u bent ingelogd welkom");
+                        //TabControl.TabPages.Add(tabpageBeheer);
+                    }
+                    if (administration.LoggedinUser.GetType() == typeof (Volunteer))
+                    {
 
-                    TabControl.TabPages[1].Enabled = true;
-                    TabControl.TabPages[3].Enabled = true;
-                    //TabControl.TabPages.Remove(tabpageChat);
-                    //TabControl.TabPages.Remove(tabpageVrijwilliger);
+                        TabControl.TabPages[1].Enabled = true;
+                        TabControl.TabPages[3].Enabled = true;
+                        MessageBox.Show("u bent ingelogd welkom");
+                        //TabControl.TabPages.Remove(tabpageChat);
+                        //TabControl.TabPages.Remove(tabpageVrijwilliger);
+                    }
+                    if (administration.LoggedinUser.GetType() == typeof (Needy))
+                    {
+                        TabControl.TabPages[2].Enabled = true;
+                        TabControl.TabPages[3].Enabled = true;
+                        MessageBox.Show("u bent ingelogd welkom");
+                        //TabControl.TabPages.Remove(tabpageChat);
+                        //TabControl.TabPages.Remove(tabpageHulpbehoevende);
+                    }
                 }
-                if (administration.LoggedinUser.GetType() == typeof(Needy))
-                {
-                    TabControl.TabPages[2].Enabled = true;
-                    TabControl.TabPages[3].Enabled = true;
-                    //TabControl.TabPages.Remove(tabpageChat);
-                    //TabControl.TabPages.Remove(tabpageHulpbehoevende);
-                }
+            }
+            else
+            {
+                MessageBox.Show("wachtwoord of inlognaam is niet correct");
             }
         }
 
@@ -323,7 +334,18 @@ namespace EyeCT4Participation
 
         private void BTHelpSend_Click(object sender, EventArgs e)
         {
-            //if()
+            bool urgent = CBUrgent.Checked;
+            string message = rtbhelpvraag.Text;
+            HelpRequest newHelpRequested = new HelpRequest(0,message,dthelprequest.Value, urgent,true,(Needy)administration.LoggedinUser);
+
+
+            if(databaseHelprequest.DoQueryAddHelpRequest(newHelpRequested))
+            {
+                MessageBox.Show("hulpvraag verzonden");
+            }
+            MessageBox.Show("hulpvraag niet verzonden, is alles goed ingevult?");
+
+
 
         }
     }

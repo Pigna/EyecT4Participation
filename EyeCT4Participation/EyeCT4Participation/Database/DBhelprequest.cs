@@ -8,14 +8,34 @@ namespace EyeCT4Participation.Database
 {
     class DBhelprequest : DB
     {
-        public bool DoQueryAddHelpRequest(string query) // replace user with the data u want to add/ change to the table
+        DB DB = new DB();
+        public bool DoQueryAddHelpRequest(HelpRequest newhelprequest) // replace user with the data u want to add/ change to the table
         {
+            
             try
             {
-                string Query; // the query will end up in here
-                Query = query;  //replace with INSERT if needed
-                doQuery(Query); //query will be activated
+               string Query = null; // the query will end up in here
+
+                Query = "insert into hulpvraag VALUES( ";
+                Query += DB.getLatestId("hulpvraag");
+                Query += ", '";
+                Query += newhelprequest.Description;
+                Query += "', 'null', 0,";
+                Query += "to_date('" + newhelprequest.Date.ToString("MM-dd-yyyy") + "', 'MM-DD-YYYY'),";
+                Query += "0-0-0,";
+                Query += Convert.ToInt32(newhelprequest.Urgency);
+                Query += ",1,";
+                Query += ", ";
+                Query += newhelprequest.Needy.id;
+                Query += ", ";
+                Query += "1";
+                Query += ")";
+               if(doQuery(Query) != -1) //query will be activated
                 return true;
+               else
+               {
+                   return false;
+               }
             }
             catch
             {

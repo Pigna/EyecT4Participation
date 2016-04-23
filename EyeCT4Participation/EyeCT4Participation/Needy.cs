@@ -23,7 +23,7 @@ namespace EyeCT4Participation
         {
             //dit moet naar de database
             string query = "INSERT INTO hulpvraag(question, description, date, author, urgency, ov) VALUES (" + question + "," + description + "," + Convert.ToString(date) + "," + Convert.ToString(author) + "," + Convert.ToString(urgency) + "," + Convert.ToString(ov) + ")";
-            databaseHR.DoQueryAddHelpRequest(query);
+            databaseHR.DoQueryAddHelpRequest(null);
         }
 
         public void AddReview(int score, string description, Needy author)

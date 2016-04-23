@@ -10,6 +10,7 @@ namespace EyeCT4Participation.Database
 {
     class DB
     {
+        
 
         //fields
         private OracleConnection con;
@@ -42,7 +43,7 @@ namespace EyeCT4Participation.Database
                 transact.Commit();
                 Disconnect();
                 return ret;
-
+                
             }
             catch (Exception e) { Console.WriteLine(e.ToString()); return -1; }
             finally { Disconnect(); }
@@ -117,6 +118,7 @@ namespace EyeCT4Participation.Database
         {
             con.Close();
             con.Dispose();
+
         }
 
         public List<string> QueryName() //name of ur query

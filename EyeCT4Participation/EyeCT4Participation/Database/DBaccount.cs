@@ -12,7 +12,7 @@ namespace EyeCT4Participation.Database
         {
             Account retAccount = null;
             List<string> ret = new List<string>(); //result of query will end up in here
-            List<Dictionary<string, object>> LogInQuery = getQuery("SELECT * FROM Gebruiker WHERE Gebruikersnaam = " + username + "AND Wachtwoord =" + password + ";"); //replace your query with te example query, replace 'QueryX' with a clear name.
+            List<Dictionary<string, object>> LogInQuery = getQuery("SELECT * FROM Gebruiker WHERE Gebruikersnaam = '" + username + "' AND Wachtwoord ='" + password + "'"); //replace your query with te example query, replace 'QueryX' with a clear name.
             if (LogInQuery.Any())
             {
 
@@ -21,42 +21,42 @@ namespace EyeCT4Participation.Database
                     //look for all posseble results in the query result.
                 {
                     //add each result to the created list, if the list if for a class, u need to add 'new class_name' 
-                    int returnvalue = Convert.ToInt32(results["Type"]);
+                    int returnvalue = Convert.ToInt32(results["type"]);
 
                     if (returnvalue == 0)
                     {
                         retAccount = new Manager(
                             Convert.ToInt32(results["id"]),
-                            Convert.ToString(results["Gebruikersnaam"]), Convert.ToString(results["Wachtwoord"]),
-                            Convert.ToString(results["Naam"]), Convert.ToString(results["Adres"]),
-                            Convert.ToString(results["Woonplaats"]),
-                            Convert.ToString(results["Email"]), Convert.ToInt32(results["Telefoonnummer"]),
-                            Convert.ToDateTime(results["Geboortedatum"]), Convert.ToString(results["Geslacht"]),
-                            Convert.ToBoolean(results["Actief"]));
+                            Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
+                            Convert.ToString(results["naam"]), Convert.ToString(results["adres"]),
+                            Convert.ToString(results["woonplaats"]),
+                            Convert.ToString(results["email"]), Convert.ToInt32(results["telefoonnummer"]),
+                            Convert.ToDateTime(results["geboortedatum"]), Convert.ToString(results["geslacht"]),
+                            Convert.ToBoolean(results["actief"]));
                     }
                     else if (returnvalue == 1)
                     {
                         retAccount = new Needy(
                             Convert.ToInt32(results["id"]),
-                            Convert.ToBoolean(results["OVkaart"]),
-                            Convert.ToString(results["Gebruikersnaam"]), Convert.ToString(results["Wachtwoord"]),
-                            Convert.ToString(results["Naam"]), Convert.ToString(results["Adres"]),
-                            Convert.ToString(results["Woonplaats"]),
-                            Convert.ToString(results["Email"]), Convert.ToInt32(results["Telefoonnummer"]),
-                            Convert.ToDateTime(results["Geboortedatum"]), Convert.ToString(results["Geslacht"]),
-                            Convert.ToBoolean(results["Actief"]));
+                            Convert.ToBoolean(results["ovkaart"]),
+                            Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
+                            Convert.ToString(results["naam"]), Convert.ToString(results["adres"]),
+                            Convert.ToString(results["woonplaats"]),
+                            Convert.ToString(results["email"]), Convert.ToInt32(results["telefoonnummer"]),
+                            Convert.ToDateTime(results["geboortedatum"]), Convert.ToString(results["geslacht"]),
+                            Convert.ToBoolean(results["actief"]));
                     }
                     else if (returnvalue == 2)
                     {
                         retAccount = new Volunteer(
                             Convert.ToInt32(results["id"]),
-                            Convert.ToBoolean(results["Auto"]),
-                            Convert.ToString(results["Gebruikersnaam"]), Convert.ToString(results["Wachtwoord"]),
-                            Convert.ToString(results["Naam"]), Convert.ToString(results["Adres"]),
-                            Convert.ToString(results["Woonplaats"]),
-                            Convert.ToString(results["Email"]), Convert.ToInt32(results["Telefoonnummer"]),
-                            Convert.ToDateTime(results["Geboortedatum"]), Convert.ToString(results["Geslacht"]),
-                            Convert.ToBoolean(results["Actief"]));
+                            Convert.ToBoolean(results["auto"]),
+                            Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
+                            Convert.ToString(results["naam"]), Convert.ToString(results["adres"]),
+                            Convert.ToString(results["woonplaats"]),
+                            Convert.ToString(results["email"]), Convert.ToInt32(results["telefoonnummer"]),
+                            Convert.ToDateTime(results["geboortedatum"]), Convert.ToString(results["geslacht"]),
+                            Convert.ToBoolean(results["actief"]));
                     }
                 }
 
