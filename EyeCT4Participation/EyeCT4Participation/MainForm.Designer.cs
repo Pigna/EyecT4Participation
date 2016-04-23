@@ -65,6 +65,7 @@
             this.lblRegistratieWW = new System.Windows.Forms.Label();
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
             this.tabpageVrijwilliger = new System.Windows.Forms.TabPage();
+            this.btnVrijwilligerUitloggen = new System.Windows.Forms.Button();
             this.btnVolunteerReviewReact = new System.Windows.Forms.Button();
             this.btnVolunteerHelprequestRegister = new System.Windows.Forms.Button();
             this.lblVolunteerReview = new System.Windows.Forms.Label();
@@ -73,6 +74,7 @@
             this.lbVolunteerReview = new System.Windows.Forms.ListBox();
             this.lbVolunteerHelprequest = new System.Windows.Forms.ListBox();
             this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
+            this.btnHulpUitloggen = new System.Windows.Forms.Button();
             this.cbUsers = new System.Windows.Forms.ComboBox();
             this.rtdreviewtxt = new System.Windows.Forms.RichTextBox();
             this.dthelprequest = new System.Windows.Forms.DateTimePicker();
@@ -108,8 +110,7 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
-            this.btnHulpUitloggen = new System.Windows.Forms.Button();
-            this.btnVrijwilligerUitloggen = new System.Windows.Forms.Button();
+            this.btnBeheerUitloggen = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -513,6 +514,16 @@
             this.tabpageVrijwilliger.Text = "Vrijwilliger";
             this.tabpageVrijwilliger.UseVisualStyleBackColor = true;
             // 
+            // btnVrijwilligerUitloggen
+            // 
+            this.btnVrijwilligerUitloggen.Location = new System.Drawing.Point(675, 23);
+            this.btnVrijwilligerUitloggen.Name = "btnVrijwilligerUitloggen";
+            this.btnVrijwilligerUitloggen.Size = new System.Drawing.Size(103, 45);
+            this.btnVrijwilligerUitloggen.TabIndex = 13;
+            this.btnVrijwilligerUitloggen.Text = "Uitloggen";
+            this.btnVrijwilligerUitloggen.UseVisualStyleBackColor = true;
+            this.btnVrijwilligerUitloggen.Click += new System.EventHandler(this.btnVrijwilligerUitloggen_Click);
+            // 
             // btnVolunteerReviewReact
             // 
             this.btnVolunteerReviewReact.Location = new System.Drawing.Point(519, 405);
@@ -595,6 +606,16 @@
             this.tabpageHulpbehoevende.TabIndex = 3;
             this.tabpageHulpbehoevende.Text = "Hulpbehoevende";
             this.tabpageHulpbehoevende.UseVisualStyleBackColor = true;
+            // 
+            // btnHulpUitloggen
+            // 
+            this.btnHulpUitloggen.Location = new System.Drawing.Point(460, 6);
+            this.btnHulpUitloggen.Name = "btnHulpUitloggen";
+            this.btnHulpUitloggen.Size = new System.Drawing.Size(103, 45);
+            this.btnHulpUitloggen.TabIndex = 22;
+            this.btnHulpUitloggen.Text = "Uitloggen";
+            this.btnHulpUitloggen.UseVisualStyleBackColor = true;
+            this.btnHulpUitloggen.Click += new System.EventHandler(this.btnVrijwilligerUitloggen_Click);
             // 
             // cbUsers
             // 
@@ -760,6 +781,7 @@
             // 
             // tabpageBeheer
             // 
+            this.tabpageBeheer.Controls.Add(this.btnBeheerUitloggen);
             this.tabpageBeheer.Controls.Add(this.btnBeheerFilter);
             this.tabpageBeheer.Controls.Add(this.lblBeheerFilter);
             this.tabpageBeheer.Controls.Add(this.tbBeheerFilter);
@@ -956,25 +978,15 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
-            // btnHulpUitloggen
+            // btnBeheerUitloggen
             // 
-            this.btnHulpUitloggen.Location = new System.Drawing.Point(460, 6);
-            this.btnHulpUitloggen.Name = "btnHulpUitloggen";
-            this.btnHulpUitloggen.Size = new System.Drawing.Size(103, 45);
-            this.btnHulpUitloggen.TabIndex = 22;
-            this.btnHulpUitloggen.Text = "Uitloggen";
-            this.btnHulpUitloggen.UseVisualStyleBackColor = true;
-            this.btnHulpUitloggen.Click += new System.EventHandler(this.btnHulpUitloggen_Click);
-            // 
-            // btnVrijwilligerUitloggen
-            // 
-            this.btnVrijwilligerUitloggen.Location = new System.Drawing.Point(675, 23);
-            this.btnVrijwilligerUitloggen.Name = "btnVrijwilligerUitloggen";
-            this.btnVrijwilligerUitloggen.Size = new System.Drawing.Size(103, 45);
-            this.btnVrijwilligerUitloggen.TabIndex = 13;
-            this.btnVrijwilligerUitloggen.Text = "Uitloggen";
-            this.btnVrijwilligerUitloggen.UseVisualStyleBackColor = true;
-            this.btnVrijwilligerUitloggen.Click += new System.EventHandler(this.btnVrijwilligerUitloggen_Click);
+            this.btnBeheerUitloggen.Location = new System.Drawing.Point(834, 5);
+            this.btnBeheerUitloggen.Name = "btnBeheerUitloggen";
+            this.btnBeheerUitloggen.Size = new System.Drawing.Size(103, 45);
+            this.btnBeheerUitloggen.TabIndex = 60;
+            this.btnBeheerUitloggen.Text = "Uitloggen";
+            this.btnBeheerUitloggen.UseVisualStyleBackColor = true;
+            this.btnBeheerUitloggen.Click += new System.EventHandler(this.btnVrijwilligerUitloggen_Click);
             // 
             // MainForm
             // 
@@ -1083,6 +1095,7 @@
         private System.Windows.Forms.DateTimePicker dtpRegistratieBirthdate;
         private System.Windows.Forms.Button btnVrijwilligerUitloggen;
         private System.Windows.Forms.Button btnHulpUitloggen;
+        private System.Windows.Forms.Button btnBeheerUitloggen;
     }
 }
 
