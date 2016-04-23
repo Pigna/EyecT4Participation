@@ -16,20 +16,10 @@ namespace EyeCT4Participation.Database
             {
                string Query = null; // the query will end up in here
 
-                Query = "insert into hulpvraag VALUES( ";
-                Query += DB.getLatestId("hulpvraag");
-                Query += ", '";
-                Query += newhelprequest.Description;
-                Query += "', 'null', 0,";
-                Query += "to_date('" + newhelprequest.Date.ToString("MM-dd-yyyy") + "', 'MM-DD-YYYY'),";
-                Query += "0-0-0,";
-                Query += Convert.ToInt32(newhelprequest.Urgency);
-                Query += ",1,";
-                Query += ", ";
-                Query += newhelprequest.Needy.id;
-                Query += ", ";
-                Query += "1";
-                Query += ")";
+                Query = "insert into hulpvraag VALUES( " + DB.getLatestId("hulpvraag") + ",'" + newhelprequest.Question +
+                        "', '1' , 0, to_date('" + newhelprequest.Date.ToString("MM-dd-yyyy") + "','MM-DD-YYYY'), to_date('" + newhelprequest.Date.ToString("MM-dd-yyyy") + "','MM-DD-YYYY')," +
+                        Convert.ToInt32(newhelprequest.Urgency) + ", 1, " + newhelprequest.Needy.id + ", null, 1) ";
+                //Query += "0-0-0,";
                if(doQuery(Query) != -1) //query will be activated
                 return true;
                else

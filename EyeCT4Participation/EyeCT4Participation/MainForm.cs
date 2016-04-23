@@ -393,10 +393,11 @@ namespace EyeCT4Participation
             {
                 MessageBox.Show("Hulpvraag verzonden");
             }
-            MessageBox.Show("Hulpvraag niet verzonden, is alles goed ingevult?");
-
-
-
+            else
+            {
+                MessageBox.Show("Hulpvraag niet verzonden, is alles goed ingevult?");
+            }
+           
         }
 
         private void btnVolunteerHelprequestRegister_Click(object sender, EventArgs e)
