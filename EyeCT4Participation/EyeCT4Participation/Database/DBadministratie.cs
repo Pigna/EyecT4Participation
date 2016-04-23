@@ -54,7 +54,7 @@ namespace EyeCT4Participation.Database
                 foreach (Dictionary<string, object> results in QueryX)
                 //look for all posseble results in the query result.
                 {
-                    if (Convert.ToInt32(results2["verzenderid"]) == Convert.ToInt32(results["id"]))
+                    if (Convert.ToInt32(results2["id"]) == Convert.ToInt32(results["ontvangerid"]))
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
@@ -92,7 +92,7 @@ namespace EyeCT4Participation.Database
                             verzender = newvoluenteer;
                         }
                     }
-                    if (Convert.ToInt32(results["ontvangerid"]) == Convert.ToInt32(results2["id"]))
+                    if (Convert.ToInt32(results["id"]) == Convert.ToInt32(results2["ontvangerid"]))
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
@@ -215,7 +215,7 @@ namespace EyeCT4Participation.Database
                 //look for all posseble results in the query result.
                 {
 
-                    if (Convert.ToInt32(results2["verzenderid"]) == Convert.ToInt32(results["id"]))
+                    if (Convert.ToInt32(results2["id"]) == Convert.ToInt32(results["ontvangerid"]))
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
