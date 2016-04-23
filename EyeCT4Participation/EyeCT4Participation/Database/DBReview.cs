@@ -54,7 +54,7 @@ namespace EyeCT4Participation.Database
                 //look for all posseble results in the query result.
                 {
 
-                    if (Convert.ToInt32(results2["verzenderid"]) == Convert.ToInt32(results["ID"]))
+                    if (Convert.ToInt32(results2["verzenderid"]) == Convert.ToInt32(results["id"]))
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
@@ -136,7 +136,7 @@ namespace EyeCT4Participation.Database
 
                 foreach (Dictionary<string, object> subreview in Query8)
                 {
-                    if (Convert.ToString(subreview["ID"]) == Convert.ToString(results2["reactieopid"]))
+                    if (Convert.ToString(subreview["id"]) == Convert.ToString(results2["reactieopid"]))
                     {
                         subreviewtxt = Convert.ToString(subreview["opmerking"]);
                     }
