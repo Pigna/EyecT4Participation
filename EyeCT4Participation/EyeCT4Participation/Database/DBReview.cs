@@ -92,7 +92,7 @@ namespace EyeCT4Participation.Database
                             verzender = newvoluenteer;
                         }
                     }
-                    if (Convert.ToInt32(results["ontvangerid"]) == Convert.ToInt32(results2["ID"]))
+                    if (Convert.ToInt32(results["id"]) == Convert.ToInt32(results2["ontvangerid"]))
                     {
                         if ((Convert.ToInt32(results["type"])) == 0)
                         {
