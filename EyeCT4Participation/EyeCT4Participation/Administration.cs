@@ -73,27 +73,28 @@ namespace EyeCT4Participation
             }
             return filterlist;
         }
-        public void DeactivateAccount(Account account)
+        public bool DeactivateAccount(Account account)
         {
             account.Active = false;
-            dbadministration.DeactivateAccount(account);
+            return dbadministration.DeactivateAccount(account);
         }
 
-        public void DeactivateChat(Chat chat)
+        public bool DeactivateChat(Chat chat)
         {
-            dbadministration.DeactivateChat(chat);
+            chat.Active = false;
+            return dbadministration.DeactivateChat(chat);
         }
 
-        public void DeactivateHelpRequest(HelpRequest helprequest)
+        public bool DeactivateHelpRequest(HelpRequest helprequest)
         {
             helprequest.Active = false;
-            dbadministration.DeactivateHelpRequest(helprequest);
+            return dbadministration.DeactivateHelpRequest(helprequest);
         }
 
-        public void DeactivateReview(Review review)
+        public bool DeactivateReview(Review review)
         {
-            
-            dbadministration.DeactivateReview(review);
+            review.Active = false;
+            return dbadministration.DeactivateReview(review);
         }
 
         public bool LoginUser(string username, string password)

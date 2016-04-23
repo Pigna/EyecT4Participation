@@ -68,6 +68,10 @@ namespace EyeCT4Participation
 
             public override string ToString()
             {
+                if (!Active)
+                {
+                    return id + " [D] " + Name + " ";
+                }
                 return id + " " + Name + " ";
             }
     }

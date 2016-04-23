@@ -181,7 +181,7 @@ namespace EyeCT4Participation.Database
                         Convert.ToString(needyObjects["geslacht"]), Convert.ToBoolean(needyObjects["actief"]));
                     needyAccount = newneedy;
                 }
-                HelpRequest newHelpRequest = new HelpRequest(Convert.ToString(results["omschrijving"]), Convert.ToDateTime(results["startdatum"]), Convert.ToBoolean(results["urgent"]), Convert.ToBoolean(results["actief"]), needyAccount, acccountList);
+                HelpRequest newHelpRequest = new HelpRequest(Convert.ToInt32(results["id"]), Convert.ToString(results["omschrijving"]), Convert.ToDateTime(results["startdatum"]), Convert.ToBoolean(results["urgent"]), Convert.ToBoolean(results["actief"]), needyAccount, acccountList);
                 requestslist.Add((newHelpRequest));
 
 
@@ -317,8 +317,9 @@ namespace EyeCT4Participation.Database
             try
             {
                 string query; // the query will end up in here
-                query = "UPDATE GEBRUIKER SET";
-                query += " ACTIEF = 0 WHERE NAAM = " + account.Username;
+                query = "UPDATE GEBRUIKER ";
+                query += "SET ACTIEF = 0 ";
+                query += "WHERE id = '" + account.id + "' ";
                 doQuery(query); //query will be activated
                 return true;
             }
@@ -335,9 +336,7 @@ namespace EyeCT4Participation.Database
                 string query; // the query will end up in here
                 query = "UPDATE CHAT ";
                 query += "SET ACTIEF = 0 ";
-                query += "WHERE TIJDSTIP = '" + chat.date + "' ";
-                query += "AND VERZENDERID = (SELECT ID FROM GEBRUIKER WHERE NAAM = '" + chat.sender.Name + "') ";
-                query += "AND ONTVANGERID = (SELECT ID FROM GEBRUIKER WHERE NAAM = '" + chat.receiver.Name + "') ";
+                query += "WHERE id = '" + chat.id + "' ";
                 doQuery(query); //query will be activated
                 return true;
             }
@@ -354,9 +353,7 @@ namespace EyeCT4Participation.Database
                 string query; // the query will end up in here
                 query = "UPDATE HULPVRAAG ";
                 query += "SET ACTIEF = 0 ";
-                query += "WHERE STARTDATUM = '" + helprequest.Date + "' ";
-                query += "AND HULPBEHOEVENDEID = (SELECT ID FROM GEBRUIKER WHERE NAAM = '" + helprequest.Needy.Name + "') ";
-                query += "AND OMSCHRIJVING = '" + helprequest.Question + "' ";
+                query += "WHERE ID = '" + helprequest.id + "' ";
                 doQuery(query); //query will be activated
                 return true;
             }
@@ -373,9 +370,7 @@ namespace EyeCT4Participation.Database
                 string query; // the query will end up in here
                 query = "UPDATE REVIEW ";
                 query += "SET ACTIEF = 0 ";
-                query += "WHERE DATUM = '" + review.Date + "' ";
-                query += "AND VERZENDERID = (SELECT ID FROM GEBRUIKER WHERE NAAM = '" + review.Volunteer.Name + "') ";
-                query += "AND ONTVANGERID = (SELECT ID FROM GEBRUIKER WHERE NAAM = '" + review.Needy.Name + "') ";
+                query += "WHERE ID = '" + review.id + "' ";
                 doQuery(query); //query will be activated
                 return true;
             }

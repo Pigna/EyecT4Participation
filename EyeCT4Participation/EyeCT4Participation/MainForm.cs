@@ -77,13 +77,38 @@ namespace EyeCT4Participation
             if (filter != "")
             {
                 lbBeheerAccount.Items.Clear();
+                lbBeheerChat.Items.Clear();
+                lbBeheerHulpaanvraag.Items.Clear();
+                lbBeheerBeoordeling.Items.Clear();
                 List<string> filterinput = new List<string>();
                 if (filter.Contains(';'))
                 {
                     filterinput.AddRange(filter.Split(';'));
-                    foreach (Account account in administration.ListFilterAccount(filterinput))
+                    List<Account> ListFiltered = administration.ListFilterAccount(filterinput);
+                    foreach (Account account in ListFiltered)
                     {
                         lbBeheerAccount.Items.Add(account);
+                        foreach (Chat chat in administration.listChats)
+                        {
+                            if (ListFiltered.Contains(chat.sender) && ListFiltered.Contains(chat.receiver))
+                            {
+                                lbBeheerChat.Items.Add(chat);
+                            }
+                        }
+                        foreach (HelpRequest helprequest in administration.listHelprequests)
+                        {
+                            if (helprequest.Needy == account || helprequest.ListVolunteers.Contains(account))
+                            {
+                                lbBeheerHulpaanvraag.Items.Add(helprequest);
+                            }
+                        }
+                        foreach (Review review in administration.listReviews)
+                        {
+                            if (review.Needy == account || review.Volunteer == account)
+                            {
+                                lbBeheerBeoordeling.Items.Add(review);
+                            }
+                        }
                     }
                 }
                 else
@@ -94,6 +119,10 @@ namespace EyeCT4Participation
                         lbBeheerAccount.Items.Add(account);
                     }
                 }
+            }
+            else
+            {
+                BeheerRefresh();
             }
 
         }
@@ -107,7 +136,7 @@ namespace EyeCT4Participation
             lbBeheerBeoordeling.Items.Clear();
             foreach (Account account in administration.listAccounts)
             {
-                lbBeheerAccount.Items.Add(account);
+                    lbBeheerAccount.Items.Add(account);
             }
             foreach (Chat chat in administration.listChats)
             {
@@ -125,22 +154,50 @@ namespace EyeCT4Participation
 
         private void btnBeheerAccountDeactiveren_Click(object sender, EventArgs e)
         {
-            administration.DeactivateAccount(lbBeheerAccount.SelectedItem as Account);
+            if (administration.DeactivateAccount(lbBeheerAccount.SelectedItem as Account))
+            {
+                lbBeheerAccount.Items.Remove(lbBeheerAccount.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Fout bij deactiveren account");
+            }
         }
 
         private void btnBeheerHulpaanvraagDeactiveren_Click(object sender, EventArgs e)
         {
-            administration.DeactivateHelpRequest(lbBeheerHulpaanvraag.SelectedItem as HelpRequest);
+            if (administration.DeactivateHelpRequest(lbBeheerHulpaanvraag.SelectedItem as HelpRequest))
+            {
+                lbBeheerHulpaanvraag.Items.Remove(lbBeheerHulpaanvraag.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Fout bij deactiveren hulpaanvraag");
+            }
         }
 
         private void btnBeheerBeoordelingDeactiveren_Click(object sender, EventArgs e)
         {
-            administration.DeactivateReview(lbBeheerBeoordeling.SelectedItem as Review);
+            if (administration.DeactivateReview(lbBeheerBeoordeling.SelectedItem as Review))
+            {
+                lbBeheerBeoordeling.Items.Remove(lbBeheerBeoordeling.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Fout bij deactiveren beoordeling");
+            }
         }
 
         private void btnBeheerChatDeactiveren_Click(object sender, EventArgs e)
         {
-            administration.DeactivateChat(lbBeheerChat.SelectedItem as Chat);
+            if (administration.DeactivateChat(lbBeheerChat.SelectedItem as Chat))
+            {
+                lbBeheerChat.Items.Remove(lbBeheerChat.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Fout bij deactiveren chat");
+            }
         }
 
         private void btnBeheerAccountAanpassen_Click(object sender, EventArgs e)

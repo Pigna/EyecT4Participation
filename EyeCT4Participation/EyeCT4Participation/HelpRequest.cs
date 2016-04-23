@@ -17,10 +17,12 @@ namespace EyeCT4Participation
 
         public bool Active { get; set; }
         public Needy Needy { get; set; }
-        List<Volunteer> ListVolunteers = new List<Volunteer>();
+        public int id { get; private set; }
+        public List<Volunteer> ListVolunteers = new List<Volunteer>();
 
-        public HelpRequest(string question, DateTime date, bool urgency, bool active, Needy needy, List<Volunteer> ListVolunteers)
+        public HelpRequest(int id, string question, DateTime date, bool urgency, bool active, Needy needy, List<Volunteer> ListVolunteers)
         {
+            this.id = id;
             this.Question = question;
             this.Date = date;
             this.Urgency = urgency;
