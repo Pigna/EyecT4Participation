@@ -27,11 +27,15 @@ namespace EyeCT4Participation.Database
                     {
                         retAccount = new Manager(
                             Convert.ToInt32(results["id"]),
-                            Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
-                            Convert.ToString(results["naam"]), Convert.ToString(results["adres"]),
+                            Convert.ToString(results["gebruikersnaam"]),
+                            Convert.ToString(results["wachtwoord"]),
+                            Convert.ToString(results["naam"]),
+                            Convert.ToString(results["adres"]),
                             Convert.ToString(results["woonplaats"]),
-                            Convert.ToString(results["email"]), Convert.ToInt32(results["telefoonnummer"]),
-                            Convert.ToDateTime(results["geboortedatum"]), Convert.ToString(results["geslacht"]),
+                            Convert.ToString(results["email"]),
+                            Convert.ToInt32(results["telefoonnummer"]),
+                            Convert.ToDateTime(results["geboortedatum"]),
+                            Convert.ToString(results["geslacht"]),
                             Convert.ToBoolean(results["actief"]));
                     }
                     else if (returnvalue == 1)
@@ -39,11 +43,15 @@ namespace EyeCT4Participation.Database
                         retAccount = new Needy(
                             Convert.ToInt32(results["id"]),
                             Convert.ToBoolean(results["ovkaart"]),
-                            Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
-                            Convert.ToString(results["naam"]), Convert.ToString(results["adres"]),
+                            Convert.ToString(results["gebruikersnaam"]),
+                            Convert.ToString(results["wachtwoord"]),
+                            Convert.ToString(results["naam"]),
+                            Convert.ToString(results["adres"]),
                             Convert.ToString(results["woonplaats"]),
-                            Convert.ToString(results["email"]), Convert.ToInt32(results["telefoonnummer"]),
-                            Convert.ToDateTime(results["geboortedatum"]), Convert.ToString(results["geslacht"]),
+                            Convert.ToString(results["email"]),
+                            Convert.ToInt32(results["telefoonnummer"]),
+                            Convert.ToDateTime(results["geboortedatum"]),
+                            Convert.ToString(results["geslacht"]),
                             Convert.ToBoolean(results["actief"]));
                     }
                     else if (returnvalue == 2)
@@ -51,11 +59,15 @@ namespace EyeCT4Participation.Database
                         retAccount = new Volunteer(
                             Convert.ToInt32(results["id"]),
                             Convert.ToBoolean(results["auto"]),
-                            Convert.ToString(results["gebruikersnaam"]), Convert.ToString(results["wachtwoord"]),
-                            Convert.ToString(results["naam"]), Convert.ToString(results["adres"]),
+                            Convert.ToString(results["gebruikersnaam"]),
+                            Convert.ToString(results["wachtwoord"]),
+                            Convert.ToString(results["naam"]),
+                            Convert.ToString(results["adres"]),
                             Convert.ToString(results["woonplaats"]),
-                            Convert.ToString(results["email"]), Convert.ToInt32(results["telefoonnummer"]),
-                            Convert.ToDateTime(results["geboortedatum"]), Convert.ToString(results["geslacht"]),
+                            Convert.ToString(results["email"]),
+                            Convert.ToInt32(results["telefoonnummer"]),
+                            Convert.ToDateTime(results["geboortedatum"]),
+                            Convert.ToString(results["geslacht"]),
                             Convert.ToBoolean(results["actief"]));
                     }
                 }

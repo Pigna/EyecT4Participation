@@ -157,12 +157,23 @@ namespace EyeCT4Participation
         /// </summary>
         private void VolunteerRefresh()
         {
-            administration.ListRefresh();
-            lbVolunteerReview.Items.Clear();
-            lbVolunteerHelprequest.Items.Clear();
-            foreach (HelpRequest helprequest in administration.listHelprequests)
+            Account account = administration.LoggedinUser;
+            if (account != null)
             {
-                lbVolunteerHelprequest.Items.Add(helprequest);
+                if (administration.LoggedinUser.GetType() == typeof (Volunteer))
+                {
+                    administration.ListRefresh();
+                    lbVolunteerReview.Items.Clear();
+                    lbVolunteerHelprequest.Items.Clear();
+                    foreach (HelpRequest helprequest in administration.listHelprequests)
+                    {
+                        lbVolunteerHelprequest.Items.Add(helprequest);
+                    }
+                    foreach (Review review in ((Volunteer) administration.LoggedinUser).getListReview())
+                    {
+                        lbVolunteerReview.Items.Add(review);
+                    }
+                }
             }
         }
 
