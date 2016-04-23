@@ -649,6 +649,7 @@
             this.btnverwijder.TabIndex = 18;
             this.btnverwijder.Text = "verwijder";
             this.btnverwijder.UseVisualStyleBackColor = true;
+            this.btnverwijder.Click += new System.EventHandler(this.btnverwijder_Click);
             // 
             // lbhulpvragen
             // 
@@ -676,6 +677,7 @@
             this.btnbeoordeel.TabIndex = 15;
             this.btnbeoordeel.Text = "Beoordeel";
             this.btnbeoordeel.UseVisualStyleBackColor = true;
+            this.btnbeoordeel.Click += new System.EventHandler(this.btnbeoordeel_Click);
             // 
             // nudscore
             // 
