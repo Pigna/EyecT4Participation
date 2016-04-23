@@ -412,21 +412,6 @@ namespace EyeCT4Participation
             }
         }
 
-        private void btnHulpUitloggen_Click(object sender, EventArgs e)
-        {
-            if (administration.LoggedinUser != null)
-            {
-                administration.LoggedinUser = null;
-                TabControl.TabPages[0].Enabled = true;
-                TabControl.TabPages[1].Enabled = false;
-                TabControl.TabPages[2].Enabled = false;
-                TabControl.TabPages[3].Enabled = false;
-                TabControl.TabPages[4].Enabled = false;
-                TabControl.SelectTab(0);
-                MessageBox.Show("U bent uitgelogd");
-            }
-        }
-
         private void btnVrijwilligerUitloggen_Click(object sender, EventArgs e)
         {
             if (administration.LoggedinUser != null)

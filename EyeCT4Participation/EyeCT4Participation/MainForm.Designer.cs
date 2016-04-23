@@ -110,6 +110,7 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
+            this.btnBeheerUitloggen = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -614,7 +615,7 @@
             this.btnHulpUitloggen.TabIndex = 22;
             this.btnHulpUitloggen.Text = "Uitloggen";
             this.btnHulpUitloggen.UseVisualStyleBackColor = true;
-            this.btnHulpUitloggen.Click += new System.EventHandler(this.btnHulpUitloggen_Click);
+            this.btnHulpUitloggen.Click += new System.EventHandler(this.btnVrijwilligerUitloggen_Click);
             // 
             // cbUsers
             // 
@@ -780,6 +781,7 @@
             // 
             // tabpageBeheer
             // 
+            this.tabpageBeheer.Controls.Add(this.btnBeheerUitloggen);
             this.tabpageBeheer.Controls.Add(this.btnBeheerFilter);
             this.tabpageBeheer.Controls.Add(this.lblBeheerFilter);
             this.tabpageBeheer.Controls.Add(this.tbBeheerFilter);
@@ -976,6 +978,16 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
+            // btnBeheerUitloggen
+            // 
+            this.btnBeheerUitloggen.Location = new System.Drawing.Point(834, 5);
+            this.btnBeheerUitloggen.Name = "btnBeheerUitloggen";
+            this.btnBeheerUitloggen.Size = new System.Drawing.Size(103, 45);
+            this.btnBeheerUitloggen.TabIndex = 60;
+            this.btnBeheerUitloggen.Text = "Uitloggen";
+            this.btnBeheerUitloggen.UseVisualStyleBackColor = true;
+            this.btnBeheerUitloggen.Click += new System.EventHandler(this.btnVrijwilligerUitloggen_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1083,6 +1095,7 @@
         private System.Windows.Forms.DateTimePicker dtpRegistratieBirthdate;
         private System.Windows.Forms.Button btnVrijwilligerUitloggen;
         private System.Windows.Forms.Button btnHulpUitloggen;
+        private System.Windows.Forms.Button btnBeheerUitloggen;
     }
 }
 
