@@ -65,6 +65,7 @@
             this.lblRegistratieWW = new System.Windows.Forms.Label();
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
             this.tabpageVrijwilliger = new System.Windows.Forms.TabPage();
+            this.btnVrijwilligerUitloggen = new System.Windows.Forms.Button();
             this.btnVolunteerReviewReact = new System.Windows.Forms.Button();
             this.btnVolunteerHelprequestRegister = new System.Windows.Forms.Button();
             this.lblVolunteerReview = new System.Windows.Forms.Label();
@@ -73,6 +74,7 @@
             this.lbVolunteerReview = new System.Windows.Forms.ListBox();
             this.lbVolunteerHelprequest = new System.Windows.Forms.ListBox();
             this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
+            this.btnHulpUitloggen = new System.Windows.Forms.Button();
             this.cbUsers = new System.Windows.Forms.ComboBox();
             this.rtdreviewtxt = new System.Windows.Forms.RichTextBox();
             this.dthelprequest = new System.Windows.Forms.DateTimePicker();
@@ -84,12 +86,12 @@
             this.BTHelpSend = new System.Windows.Forms.Button();
             this.rtbhelpvraag = new System.Windows.Forms.RichTextBox();
             this.tabpageChat = new System.Windows.Forms.TabPage();
-            this.btnOpen = new System.Windows.Forms.Button();
+            this.btnChatOpen = new System.Windows.Forms.Button();
             this.tbChatMessage = new System.Windows.Forms.RichTextBox();
             this.lbChatConversation = new System.Windows.Forms.ListBox();
             this.lblActiveConversation = new System.Windows.Forms.Label();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.lbActiveConversations = new System.Windows.Forms.ListBox();
+            this.btnChatSend = new System.Windows.Forms.Button();
+            this.lbChatConversations = new System.Windows.Forms.ListBox();
             this.tabpageBeheer = new System.Windows.Forms.TabPage();
             this.btnBeheerFilter = new System.Windows.Forms.Button();
             this.lblBeheerFilter = new System.Windows.Forms.Label();
@@ -108,8 +110,6 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
-            this.btnHulpUitloggen = new System.Windows.Forms.Button();
-            this.btnVrijwilligerUitloggen = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -513,6 +513,16 @@
             this.tabpageVrijwilliger.Text = "Vrijwilliger";
             this.tabpageVrijwilliger.UseVisualStyleBackColor = true;
             // 
+            // btnVrijwilligerUitloggen
+            // 
+            this.btnVrijwilligerUitloggen.Location = new System.Drawing.Point(675, 23);
+            this.btnVrijwilligerUitloggen.Name = "btnVrijwilligerUitloggen";
+            this.btnVrijwilligerUitloggen.Size = new System.Drawing.Size(103, 45);
+            this.btnVrijwilligerUitloggen.TabIndex = 13;
+            this.btnVrijwilligerUitloggen.Text = "Uitloggen";
+            this.btnVrijwilligerUitloggen.UseVisualStyleBackColor = true;
+            this.btnVrijwilligerUitloggen.Click += new System.EventHandler(this.btnVrijwilligerUitloggen_Click);
+            // 
             // btnVolunteerReviewReact
             // 
             this.btnVolunteerReviewReact.Location = new System.Drawing.Point(519, 405);
@@ -595,6 +605,16 @@
             this.tabpageHulpbehoevende.TabIndex = 3;
             this.tabpageHulpbehoevende.Text = "Hulpbehoevende";
             this.tabpageHulpbehoevende.UseVisualStyleBackColor = true;
+            // 
+            // btnHulpUitloggen
+            // 
+            this.btnHulpUitloggen.Location = new System.Drawing.Point(460, 6);
+            this.btnHulpUitloggen.Name = "btnHulpUitloggen";
+            this.btnHulpUitloggen.Size = new System.Drawing.Size(103, 45);
+            this.btnHulpUitloggen.TabIndex = 22;
+            this.btnHulpUitloggen.Text = "Uitloggen";
+            this.btnHulpUitloggen.UseVisualStyleBackColor = true;
+            this.btnHulpUitloggen.Click += new System.EventHandler(this.btnHulpUitloggen_Click);
             // 
             // cbUsers
             // 
@@ -687,12 +707,12 @@
             // 
             // tabpageChat
             // 
-            this.tabpageChat.Controls.Add(this.btnOpen);
+            this.tabpageChat.Controls.Add(this.btnChatOpen);
             this.tabpageChat.Controls.Add(this.tbChatMessage);
             this.tabpageChat.Controls.Add(this.lbChatConversation);
             this.tabpageChat.Controls.Add(this.lblActiveConversation);
-            this.tabpageChat.Controls.Add(this.btnSend);
-            this.tabpageChat.Controls.Add(this.lbActiveConversations);
+            this.tabpageChat.Controls.Add(this.btnChatSend);
+            this.tabpageChat.Controls.Add(this.lbChatConversations);
             this.tabpageChat.Location = new System.Drawing.Point(4, 22);
             this.tabpageChat.Name = "tabpageChat";
             this.tabpageChat.Padding = new System.Windows.Forms.Padding(3);
@@ -701,16 +721,16 @@
             this.tabpageChat.Text = "Chat";
             this.tabpageChat.UseVisualStyleBackColor = true;
             // 
-            // btnOpen
+            // btnChatOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(155, 566);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(2);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(103, 45);
-            this.btnOpen.TabIndex = 18;
-            this.btnOpen.Text = "Open";
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            this.btnChatOpen.Location = new System.Drawing.Point(155, 566);
+            this.btnChatOpen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnChatOpen.Name = "btnChatOpen";
+            this.btnChatOpen.Size = new System.Drawing.Size(103, 45);
+            this.btnChatOpen.TabIndex = 18;
+            this.btnChatOpen.Text = "Open";
+            this.btnChatOpen.UseVisualStyleBackColor = true;
+            this.btnChatOpen.Click += new System.EventHandler(this.btnChatOpen_Click);
             // 
             // tbChatMessage
             // 
@@ -733,30 +753,30 @@
             // lblActiveConversation
             // 
             this.lblActiveConversation.AutoSize = true;
-            this.lblActiveConversation.Location = new System.Drawing.Point(314, 3);
+            this.lblActiveConversation.Location = new System.Drawing.Point(259, 8);
             this.lblActiveConversation.Name = "lblActiveConversation";
             this.lblActiveConversation.Size = new System.Drawing.Size(83, 13);
             this.lblActiveConversation.TabIndex = 15;
             this.lblActiveConversation.Text = "[HuidigGesprek]";
             // 
-            // btnSend
+            // btnChatSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(833, 566);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(103, 45);
-            this.btnSend.TabIndex = 11;
-            this.btnSend.Text = "Verstuur";
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            this.btnChatSend.Location = new System.Drawing.Point(833, 566);
+            this.btnChatSend.Name = "btnChatSend";
+            this.btnChatSend.Size = new System.Drawing.Size(103, 45);
+            this.btnChatSend.TabIndex = 11;
+            this.btnChatSend.Text = "Verstuur";
+            this.btnChatSend.UseVisualStyleBackColor = true;
+            this.btnChatSend.Click += new System.EventHandler(this.btnChatSend_Click);
             // 
-            // lbActiveConversations
+            // lbChatConversations
             // 
-            this.lbActiveConversations.FormattingEnabled = true;
-            this.lbActiveConversations.Location = new System.Drawing.Point(8, 23);
-            this.lbActiveConversations.Margin = new System.Windows.Forms.Padding(4);
-            this.lbActiveConversations.Name = "lbActiveConversations";
-            this.lbActiveConversations.Size = new System.Drawing.Size(249, 537);
-            this.lbActiveConversations.TabIndex = 8;
+            this.lbChatConversations.FormattingEnabled = true;
+            this.lbChatConversations.Location = new System.Drawing.Point(8, 23);
+            this.lbChatConversations.Margin = new System.Windows.Forms.Padding(4);
+            this.lbChatConversations.Name = "lbChatConversations";
+            this.lbChatConversations.Size = new System.Drawing.Size(249, 537);
+            this.lbChatConversations.TabIndex = 8;
             // 
             // tabpageBeheer
             // 
@@ -956,26 +976,6 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
-            // btnHulpUitloggen
-            // 
-            this.btnHulpUitloggen.Location = new System.Drawing.Point(460, 6);
-            this.btnHulpUitloggen.Name = "btnHulpUitloggen";
-            this.btnHulpUitloggen.Size = new System.Drawing.Size(103, 45);
-            this.btnHulpUitloggen.TabIndex = 22;
-            this.btnHulpUitloggen.Text = "Uitloggen";
-            this.btnHulpUitloggen.UseVisualStyleBackColor = true;
-            this.btnHulpUitloggen.Click += new System.EventHandler(this.btnHulpUitloggen_Click);
-            // 
-            // btnVrijwilligerUitloggen
-            // 
-            this.btnVrijwilligerUitloggen.Location = new System.Drawing.Point(675, 23);
-            this.btnVrijwilligerUitloggen.Name = "btnVrijwilligerUitloggen";
-            this.btnVrijwilligerUitloggen.Size = new System.Drawing.Size(103, 45);
-            this.btnVrijwilligerUitloggen.TabIndex = 13;
-            this.btnVrijwilligerUitloggen.Text = "Uitloggen";
-            this.btnVrijwilligerUitloggen.UseVisualStyleBackColor = true;
-            this.btnVrijwilligerUitloggen.Click += new System.EventHandler(this.btnVrijwilligerUitloggen_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1043,9 +1043,9 @@
         private System.Windows.Forms.Label lblRegistratieWW;
         private System.Windows.Forms.Label lblRegistratieGebruikersnaam;
         private System.Windows.Forms.Label lblActiveConversation;
-        private System.Windows.Forms.ListBox lbActiveConversations;
+        private System.Windows.Forms.ListBox lbChatConversations;
         private System.Windows.Forms.Label lblRegistratieWoonplaats;
-        public System.Windows.Forms.Button btnSend;
+        public System.Windows.Forms.Button btnChatSend;
         public System.Windows.Forms.ListBox lbChatConversation;
         public System.Windows.Forms.RichTextBox tbChatMessage;
         private System.Windows.Forms.TextBox tbRegistratiePhonenumber;
@@ -1058,7 +1058,7 @@
         private System.Windows.Forms.NumericUpDown nudscore;
         private System.Windows.Forms.Button BTHelpSend;
         private System.Windows.Forms.RichTextBox rtbhelpvraag;
-        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.Button btnChatOpen;
         private System.Windows.Forms.TextBox tbRegistratieEmail;
         private System.Windows.Forms.Label lblRegistratieEmail;
         private System.Windows.Forms.CheckBox cbRegistratieAuto;

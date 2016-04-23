@@ -35,39 +35,6 @@ namespace EyeCT4Participation
             TabControl.TabPages.Remove(tabpageVrijwilliger);
              */
         }
-
-        public void btnSend_Click(object sender, EventArgs e)
-        {
-            foreach (Chat chat in administration.listChats)
-            {
-                if (administration.LoggedinUser == chat.receiver)
-                {
-                    foreach (Chat p in administration.listChats)
-                    { lbChatConversation.Items.Add(p);
-                    }
-                }
-                else { MessageBox.Show("Verkeerde gebruiker"); }
-            }
-        }
-
-
-            //string message = tbChatMessage.Text;
-            //if (message != null && message != "")
-            //{
-            //    Chat chat = new Chat(message, date, sender, receiver, active);
-            //    lbChatConversation.Items.Add(chat);
-            //}
-
-            //else
-            //{
-            //    MessageBox.Show("Voer iets in, veld is nog leeg!");
-            //}
-
-        private void btnOpen_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBeheerFilter_Click(object sender, EventArgs e)
         {
             string filter = tbBeheerFilter.Text;
@@ -472,6 +439,36 @@ namespace EyeCT4Participation
                 TabControl.TabPages[4].Enabled = false;
                 TabControl.SelectTab(0);
                 MessageBox.Show("U bent uitgelogd");
+            }
+        }
+
+        private void btnChatSend_Click(object sender, EventArgs e)
+        {
+            //string message = tbChatMessage.Text;
+            //if (message != null && message != "")
+            //{
+            //    Chat chat = new Chat(message, date, sender, receiver, active);
+            //    lbChatConversation.Items.Add(chat);
+            //}
+
+            //else
+            //{
+            //    MessageBox.Show("Voer iets in, veld is nog leeg!");
+            //}
+        }
+
+        private void btnChatOpen_Click(object sender, EventArgs e)
+        {
+            foreach (Chat chat in administration.listChats)
+            {
+                if (administration.LoggedinUser == chat.receiver)
+                {
+                    foreach (Chat p in administration.listChats)
+                    {
+                        lbChatConversation.Items.Add(p);
+                    }
+                }
+                else { MessageBox.Show("Verkeerde gebruiker"); }
             }
         }
     }
