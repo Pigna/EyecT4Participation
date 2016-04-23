@@ -14,9 +14,7 @@ namespace EyeCT4Participation
     public partial class MainForm : Form
     {
         
-        DBaccount databaseAcc = new DBaccount();
-        DBneedy databaseneedy = new DBneedy();
-        DBvolunteer databaseVolunteer = new DBvolunteer();
+        DBaccount dbAccount = new DBaccount();
         DBhelprequest databaseHelprequest = new DBhelprequest();
         
 
@@ -241,12 +239,12 @@ namespace EyeCT4Participation
             
         }
 
-        public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string woonplaats, string email, string geboortedatum, int telefoonnummer,string type,int geslacht, int auto, int ov)
+        public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string woonplaats, string email, DateTime geboortedatum, int telefoonnummer,string type,int geslacht, int auto, int ov)
         {
 
             if (type == "Hulpbehoevende")
             {
-                bool doqueryNeedy = databaseneedy.DoQueryAddNeedy(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
+                bool doqueryNeedy = dbAccount.NewAccount(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
                 
                 if (doqueryNeedy == true)
                 {
@@ -261,7 +259,7 @@ namespace EyeCT4Participation
             }
             else if (type == "Vrijwilliger")
             {
-                bool doqueryVrijwilliger = databaseVolunteer.DoQueryAddVolunteer(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
+                bool doqueryVrijwilliger = dbAccount.NewAccount(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
                
                 if (doqueryVrijwilliger == true)
                 {
@@ -279,7 +277,6 @@ namespace EyeCT4Participation
             tbRegistratieNaam.Clear();
             tbRegistratieAdres.Clear();
             tbRegistratieWplaats.Clear();
-            tbRegistratieGeboortedatum.Clear();
             tbRegistratiePhonenumber.Clear();
             cbRegistratieGeslacht.Text = "";
             cbRegistratieType.Text = "";
@@ -343,35 +340,52 @@ namespace EyeCT4Participation
 
         private void btnRegistratieOK_Click(object sender, EventArgs e)
         {
-            int registratiegeslacht = 2;
-            int auto = 0;
-            int ov = 0;
-            if (cbRegistratieAuto.Checked)
+            if
+            (
+                    tbRegistratieGnaam.Text != "" &&
+                    tbRegistratieWW.Text != "" &&
+                    tbRegistratieNaam.Text != "" &&
+                    tbRegistratieAdres.Text != "" &&
+                    tbRegistratieWplaats.Text != "" &&
+                    tbRegistratieEmail.Text != ""
+            )
             {
-                auto = 1;
-            }
-            if (cbRegistratieAuto.Checked == false)
-            {
-                auto = 0;
-            }
-            if (cbRegistratieOv.Checked)
-            {
-                ov = 1;
-            }
-            if (cbRegistratieOv.Checked == false)
-            {
-                ov = 0;
+                int registratiegeslacht = 2;
+                int auto = 0;
+                int ov = 0;
+                if (cbRegistratieAuto.Checked)
+                {
+                    auto = 1;
+                }
+                if (cbRegistratieOv.Checked)
+                {
+                    ov = 1;
+                }
+
+                if (Convert.ToString(cbRegistratieGeslacht.SelectedItem) == "Man")
+                {
+                    registratiegeslacht = 0;
+                }
+                else if (Convert.ToString(cbRegistratieGeslacht.SelectedItem) == "Vrouw")
+                {
+                     registratiegeslacht = 1;
+                }
+                Registreer(
+                    tbRegistratieGnaam.Text,
+                    tbRegistratieWW.Text,
+                    tbRegistratieNaam.Text,
+                    tbRegistratieAdres.Text,
+                    tbRegistratieWplaats.Text,
+                    tbRegistratieEmail.Text,
+                    Convert.ToDateTime(dtpRegistratieBirthdate.Value),
+                    Convert.ToInt32(tbRegistratiePhonenumber.Text),
+                    Convert.ToString(cbRegistratieType.SelectedItem),
+                    registratiegeslacht,
+                    auto,
+                    ov
+                    );
             }
 
-            if (Convert.ToString(cbRegistratieGeslacht.SelectedItem) == "Man")
-            {
-                registratiegeslacht = 0;
-            }
-            else if (Convert.ToString(cbRegistratieGeslacht.SelectedItem) == "Vrouw")
-            {
-                 registratiegeslacht = 1;
-            }
-            Registreer(tbRegistratieGnaam.Text,tbRegistratieWW.Text,tbRegistratieNaam.Text,tbRegistratieAdres.Text,tbRegistratieWplaats.Text,tbRegistratieEmail.Text,tbRegistratieGeboortedatum.Text,Convert.ToInt32(tbRegistratiePhonenumber.Text),Convert.ToString(cbRegistratieType.SelectedItem),registratiegeslacht, auto, ov);
             
         }
 

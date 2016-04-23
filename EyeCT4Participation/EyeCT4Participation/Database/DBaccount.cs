@@ -79,5 +79,23 @@ namespace EyeCT4Participation.Database
                 return null;
             }
         }
+        public bool NewAccount(string gebruikersnaam, string wachtwoord, string naam, string adres, string woonplaats, string email, DateTime geboortedatum, int telefoonnummer, int type, int geslacht, int auto, int actief, int ov) // replace user with the data u want to add/ change to the table
+        {
+            int returnID = getLatestId("gebruiker");
+
+            try
+            {
+                string query; // the query will end up in here
+
+                query = "INSERT INTO GEBRUIKER (ID, NAAM, GEBRUIKERSNAAM, WACHTWOORD, EMAIL, GEBOORTEDATUM, ADRES, WOONPLAATS, TELEFOONNUMMER, AUTO, ACTIEF, TYPE, FOTO, OVKAART, GESLACHT) VALUES ";
+                query += "(" + returnID + ",'" + naam + "','" + gebruikersnaam + "','" + wachtwoord + "','" + email + "',to_date('" + geboortedatum.ToString("MM-dd-yyyy hh:mm") + "','MM-DD-YYYY hh24:MI'),'" + adres + "','" + woonplaats + "'," + telefoonnummer + "," + auto + "," + actief + "," + type + ", NULL ," + ov + ", " + geslacht + ")";  //replace with INSERT if needed
+                doQuery(query); //query will be activated
+                return true;
+            }
+            catch
+            {
+                return false;   // if query fails, return a false.
+            }
+        }
     }
 }

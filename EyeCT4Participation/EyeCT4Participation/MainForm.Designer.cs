@@ -30,6 +30,7 @@
         {
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabpageLogin = new System.Windows.Forms.TabPage();
+            this.dtpRegistratieBirthdate = new System.Windows.Forms.DateTimePicker();
             this.cbRegistratieOv = new System.Windows.Forms.CheckBox();
             this.lblRegistratieOv = new System.Windows.Forms.Label();
             this.lblRegistratieGelukt = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.lblInloggenInloggen = new System.Windows.Forms.Label();
             this.btnRegistratieOK = new System.Windows.Forms.Button();
             this.btnRegistratieAnnuleren = new System.Windows.Forms.Button();
-            this.tbRegistratieGeboortedatum = new System.Windows.Forms.TextBox();
             this.tbRegistratieWplaats = new System.Windows.Forms.TextBox();
             this.tbRegistratieAdres = new System.Windows.Forms.TextBox();
             this.tbRegistratieNaam = new System.Windows.Forms.TextBox();
@@ -133,6 +133,7 @@
             // 
             // tabpageLogin
             // 
+            this.tabpageLogin.Controls.Add(this.dtpRegistratieBirthdate);
             this.tabpageLogin.Controls.Add(this.cbRegistratieOv);
             this.tabpageLogin.Controls.Add(this.lblRegistratieOv);
             this.tabpageLogin.Controls.Add(this.lblRegistratieGelukt);
@@ -155,7 +156,6 @@
             this.tabpageLogin.Controls.Add(this.lblInloggenInloggen);
             this.tabpageLogin.Controls.Add(this.btnRegistratieOK);
             this.tabpageLogin.Controls.Add(this.btnRegistratieAnnuleren);
-            this.tabpageLogin.Controls.Add(this.tbRegistratieGeboortedatum);
             this.tabpageLogin.Controls.Add(this.tbRegistratieWplaats);
             this.tabpageLogin.Controls.Add(this.tbRegistratieAdres);
             this.tabpageLogin.Controls.Add(this.tbRegistratieNaam);
@@ -174,6 +174,13 @@
             this.tabpageLogin.TabIndex = 0;
             this.tabpageLogin.Text = "Inloggen/Registreren";
             this.tabpageLogin.UseVisualStyleBackColor = true;
+            // 
+            // dtpRegistratieBirthdate
+            // 
+            this.dtpRegistratieBirthdate.Location = new System.Drawing.Point(548, 240);
+            this.dtpRegistratieBirthdate.Name = "dtpRegistratieBirthdate";
+            this.dtpRegistratieBirthdate.Size = new System.Drawing.Size(200, 20);
+            this.dtpRegistratieBirthdate.TabIndex = 61;
             // 
             // cbRegistratieOv
             // 
@@ -199,9 +206,8 @@
             this.lblRegistratieGelukt.AutoSize = true;
             this.lblRegistratieGelukt.Location = new System.Drawing.Point(660, 484);
             this.lblRegistratieGelukt.Name = "lblRegistratieGelukt";
-            this.lblRegistratieGelukt.Size = new System.Drawing.Size(35, 13);
+            this.lblRegistratieGelukt.Size = new System.Drawing.Size(0, 13);
             this.lblRegistratieGelukt.TabIndex = 58;
-            this.lblRegistratieGelukt.Text = "label3";
             this.lblRegistratieGelukt.Visible = false;
             // 
             // cbRegistratieAuto
@@ -285,6 +291,7 @@
             // tbRegistratiePhonenumber
             // 
             this.tbRegistratiePhonenumber.Location = new System.Drawing.Point(548, 272);
+            this.tbRegistratiePhonenumber.MaxLength = 16;
             this.tbRegistratiePhonenumber.Name = "tbRegistratiePhonenumber";
             this.tbRegistratiePhonenumber.Size = new System.Drawing.Size(96, 20);
             this.tbRegistratiePhonenumber.TabIndex = 49;
@@ -385,14 +392,6 @@
             this.btnRegistratieAnnuleren.TabIndex = 39;
             this.btnRegistratieAnnuleren.Text = "Annuleren";
             this.btnRegistratieAnnuleren.UseVisualStyleBackColor = true;
-            // 
-            // tbRegistratieGeboortedatum
-            // 
-            this.tbRegistratieGeboortedatum.Location = new System.Drawing.Point(548, 240);
-            this.tbRegistratieGeboortedatum.Margin = new System.Windows.Forms.Padding(2);
-            this.tbRegistratieGeboortedatum.Name = "tbRegistratieGeboortedatum";
-            this.tbRegistratieGeboortedatum.Size = new System.Drawing.Size(96, 20);
-            this.tbRegistratieGeboortedatum.TabIndex = 37;
             // 
             // tbRegistratieWplaats
             // 
@@ -1009,7 +1008,6 @@
         private System.Windows.Forms.Label lblInloggenInloggen;
         private System.Windows.Forms.Button btnRegistratieOK;
         private System.Windows.Forms.Button btnRegistratieAnnuleren;
-        private System.Windows.Forms.TextBox tbRegistratieGeboortedatum;
         private System.Windows.Forms.TextBox tbRegistratieWplaats;
         private System.Windows.Forms.TextBox tbRegistratieAdres;
         private System.Windows.Forms.TextBox tbRegistratieNaam;
@@ -1058,6 +1056,7 @@
         private System.Windows.Forms.ListBox lbVolunteerHelprequest;
         private System.Windows.Forms.RichTextBox rtdreviewtxt;
         private System.Windows.Forms.ComboBox cbUsers;
+        private System.Windows.Forms.DateTimePicker dtpRegistratieBirthdate;
     }
 }
 
