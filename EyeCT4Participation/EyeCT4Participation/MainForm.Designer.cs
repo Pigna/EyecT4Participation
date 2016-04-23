@@ -303,7 +303,7 @@
             this.btnInloggenInloggen.Location = new System.Drawing.Point(175, 142);
             this.btnInloggenInloggen.Margin = new System.Windows.Forms.Padding(2);
             this.btnInloggenInloggen.Name = "btnInloggenInloggen";
-            this.btnInloggenInloggen.Size = new System.Drawing.Size(67, 29);
+            this.btnInloggenInloggen.Size = new System.Drawing.Size(103, 45);
             this.btnInloggenInloggen.TabIndex = 47;
             this.btnInloggenInloggen.Text = "Inloggen";
             this.btnInloggenInloggen.UseVisualStyleBackColor = true;
@@ -367,10 +367,10 @@
             // 
             // btnRegistratieOK
             // 
-            this.btnRegistratieOK.Location = new System.Drawing.Point(573, 481);
+            this.btnRegistratieOK.Location = new System.Drawing.Point(548, 481);
             this.btnRegistratieOK.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistratieOK.Name = "btnRegistratieOK";
-            this.btnRegistratieOK.Size = new System.Drawing.Size(56, 19);
+            this.btnRegistratieOK.Size = new System.Drawing.Size(103, 45);
             this.btnRegistratieOK.TabIndex = 40;
             this.btnRegistratieOK.Text = "OK";
             this.btnRegistratieOK.UseVisualStyleBackColor = true;
@@ -378,10 +378,10 @@
             // 
             // btnRegistratieAnnuleren
             // 
-            this.btnRegistratieAnnuleren.Location = new System.Drawing.Point(444, 481);
+            this.btnRegistratieAnnuleren.Location = new System.Drawing.Point(438, 481);
             this.btnRegistratieAnnuleren.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistratieAnnuleren.Name = "btnRegistratieAnnuleren";
-            this.btnRegistratieAnnuleren.Size = new System.Drawing.Size(72, 19);
+            this.btnRegistratieAnnuleren.Size = new System.Drawing.Size(103, 45);
             this.btnRegistratieAnnuleren.TabIndex = 39;
             this.btnRegistratieAnnuleren.Text = "Annuleren";
             this.btnRegistratieAnnuleren.UseVisualStyleBackColor = true;
@@ -513,9 +513,9 @@
             // 
             // btnVolunteerReviewReact
             // 
-            this.btnVolunteerReviewReact.Location = new System.Drawing.Point(545, 405);
+            this.btnVolunteerReviewReact.Location = new System.Drawing.Point(519, 405);
             this.btnVolunteerReviewReact.Name = "btnVolunteerReviewReact";
-            this.btnVolunteerReviewReact.Size = new System.Drawing.Size(77, 19);
+            this.btnVolunteerReviewReact.Size = new System.Drawing.Size(103, 45);
             this.btnVolunteerReviewReact.TabIndex = 6;
             this.btnVolunteerReviewReact.Text = "Reageren";
             this.btnVolunteerReviewReact.UseVisualStyleBackColor = true;
@@ -523,9 +523,9 @@
             // 
             // btnVolunteerHelprequestRegister
             // 
-            this.btnVolunteerHelprequestRegister.Location = new System.Drawing.Point(234, 306);
+            this.btnVolunteerHelprequestRegister.Location = new System.Drawing.Point(208, 306);
             this.btnVolunteerHelprequestRegister.Name = "btnVolunteerHelprequestRegister";
-            this.btnVolunteerHelprequestRegister.Size = new System.Drawing.Size(77, 19);
+            this.btnVolunteerHelprequestRegister.Size = new System.Drawing.Size(103, 45);
             this.btnVolunteerHelprequestRegister.TabIndex = 5;
             this.btnVolunteerHelprequestRegister.Text = "Inschrijven";
             this.btnVolunteerHelprequestRegister.UseVisualStyleBackColor = true;
@@ -700,10 +700,10 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(8, 592);
+            this.btnOpen.Location = new System.Drawing.Point(155, 566);
             this.btnOpen.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(56, 19);
+            this.btnOpen.Size = new System.Drawing.Size(103, 45);
             this.btnOpen.TabIndex = 18;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -714,7 +714,7 @@
             this.tbChatMessage.Location = new System.Drawing.Point(262, 434);
             this.tbChatMessage.Margin = new System.Windows.Forms.Padding(2);
             this.tbChatMessage.Name = "tbChatMessage";
-            this.tbChatMessage.Size = new System.Drawing.Size(674, 159);
+            this.tbChatMessage.Size = new System.Drawing.Size(674, 126);
             this.tbChatMessage.TabIndex = 17;
             this.tbChatMessage.Text = "";
             // 
@@ -738,9 +738,9 @@
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(861, 598);
+            this.btnSend.Location = new System.Drawing.Point(833, 566);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.Size = new System.Drawing.Size(103, 45);
             this.btnSend.TabIndex = 11;
             this.btnSend.Text = "Verstuur";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -752,7 +752,7 @@
             this.lbActiveConversations.Location = new System.Drawing.Point(8, 23);
             this.lbActiveConversations.Margin = new System.Windows.Forms.Padding(4);
             this.lbActiveConversations.Name = "lbActiveConversations";
-            this.lbActiveConversations.Size = new System.Drawing.Size(249, 563);
+            this.lbActiveConversations.Size = new System.Drawing.Size(249, 537);
             this.lbActiveConversations.TabIndex = 8;
             // 
             // tabpageBeheer
@@ -784,10 +784,10 @@
             // 
             // btnBeheerFilter
             // 
-            this.btnBeheerFilter.Location = new System.Drawing.Point(234, 40);
+            this.btnBeheerFilter.Location = new System.Drawing.Point(208, 40);
             this.btnBeheerFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerFilter.Name = "btnBeheerFilter";
-            this.btnBeheerFilter.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerFilter.Size = new System.Drawing.Size(103, 45);
             this.btnBeheerFilter.TabIndex = 59;
             this.btnBeheerFilter.Text = "Filter";
             this.btnBeheerFilter.UseVisualStyleBackColor = true;
@@ -813,10 +813,10 @@
             // 
             // btnBeheerChatDeactiveren
             // 
-            this.btnBeheerChatDeactiveren.Location = new System.Drawing.Point(860, 608);
+            this.btnBeheerChatDeactiveren.Location = new System.Drawing.Point(834, 576);
             this.btnBeheerChatDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerChatDeactiveren.Name = "btnBeheerChatDeactiveren";
-            this.btnBeheerChatDeactiveren.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerChatDeactiveren.Size = new System.Drawing.Size(103, 45);
             this.btnBeheerChatDeactiveren.TabIndex = 56;
             this.btnBeheerChatDeactiveren.Text = "Deactiveren";
             this.btnBeheerChatDeactiveren.UseVisualStyleBackColor = true;
@@ -825,7 +825,7 @@
             // lblBeheerBeoordeling
             // 
             this.lblBeheerBeoordeling.AutoSize = true;
-            this.lblBeheerBeoordeling.Location = new System.Drawing.Point(1, 395);
+            this.lblBeheerBeoordeling.Location = new System.Drawing.Point(3, 404);
             this.lblBeheerBeoordeling.Name = "lblBeheerBeoordeling";
             this.lblBeheerBeoordeling.Size = new System.Drawing.Size(63, 13);
             this.lblBeheerBeoordeling.TabIndex = 54;
@@ -834,7 +834,7 @@
             // lblBeheerChat
             // 
             this.lblBeheerChat.AutoSize = true;
-            this.lblBeheerChat.Location = new System.Drawing.Point(631, 65);
+            this.lblBeheerChat.Location = new System.Drawing.Point(631, 72);
             this.lblBeheerChat.Name = "lblBeheerChat";
             this.lblBeheerChat.Size = new System.Drawing.Size(29, 13);
             this.lblBeheerChat.TabIndex = 53;
@@ -843,7 +843,7 @@
             // lblBeheerHulpaanvraag
             // 
             this.lblBeheerHulpaanvraag.AutoSize = true;
-            this.lblBeheerHulpaanvraag.Location = new System.Drawing.Point(317, 65);
+            this.lblBeheerHulpaanvraag.Location = new System.Drawing.Point(319, 74);
             this.lblBeheerHulpaanvraag.Name = "lblBeheerHulpaanvraag";
             this.lblBeheerHulpaanvraag.Size = new System.Drawing.Size(74, 13);
             this.lblBeheerHulpaanvraag.TabIndex = 52;
@@ -852,7 +852,7 @@
             // lblBeheerAccount
             // 
             this.lblBeheerAccount.AutoSize = true;
-            this.lblBeheerAccount.Location = new System.Drawing.Point(3, 65);
+            this.lblBeheerAccount.Location = new System.Drawing.Point(3, 74);
             this.lblBeheerAccount.Name = "lblBeheerAccount";
             this.lblBeheerAccount.Size = new System.Drawing.Size(47, 13);
             this.lblBeheerAccount.TabIndex = 51;
@@ -860,10 +860,10 @@
             // 
             // btnBeheerBeoordelingDeactiveren
             // 
-            this.btnBeheerBeoordelingDeactiveren.Location = new System.Drawing.Point(232, 600);
+            this.btnBeheerBeoordelingDeactiveren.Location = new System.Drawing.Point(208, 583);
             this.btnBeheerBeoordelingDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerBeoordelingDeactiveren.Name = "btnBeheerBeoordelingDeactiveren";
-            this.btnBeheerBeoordelingDeactiveren.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerBeoordelingDeactiveren.Size = new System.Drawing.Size(103, 45);
             this.btnBeheerBeoordelingDeactiveren.TabIndex = 50;
             this.btnBeheerBeoordelingDeactiveren.Text = "Deactiveren";
             this.btnBeheerBeoordelingDeactiveren.UseVisualStyleBackColor = true;
@@ -871,10 +871,10 @@
             // 
             // btnBeheerHulpaanvraagDeactiveren
             // 
-            this.btnBeheerHulpaanvraagDeactiveren.Location = new System.Drawing.Point(546, 361);
+            this.btnBeheerHulpaanvraagDeactiveren.Location = new System.Drawing.Point(522, 370);
             this.btnBeheerHulpaanvraagDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerHulpaanvraagDeactiveren.Name = "btnBeheerHulpaanvraagDeactiveren";
-            this.btnBeheerHulpaanvraagDeactiveren.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerHulpaanvraagDeactiveren.Size = new System.Drawing.Size(103, 45);
             this.btnBeheerHulpaanvraagDeactiveren.TabIndex = 48;
             this.btnBeheerHulpaanvraagDeactiveren.Text = "Deactiveren";
             this.btnBeheerHulpaanvraagDeactiveren.UseVisualStyleBackColor = true;
@@ -885,10 +885,10 @@
             this.lbBeheerBeoordeling.FormattingEnabled = true;
             this.lbBeheerBeoordeling.Items.AddRange(new object[] {
             "Beoordeling - [Stuuder] [Hulpaanvraag] [Bericht] [Rating]"});
-            this.lbBeheerBeoordeling.Location = new System.Drawing.Point(4, 410);
+            this.lbBeheerBeoordeling.Location = new System.Drawing.Point(6, 419);
             this.lbBeheerBeoordeling.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerBeoordeling.Name = "lbBeheerBeoordeling";
-            this.lbBeheerBeoordeling.Size = new System.Drawing.Size(305, 186);
+            this.lbBeheerBeoordeling.Size = new System.Drawing.Size(305, 160);
             this.lbBeheerBeoordeling.TabIndex = 46;
             // 
             // lbBeheerChat
@@ -896,10 +896,10 @@
             this.lbBeheerChat.FormattingEnabled = true;
             this.lbBeheerChat.Items.AddRange(new object[] {
             "Chat - [Stuurder] [Bericht]"});
-            this.lbBeheerChat.Location = new System.Drawing.Point(634, 80);
+            this.lbBeheerChat.Location = new System.Drawing.Point(634, 87);
             this.lbBeheerChat.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerChat.Name = "lbBeheerChat";
-            this.lbBeheerChat.Size = new System.Drawing.Size(303, 524);
+            this.lbBeheerChat.Size = new System.Drawing.Size(303, 485);
             this.lbBeheerChat.TabIndex = 45;
             // 
             // lbBeheerHulpaanvraag
@@ -907,7 +907,7 @@
             this.lbBeheerHulpaanvraag.FormattingEnabled = true;
             this.lbBeheerHulpaanvraag.Items.AddRange(new object[] {
             "Hulp - [Aanvrager] : [Bericht]"});
-            this.lbBeheerHulpaanvraag.Location = new System.Drawing.Point(320, 80);
+            this.lbBeheerHulpaanvraag.Location = new System.Drawing.Point(322, 89);
             this.lbBeheerHulpaanvraag.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerHulpaanvraag.Name = "lbBeheerHulpaanvraag";
             this.lbBeheerHulpaanvraag.Size = new System.Drawing.Size(303, 277);
@@ -915,10 +915,10 @@
             // 
             // btnBeheerAccountDeactiveren
             // 
-            this.btnBeheerAccountDeactiveren.Location = new System.Drawing.Point(153, 361);
+            this.btnBeheerAccountDeactiveren.Location = new System.Drawing.Point(101, 370);
             this.btnBeheerAccountDeactiveren.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerAccountDeactiveren.Name = "btnBeheerAccountDeactiveren";
-            this.btnBeheerAccountDeactiveren.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerAccountDeactiveren.Size = new System.Drawing.Size(103, 45);
             this.btnBeheerAccountDeactiveren.TabIndex = 43;
             this.btnBeheerAccountDeactiveren.Text = "Deactiveren";
             this.btnBeheerAccountDeactiveren.UseVisualStyleBackColor = true;
@@ -926,10 +926,10 @@
             // 
             // btnBeheerAccountAanpassen
             // 
-            this.btnBeheerAccountAanpassen.Location = new System.Drawing.Point(234, 361);
+            this.btnBeheerAccountAanpassen.Location = new System.Drawing.Point(208, 370);
             this.btnBeheerAccountAanpassen.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeheerAccountAanpassen.Name = "btnBeheerAccountAanpassen";
-            this.btnBeheerAccountAanpassen.Size = new System.Drawing.Size(77, 19);
+            this.btnBeheerAccountAanpassen.Size = new System.Drawing.Size(103, 45);
             this.btnBeheerAccountAanpassen.TabIndex = 42;
             this.btnBeheerAccountAanpassen.Text = "Aanpassen";
             this.btnBeheerAccountAanpassen.UseVisualStyleBackColor = true;
@@ -940,7 +940,7 @@
             this.lbBeheerAccount.FormattingEnabled = true;
             this.lbBeheerAccount.Items.AddRange(new object[] {
             "Account - [Naam] [Adres] [Meer]"});
-            this.lbBeheerAccount.Location = new System.Drawing.Point(6, 80);
+            this.lbBeheerAccount.Location = new System.Drawing.Point(6, 89);
             this.lbBeheerAccount.Margin = new System.Windows.Forms.Padding(2);
             this.lbBeheerAccount.Name = "lbBeheerAccount";
             this.lbBeheerAccount.Size = new System.Drawing.Size(305, 277);
