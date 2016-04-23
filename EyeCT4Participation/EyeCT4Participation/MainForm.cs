@@ -209,7 +209,7 @@ namespace EyeCT4Participation
 
         private void btnBeheerAccountAanpassen_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string woonplaats, string email, DateTime geboortedatum, int telefoonnummer,string type,int geslacht, int auto, int ov)
@@ -465,6 +465,24 @@ namespace EyeCT4Participation
                 TabControl.SelectTab(0);
                 MessageBox.Show("U bent uitgelogd");
             }
+        }
+
+        private void btnverwijder_Click(object sender, EventArgs e)
+        {
+            if (administration.DeactivateHelpRequest(lbhulpvragen.SelectedItem as HelpRequest))
+            {
+                lbhulpvragen.Items.Remove(lbhulpvragen.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Fout bij deactiveren Hulpvraag");
+            }
+            
+        }
+
+        private void btnbeoordeel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
