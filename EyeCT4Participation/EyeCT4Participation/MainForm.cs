@@ -295,27 +295,44 @@ namespace EyeCT4Participation
             {
                     if (administration.LoggedinUser.GetType() == typeof (Manager))
                 {
+                    TabControl.TabPages[0].Enabled = false;
+                    TabControl.TabPages[1].Enabled = false;
+                    TabControl.TabPages[2].Enabled = false;
+                    TabControl.TabPages[3].Enabled = false;
+
                     TabControl.TabPages[4].Enabled = true;
+                    TabControl.SelectTab(4);
                         MessageBox.Show("u bent ingelogd welkom");
                     //TabControl.TabPages.Add(tabpageBeheer);
                 }
                     if (administration.LoggedinUser.GetType() == typeof (Volunteer))
                 {
+                    TabControl.TabPages[0].Enabled = false;
+                    TabControl.TabPages[4].Enabled = false;
+                    TabControl.TabPages[2].Enabled = false;
 
                     TabControl.TabPages[1].Enabled = true;
                     TabControl.TabPages[3].Enabled = true;
+                    TabControl.SelectTab(1);
                         MessageBox.Show("u bent ingelogd welkom");
                     //TabControl.TabPages.Remove(tabpageChat);
                     //TabControl.TabPages.Remove(tabpageVrijwilliger);
                 }
                     if (administration.LoggedinUser.GetType() == typeof (Needy))
-                {
+                    {
+                    TabControl.TabPages[0].Enabled = false;
+                    TabControl.TabPages[1].Enabled = false;
+                    TabControl.TabPages[4].Enabled = false;
+
                     TabControl.TabPages[2].Enabled = true;
                     TabControl.TabPages[3].Enabled = true;
+                    TabControl.SelectTab(2);
                         MessageBox.Show("u bent ingelogd welkom");
                     //TabControl.TabPages.Remove(tabpageChat);
                     //TabControl.TabPages.Remove(tabpageHulpbehoevende);
                 }
+                tbInloggenGnaam.Clear();
+                tbInloggenWW.Clear();
                 }
             }
             else
