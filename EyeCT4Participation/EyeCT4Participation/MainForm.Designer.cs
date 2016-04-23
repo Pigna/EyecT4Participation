@@ -73,6 +73,9 @@
             this.lbVolunteerReview = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
             this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
+            this.dthelprequest = new System.Windows.Forms.DateTimePicker();
+            this.button2 = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.CBUrgent = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -103,9 +106,6 @@
             this.btnBeheerAccountDeactiveren = new System.Windows.Forms.Button();
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dthelprequest = new System.Windows.Forms.DateTimePicker();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -588,6 +588,30 @@
             this.tabpageHulpbehoevende.Text = "Hulpbehoevende";
             this.tabpageHulpbehoevende.UseVisualStyleBackColor = true;
             // 
+            // dthelprequest
+            // 
+            this.dthelprequest.Location = new System.Drawing.Point(115, 166);
+            this.dthelprequest.Name = "dthelprequest";
+            this.dthelprequest.Size = new System.Drawing.Size(187, 20);
+            this.dthelprequest.TabIndex = 19;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(0, 443);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 45);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(6, 225);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(299, 212);
+            this.listBox2.TabIndex = 17;
+            // 
             // CBUrgent
             // 
             this.CBUrgent.AutoSize = true;
@@ -908,30 +932,6 @@
             this.lbBeheerAccount.Name = "lbBeheerAccount";
             this.lbBeheerAccount.Size = new System.Drawing.Size(305, 277);
             this.lbBeheerAccount.TabIndex = 41;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(3, 225);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(299, 212);
-            this.listBox2.TabIndex = 17;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 443);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 45);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dthelprequest
-            // 
-            this.dthelprequest.Location = new System.Drawing.Point(115, 166);
-            this.dthelprequest.Name = "dthelprequest";
-            this.dthelprequest.Size = new System.Drawing.Size(187, 20);
-            this.dthelprequest.TabIndex = 19;
             // 
             // MainForm
             // 
