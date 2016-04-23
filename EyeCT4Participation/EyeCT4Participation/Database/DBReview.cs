@@ -38,6 +38,23 @@ namespace EyeCT4Participation.Database
             }
         }
 
+        public bool AddReaction(Review review, string message)
+        {
+            try
+            {
+                int returnID = getLatestId("review");
+                string query; // the query will end up in here
+                query = "INSERT INTO REVIEW";
+                query += "(ID, BEOORDELING, OPMERKING, DATUM, VERZENDERID, ONTVANGERID, HULPVRAAGID, REACTIEOPID, ACTIEF) VALUES ";
+                query += "(" + returnID + ", 0, '" + message + "', sysdate , " + review.Volunteer.id + ", " + review.Needy.id + ", " + review.hulpvraagid + ", " + review.id + ", 1)";
+                doQuery(query); //query will be activated
+                return true;
+            }
+            catch
+            {
+                return false;   // if query fails, return a false.
+            }
+        }
         public List<Review> GetReview(Volunteer volunteer)
         {
             List<Review> ret = new List<Review>(); //result of query will end up in here
@@ -152,7 +169,9 @@ namespace EyeCT4Participation.Database
                     Convert.ToBoolean(results2["actief"]), 
                     Convert.ToDateTime(results2["datum"]), 
                     verzender, 
-                    ontvanger);
+                    ontvanger,
+                    Convert.ToInt32(results2["hulpvraagid"])
+                    );
                 ret.Add(neReview);
             }
             return ret;

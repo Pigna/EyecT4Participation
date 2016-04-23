@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
+using EyeCT4Participation.Database;
 
 namespace EyeCT4Participation
 {
@@ -19,6 +20,7 @@ namespace EyeCT4Participation
         public Needy Needy { get; set; }
         public int id { get; private set; }
         public List<Volunteer> ListVolunteers = new List<Volunteer>();
+        DBhelprequest dbHelprequest = new DBhelprequest();
 
         public HelpRequest(int id, string question, DateTime date, bool urgency, bool active, Needy needy, List<Volunteer> ListVolunteers)
         {
@@ -44,9 +46,31 @@ namespace EyeCT4Participation
           
         }
 
-        public void AddVolunteer(Volunteer volunteer)
+        public bool AddVolunteer(Volunteer volunteer)
         {
-            ListVolunteers.Add(volunteer);
+            if (!ListVolunteers.Contains(volunteer))
+            {
+                ListVolunteers.Add(volunteer);
+                if (dbHelprequest.JoinHelprequest(this, volunteer))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public override string ToString()
+        {
+            string volunteers = "";
+            foreach (Volunteer volunteer in ListVolunteers)
+            {
+                volunteers += volunteer.Name + ", ";
+            }
+            return
+                "" + Needy.Name + "; " +
+                "Vraag: " + Question + "; " +
+                "Datum: " + Date + "; " +
+                "Vrijwilligers: " + volunteers + "; ";
         }
     }
 }

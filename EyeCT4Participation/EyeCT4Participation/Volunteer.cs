@@ -17,7 +17,6 @@ namespace EyeCT4Participation
         public Volunteer(int id, bool license, string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active) : base(id, username, password, name, adress, residence, email, phonenumber, birthdate, active, geslacht)
         {
             License = license;
-            Reviews();
         }
 
         public void AddReaction(string name, string message, Volunteer author, DateTime date)
@@ -40,12 +39,9 @@ namespace EyeCT4Participation
             }
             return false;
         }
-        private void Reviews()
-        {
-            reviewList = dbReview.GetReview(this);
-        }
         public List<Review> getListReview()
         {
+            reviewList = dbReview.GetReview(this);
             return reviewList;
         } 
     }

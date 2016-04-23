@@ -305,7 +305,7 @@ namespace EyeCT4Participation.Database
 
 
 
-                Review neReview = new Review(Convert.ToInt32(results2["id"]), Convert.ToInt32(results2["beoordeling"]), Convert.ToString(results2["opmerking"]), subreviewtxt, Convert.ToBoolean(results2["actief"]), Convert.ToDateTime(results2["datum"]), verzender, ontvanger);
+                Review neReview = new Review(Convert.ToInt32(results2["id"]), Convert.ToInt32(results2["beoordeling"]), Convert.ToString(results2["opmerking"]), subreviewtxt, Convert.ToBoolean(results2["actief"]), Convert.ToDateTime(results2["datum"]), verzender, ontvanger, Convert.ToInt32(results2["hulpvraagid"]));
                 ret.Add(neReview);
             }
             return ret;

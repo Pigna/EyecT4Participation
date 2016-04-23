@@ -49,7 +49,7 @@ namespace EyeCT4Participation.Database
             {
                 string query; // the query will end up in here
                 query = "INSERT INTO GEBRUIKER_HULPVRAAG";  //replace with INSERT if needed
-                query += "(GEBRUIKERID, HULPVRAAGID) VALUES ('" + volunteer.id +"', '" + helprequest + "')"; //replace 'user.X' with the data u need.
+                query += "(GEBRUIKERID, HULPVRAAGID) VALUES ('" + volunteer.id +"', '" + helprequest.id + "')"; //replace 'user.X' with the data u need.
                 doQuery(query); //query will be activated
                 return true;
             }

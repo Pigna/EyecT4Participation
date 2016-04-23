@@ -66,13 +66,15 @@
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
             this.tabpageVrijwilliger = new System.Windows.Forms.TabPage();
             this.btnVolunteerReviewReact = new System.Windows.Forms.Button();
-            this.btnVolunteerVolunteerRegister = new System.Windows.Forms.Button();
+            this.btnVolunteerHelprequestRegister = new System.Windows.Forms.Button();
             this.lblVolunteerReview = new System.Windows.Forms.Label();
             this.lblVolunteerVolunteer = new System.Windows.Forms.Label();
             this.tbVolunteerReviewReaction = new System.Windows.Forms.TextBox();
             this.lbVolunteerReview = new System.Windows.Forms.ListBox();
             this.lbVolunteerHelprequest = new System.Windows.Forms.ListBox();
             this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
+            this.cbUsers = new System.Windows.Forms.ComboBox();
+            this.rtdreviewtxt = new System.Windows.Forms.RichTextBox();
             this.dthelprequest = new System.Windows.Forms.DateTimePicker();
             this.btnverwijder = new System.Windows.Forms.Button();
             this.lbhulpvragen = new System.Windows.Forms.ListBox();
@@ -106,8 +108,6 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
-            this.rtdreviewtxt = new System.Windows.Forms.RichTextBox();
-            this.cbUsers = new System.Windows.Forms.ComboBox();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -497,7 +497,7 @@
             // tabpageVrijwilliger
             // 
             this.tabpageVrijwilliger.Controls.Add(this.btnVolunteerReviewReact);
-            this.tabpageVrijwilliger.Controls.Add(this.btnVolunteerVolunteerRegister);
+            this.tabpageVrijwilliger.Controls.Add(this.btnVolunteerHelprequestRegister);
             this.tabpageVrijwilliger.Controls.Add(this.lblVolunteerReview);
             this.tabpageVrijwilliger.Controls.Add(this.lblVolunteerVolunteer);
             this.tabpageVrijwilliger.Controls.Add(this.tbVolunteerReviewReaction);
@@ -519,15 +519,17 @@
             this.btnVolunteerReviewReact.TabIndex = 6;
             this.btnVolunteerReviewReact.Text = "Reageren";
             this.btnVolunteerReviewReact.UseVisualStyleBackColor = true;
+            this.btnVolunteerReviewReact.Click += new System.EventHandler(this.btnVolunteerReviewReact_Click);
             // 
-            // btnVolunteerVolunteerRegister
+            // btnVolunteerHelprequestRegister
             // 
-            this.btnVolunteerVolunteerRegister.Location = new System.Drawing.Point(234, 306);
-            this.btnVolunteerVolunteerRegister.Name = "btnVolunteerVolunteerRegister";
-            this.btnVolunteerVolunteerRegister.Size = new System.Drawing.Size(77, 19);
-            this.btnVolunteerVolunteerRegister.TabIndex = 5;
-            this.btnVolunteerVolunteerRegister.Text = "Inschrijven";
-            this.btnVolunteerVolunteerRegister.UseVisualStyleBackColor = true;
+            this.btnVolunteerHelprequestRegister.Location = new System.Drawing.Point(234, 306);
+            this.btnVolunteerHelprequestRegister.Name = "btnVolunteerHelprequestRegister";
+            this.btnVolunteerHelprequestRegister.Size = new System.Drawing.Size(77, 19);
+            this.btnVolunteerHelprequestRegister.TabIndex = 5;
+            this.btnVolunteerHelprequestRegister.Text = "Inschrijven";
+            this.btnVolunteerHelprequestRegister.UseVisualStyleBackColor = true;
+            this.btnVolunteerHelprequestRegister.Click += new System.EventHandler(this.btnVolunteerHelprequestRegister_Click);
             // 
             // lblVolunteerReview
             // 
@@ -590,6 +592,22 @@
             this.tabpageHulpbehoevende.TabIndex = 3;
             this.tabpageHulpbehoevende.Text = "Hulpbehoevende";
             this.tabpageHulpbehoevende.UseVisualStyleBackColor = true;
+            // 
+            // cbUsers
+            // 
+            this.cbUsers.FormattingEnabled = true;
+            this.cbUsers.Location = new System.Drawing.Point(437, 327);
+            this.cbUsers.Name = "cbUsers";
+            this.cbUsers.Size = new System.Drawing.Size(121, 21);
+            this.cbUsers.TabIndex = 21;
+            // 
+            // rtdreviewtxt
+            // 
+            this.rtdreviewtxt.Location = new System.Drawing.Point(328, 225);
+            this.rtdreviewtxt.Name = "rtdreviewtxt";
+            this.rtdreviewtxt.Size = new System.Drawing.Size(235, 96);
+            this.rtdreviewtxt.TabIndex = 20;
+            this.rtdreviewtxt.Text = "";
             // 
             // dthelprequest
             // 
@@ -935,22 +953,6 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
-            // rtdreviewtxt
-            // 
-            this.rtdreviewtxt.Location = new System.Drawing.Point(328, 225);
-            this.rtdreviewtxt.Name = "rtdreviewtxt";
-            this.rtdreviewtxt.Size = new System.Drawing.Size(235, 96);
-            this.rtdreviewtxt.TabIndex = 20;
-            this.rtdreviewtxt.Text = "";
-            // 
-            // cbUsers
-            // 
-            this.cbUsers.FormattingEnabled = true;
-            this.cbUsers.Location = new System.Drawing.Point(437, 327);
-            this.cbUsers.Name = "cbUsers";
-            this.cbUsers.Size = new System.Drawing.Size(121, 21);
-            this.cbUsers.TabIndex = 21;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1044,7 +1046,7 @@
         private System.Windows.Forms.CheckBox cbRegistratieOv;
         private System.Windows.Forms.Label lblRegistratieOv;
         private System.Windows.Forms.Button btnVolunteerReviewReact;
-        private System.Windows.Forms.Button btnVolunteerVolunteerRegister;
+        private System.Windows.Forms.Button btnVolunteerHelprequestRegister;
         private System.Windows.Forms.Label lblVolunteerReview;
         private System.Windows.Forms.Label lblVolunteerVolunteer;
         private System.Windows.Forms.TextBox tbVolunteerReviewReaction;

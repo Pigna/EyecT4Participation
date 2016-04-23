@@ -169,6 +169,7 @@ namespace EyeCT4Participation
                     {
                         lbVolunteerHelprequest.Items.Add(helprequest);
                     }
+
                     foreach (Review review in ((Volunteer) administration.LoggedinUser).getListReview())
                     {
                         lbVolunteerReview.Items.Add(review);
@@ -388,6 +389,29 @@ namespace EyeCT4Participation
 
 
 
+        }
+
+        private void btnVolunteerHelprequestRegister_Click(object sender, EventArgs e)
+        {
+            if (lbVolunteerHelprequest.SelectedItem != null)
+            {
+                if(((HelpRequest)lbVolunteerHelprequest.SelectedItem).AddVolunteer((Volunteer)administration.LoggedinUser))
+                {
+                    MessageBox.Show("Inschrijven gelukt.");
+                }
+            }
+        }
+
+        private void btnVolunteerReviewReact_Click(object sender, EventArgs e)
+        {
+            string reaction = tbVolunteerReviewReaction.Text;
+            if (lbVolunteerReview.SelectedItem != null && reaction != "")
+            {
+                if (((Review) lbVolunteerReview.SelectedItem).AddReaction(reaction))
+                {
+                    MessageBox.Show("Reactie geplaatst.");
+                }
+            }
         }
     }
 }
