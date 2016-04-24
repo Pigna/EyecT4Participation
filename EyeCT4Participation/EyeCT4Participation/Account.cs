@@ -31,7 +31,7 @@ namespace EyeCT4Participation
         public DateTime Birthdate { get; set; }
         public bool Active { get; set; }
         public string Geslacht { get; set; }
-        public int id { get; }
+        public int id { get; private set; }
 
         public List<Account> Conversation() //fix needed
         {
