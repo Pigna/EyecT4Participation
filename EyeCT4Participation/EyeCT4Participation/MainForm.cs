@@ -143,15 +143,6 @@ namespace EyeCT4Participation
                 }
             }
         }
-        private void hulpRefresh()
-        {
-
-            lbNeedyHelprequests.Items.Clear();
-            foreach (HelpRequest helprequest in administration.listHelprequests)
-            {
-                lbNeedyHelprequests.Items.Add(helprequest.ToString());
-            }
-        }
 
         private void ChatRefresh()
         {
@@ -176,6 +167,25 @@ namespace EyeCT4Participation
             }
 
             
+        }
+
+        private void NeedyRefresh()
+        {
+            if (administration.LoggedinUser != null)
+            {
+                if (administration.LoggedinUser.GetType() == typeof (Needy))
+                {
+                    administration.ListHelpRequest();
+                    foreach (HelpRequest helprequest in administration.listHelprequests)
+                    {
+                        if (helprequest.Needy.id == (administration.LoggedinUser.id))
+                        {
+                            lbNeedyHelprequests.Items.Add(helprequest);
+                        }
+                    }
+                    
+                }
+            }
         }
 
         private void btnBeheerAccountDeactiveren_Click(object sender, EventArgs e)
@@ -396,7 +406,7 @@ namespace EyeCT4Participation
                 }
                 if (TabControl.SelectedTab.Text == "Hulpbehoevende" && loggedinaccount.GetType() == typeof(Needy))
                 {
-                    hulpRefresh();
+                    NeedyRefresh();
                 }
                 if (TabControl.SelectedTab.Text == "Chat")
                 {
