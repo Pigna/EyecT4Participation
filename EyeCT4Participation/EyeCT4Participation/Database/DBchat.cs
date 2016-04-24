@@ -10,7 +10,7 @@ namespace EyeCT4Participation.Database
     {
         public List<Chat> Conversation(Account x, Account y) //name of ur query
         {
-            List<Dictionary<string, object>> QueryY = getQuery("SELECT * FROM CHAT WHERE (verzenderid = " + x.id + " AND ontvangerid = " + y.id + ") OR (verzenderid =  " + y.id + " AND ontvangerid =  " + x.id + ") AND actief = 1 ORDER BY tijdstip"); //replace your query with te example query, replace 'QueryX' with a clear name.
+            List<Dictionary<string, object>> QueryY = getQuery("SELECT * FROM CHAT WHERE (verzenderid = " + x.id + " AND ontvangerid = " + y.id + ") OR (verzenderid =  " + y.id + " AND ontvangerid =  " + x.id + ") AND actief = 1 ORDER BY id"); //replace your query with te example query, replace 'QueryX' with a clear name.
             List<Chat> ret = new List<Chat>(); //result of query will end up in here
             List<Dictionary<string, object>> QueryX = getQuery("SELECT * FROM GEBRUIKER WHERE actief != 0");
             foreach (Dictionary<string, object> results2 in QueryY) //look for all posseble results in the query result.
