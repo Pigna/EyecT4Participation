@@ -616,6 +616,7 @@ namespace EyeCT4Participation
                 if (administration.DeactivateAccount(administration.LoggedinUser))
                 {
                     MessageBox.Show("Account verwijderen is gelukt");
+                    administration.LoggedinUser = null;
                     TabControl.TabPages[0].Enabled = true;
                     TabControl.TabPages[1].Enabled = false;
                     TabControl.TabPages[2].Enabled = false;
