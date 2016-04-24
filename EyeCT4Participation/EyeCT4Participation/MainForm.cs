@@ -410,18 +410,20 @@ namespace EyeCT4Participation
         {
             bool urgent = CBUrgent.Checked;
             string message = rtbhelpvraag.Text;
-            HelpRequest newHelpRequested = new HelpRequest(0,message,dthelprequest.Value, urgent,true,(Needy)administration.LoggedinUser);
+            if (message != "")
+            {
+                HelpRequest newHelpRequested = new HelpRequest(0, message, dthelprequest.Value, urgent, true, (Needy)administration.LoggedinUser);
 
 
-            if(databaseHelprequest.DoQueryAddHelpRequest(newHelpRequested))
-            {
-                MessageBox.Show("Hulpvraag verzonden");
+                if (databaseHelprequest.AddHelpRequest(newHelpRequested))
+                {
+                    MessageBox.Show("Hulpvraag verzonden");
+                }
+                else
+                {
+                    MessageBox.Show("Hulpvraag niet verzonden, is alles goed ingevult?");
+                }
             }
-            else
-            {
-                MessageBox.Show("Hulpvraag niet verzonden, is alles goed ingevult?");
-            }
-           
         }
 
         private void btnVolunteerHelprequestRegister_Click(object sender, EventArgs e)
@@ -456,6 +458,7 @@ namespace EyeCT4Participation
                 if (dbChat.SendMessage(chat))
                 {
                     lbChatConversation.Items.Add(chat);
+                    tbChatMessage.Clear();
                 }
             }
 

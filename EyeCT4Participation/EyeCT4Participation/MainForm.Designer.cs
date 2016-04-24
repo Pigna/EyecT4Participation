@@ -111,6 +111,7 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
+            this.tbNeedyLocation = new System.Windows.Forms.TextBox();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -589,6 +590,7 @@
             // 
             // tabpageHulpbehoevende
             // 
+            this.tabpageHulpbehoevende.Controls.Add(this.tbNeedyLocation);
             this.tabpageHulpbehoevende.Controls.Add(this.btnHulpUitloggen);
             this.tabpageHulpbehoevende.Controls.Add(this.cbUsers);
             this.tabpageHulpbehoevende.Controls.Add(this.rtdreviewtxt);
@@ -991,6 +993,14 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
+            // tbNeedyLocation
+            // 
+            this.tbNeedyLocation.Location = new System.Drawing.Point(202, 140);
+            this.tbNeedyLocation.Name = "tbNeedyLocation";
+            this.tbNeedyLocation.Size = new System.Drawing.Size(100, 20);
+            this.tbNeedyLocation.TabIndex = 23;
+            this.tbNeedyLocation.Text = "Locatie";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1099,6 +1109,7 @@
         private System.Windows.Forms.Button btnVrijwilligerUitloggen;
         private System.Windows.Forms.Button btnHulpUitloggen;
         private System.Windows.Forms.Button btnBeheerUitloggen;
+        private System.Windows.Forms.TextBox tbNeedyLocation;
     }
 }
 

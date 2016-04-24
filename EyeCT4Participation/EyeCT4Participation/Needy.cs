@@ -19,11 +19,11 @@ namespace EyeCT4Participation
             this.Ov = ov;
         }
 
-        public void AddHelpRequest(string question, string description, DateTime date, Needy author, bool urgency, bool ov)
+        public void AddHelpRequest(string question, DateTime date, Needy author, bool urgency, bool ov)
         {
             //dit moet naar de database
-            string query = "INSERT INTO hulpvraag(question, description, date, author, urgency, ov) VALUES (" + question + "," + description + "," + Convert.ToString(date) + "," + Convert.ToString(author) + "," + Convert.ToString(urgency) + "," + Convert.ToString(ov) + ")";
-            databaseHR.DoQueryAddHelpRequest(null);
+            string query = "INSERT INTO hulpvraag(question, description, date, author, urgency, ov) VALUES (" + question + ", null," + Convert.ToString(date) + "," + Convert.ToString(author) + "," + Convert.ToString(urgency) + "," + Convert.ToString(ov) + ")";
+            databaseHR.AddHelpRequest(null);
         }
 
         public void AddReview(int score, string description, Needy author)
