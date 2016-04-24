@@ -8,13 +8,15 @@ namespace EyeCT4Participation.Database
 {
     class DBReview : DB
     {
-        public bool DoQueryAddReview(string query) // replace user with the data u want to add/ change to the table
+        public bool AddReview(Review review) // replace user with the data u want to add/ change to the table
         {
             try
             {
-                string Query; // the query will end up in here
-                Query = query;  //replace with INSERT if needed
-                doQuery(Query); //query will be activated
+                string query; // the query will end up in here
+                query = "INSERT INTO REVIEW";
+                query += "(ID, BEOORDELING, OPMERKING, DATUM, VERZENDERID, ONTVANGERID, HULPVRAAGID, REACTIEOPID, ACTIEF) VALUES ";
+                query += "(" + review.id + ", " + review.Score + ", '" + review.Description + "', sysdate , " + review.Needy.id + ", " + review.Volunteer.id + ", " + review.hulpvraagid + ", NULL, 1)";
+                doQuery(query); //query will be activated
                 return true;
             }
             catch
@@ -42,11 +44,10 @@ namespace EyeCT4Participation.Database
         {
             try
             {
-                int returnID = getLatestId("review");
                 string query; // the query will end up in here
                 query = "INSERT INTO REVIEW";
                 query += "(ID, BEOORDELING, OPMERKING, DATUM, VERZENDERID, ONTVANGERID, HULPVRAAGID, REACTIEOPID, ACTIEF) VALUES ";
-                query += "(" + returnID + ", 0, '" + message + "', sysdate , " + review.Volunteer.id + ", " + review.Needy.id + ", " + review.hulpvraagid + ", " + review.id + ", 1)";
+                query += "(" + review.id + ", 0, '" + message + "', sysdate , " + review.Volunteer.id + ", " + review.Needy.id + ", " + review.hulpvraagid + ", " + review.id + ", 1)";
                 doQuery(query); //query will be activated
                 return true;
             }

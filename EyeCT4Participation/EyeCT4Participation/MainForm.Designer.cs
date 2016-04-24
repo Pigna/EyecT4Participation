@@ -84,7 +84,7 @@
             this.btnNeedyReview = new System.Windows.Forms.Button();
             this.nudNeedyReviewScore = new System.Windows.Forms.NumericUpDown();
             this.btnNeedyHelprequest = new System.Windows.Forms.Button();
-            this.rtbhelpvraag = new System.Windows.Forms.RichTextBox();
+            this.tbNeedyHelprequestDesctiption = new System.Windows.Forms.RichTextBox();
             this.tabpageChat = new System.Windows.Forms.TabPage();
             this.btnChatOpen = new System.Windows.Forms.Button();
             this.tbChatMessage = new System.Windows.Forms.RichTextBox();
@@ -608,7 +608,7 @@
             this.tabpageHulpbehoevende.Controls.Add(this.btnNeedyReview);
             this.tabpageHulpbehoevende.Controls.Add(this.nudNeedyReviewScore);
             this.tabpageHulpbehoevende.Controls.Add(this.btnNeedyHelprequest);
-            this.tabpageHulpbehoevende.Controls.Add(this.rtbhelpvraag);
+            this.tabpageHulpbehoevende.Controls.Add(this.tbNeedyHelprequestDesctiption);
             this.tabpageHulpbehoevende.Location = new System.Drawing.Point(4, 22);
             this.tabpageHulpbehoevende.Name = "tabpageHulpbehoevende";
             this.tabpageHulpbehoevende.Padding = new System.Windows.Forms.Padding(3);
@@ -658,6 +658,7 @@
             this.btnNeedyHelprequestsDelete.TabIndex = 18;
             this.btnNeedyHelprequestsDelete.Text = "Verwijder";
             this.btnNeedyHelprequestsDelete.UseVisualStyleBackColor = true;
+            this.btnNeedyHelprequestsDelete.Click += new System.EventHandler(this.btnNeedyHelprequestsDelete_Click);
             // 
             // lbNeedyHelprequests
             // 
@@ -685,6 +686,7 @@
             this.btnNeedyReview.TabIndex = 15;
             this.btnNeedyReview.Text = "Beoordeel";
             this.btnNeedyReview.UseVisualStyleBackColor = true;
+            this.btnNeedyReview.Click += new System.EventHandler(this.btnNeedyReview_Click);
             // 
             // nudNeedyReviewScore
             // 
@@ -706,14 +708,15 @@
             this.btnNeedyHelprequest.TabIndex = 12;
             this.btnNeedyHelprequest.Text = "Verstuur";
             this.btnNeedyHelprequest.UseVisualStyleBackColor = true;
+            this.btnNeedyHelprequest.Click += new System.EventHandler(this.btnNeedyHelprequest_Click);
             // 
-            // rtbhelpvraag
+            // tbNeedyHelprequestDesctiption
             // 
-            this.rtbhelpvraag.Location = new System.Drawing.Point(6, 6);
-            this.rtbhelpvraag.Name = "rtbhelpvraag";
-            this.rtbhelpvraag.Size = new System.Drawing.Size(296, 131);
-            this.rtbhelpvraag.TabIndex = 6;
-            this.rtbhelpvraag.Text = "Help mij met..";
+            this.tbNeedyHelprequestDesctiption.Location = new System.Drawing.Point(6, 6);
+            this.tbNeedyHelprequestDesctiption.Name = "tbNeedyHelprequestDesctiption";
+            this.tbNeedyHelprequestDesctiption.Size = new System.Drawing.Size(296, 131);
+            this.tbNeedyHelprequestDesctiption.TabIndex = 6;
+            this.tbNeedyHelprequestDesctiption.Text = "Help mij met..";
             // 
             // tabpageChat
             // 
@@ -1110,7 +1113,7 @@
         private System.Windows.Forms.Button btnNeedyReview;
         private System.Windows.Forms.NumericUpDown nudNeedyReviewScore;
         private System.Windows.Forms.Button btnNeedyHelprequest;
-        private System.Windows.Forms.RichTextBox rtbhelpvraag;
+        private System.Windows.Forms.RichTextBox tbNeedyHelprequestDesctiption;
         private System.Windows.Forms.Button btnChatOpen;
         private System.Windows.Forms.TextBox tbRegistratieEmail;
         private System.Windows.Forms.Label lblRegistratieEmail;

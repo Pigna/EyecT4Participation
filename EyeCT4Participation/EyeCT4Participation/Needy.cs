@@ -9,8 +9,8 @@ namespace EyeCT4Participation
 {
     class Needy : Account
     {
-        DBhelprequest databaseHR = new DBhelprequest();
-        DBReview databaseR = new DBReview();
+        DBhelprequest dbHelprequest = new DBhelprequest();
+        DBReview dbReview = new DBReview();
 
         public bool Ov { get; set; }
 
@@ -19,18 +19,18 @@ namespace EyeCT4Participation
             this.Ov = ov;
         }
 
-        public void AddHelpRequest(string question, DateTime date, Needy author, bool urgency, bool ov)
+        public bool AddHelpRequest(string question, string locatie, DateTime startdate, DateTime endatdate, bool urgency, int amountVolunteers)
         {
             //dit moet naar de database
-            string query = "INSERT INTO hulpvraag(question, description, date, author, urgency, ov) VALUES (" + question + ", null," + Convert.ToString(date) + "," + Convert.ToString(author) + "," + Convert.ToString(urgency) + "," + Convert.ToString(ov) + ")";
-            databaseHR.AddHelpRequest(null);
+            HelpRequest newHelpRequest = new HelpRequest(dbHelprequest.getLatestId("Hulpvraag"), question, startdate, urgency, true, this, new List<Volunteer>());
+            return dbHelprequest.AddHelpRequest(newHelpRequest);
         }
 
-        public void AddReview(int score, string description, Needy author)
+        public bool AddReview(int score, string description, Volunteer reciever, HelpRequest helprequest)
         {
             //dit moet naar de database
-            string query = "INSERT INTO review(score, description, author) VALUES (" + Convert.ToString(score) + "," + description + "," + Convert.ToString(author) + ")";
-            databaseR.DoQueryAddReview(query);
+            Review newReview = new Review(dbReview.getLatestId("Review"), score, description,"",true,DateTime.Now, this,reciever,helprequest.id);
+            return dbReview.AddReview(newReview);
         }
     }
 }

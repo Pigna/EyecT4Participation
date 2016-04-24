@@ -406,16 +406,14 @@ namespace EyeCT4Participation
 
         }
 
-        private void BTHelpSend_Click(object sender, EventArgs e)
+        private void btnNeedyHelprequest_Click(object sender, EventArgs e)
         {
             bool urgent = cbNeedyUrgent.Checked;
-            string message = rtbhelpvraag.Text;
+            string message = tbNeedyHelprequestDesctiption.Text;
+            string locatie = tbNeedyLocation.Text;
             if (message != "")
             {
-                HelpRequest newHelpRequested = new HelpRequest(0, message, dtpNeedyEnddate.Value, urgent, true, (Needy)administration.LoggedinUser);
-
-
-                if (databaseHelprequest.AddHelpRequest(newHelpRequested))
+                if ((administration.LoggedinUser as Needy).AddHelpRequest(message, locatie, dtpNeedyStartdate.Value, dtpNeedyEnddate.Value, cbNeedyUrgent.Checked, Convert.ToInt32(nudNeedyVolunteers.Value)))
                 {
                     MessageBox.Show("Hulpvraag verzonden");
                 }
@@ -497,21 +495,31 @@ namespace EyeCT4Participation
             }
         }
 
-        private void btnverwijder_Click(object sender, EventArgs e)
+        private void btnNeedyHelprequestsDelete_Click(object sender, EventArgs e)
         {
-            if (administration.DeactivateHelpRequest(lbNeedyHelprequests.SelectedItem as HelpRequest))
+            if (lbNeedyHelprequests.SelectedItem != null)
             {
-                lbNeedyHelprequests.Items.Remove(lbNeedyHelprequests.SelectedItem);
+                if (administration.DeactivateHelpRequest(lbNeedyHelprequests.SelectedItem as HelpRequest))
+                {
+                    lbNeedyHelprequests.Items.Remove(lbNeedyHelprequests.SelectedItem);
+                }
+                else
+                {
+                    MessageBox.Show("Fout bij deactiveren Hulpvraag");
+                }
             }
-            else
-            {
-                MessageBox.Show("Fout bij deactiveren Hulpvraag");
-            }
-            
         }
 
-        private void btnbeoordeel_Click(object sender, EventArgs e)
+        private void btnNeedyReview_Click(object sender, EventArgs e)
         {
+            string reviewdesc = tbNeedyReviewDescription.Text;
+            if (administration.LoggedinUser != null && cbNeedyReviewUser.SelectedItem != null && reviewdesc != "" && lbNeedyHelprequests.SelectedItem != null)
+            {
+                if ((administration.LoggedinUser as Needy).AddReview(Convert.ToInt32(nudNeedyReviewScore.Value), reviewdesc,cbNeedyReviewUser .SelectedItem as Volunteer, lbNeedyHelprequests.SelectedItem as HelpRequest))
+                {
+
+                }
+            }
 
         }
     }
