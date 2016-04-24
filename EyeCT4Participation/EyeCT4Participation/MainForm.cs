@@ -240,13 +240,11 @@ namespace EyeCT4Participation
                 
                 if (doqueryNeedy == true)
                 {
-                   lblRegistratieGelukt.Text = "Registratie is gelukt";
-                    lblRegistratieGelukt.Visible = true;
+                    MessageBox.Show("Registratie is gelukt");
                 }
                 if (doqueryNeedy == false)
                 {
-                  lblRegistratieGelukt.Text = "Registratie is mislukt";
-                    lblRegistratieGelukt.Visible = true;
+                    MessageBox.Show("Registratie is mislukt");
                 }
             }
             else if (type == "Vrijwilliger")
@@ -255,13 +253,11 @@ namespace EyeCT4Participation
                
                 if (doqueryVrijwilliger == true)
                 {
-                    lblRegistratieGelukt.Text = "Registratie is gelukt";
-                    lblRegistratieGelukt.Visible = true;
+                    MessageBox.Show("Registratie is gelukt");
                 }
                 if (doqueryVrijwilliger == false)
                 {
-                   lblRegistratieGelukt.Text = "Registratie is mislukt";
-                   lblRegistratieGelukt.Visible = true;
+                    MessageBox.Show("Registratie is mislukt");
                 }
             }
             tbRegistratieGnaam.Clear();
@@ -274,6 +270,7 @@ namespace EyeCT4Participation
             cbRegistratieType.Text = "";
             tbRegistratieEmail.Clear();
             cbRegistratieAuto.Checked = false;
+            cbRegistratieOv.Checked = false;
         }
 
         private void btnInloggenInloggen_Click(object sender, EventArgs e)
@@ -521,6 +518,25 @@ namespace EyeCT4Participation
                 }
             }
 
+        }
+
+        private void btnAccountVerwijderen_Click(object sender, EventArgs e)
+        {
+            DialogResult verwijderaccount = MessageBox.Show("Weet u zeker dat u uw account wilt verwijderen?", "", MessageBoxButtons.YesNo);
+
+            if (verwijderaccount == DialogResult.Yes)
+            {
+                if (administration.DeactivateAccount(administration.LoggedinUser))
+                {
+                    MessageBox.Show("Account verwijderen is gelukt");
+                    TabControl.TabPages[0].Enabled = true;
+                    TabControl.TabPages[1].Enabled = false;
+                    TabControl.TabPages[2].Enabled = false;
+                    TabControl.TabPages[3].Enabled = false;
+                    TabControl.TabPages[4].Enabled = false;
+                    TabControl.SelectTab(0);
+                }
+            }
         }
     }
 }

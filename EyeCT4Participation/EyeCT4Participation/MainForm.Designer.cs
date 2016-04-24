@@ -33,7 +33,6 @@
             this.dtpRegistratieBirthdate = new System.Windows.Forms.DateTimePicker();
             this.cbRegistratieOv = new System.Windows.Forms.CheckBox();
             this.lblRegistratieOv = new System.Windows.Forms.Label();
-            this.lblRegistratieGelukt = new System.Windows.Forms.Label();
             this.cbRegistratieAuto = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbRegistratieEmail = new System.Windows.Forms.TextBox();
@@ -65,6 +64,7 @@
             this.lblRegistratieWW = new System.Windows.Forms.Label();
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
             this.tabpageVrijwilliger = new System.Windows.Forms.TabPage();
+            this.btnVrijwilligerVerwijderen = new System.Windows.Forms.Button();
             this.btnVrijwilligerUitloggen = new System.Windows.Forms.Button();
             this.btnVolunteerReviewReact = new System.Windows.Forms.Button();
             this.btnVolunteerHelprequestRegister = new System.Windows.Forms.Button();
@@ -74,6 +74,11 @@
             this.lbVolunteerReview = new System.Windows.Forms.ListBox();
             this.lbVolunteerHelprequest = new System.Windows.Forms.ListBox();
             this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dtpNeedyStartdate = new System.Windows.Forms.DateTimePicker();
+            this.lbNeedyVolunteers = new System.Windows.Forms.Label();
+            this.nudNeedyVolunteers = new System.Windows.Forms.NumericUpDown();
+            this.tbNeedyLocation = new System.Windows.Forms.TextBox();
             this.btnHulpUitloggen = new System.Windows.Forms.Button();
             this.cbNeedyReviewUser = new System.Windows.Forms.ComboBox();
             this.tbNeedyReviewDescription = new System.Windows.Forms.RichTextBox();
@@ -111,18 +116,14 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
-            this.tbNeedyLocation = new System.Windows.Forms.TextBox();
-            this.nudNeedyVolunteers = new System.Windows.Forms.NumericUpDown();
-            this.lbNeedyVolunteers = new System.Windows.Forms.Label();
-            this.dtpNeedyStartdate = new System.Windows.Forms.DateTimePicker();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
             this.tabpageHulpbehoevende.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNeedyVolunteers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNeedyReviewScore)).BeginInit();
             this.tabpageChat.SuspendLayout();
             this.tabpageBeheer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNeedyVolunteers)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl
@@ -144,7 +145,6 @@
             this.tabpageLogin.Controls.Add(this.dtpRegistratieBirthdate);
             this.tabpageLogin.Controls.Add(this.cbRegistratieOv);
             this.tabpageLogin.Controls.Add(this.lblRegistratieOv);
-            this.tabpageLogin.Controls.Add(this.lblRegistratieGelukt);
             this.tabpageLogin.Controls.Add(this.cbRegistratieAuto);
             this.tabpageLogin.Controls.Add(this.label2);
             this.tabpageLogin.Controls.Add(this.tbRegistratieEmail);
@@ -208,15 +208,6 @@
             this.lblRegistratieOv.Size = new System.Drawing.Size(22, 13);
             this.lblRegistratieOv.TabIndex = 59;
             this.lblRegistratieOv.Text = "OV";
-            // 
-            // lblRegistratieGelukt
-            // 
-            this.lblRegistratieGelukt.AutoSize = true;
-            this.lblRegistratieGelukt.Location = new System.Drawing.Point(660, 484);
-            this.lblRegistratieGelukt.Name = "lblRegistratieGelukt";
-            this.lblRegistratieGelukt.Size = new System.Drawing.Size(0, 13);
-            this.lblRegistratieGelukt.TabIndex = 58;
-            this.lblRegistratieGelukt.Visible = false;
             // 
             // cbRegistratieAuto
             // 
@@ -504,6 +495,7 @@
             // 
             // tabpageVrijwilliger
             // 
+            this.tabpageVrijwilliger.Controls.Add(this.btnVrijwilligerVerwijderen);
             this.tabpageVrijwilliger.Controls.Add(this.btnVrijwilligerUitloggen);
             this.tabpageVrijwilliger.Controls.Add(this.btnVolunteerReviewReact);
             this.tabpageVrijwilliger.Controls.Add(this.btnVolunteerHelprequestRegister);
@@ -519,6 +511,16 @@
             this.tabpageVrijwilliger.TabIndex = 1;
             this.tabpageVrijwilliger.Text = "Vrijwilliger";
             this.tabpageVrijwilliger.UseVisualStyleBackColor = true;
+            // 
+            // btnVrijwilligerVerwijderen
+            // 
+            this.btnVrijwilligerVerwijderen.Location = new System.Drawing.Point(823, 23);
+            this.btnVrijwilligerVerwijderen.Name = "btnVrijwilligerVerwijderen";
+            this.btnVrijwilligerVerwijderen.Size = new System.Drawing.Size(103, 45);
+            this.btnVrijwilligerVerwijderen.TabIndex = 14;
+            this.btnVrijwilligerVerwijderen.Text = "Account verwijderen";
+            this.btnVrijwilligerVerwijderen.UseVisualStyleBackColor = true;
+            this.btnVrijwilligerVerwijderen.Click += new System.EventHandler(this.btnAccountVerwijderen_Click);
             // 
             // btnVrijwilligerUitloggen
             // 
@@ -594,6 +596,7 @@
             // 
             // tabpageHulpbehoevende
             // 
+            this.tabpageHulpbehoevende.Controls.Add(this.button1);
             this.tabpageHulpbehoevende.Controls.Add(this.dtpNeedyStartdate);
             this.tabpageHulpbehoevende.Controls.Add(this.lbNeedyVolunteers);
             this.tabpageHulpbehoevende.Controls.Add(this.nudNeedyVolunteers);
@@ -616,6 +619,47 @@
             this.tabpageHulpbehoevende.TabIndex = 3;
             this.tabpageHulpbehoevende.Text = "Hulpbehoevende";
             this.tabpageHulpbehoevende.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(623, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 45);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Account verwijderen";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnAccountVerwijderen_Click);
+            // 
+            // dtpNeedyStartdate
+            // 
+            this.dtpNeedyStartdate.Location = new System.Drawing.Point(6, 168);
+            this.dtpNeedyStartdate.Name = "dtpNeedyStartdate";
+            this.dtpNeedyStartdate.Size = new System.Drawing.Size(187, 20);
+            this.dtpNeedyStartdate.TabIndex = 26;
+            // 
+            // lbNeedyVolunteers
+            // 
+            this.lbNeedyVolunteers.AutoSize = true;
+            this.lbNeedyVolunteers.Location = new System.Drawing.Point(166, 145);
+            this.lbNeedyVolunteers.Name = "lbNeedyVolunteers";
+            this.lbNeedyVolunteers.Size = new System.Drawing.Size(57, 13);
+            this.lbNeedyVolunteers.TabIndex = 25;
+            this.lbNeedyVolunteers.Text = "Vrijwilligers";
+            // 
+            // nudNeedyVolunteers
+            // 
+            this.nudNeedyVolunteers.Location = new System.Drawing.Point(229, 143);
+            this.nudNeedyVolunteers.Name = "nudNeedyVolunteers";
+            this.nudNeedyVolunteers.Size = new System.Drawing.Size(73, 20);
+            this.nudNeedyVolunteers.TabIndex = 24;
+            // 
+            // tbNeedyLocation
+            // 
+            this.tbNeedyLocation.Location = new System.Drawing.Point(70, 142);
+            this.tbNeedyLocation.Name = "tbNeedyLocation";
+            this.tbNeedyLocation.Size = new System.Drawing.Size(90, 20);
+            this.tbNeedyLocation.TabIndex = 23;
+            this.tbNeedyLocation.Text = "Locatie";
             // 
             // btnHulpUitloggen
             // 
@@ -1000,37 +1044,6 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
-            // tbNeedyLocation
-            // 
-            this.tbNeedyLocation.Location = new System.Drawing.Point(70, 142);
-            this.tbNeedyLocation.Name = "tbNeedyLocation";
-            this.tbNeedyLocation.Size = new System.Drawing.Size(90, 20);
-            this.tbNeedyLocation.TabIndex = 23;
-            this.tbNeedyLocation.Text = "Locatie";
-            // 
-            // nudNeedyVolunteers
-            // 
-            this.nudNeedyVolunteers.Location = new System.Drawing.Point(229, 143);
-            this.nudNeedyVolunteers.Name = "nudNeedyVolunteers";
-            this.nudNeedyVolunteers.Size = new System.Drawing.Size(73, 20);
-            this.nudNeedyVolunteers.TabIndex = 24;
-            // 
-            // lbNeedyVolunteers
-            // 
-            this.lbNeedyVolunteers.AutoSize = true;
-            this.lbNeedyVolunteers.Location = new System.Drawing.Point(166, 145);
-            this.lbNeedyVolunteers.Name = "lbNeedyVolunteers";
-            this.lbNeedyVolunteers.Size = new System.Drawing.Size(57, 13);
-            this.lbNeedyVolunteers.TabIndex = 25;
-            this.lbNeedyVolunteers.Text = "Vrijwilligers";
-            // 
-            // dtpNeedyStartdate
-            // 
-            this.dtpNeedyStartdate.Location = new System.Drawing.Point(6, 168);
-            this.dtpNeedyStartdate.Name = "dtpNeedyStartdate";
-            this.dtpNeedyStartdate.Size = new System.Drawing.Size(187, 20);
-            this.dtpNeedyStartdate.TabIndex = 26;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1045,12 +1058,12 @@
             this.tabpageVrijwilliger.PerformLayout();
             this.tabpageHulpbehoevende.ResumeLayout(false);
             this.tabpageHulpbehoevende.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNeedyVolunteers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNeedyReviewScore)).EndInit();
             this.tabpageChat.ResumeLayout(false);
             this.tabpageChat.PerformLayout();
             this.tabpageBeheer.ResumeLayout(false);
             this.tabpageBeheer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNeedyVolunteers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1119,7 +1132,6 @@
         private System.Windows.Forms.Label lblRegistratieEmail;
         private System.Windows.Forms.CheckBox cbRegistratieAuto;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblRegistratieGelukt;
         private System.Windows.Forms.CheckBox cbNeedyUrgent;
         private System.Windows.Forms.CheckBox cbRegistratieOv;
         private System.Windows.Forms.Label lblRegistratieOv;
@@ -1144,6 +1156,8 @@
         private System.Windows.Forms.DateTimePicker dtpNeedyStartdate;
         private System.Windows.Forms.Label lbNeedyVolunteers;
         private System.Windows.Forms.NumericUpDown nudNeedyVolunteers;
+        private System.Windows.Forms.Button btnVrijwilligerVerwijderen;
+        private System.Windows.Forms.Button button1;
     }
 }
 
