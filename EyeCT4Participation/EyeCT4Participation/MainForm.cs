@@ -143,7 +143,9 @@ namespace EyeCT4Participation
                 }
             }
         }
-
+        /// <summary>
+        /// Refresh interface of Chat
+        /// </summary>
         private void ChatRefresh()
         {
             if (administration.LoggedinUser != null)
@@ -168,13 +170,16 @@ namespace EyeCT4Participation
 
             
         }
-
+        /// <summary>
+        /// Refresh interface of needy
+        /// </summary>
         private void NeedyRefresh()
         {
             if (administration.LoggedinUser != null)
             {
                 if (administration.LoggedinUser.GetType() == typeof (Needy))
                 {
+                    lbNeedyHelprequests.Items.Clear();
                     administration.ListHelpRequest();
                     foreach (HelpRequest helprequest in administration.listHelprequests)
                     {
@@ -187,7 +192,11 @@ namespace EyeCT4Participation
                 }
             }
         }
-
+        /// <summary>
+        /// Deactivate selected account
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBeheerAccountDeactiveren_Click(object sender, EventArgs e)
         {
             if (administration.DeactivateAccount(lbBeheerAccount.SelectedItem as Account))
@@ -199,7 +208,11 @@ namespace EyeCT4Participation
                 MessageBox.Show("Fout bij deactiveren account");
             }
         }
-
+        /// <summary>
+        /// Deactivatie selected helprequest
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBeheerHulpaanvraagDeactiveren_Click(object sender, EventArgs e)
         {
             if (administration.DeactivateHelpRequest(lbBeheerHulpaanvraag.SelectedItem as HelpRequest))
@@ -211,7 +224,11 @@ namespace EyeCT4Participation
                 MessageBox.Show("Fout bij deactiveren hulpaanvraag");
             }
         }
-
+        /// <summary>
+        /// Deactivate selected review
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBeheerBeoordelingDeactiveren_Click(object sender, EventArgs e)
         {
             if (administration.DeactivateReview(lbBeheerBeoordeling.SelectedItem as Review))
@@ -223,7 +240,11 @@ namespace EyeCT4Participation
                 MessageBox.Show("Fout bij deactiveren beoordeling");
             }
         }
-
+        /// <summary>
+        /// deactivate selected chat
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBeheerChatDeactiveren_Click(object sender, EventArgs e)
         {
             if (administration.DeactivateChat(lbBeheerChat.SelectedItem as Chat))
@@ -240,7 +261,21 @@ namespace EyeCT4Participation
         {
 
         }
-
+        /// <summary>
+        /// Register in the application
+        /// </summary>
+        /// <param name="gebruikersnaam"></param>
+        /// <param name="wachtwoord"></param>
+        /// <param name="naam"></param>
+        /// <param name="adres"></param>
+        /// <param name="woonplaats"></param>
+        /// <param name="email"></param>
+        /// <param name="geboortedatum"></param>
+        /// <param name="telefoonnummer"></param>
+        /// <param name="type"></param>
+        /// <param name="geslacht"></param>
+        /// <param name="auto"></param>
+        /// <param name="ov"></param>
         public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string woonplaats, string email, DateTime geboortedatum, int telefoonnummer,string type,int geslacht, int auto, int ov)
         {
 
