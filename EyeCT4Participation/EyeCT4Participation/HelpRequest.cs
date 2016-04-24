@@ -42,7 +42,11 @@ namespace EyeCT4Participation
         public bool Active { get; set; }
         public Needy Needy { get; set; }
         public int id { get; private set; }
-
+        /// <summary>
+        /// Vrijwilliger toevoegen
+        /// </summary>
+        /// <param name="volunteer"></param>
+        /// <returns></returns>
         public bool AddVolunteer(Volunteer volunteer)
         {
             if (!ListVolunteers.Contains(volunteer))

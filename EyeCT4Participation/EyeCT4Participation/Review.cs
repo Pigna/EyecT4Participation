@@ -31,7 +31,11 @@ namespace EyeCT4Participation
         public int id { get; private set; }
         public int hulpvraagid { get; private set; }
 
-
+        /// <summary>
+        /// Reactie toevoegen
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
         public bool AddReaction(string message)
         {
             return dbReview.AddReaction(this, message);

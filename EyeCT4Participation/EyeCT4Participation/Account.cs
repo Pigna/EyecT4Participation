@@ -33,35 +33,6 @@ namespace EyeCT4Participation
         public string Geslacht { get; set; }
         public int id { get; private set; }
 
-        public List<Account> Conversation() //fix needed
-        {
-/*
-            foreach (Chat chat in administration.listChats)
-            {
-                if (administration.LoggedinUser == chat)
-                {
-                    foreach (Chat p in administration.listChats)
-                    {
-                        
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Verkeerde gebruiker");
-                }
-                return null;
-            }
-            return null;*/
-            /*
-                foreach (Account account in administration.listAccounts)
-                {
-
-                }
-            }
-            return chat;*/
-            return null;
-        }
-
         public override string ToString()
         {
             if (!Active)

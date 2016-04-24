@@ -37,7 +37,9 @@ namespace EyeCT4Participation
                 phonenumber, birthdate, geslacht, active);
             listAccounts.Add(newVolunteer);
         }
-
+        /// <summary>
+        /// Lijsten
+        /// </summary>
         public void ListAccount()
         {
             listAccounts.Clear();
@@ -61,7 +63,11 @@ namespace EyeCT4Participation
             listReviews.Clear();
             listReviews = dbadministration.ListReview();
         }
-
+        /// <summary>
+        /// Filter op Account
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public List<Account> ListFilterAccount(List<string> filter)
         {
             var filterlist = new List<Account>();
@@ -77,7 +83,11 @@ namespace EyeCT4Participation
             }
             return filterlist;
         }
-
+        /// <summary>
+        /// Deactiveren
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
         public bool DeactivateAccount(Account account)
         {
             account.Active = false;
@@ -101,7 +111,12 @@ namespace EyeCT4Participation
             review.Active = false;
             return dbadministration.DeactivateReview(review);
         }
-
+        /// <summary>
+        /// Logt gebruiker in
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public bool LoginUser(string username, string password)
         {
             var loginAccount = databaseAcc.GetQueryLogIn(username, password);
@@ -113,12 +128,5 @@ namespace EyeCT4Participation
             }
             return false;
         }
-
-        //return false
-        //else
-        //true
-        //insert user in -> administration.LoggedinUser
-        //db return user
-        //if db rturn = user
     }
 }

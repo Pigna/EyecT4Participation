@@ -19,13 +19,6 @@ namespace EyeCT4Participation
 
         public bool License { get; set; }
 
-        public void AddReaction(string name, string message, Volunteer author, DateTime date)
-        {
-            var query = "INSERT INTO review(name, message, author, date) VALUES (" + name + "," + message + "," +
-                        Convert.ToString(author) + "," + Convert.ToString(date) + ")";
-            dbReview.DoQueryAddReaction(query);
-        }
-
         /// <summary>
         ///     Inschrijven op hulpvraag
         /// </summary>
@@ -41,7 +34,10 @@ namespace EyeCT4Participation
             }
             return false;
         }
-
+        /// <summary>
+        /// Lijst met review
+        /// </summary>
+        /// <returns></returns>
         public List<Review> getListReview()
         {
             reviewList = dbReview.GetReview(this);

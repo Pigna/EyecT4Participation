@@ -32,12 +32,6 @@ namespace EyeCT4Participation
             TabControl.TabPages[2].Enabled = false;
             TabControl.TabPages[3].Enabled = false;
             TabControl.TabPages[4].Enabled = false;
-            /*
-            TabControl.TabPages.Remove(tabpageBeheer);
-            TabControl.TabPages.Remove(tabpageChat);
-            TabControl.TabPages.Remove(tabpageHulpbehoevende);
-            TabControl.TabPages.Remove(tabpageVrijwilliger);
-             */
         }
 
         private void OnTimeEvent(object source, ElapsedEventArgs e)
@@ -343,7 +337,11 @@ namespace EyeCT4Participation
             cbRegistratieAuto.Checked = false;
             cbRegistratieOv.Checked = false;
         }
-
+        /// <summary>
+        /// Klik event Log in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInloggenInloggen_Click(object sender, EventArgs e)
         {
             if (administration.LoginUser(tbInloggenGnaam.Text, tbInloggenWW.Text))
@@ -360,7 +358,6 @@ namespace EyeCT4Participation
                         TabControl.TabPages[4].Enabled = true;
                         TabControl.SelectTab(4);
                         MessageBox.Show("U bent ingelogd welkom");
-                        //TabControl.TabPages.Add(tabpageBeheer);
                     }
                     if (administration.LoggedinUser.GetType() == typeof (Volunteer))
                     {
@@ -372,8 +369,6 @@ namespace EyeCT4Participation
                         TabControl.TabPages[3].Enabled = true;
                         TabControl.SelectTab(1);
                         MessageBox.Show("U bent ingelogd welkom");
-                        //TabControl.TabPages.Remove(tabpageChat);
-                        //TabControl.TabPages.Remove(tabpageVrijwilliger);
                     }
                     if (administration.LoggedinUser.GetType() == typeof (Needy))
                     {
@@ -385,8 +380,6 @@ namespace EyeCT4Participation
                         TabControl.TabPages[3].Enabled = true;
                         TabControl.SelectTab(2);
                         MessageBox.Show("U bent ingelogd welkom");
-                        //TabControl.TabPages.Remove(tabpageChat);
-                        //TabControl.TabPages.Remove(tabpageHulpbehoevende);
                     }
                     tbInloggenGnaam.Clear();
                     tbInloggenWW.Clear();
@@ -397,7 +390,11 @@ namespace EyeCT4Participation
                 MessageBox.Show("Wachtwoord of inlognaam is niet correct");
             }
         }
-
+        /// <summary>
+        /// Klik event Registratie
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistratieOK_Click(object sender, EventArgs e)
         {
             if
@@ -446,7 +443,11 @@ namespace EyeCT4Participation
                     );
             }
         }
-
+        /// <summary>
+        /// Refresh wanneer je van tabpage verandert
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             var loggedinaccount = administration.LoggedinUser;
@@ -470,7 +471,11 @@ namespace EyeCT4Participation
                 }
             }
         }
-
+        /// <summary>
+        /// Klik event hulpaanvraag opstellen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNeedyHelprequest_Click(object sender, EventArgs e)
         {
             var urgent = cbNeedyUrgent.Checked;
@@ -489,7 +494,11 @@ namespace EyeCT4Participation
                 }
             }
         }
-
+        /// <summary>
+        /// Klik event inschrijven op een hulpvraag
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVolunteerHelprequestRegister_Click(object sender, EventArgs e)
         {
             if (lbVolunteerHelprequest.SelectedItem != null)
@@ -502,7 +511,11 @@ namespace EyeCT4Participation
                 }
             }
         }
-
+        /// <summary>
+        /// Klik event reactie op review
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVolunteerReviewReact_Click(object sender, EventArgs e)
         {
             var reaction = tbVolunteerReviewReaction.Text;
@@ -514,7 +527,11 @@ namespace EyeCT4Participation
                 }
             }
         }
-
+        /// <summary>
+        /// Klik event chat verzenden
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnChatSend_Click(object sender, EventArgs e)
         {
             var message = tbChatMessage.Text;
@@ -528,13 +545,12 @@ namespace EyeCT4Participation
                     tbChatMessage.Clear();
                 }
             }
-
-            //else
-            //{
-            //    MessageBox.Show("Voer iets in, veld is nog leeg!");
-            //}
         }
-
+        /// <summary>
+        /// Klik event Open conversation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnChatOpen_Click(object sender, EventArgs e)
         {
             if (lbChatConversations.SelectedItem != null)
@@ -548,7 +564,11 @@ namespace EyeCT4Participation
                 }
             }
         }
-
+        /// <summary>
+        /// Klik event uitloggen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUitloggen_Click(object sender, EventArgs e)
         {
             if (administration.LoggedinUser != null)
@@ -563,7 +583,11 @@ namespace EyeCT4Participation
                 MessageBox.Show("U bent uitgelogd");
             }
         }
-
+        /// <summary>
+        /// Klik event Hulpvraag verwijderen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNeedyHelprequestsDelete_Click(object sender, EventArgs e)
         {
             if (lbNeedyHelprequests.SelectedItem != null)
@@ -578,7 +602,11 @@ namespace EyeCT4Participation
                 }
             }
         }
-
+        /// <summary>
+        /// Klik event review
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNeedyReview_Click(object sender, EventArgs e)
         {
             var reviewdesc = tbNeedyReviewDescription.Text;
@@ -605,7 +633,11 @@ namespace EyeCT4Participation
                 MessageBox.Show("vul alle velden correct in");
             }
         }
-
+        /// <summary>
+        /// Klik event account verwijderen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAccountVerwijderen_Click(object sender, EventArgs e)
         {
             var verwijderaccount = MessageBox.Show("Weet u zeker dat u uw account wilt verwijderen?", "",
@@ -626,7 +658,11 @@ namespace EyeCT4Participation
                 }
             }
         }
-
+        /// <summary>
+        /// Refresh van hulpvraaglistbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lbNeedyHelprequests_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbNeedyReviewVolunteer.Items.Clear();
