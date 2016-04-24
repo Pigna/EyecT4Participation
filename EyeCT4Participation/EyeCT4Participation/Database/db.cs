@@ -139,9 +139,9 @@ namespace EyeCT4Participation.Database
             if (data == null)
                 return 0;
 
-            if (data.Count > 0)
+            if (data.Count > 0 && data[0]["id"] != DBNull.Value)
                 return Convert.ToInt32(data[0]["id"]);
-            return -1;
+            return 1;
         }
     }
 }
