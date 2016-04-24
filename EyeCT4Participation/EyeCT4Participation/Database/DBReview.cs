@@ -47,7 +47,7 @@ namespace EyeCT4Participation.Database
                 query = "INSERT INTO REVIEW";
                 query +=
                     "(ID, BEOORDELING, OPMERKING, DATUM, VERZENDERID, ONTVANGERID, HULPVRAAGID, REACTIEOPID, ACTIEF) VALUES ";
-                query += "(" + review.id + ", 0, '" + message + "', sysdate , " + review.Volunteer.id + ", " +
+                query += "(" + getLatestId("Review") + ", 0, '" + message + "', sysdate , " + review.Volunteer.id + ", " +
                          review.Needy.id + ", " + review.hulpvraagid + ", " + review.id + ", 1)";
                 doQuery(query); //query will be activated
                 return true;
