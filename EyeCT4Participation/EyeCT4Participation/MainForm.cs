@@ -146,10 +146,10 @@ namespace EyeCT4Participation
         private void hulpRefresh()
         {
 
-            lbhulpvragen.Items.Clear();
+            lbNeedyHelprequests.Items.Clear();
             foreach (HelpRequest helprequest in administration.listHelprequests)
             {
-                lbhulpvragen.Items.Add(helprequest.ToString());
+                lbNeedyHelprequests.Items.Add(helprequest.ToString());
             }
         }
 
@@ -408,11 +408,11 @@ namespace EyeCT4Participation
 
         private void BTHelpSend_Click(object sender, EventArgs e)
         {
-            bool urgent = CBUrgent.Checked;
+            bool urgent = cbNeedyUrgent.Checked;
             string message = rtbhelpvraag.Text;
             if (message != "")
             {
-                HelpRequest newHelpRequested = new HelpRequest(0, message, dthelprequest.Value, urgent, true, (Needy)administration.LoggedinUser);
+                HelpRequest newHelpRequested = new HelpRequest(0, message, dtpNeedyEnddate.Value, urgent, true, (Needy)administration.LoggedinUser);
 
 
                 if (databaseHelprequest.AddHelpRequest(newHelpRequested))
@@ -499,9 +499,9 @@ namespace EyeCT4Participation
 
         private void btnverwijder_Click(object sender, EventArgs e)
         {
-            if (administration.DeactivateHelpRequest(lbhulpvragen.SelectedItem as HelpRequest))
+            if (administration.DeactivateHelpRequest(lbNeedyHelprequests.SelectedItem as HelpRequest))
             {
-                lbhulpvragen.Items.Remove(lbhulpvragen.SelectedItem);
+                lbNeedyHelprequests.Items.Remove(lbNeedyHelprequests.SelectedItem);
             }
             else
             {

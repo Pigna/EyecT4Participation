@@ -75,15 +75,15 @@
             this.lbVolunteerHelprequest = new System.Windows.Forms.ListBox();
             this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
             this.btnHulpUitloggen = new System.Windows.Forms.Button();
-            this.cbUsers = new System.Windows.Forms.ComboBox();
-            this.rtdreviewtxt = new System.Windows.Forms.RichTextBox();
-            this.dthelprequest = new System.Windows.Forms.DateTimePicker();
-            this.btnverwijder = new System.Windows.Forms.Button();
-            this.lbhulpvragen = new System.Windows.Forms.ListBox();
-            this.CBUrgent = new System.Windows.Forms.CheckBox();
-            this.btnbeoordeel = new System.Windows.Forms.Button();
-            this.nudscore = new System.Windows.Forms.NumericUpDown();
-            this.BTHelpSend = new System.Windows.Forms.Button();
+            this.cbNeedyReviewUser = new System.Windows.Forms.ComboBox();
+            this.tbNeedyReviewDescription = new System.Windows.Forms.RichTextBox();
+            this.dtpNeedyEnddate = new System.Windows.Forms.DateTimePicker();
+            this.btnNeedyHelprequestsDelete = new System.Windows.Forms.Button();
+            this.lbNeedyHelprequests = new System.Windows.Forms.ListBox();
+            this.cbNeedyUrgent = new System.Windows.Forms.CheckBox();
+            this.btnNeedyReview = new System.Windows.Forms.Button();
+            this.nudNeedyReviewScore = new System.Windows.Forms.NumericUpDown();
+            this.btnNeedyHelprequest = new System.Windows.Forms.Button();
             this.rtbhelpvraag = new System.Windows.Forms.RichTextBox();
             this.tabpageChat = new System.Windows.Forms.TabPage();
             this.btnChatOpen = new System.Windows.Forms.Button();
@@ -112,13 +112,17 @@
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
             this.tbNeedyLocation = new System.Windows.Forms.TextBox();
+            this.nudNeedyVolunteers = new System.Windows.Forms.NumericUpDown();
+            this.lbNeedyVolunteers = new System.Windows.Forms.Label();
+            this.dtpNeedyStartdate = new System.Windows.Forms.DateTimePicker();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
             this.tabpageHulpbehoevende.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudscore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNeedyReviewScore)).BeginInit();
             this.tabpageChat.SuspendLayout();
             this.tabpageBeheer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNeedyVolunteers)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl
@@ -590,17 +594,20 @@
             // 
             // tabpageHulpbehoevende
             // 
+            this.tabpageHulpbehoevende.Controls.Add(this.dtpNeedyStartdate);
+            this.tabpageHulpbehoevende.Controls.Add(this.lbNeedyVolunteers);
+            this.tabpageHulpbehoevende.Controls.Add(this.nudNeedyVolunteers);
             this.tabpageHulpbehoevende.Controls.Add(this.tbNeedyLocation);
             this.tabpageHulpbehoevende.Controls.Add(this.btnHulpUitloggen);
-            this.tabpageHulpbehoevende.Controls.Add(this.cbUsers);
-            this.tabpageHulpbehoevende.Controls.Add(this.rtdreviewtxt);
-            this.tabpageHulpbehoevende.Controls.Add(this.dthelprequest);
-            this.tabpageHulpbehoevende.Controls.Add(this.btnverwijder);
-            this.tabpageHulpbehoevende.Controls.Add(this.lbhulpvragen);
-            this.tabpageHulpbehoevende.Controls.Add(this.CBUrgent);
-            this.tabpageHulpbehoevende.Controls.Add(this.btnbeoordeel);
-            this.tabpageHulpbehoevende.Controls.Add(this.nudscore);
-            this.tabpageHulpbehoevende.Controls.Add(this.BTHelpSend);
+            this.tabpageHulpbehoevende.Controls.Add(this.cbNeedyReviewUser);
+            this.tabpageHulpbehoevende.Controls.Add(this.tbNeedyReviewDescription);
+            this.tabpageHulpbehoevende.Controls.Add(this.dtpNeedyEnddate);
+            this.tabpageHulpbehoevende.Controls.Add(this.btnNeedyHelprequestsDelete);
+            this.tabpageHulpbehoevende.Controls.Add(this.lbNeedyHelprequests);
+            this.tabpageHulpbehoevende.Controls.Add(this.cbNeedyUrgent);
+            this.tabpageHulpbehoevende.Controls.Add(this.btnNeedyReview);
+            this.tabpageHulpbehoevende.Controls.Add(this.nudNeedyReviewScore);
+            this.tabpageHulpbehoevende.Controls.Add(this.btnNeedyHelprequest);
             this.tabpageHulpbehoevende.Controls.Add(this.rtbhelpvraag);
             this.tabpageHulpbehoevende.Location = new System.Drawing.Point(4, 22);
             this.tabpageHulpbehoevende.Name = "tabpageHulpbehoevende";
@@ -620,88 +627,85 @@
             this.btnHulpUitloggen.UseVisualStyleBackColor = true;
             this.btnHulpUitloggen.Click += new System.EventHandler(this.btnUitloggen_Click);
             // 
-            // cbUsers
+            // cbNeedyReviewUser
             // 
-            this.cbUsers.FormattingEnabled = true;
-            this.cbUsers.Location = new System.Drawing.Point(437, 327);
-            this.cbUsers.Name = "cbUsers";
-            this.cbUsers.Size = new System.Drawing.Size(121, 21);
-            this.cbUsers.TabIndex = 21;
+            this.cbNeedyReviewUser.FormattingEnabled = true;
+            this.cbNeedyReviewUser.Location = new System.Drawing.Point(328, 327);
+            this.cbNeedyReviewUser.Name = "cbNeedyReviewUser";
+            this.cbNeedyReviewUser.Size = new System.Drawing.Size(121, 21);
+            this.cbNeedyReviewUser.TabIndex = 21;
             // 
-            // rtdreviewtxt
+            // tbNeedyReviewDescription
             // 
-            this.rtdreviewtxt.Location = new System.Drawing.Point(328, 225);
-            this.rtdreviewtxt.Name = "rtdreviewtxt";
-            this.rtdreviewtxt.Size = new System.Drawing.Size(235, 96);
-            this.rtdreviewtxt.TabIndex = 20;
-            this.rtdreviewtxt.Text = "";
+            this.tbNeedyReviewDescription.Location = new System.Drawing.Point(328, 225);
+            this.tbNeedyReviewDescription.Name = "tbNeedyReviewDescription";
+            this.tbNeedyReviewDescription.Size = new System.Drawing.Size(235, 96);
+            this.tbNeedyReviewDescription.TabIndex = 20;
+            this.tbNeedyReviewDescription.Text = "";
             // 
-            // dthelprequest
+            // dtpNeedyEnddate
             // 
-            this.dthelprequest.Location = new System.Drawing.Point(115, 166);
-            this.dthelprequest.Name = "dthelprequest";
-            this.dthelprequest.Size = new System.Drawing.Size(187, 20);
-            this.dthelprequest.TabIndex = 19;
+            this.dtpNeedyEnddate.Location = new System.Drawing.Point(6, 193);
+            this.dtpNeedyEnddate.Name = "dtpNeedyEnddate";
+            this.dtpNeedyEnddate.Size = new System.Drawing.Size(187, 20);
+            this.dtpNeedyEnddate.TabIndex = 19;
             // 
-            // btnverwijder
+            // btnNeedyHelprequestsDelete
             // 
-            this.btnverwijder.Location = new System.Drawing.Point(0, 443);
-            this.btnverwijder.Name = "btnverwijder";
-            this.btnverwijder.Size = new System.Drawing.Size(103, 45);
-            this.btnverwijder.TabIndex = 18;
-            this.btnverwijder.Text = "verwijder";
-            this.btnverwijder.UseVisualStyleBackColor = true;
-            this.btnverwijder.Click += new System.EventHandler(this.btnverwijder_Click);
+            this.btnNeedyHelprequestsDelete.Location = new System.Drawing.Point(202, 443);
+            this.btnNeedyHelprequestsDelete.Name = "btnNeedyHelprequestsDelete";
+            this.btnNeedyHelprequestsDelete.Size = new System.Drawing.Size(103, 45);
+            this.btnNeedyHelprequestsDelete.TabIndex = 18;
+            this.btnNeedyHelprequestsDelete.Text = "Verwijder";
+            this.btnNeedyHelprequestsDelete.UseVisualStyleBackColor = true;
             // 
-            // lbhulpvragen
+            // lbNeedyHelprequests
             // 
-            this.lbhulpvragen.FormattingEnabled = true;
-            this.lbhulpvragen.Location = new System.Drawing.Point(6, 225);
-            this.lbhulpvragen.Name = "lbhulpvragen";
-            this.lbhulpvragen.Size = new System.Drawing.Size(299, 212);
-            this.lbhulpvragen.TabIndex = 17;
+            this.lbNeedyHelprequests.FormattingEnabled = true;
+            this.lbNeedyHelprequests.Location = new System.Drawing.Point(6, 225);
+            this.lbNeedyHelprequests.Name = "lbNeedyHelprequests";
+            this.lbNeedyHelprequests.Size = new System.Drawing.Size(299, 212);
+            this.lbNeedyHelprequests.TabIndex = 17;
             // 
-            // CBUrgent
+            // cbNeedyUrgent
             // 
-            this.CBUrgent.AutoSize = true;
-            this.CBUrgent.Location = new System.Drawing.Point(115, 143);
-            this.CBUrgent.Name = "CBUrgent";
-            this.CBUrgent.Size = new System.Drawing.Size(58, 17);
-            this.CBUrgent.TabIndex = 16;
-            this.CBUrgent.Text = "Urgent";
-            this.CBUrgent.UseVisualStyleBackColor = true;
+            this.cbNeedyUrgent.AutoSize = true;
+            this.cbNeedyUrgent.Location = new System.Drawing.Point(6, 144);
+            this.cbNeedyUrgent.Name = "cbNeedyUrgent";
+            this.cbNeedyUrgent.Size = new System.Drawing.Size(58, 17);
+            this.cbNeedyUrgent.TabIndex = 16;
+            this.cbNeedyUrgent.Text = "Urgent";
+            this.cbNeedyUrgent.UseVisualStyleBackColor = true;
             // 
-            // btnbeoordeel
+            // btnNeedyReview
             // 
-            this.btnbeoordeel.Location = new System.Drawing.Point(328, 327);
-            this.btnbeoordeel.Name = "btnbeoordeel";
-            this.btnbeoordeel.Size = new System.Drawing.Size(103, 45);
-            this.btnbeoordeel.TabIndex = 15;
-            this.btnbeoordeel.Text = "Beoordeel";
-            this.btnbeoordeel.UseVisualStyleBackColor = true;
-            this.btnbeoordeel.Click += new System.EventHandler(this.btnbeoordeel_Click);
+            this.btnNeedyReview.Location = new System.Drawing.Point(460, 327);
+            this.btnNeedyReview.Name = "btnNeedyReview";
+            this.btnNeedyReview.Size = new System.Drawing.Size(103, 45);
+            this.btnNeedyReview.TabIndex = 15;
+            this.btnNeedyReview.Text = "Beoordeel";
+            this.btnNeedyReview.UseVisualStyleBackColor = true;
             // 
-            // nudscore
+            // nudNeedyReviewScore
             // 
-            this.nudscore.Location = new System.Drawing.Point(437, 352);
-            this.nudscore.Maximum = new decimal(new int[] {
+            this.nudNeedyReviewScore.Location = new System.Drawing.Point(328, 354);
+            this.nudNeedyReviewScore.Maximum = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.nudscore.Name = "nudscore";
-            this.nudscore.Size = new System.Drawing.Size(121, 20);
-            this.nudscore.TabIndex = 14;
+            this.nudNeedyReviewScore.Name = "nudNeedyReviewScore";
+            this.nudNeedyReviewScore.Size = new System.Drawing.Size(121, 20);
+            this.nudNeedyReviewScore.TabIndex = 14;
             // 
-            // BTHelpSend
+            // btnNeedyHelprequest
             // 
-            this.BTHelpSend.Location = new System.Drawing.Point(6, 143);
-            this.BTHelpSend.Name = "BTHelpSend";
-            this.BTHelpSend.Size = new System.Drawing.Size(103, 45);
-            this.BTHelpSend.TabIndex = 12;
-            this.BTHelpSend.Text = "Verstuur";
-            this.BTHelpSend.UseVisualStyleBackColor = true;
-            this.BTHelpSend.Click += new System.EventHandler(this.BTHelpSend_Click);
+            this.btnNeedyHelprequest.Location = new System.Drawing.Point(199, 168);
+            this.btnNeedyHelprequest.Name = "btnNeedyHelprequest";
+            this.btnNeedyHelprequest.Size = new System.Drawing.Size(103, 45);
+            this.btnNeedyHelprequest.TabIndex = 12;
+            this.btnNeedyHelprequest.Text = "Verstuur";
+            this.btnNeedyHelprequest.UseVisualStyleBackColor = true;
             // 
             // rtbhelpvraag
             // 
@@ -995,11 +999,34 @@
             // 
             // tbNeedyLocation
             // 
-            this.tbNeedyLocation.Location = new System.Drawing.Point(202, 140);
+            this.tbNeedyLocation.Location = new System.Drawing.Point(70, 142);
             this.tbNeedyLocation.Name = "tbNeedyLocation";
-            this.tbNeedyLocation.Size = new System.Drawing.Size(100, 20);
+            this.tbNeedyLocation.Size = new System.Drawing.Size(90, 20);
             this.tbNeedyLocation.TabIndex = 23;
             this.tbNeedyLocation.Text = "Locatie";
+            // 
+            // nudNeedyVolunteers
+            // 
+            this.nudNeedyVolunteers.Location = new System.Drawing.Point(229, 143);
+            this.nudNeedyVolunteers.Name = "nudNeedyVolunteers";
+            this.nudNeedyVolunteers.Size = new System.Drawing.Size(73, 20);
+            this.nudNeedyVolunteers.TabIndex = 24;
+            // 
+            // lbNeedyVolunteers
+            // 
+            this.lbNeedyVolunteers.AutoSize = true;
+            this.lbNeedyVolunteers.Location = new System.Drawing.Point(166, 145);
+            this.lbNeedyVolunteers.Name = "lbNeedyVolunteers";
+            this.lbNeedyVolunteers.Size = new System.Drawing.Size(57, 13);
+            this.lbNeedyVolunteers.TabIndex = 25;
+            this.lbNeedyVolunteers.Text = "Vrijwilligers";
+            // 
+            // dtpNeedyStartdate
+            // 
+            this.dtpNeedyStartdate.Location = new System.Drawing.Point(6, 168);
+            this.dtpNeedyStartdate.Name = "dtpNeedyStartdate";
+            this.dtpNeedyStartdate.Size = new System.Drawing.Size(187, 20);
+            this.dtpNeedyStartdate.TabIndex = 26;
             // 
             // MainForm
             // 
@@ -1015,11 +1042,12 @@
             this.tabpageVrijwilliger.PerformLayout();
             this.tabpageHulpbehoevende.ResumeLayout(false);
             this.tabpageHulpbehoevende.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudscore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNeedyReviewScore)).EndInit();
             this.tabpageChat.ResumeLayout(false);
             this.tabpageChat.PerformLayout();
             this.tabpageBeheer.ResumeLayout(false);
             this.tabpageBeheer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNeedyVolunteers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1079,9 +1107,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbRegistratieType;
         private System.Windows.Forms.Label lblRegistratieType;
-        private System.Windows.Forms.Button btnbeoordeel;
-        private System.Windows.Forms.NumericUpDown nudscore;
-        private System.Windows.Forms.Button BTHelpSend;
+        private System.Windows.Forms.Button btnNeedyReview;
+        private System.Windows.Forms.NumericUpDown nudNeedyReviewScore;
+        private System.Windows.Forms.Button btnNeedyHelprequest;
         private System.Windows.Forms.RichTextBox rtbhelpvraag;
         private System.Windows.Forms.Button btnChatOpen;
         private System.Windows.Forms.TextBox tbRegistratieEmail;
@@ -1089,7 +1117,7 @@
         private System.Windows.Forms.CheckBox cbRegistratieAuto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblRegistratieGelukt;
-        private System.Windows.Forms.CheckBox CBUrgent;
+        private System.Windows.Forms.CheckBox cbNeedyUrgent;
         private System.Windows.Forms.CheckBox cbRegistratieOv;
         private System.Windows.Forms.Label lblRegistratieOv;
         private System.Windows.Forms.Button btnVolunteerReviewReact;
@@ -1099,17 +1127,20 @@
         private System.Windows.Forms.TextBox tbVolunteerReviewReaction;
         private System.Windows.Forms.ListBox lbVolunteerReview;
         private System.Windows.Forms.ListBox lbVolunteerVolunteer;
-        private System.Windows.Forms.Button btnverwijder;
-        private System.Windows.Forms.ListBox lbhulpvragen;
-        private System.Windows.Forms.DateTimePicker dthelprequest;
+        private System.Windows.Forms.Button btnNeedyHelprequestsDelete;
+        private System.Windows.Forms.ListBox lbNeedyHelprequests;
+        private System.Windows.Forms.DateTimePicker dtpNeedyEnddate;
         private System.Windows.Forms.ListBox lbVolunteerHelprequest;
-        private System.Windows.Forms.RichTextBox rtdreviewtxt;
-        private System.Windows.Forms.ComboBox cbUsers;
+        private System.Windows.Forms.RichTextBox tbNeedyReviewDescription;
+        private System.Windows.Forms.ComboBox cbNeedyReviewUser;
         private System.Windows.Forms.DateTimePicker dtpRegistratieBirthdate;
         private System.Windows.Forms.Button btnVrijwilligerUitloggen;
         private System.Windows.Forms.Button btnHulpUitloggen;
         private System.Windows.Forms.Button btnBeheerUitloggen;
         private System.Windows.Forms.TextBox tbNeedyLocation;
+        private System.Windows.Forms.DateTimePicker dtpNeedyStartdate;
+        private System.Windows.Forms.Label lbNeedyVolunteers;
+        private System.Windows.Forms.NumericUpDown nudNeedyVolunteers;
     }
 }
 
