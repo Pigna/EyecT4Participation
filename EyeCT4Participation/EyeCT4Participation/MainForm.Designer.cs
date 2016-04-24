@@ -711,6 +711,7 @@
             this.lbNeedyHelprequests.Name = "lbNeedyHelprequests";
             this.lbNeedyHelprequests.Size = new System.Drawing.Size(299, 212);
             this.lbNeedyHelprequests.TabIndex = 17;
+            this.lbNeedyHelprequests.SelectedIndexChanged += new System.EventHandler(this.lbNeedyHelprequests_SelectedIndexChanged);
             // 
             // cbNeedyUrgent
             // 

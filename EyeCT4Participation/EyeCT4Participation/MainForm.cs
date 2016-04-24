@@ -589,7 +589,16 @@ namespace EyeCT4Participation
                     reviewdesc, cbNeedyReviewUser.SelectedItem as Volunteer,
                     lbNeedyHelprequests.SelectedItem as HelpRequest))
                 {
+                    MessageBox.Show("review is gelukt");
                 }
+                else
+                {
+                    MessageBox.Show("vul alle velden correct in");
+                }
+            }
+            else
+            {
+                MessageBox.Show("vul alle velden correct in");
             }
         }
 
@@ -610,6 +619,16 @@ namespace EyeCT4Participation
                     TabControl.TabPages[4].Enabled = false;
                     TabControl.SelectTab(0);
                 }
+            }
+        }
+
+        private void lbNeedyHelprequests_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbNeedyReviewUser.Items.Clear();
+            HelpRequest help = ((HelpRequest)lbNeedyHelprequests.SelectedItem);
+            foreach (Volunteer vol in help.ListVolunteers)
+            {
+                cbNeedyReviewUser.Items.Add(vol.ToString());
             }
         }
     }
