@@ -7,6 +7,7 @@ namespace EyeCT4Participation.Database
     {
         public List<Chat> Conversation(Account x, Account y) //name of ur query
         {
+            
             var QueryY =
                 getQuery("SELECT * FROM CHAT WHERE (verzenderid = " + x.id + " AND ontvangerid = " + y.id +
                          ") OR (verzenderid =  " + y.id + " AND ontvangerid =  " + x.id + ") AND actief = 1 ORDER BY id");
