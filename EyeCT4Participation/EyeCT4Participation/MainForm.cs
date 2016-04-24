@@ -28,7 +28,7 @@ namespace EyeCT4Participation
             InitializeComponent();
             administration = new Administration();
             
-            aTimer = new System.Timers.Timer(10000); // refresh timer in miliseconds
+            aTimer = new System.Timers.Timer(1000); // refresh timer in miliseconds
             aTimer.Elapsed += OnTimeEvent;
             aTimer.AutoReset = true;
             aTimer.Enabled = true;
