@@ -42,7 +42,7 @@ namespace EyeCT4Participation
 
         private void OnTimeEvent(object source, ElapsedEventArgs e)
         {
-            if (currentConversation != null)
+            if (currentConversation != null && administration.LoggedinUser != null)
             {
                 lbChatConversation.Invoke((Action) (() =>
                 {
