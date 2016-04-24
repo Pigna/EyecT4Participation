@@ -582,18 +582,22 @@ namespace EyeCT4Participation
         private void btnNeedyReview_Click(object sender, EventArgs e)
         {
             var reviewdesc = tbNeedyReviewDescription.Text;
-            if (administration.LoggedinUser != null && cbNeedyReviewUser.SelectedItem != null && reviewdesc != "" &&
-                lbNeedyHelprequests.SelectedItem != null)
+            if (administration.LoggedinUser != null &&
+                lbNeedyReviewVolunteer.SelectedItem != null &&
+                reviewdesc != "" &&
+                lbNeedyHelprequests.SelectedItem != null
+                )
             {
+                Volunteer volunteer = lbNeedyReviewVolunteer.SelectedItem as Volunteer;
                 if ((administration.LoggedinUser as Needy).AddReview(Convert.ToInt32(nudNeedyReviewScore.Value),
-                    reviewdesc, cbNeedyReviewUser.SelectedItem as Volunteer,
+                    reviewdesc, volunteer,
                     lbNeedyHelprequests.SelectedItem as HelpRequest))
                 {
                     MessageBox.Show("review is gelukt");
                 }
                 else
                 {
-                    MessageBox.Show("vul alle velden correct in");
+                    MessageBox.Show("vul alle velden correct in." + lbNeedyReviewVolunteer.SelectedItem);
                 }
             }
             else
@@ -624,11 +628,11 @@ namespace EyeCT4Participation
 
         private void lbNeedyHelprequests_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbNeedyReviewUser.Items.Clear();
+            lbNeedyReviewVolunteer.Items.Clear();
             HelpRequest help = ((HelpRequest)lbNeedyHelprequests.SelectedItem);
-            foreach (Volunteer vol in help.ListVolunteers)
+            foreach (Volunteer volunteer in help.ListVolunteers)
             {
-                cbNeedyReviewUser.Items.Add(vol.ToString());
+                lbNeedyReviewVolunteer.Items.Add(volunteer);
             }
         }
     }

@@ -80,7 +80,6 @@
             this.nudNeedyVolunteers = new System.Windows.Forms.NumericUpDown();
             this.tbNeedyLocation = new System.Windows.Forms.TextBox();
             this.btnHulpUitloggen = new System.Windows.Forms.Button();
-            this.cbNeedyReviewUser = new System.Windows.Forms.ComboBox();
             this.tbNeedyReviewDescription = new System.Windows.Forms.RichTextBox();
             this.dtpNeedyEnddate = new System.Windows.Forms.DateTimePicker();
             this.btnNeedyHelprequestsDelete = new System.Windows.Forms.Button();
@@ -116,6 +115,8 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
+            this.lbNeedyReviewVolunteer = new System.Windows.Forms.ListBox();
+            this.lbNeedyRating = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -596,13 +597,14 @@
             // 
             // tabpageHulpbehoevende
             // 
+            this.tabpageHulpbehoevende.Controls.Add(this.lbNeedyRating);
+            this.tabpageHulpbehoevende.Controls.Add(this.lbNeedyReviewVolunteer);
             this.tabpageHulpbehoevende.Controls.Add(this.button1);
             this.tabpageHulpbehoevende.Controls.Add(this.dtpNeedyStartdate);
             this.tabpageHulpbehoevende.Controls.Add(this.lbNeedyVolunteers);
             this.tabpageHulpbehoevende.Controls.Add(this.nudNeedyVolunteers);
             this.tabpageHulpbehoevende.Controls.Add(this.tbNeedyLocation);
             this.tabpageHulpbehoevende.Controls.Add(this.btnHulpUitloggen);
-            this.tabpageHulpbehoevende.Controls.Add(this.cbNeedyReviewUser);
             this.tabpageHulpbehoevende.Controls.Add(this.tbNeedyReviewDescription);
             this.tabpageHulpbehoevende.Controls.Add(this.dtpNeedyEnddate);
             this.tabpageHulpbehoevende.Controls.Add(this.btnNeedyHelprequestsDelete);
@@ -622,7 +624,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(623, 6);
+            this.button1.Location = new System.Drawing.Point(613, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 45);
             this.button1.TabIndex = 27;
@@ -663,7 +665,7 @@
             // 
             // btnHulpUitloggen
             // 
-            this.btnHulpUitloggen.Location = new System.Drawing.Point(460, 6);
+            this.btnHulpUitloggen.Location = new System.Drawing.Point(613, 57);
             this.btnHulpUitloggen.Name = "btnHulpUitloggen";
             this.btnHulpUitloggen.Size = new System.Drawing.Size(103, 45);
             this.btnHulpUitloggen.TabIndex = 22;
@@ -671,19 +673,11 @@
             this.btnHulpUitloggen.UseVisualStyleBackColor = true;
             this.btnHulpUitloggen.Click += new System.EventHandler(this.btnUitloggen_Click);
             // 
-            // cbNeedyReviewUser
-            // 
-            this.cbNeedyReviewUser.FormattingEnabled = true;
-            this.cbNeedyReviewUser.Location = new System.Drawing.Point(328, 327);
-            this.cbNeedyReviewUser.Name = "cbNeedyReviewUser";
-            this.cbNeedyReviewUser.Size = new System.Drawing.Size(121, 21);
-            this.cbNeedyReviewUser.TabIndex = 21;
-            // 
             // tbNeedyReviewDescription
             // 
-            this.tbNeedyReviewDescription.Location = new System.Drawing.Point(328, 225);
+            this.tbNeedyReviewDescription.Location = new System.Drawing.Point(308, 312);
             this.tbNeedyReviewDescription.Name = "tbNeedyReviewDescription";
-            this.tbNeedyReviewDescription.Size = new System.Drawing.Size(235, 96);
+            this.tbNeedyReviewDescription.Size = new System.Drawing.Size(299, 96);
             this.tbNeedyReviewDescription.TabIndex = 20;
             this.tbNeedyReviewDescription.Text = "";
             // 
@@ -696,7 +690,7 @@
             // 
             // btnNeedyHelprequestsDelete
             // 
-            this.btnNeedyHelprequestsDelete.Location = new System.Drawing.Point(202, 443);
+            this.btnNeedyHelprequestsDelete.Location = new System.Drawing.Point(613, 224);
             this.btnNeedyHelprequestsDelete.Name = "btnNeedyHelprequestsDelete";
             this.btnNeedyHelprequestsDelete.Size = new System.Drawing.Size(103, 45);
             this.btnNeedyHelprequestsDelete.TabIndex = 18;
@@ -707,7 +701,7 @@
             // lbNeedyHelprequests
             // 
             this.lbNeedyHelprequests.FormattingEnabled = true;
-            this.lbNeedyHelprequests.Location = new System.Drawing.Point(6, 225);
+            this.lbNeedyHelprequests.Location = new System.Drawing.Point(308, 6);
             this.lbNeedyHelprequests.Name = "lbNeedyHelprequests";
             this.lbNeedyHelprequests.Size = new System.Drawing.Size(299, 212);
             this.lbNeedyHelprequests.TabIndex = 17;
@@ -725,7 +719,7 @@
             // 
             // btnNeedyReview
             // 
-            this.btnNeedyReview.Location = new System.Drawing.Point(460, 327);
+            this.btnNeedyReview.Location = new System.Drawing.Point(504, 414);
             this.btnNeedyReview.Name = "btnNeedyReview";
             this.btnNeedyReview.Size = new System.Drawing.Size(103, 45);
             this.btnNeedyReview.TabIndex = 15;
@@ -735,14 +729,14 @@
             // 
             // nudNeedyReviewScore
             // 
-            this.nudNeedyReviewScore.Location = new System.Drawing.Point(328, 354);
+            this.nudNeedyReviewScore.Location = new System.Drawing.Point(349, 414);
             this.nudNeedyReviewScore.Maximum = new decimal(new int[] {
             5,
             0,
             0,
             0});
             this.nudNeedyReviewScore.Name = "nudNeedyReviewScore";
-            this.nudNeedyReviewScore.Size = new System.Drawing.Size(121, 20);
+            this.nudNeedyReviewScore.Size = new System.Drawing.Size(149, 20);
             this.nudNeedyReviewScore.TabIndex = 14;
             // 
             // btnNeedyHelprequest
@@ -1045,6 +1039,23 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
+            // lbNeedyReviewVolunteer
+            // 
+            this.lbNeedyReviewVolunteer.FormattingEnabled = true;
+            this.lbNeedyReviewVolunteer.Location = new System.Drawing.Point(308, 224);
+            this.lbNeedyReviewVolunteer.Name = "lbNeedyReviewVolunteer";
+            this.lbNeedyReviewVolunteer.Size = new System.Drawing.Size(299, 82);
+            this.lbNeedyReviewVolunteer.TabIndex = 28;
+            // 
+            // lbNeedyRating
+            // 
+            this.lbNeedyRating.AutoSize = true;
+            this.lbNeedyRating.Location = new System.Drawing.Point(305, 416);
+            this.lbNeedyRating.Name = "lbNeedyRating";
+            this.lbNeedyRating.Size = new System.Drawing.Size(38, 13);
+            this.lbNeedyRating.TabIndex = 29;
+            this.lbNeedyRating.Text = "Rating";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1148,7 +1159,6 @@
         private System.Windows.Forms.DateTimePicker dtpNeedyEnddate;
         private System.Windows.Forms.ListBox lbVolunteerHelprequest;
         private System.Windows.Forms.RichTextBox tbNeedyReviewDescription;
-        private System.Windows.Forms.ComboBox cbNeedyReviewUser;
         private System.Windows.Forms.DateTimePicker dtpRegistratieBirthdate;
         private System.Windows.Forms.Button btnVrijwilligerUitloggen;
         private System.Windows.Forms.Button btnHulpUitloggen;
@@ -1159,6 +1169,8 @@
         private System.Windows.Forms.NumericUpDown nudNeedyVolunteers;
         private System.Windows.Forms.Button btnVrijwilligerVerwijderen;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbNeedyRating;
+        private System.Windows.Forms.ListBox lbNeedyReviewVolunteer;
     }
 }
 
