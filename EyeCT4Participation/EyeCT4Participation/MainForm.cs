@@ -320,7 +320,7 @@ namespace EyeCT4Participation
             else if (type == "Vrijwilliger")
             {
                 var doqueryVrijwilliger = dbAccount.NewAccount(gebruikersnaam, wachtwoord, naam, adres, woonplaats,
-                    email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
+                    email, geboortedatum, telefoonnummer, 2, geslacht, auto, 1, ov);
 
                 if (doqueryVrijwilliger)
                 {
