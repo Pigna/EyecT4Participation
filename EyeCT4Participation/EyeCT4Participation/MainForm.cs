@@ -29,9 +29,9 @@ namespace EyeCT4Participation
             administration = new Administration();
             
             aTimer = new System.Timers.Timer(1000); // refresh timer in miliseconds
-            aTimer.Elapsed += OnTimeEvent;
+            aTimer.Elapsed += OnTimeEvent; 
             aTimer.AutoReset = true;
-            aTimer.Enabled = true;
+            aTimer.Enabled = true; // start event
 
             TabControl.TabPages[1].Enabled = false;
             TabControl.TabPages[2].Enabled = false;
