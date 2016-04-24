@@ -1,50 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
 using EyeCT4Participation.Database;
 
 namespace EyeCT4Participation
 {
-    class HelpRequest
+    internal class HelpRequest
     {
-        public string Question { get; set; }
-        public string Description { get; set; }
-        public DateTime Date { get; set; }
-        public Boolean Urgency { get; set; }
-
-        public bool Active { get; set; }
-        public Needy Needy { get; set; }
-        public int id { get; private set; }
+        private readonly DBhelprequest dbHelprequest = new DBhelprequest();
         public List<Volunteer> ListVolunteers = new List<Volunteer>();
-        DBhelprequest dbHelprequest = new DBhelprequest();
 
-        public HelpRequest(int id, string question, DateTime date, bool urgency, bool active, Needy needy, List<Volunteer> ListVolunteers)
+        public HelpRequest(int id, string question, DateTime date, bool urgency, bool active, Needy needy,
+            List<Volunteer> ListVolunteers)
         {
             this.id = id;
-            this.Question = question;
-            this.Date = date;
-            this.Urgency = urgency;
-            this.Active = active;
-            this.Needy = needy;
-            foreach (Volunteer volunteer in ListVolunteers)
+            Question = question;
+            Date = date;
+            Urgency = urgency;
+            Active = active;
+            Needy = needy;
+            foreach (var volunteer in ListVolunteers)
             {
                 AddVolunteer(volunteer);
             }
         }
+
         public HelpRequest(int id, string question, DateTime date, bool urgency, bool active, Needy needy)
         {
             this.id = id;
-            this.Question = question;
-            this.Date = date;
-            this.Urgency = urgency;
-            this.Active = active;
-            this.Needy = needy;
-          
+            Question = question;
+            Date = date;
+            Urgency = urgency;
+            Active = active;
+            Needy = needy;
         }
+
+        public string Question { get; set; }
+        public string Description { get; set; }
+        public DateTime Date { get; set; }
+        public bool Urgency { get; set; }
+
+        public bool Active { get; set; }
+        public Needy Needy { get; set; }
+        public int id { get; private set; }
 
         public bool AddVolunteer(Volunteer volunteer)
         {
@@ -61,8 +58,8 @@ namespace EyeCT4Participation
 
         public override string ToString()
         {
-            string volunteers = "";
-            foreach (Volunteer volunteer in ListVolunteers)
+            var volunteers = "";
+            foreach (var volunteer in ListVolunteers)
             {
                 volunteers += volunteer.Name + ", ";
             }

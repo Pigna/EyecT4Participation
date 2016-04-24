@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.VisualStyles;
 using EyeCT4Participation.Database;
 
 namespace EyeCT4Participation
 {
-    class Administration
+    internal class Administration
     {
+        private readonly DBaccount databaseAcc = new DBaccount();
+        private readonly DBadministratie dbadministration = new DBadministratie();
         public List<Account> listAccounts = new List<Account>();
         public List<Chat> listChats = new List<Chat>();
         public List<HelpRequest> listHelprequests = new List<HelpRequest>();
         public List<Review> listReviews = new List<Review>();
-        private DBadministratie dbadministration = new DBadministratie();
         public Account LoggedinUser;
-        private DBaccount databaseAcc = new DBaccount();
 
         public void ListRefresh()
         {
@@ -25,16 +21,23 @@ namespace EyeCT4Participation
             ListHelpRequest();
             ListReview();
         }
-        public void AddNeedy(int id, bool ov, string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active)
+
+        public void AddNeedy(int id, bool ov, string username, string password, string name, string adress,
+            string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active)
         {
-            Needy newNeedy = new Needy(id, ov, username, password, name, adress, residence, email, phonenumber, birthdate, geslacht, active);
+            var newNeedy = new Needy(id, ov, username, password, name, adress, residence, email, phonenumber, birthdate,
+                geslacht, active);
             listAccounts.Add(newNeedy);
         }
-        public void AddVolunteer(int id, bool licence, string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active)
+
+        public void AddVolunteer(int id, bool licence, string username, string password, string name, string adress,
+            string residence, string email, int phonenumber, DateTime birthdate, string geslacht, bool active)
         {
-            Volunteer newVolunteer = new Volunteer(id, licence, username, password, name, adress, residence, email, phonenumber, birthdate, geslacht, active);
+            var newVolunteer = new Volunteer(id, licence, username, password, name, adress, residence, email,
+                phonenumber, birthdate, geslacht, active);
             listAccounts.Add(newVolunteer);
         }
+
         public void ListAccount()
         {
             listAccounts.Clear();
@@ -46,6 +49,7 @@ namespace EyeCT4Participation
             listChats.Clear();
             listChats = dbadministration.ListChat();
         }
+
         public void ListHelpRequest()
         {
             listHelprequests.Clear();
@@ -60,10 +64,10 @@ namespace EyeCT4Participation
 
         public List<Account> ListFilterAccount(List<string> filter)
         {
-            List<Account> filterlist = new List<Account>();
-            foreach (string filterstring in filter)
+            var filterlist = new List<Account>();
+            foreach (var filterstring in filter)
             {
-                foreach (Account account in listAccounts)
+                foreach (var account in listAccounts)
                 {
                     if (account.Name == filterstring)
                     {
@@ -73,6 +77,7 @@ namespace EyeCT4Participation
             }
             return filterlist;
         }
+
         public bool DeactivateAccount(Account account)
         {
             account.Active = false;
@@ -99,7 +104,7 @@ namespace EyeCT4Participation
 
         public bool LoginUser(string username, string password)
         {
-            Account loginAccount = databaseAcc.GetQueryLogIn(username, password);
+            var loginAccount = databaseAcc.GetQueryLogIn(username, password);
 
             if (loginAccount != null)
             {
@@ -108,11 +113,12 @@ namespace EyeCT4Participation
             }
             return false;
         }
-        //if db rturn = user
-        //db return user
-        //insert user in -> administration.LoggedinUser
-        //true
-        //else
+
         //return false
+        //else
+        //true
+        //insert user in -> administration.LoggedinUser
+        //db return user
+        //if db rturn = user
     }
 }

@@ -1,16 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EyeCT4Participation.Database;
 
 namespace EyeCT4Participation
 {
-        public abstract class Account
+    public abstract class Account
     {
+        public Account(int id, string username, string password, string name, string adress, string residence,
+            string email, int phonenumber, DateTime birthdate, bool active, string geslacht)
+        {
+            this.id = id;
+            Username = username;
+            Password = password;
+            Name = name;
+            Adress = adress;
+            Residence = residence;
+            Email = email;
+            PhoneNumber = phonenumber;
+            Birthdate = birthdate;
+            Active = active;
+            Geslacht = geslacht;
+        }
+
         public string Username { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
@@ -21,24 +31,11 @@ namespace EyeCT4Participation
         public DateTime Birthdate { get; set; }
         public bool Active { get; set; }
         public string Geslacht { get; set; }
-        public int id { get; private set; }
+        public int id { get; }
 
-        public Account(int id, string username, string password, string name, string adress, string residence, string email, int phonenumber, DateTime birthdate, bool active, string geslacht)
-        {
-            this.id = id;
-            this.Username = username;
-            this.Password = password;
-            this.Name = name;
-            this.Adress = adress;
-            this.Residence = residence;
-            this.Email = email;
-            this.PhoneNumber = phonenumber;
-            this.Birthdate = birthdate;
-            this.Active = active;
-            this.Geslacht = geslacht;
-        }
         public List<Account> Conversation() //fix needed
-        {/*
+        {
+/*
             foreach (Chat chat in administration.listChats)
             {
                 if (administration.LoggedinUser == chat)
@@ -65,13 +62,13 @@ namespace EyeCT4Participation
             return null;
         }
 
-            public override string ToString()
+        public override string ToString()
+        {
+            if (!Active)
             {
-                if (!Active)
-                {
-                    return id + " [D] " + Name + " ";
-                }
-                return id + " " + Name + " ";
+                return id + " [D] " + Name + " ";
             }
+            return id + " " + Name + " ";
+        }
     }
 }

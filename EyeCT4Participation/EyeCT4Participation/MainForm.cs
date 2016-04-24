@@ -1,35 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using EyeCT4Participation.Database;
+using Timer = System.Timers.Timer;
 
 namespace EyeCT4Participation
 {
     public partial class MainForm : Form
     {
-        private static System.Timers.Timer aTimer;
-        
-        DBaccount dbAccount = new DBaccount();
-        DBhelprequest databaseHelprequest = new DBhelprequest();
-        DBchat dbChat = new DBchat();
+        private static Timer aTimer;
+        private readonly Administration administration;
         private Account currentConversation;
-        private Administration administration;
+        private DBhelprequest databaseHelprequest = new DBhelprequest();
+
+        private readonly DBaccount dbAccount = new DBaccount();
+        private readonly DBchat dbChat = new DBchat();
+
         public MainForm()
         {
             InitializeComponent();
             administration = new Administration();
-            
-            aTimer = new System.Timers.Timer(1000); // refresh timer in miliseconds
-            aTimer.Elapsed += OnTimeEvent; 
+
+            aTimer = new Timer(1000); // refresh timer in miliseconds
+            aTimer.Elapsed += OnTimeEvent;
             aTimer.AutoReset = true;
             aTimer.Enabled = true; // start event
 
@@ -45,15 +40,14 @@ namespace EyeCT4Participation
              */
         }
 
-        private void OnTimeEvent(object source, System.Timers.ElapsedEventArgs e)
+        private void OnTimeEvent(object source, ElapsedEventArgs e)
         {
             if (currentConversation != null)
             {
-                this.lbChatConversation.Invoke((Action) (() =>
+                lbChatConversation.Invoke((Action) (() =>
                 {
-
                     lbChatConversation.Items.Clear();
-                    foreach (Chat chat in dbChat.Conversation(administration.LoggedinUser, currentConversation))
+                    foreach (var chat in dbChat.Conversation(administration.LoggedinUser, currentConversation))
                     {
                         lbChatConversation.Items.Add(chat);
                     }
@@ -61,42 +55,40 @@ namespace EyeCT4Participation
                     )
                     ;
             }
-
-
         }
 
         private void btnBeheerFilter_Click(object sender, EventArgs e)
         {
-            string filter = tbBeheerFilter.Text;
+            var filter = tbBeheerFilter.Text;
             if (filter != "")
             {
                 lbBeheerAccount.Items.Clear();
                 lbBeheerChat.Items.Clear();
                 lbBeheerHulpaanvraag.Items.Clear();
                 lbBeheerBeoordeling.Items.Clear();
-                List<string> filterinput = new List<string>();
+                var filterinput = new List<string>();
                 if (filter.Contains(';'))
                 {
                     filterinput.AddRange(filter.Split(';'));
-                    List<Account> ListFiltered = administration.ListFilterAccount(filterinput);
-                    foreach (Account account in ListFiltered)
+                    var ListFiltered = administration.ListFilterAccount(filterinput);
+                    foreach (var account in ListFiltered)
                     {
                         lbBeheerAccount.Items.Add(account);
-                        foreach (Chat chat in administration.listChats)
+                        foreach (var chat in administration.listChats)
                         {
                             if (ListFiltered.Contains(chat.sender) && ListFiltered.Contains(chat.receiver))
                             {
                                 lbBeheerChat.Items.Add(chat);
                             }
                         }
-                        foreach (HelpRequest helprequest in administration.listHelprequests)
+                        foreach (var helprequest in administration.listHelprequests)
                         {
                             if (helprequest.Needy == account || helprequest.ListVolunteers.Contains(account))
                             {
                                 lbBeheerHulpaanvraag.Items.Add(helprequest);
                             }
                         }
-                        foreach (Review review in administration.listReviews)
+                        foreach (var review in administration.listReviews)
                         {
                             if (review.Needy == account || review.Volunteer == account)
                             {
@@ -108,7 +100,7 @@ namespace EyeCT4Participation
                 else
                 {
                     filterinput.Add(filter);
-                    foreach (Account account in administration.ListFilterAccount(filterinput))
+                    foreach (var account in administration.ListFilterAccount(filterinput))
                     {
                         lbBeheerAccount.Items.Add(account);
                     }
@@ -118,10 +110,10 @@ namespace EyeCT4Participation
             {
                 BeheerRefresh();
             }
-
         }
+
         /// <summary>
-        /// Refresh interface of Manager
+        ///     Refresh interface of Manager
         /// </summary>
         private void BeheerRefresh()
         {
@@ -130,25 +122,26 @@ namespace EyeCT4Participation
             lbBeheerChat.Items.Clear();
             lbBeheerHulpaanvraag.Items.Clear();
             lbBeheerBeoordeling.Items.Clear();
-            foreach (Account account in administration.listAccounts)
+            foreach (var account in administration.listAccounts)
             {
-                    lbBeheerAccount.Items.Add(account);
+                lbBeheerAccount.Items.Add(account);
             }
-            foreach (Chat chat in administration.listChats)
+            foreach (var chat in administration.listChats)
             {
-                lbBeheerChat.Items.Add((chat));
+                lbBeheerChat.Items.Add(chat);
             }
-            foreach (HelpRequest helprequest in administration.listHelprequests)
+            foreach (var helprequest in administration.listHelprequests)
             {
                 lbBeheerHulpaanvraag.Items.Add(helprequest);
             }
-            foreach (Review review in administration.listReviews)
+            foreach (var review in administration.listReviews)
             {
                 lbBeheerBeoordeling.Items.Add(review);
             }
         }
+
         /// <summary>
-        /// Refresh interface of Volunteer
+        ///     Refresh interface of Volunteer
         /// </summary>
         private void VolunteerRefresh()
         {
@@ -159,20 +152,21 @@ namespace EyeCT4Participation
                     administration.ListRefresh();
                     lbVolunteerReview.Items.Clear();
                     lbVolunteerHelprequest.Items.Clear();
-                    foreach (HelpRequest helprequest in administration.listHelprequests)
+                    foreach (var helprequest in administration.listHelprequests)
                     {
                         lbVolunteerHelprequest.Items.Add(helprequest);
                     }
 
-                    foreach (Review review in ((Volunteer) administration.LoggedinUser).getListReview())
+                    foreach (var review in ((Volunteer) administration.LoggedinUser).getListReview())
                     {
                         lbVolunteerReview.Items.Add(review);
                     }
                 }
             }
         }
+
         /// <summary>
-        /// Refresh interface of Chat
+        ///     Refresh interface of Chat
         /// </summary>
         private void ChatRefresh()
         {
@@ -180,26 +174,25 @@ namespace EyeCT4Participation
             {
                 lbChatConversations.Items.Clear();
                 lbChatConversation.Items.Clear();
-                if (administration.LoggedinUser.GetType() == typeof(Needy))
+                if (administration.LoggedinUser.GetType() == typeof (Needy))
                 {
-                    foreach (Account account in dbChat.ListConversationVolunteers(administration.LoggedinUser as Needy))
+                    foreach (var account in dbChat.ListConversationVolunteers(administration.LoggedinUser as Needy))
                     {
                         lbChatConversations.Items.Add(account);
                     }
                 }
-                else if (administration.LoggedinUser.GetType() == typeof(Volunteer))
+                else if (administration.LoggedinUser.GetType() == typeof (Volunteer))
                 {
-                    foreach (Account account in dbChat.ListConversationNeedys(administration.LoggedinUser as Volunteer))
+                    foreach (var account in dbChat.ListConversationNeedys(administration.LoggedinUser as Volunteer))
                     {
                         lbChatConversations.Items.Add(account);
                     }
                 }
             }
-
-            
         }
+
         /// <summary>
-        /// Refresh interface of needy
+        ///     Refresh interface of needy
         /// </summary>
         private void NeedyRefresh()
         {
@@ -209,19 +202,19 @@ namespace EyeCT4Participation
                 {
                     lbNeedyHelprequests.Items.Clear();
                     administration.ListHelpRequest();
-                    foreach (HelpRequest helprequest in administration.listHelprequests)
+                    foreach (var helprequest in administration.listHelprequests)
                     {
-                        if (helprequest.Needy.id == (administration.LoggedinUser.id))
+                        if (helprequest.Needy.id == administration.LoggedinUser.id)
                         {
                             lbNeedyHelprequests.Items.Add(helprequest);
                         }
                     }
-
                 }
             }
         }
+
         /// <summary>
-        /// Deactivate selected account
+        ///     Deactivate selected account
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -236,8 +229,9 @@ namespace EyeCT4Participation
                 MessageBox.Show("Fout bij deactiveren account");
             }
         }
+
         /// <summary>
-        /// Deactivatie selected helprequest
+        ///     Deactivatie selected helprequest
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -252,8 +246,9 @@ namespace EyeCT4Participation
                 MessageBox.Show("Fout bij deactiveren hulpaanvraag");
             }
         }
+
         /// <summary>
-        /// Deactivate selected review
+        ///     Deactivate selected review
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -268,8 +263,9 @@ namespace EyeCT4Participation
                 MessageBox.Show("Fout bij deactiveren beoordeling");
             }
         }
+
         /// <summary>
-        /// deactivate selected chat
+        ///     deactivate selected chat
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -287,10 +283,10 @@ namespace EyeCT4Participation
 
         private void btnBeheerAccountAanpassen_Click(object sender, EventArgs e)
         {
-
         }
+
         /// <summary>
-        /// Register in the application
+        ///     Register in the application
         /// </summary>
         /// <param name="gebruikersnaam"></param>
         /// <param name="wachtwoord"></param>
@@ -304,14 +300,15 @@ namespace EyeCT4Participation
         /// <param name="geslacht"></param>
         /// <param name="auto"></param>
         /// <param name="ov"></param>
-        public void Registreer(string gebruikersnaam,string wachtwoord,string naam, string adres, string woonplaats, string email, DateTime geboortedatum, int telefoonnummer,string type,int geslacht, int auto, int ov)
+        public void Registreer(string gebruikersnaam, string wachtwoord, string naam, string adres, string woonplaats,
+            string email, DateTime geboortedatum, int telefoonnummer, string type, int geslacht, int auto, int ov)
         {
-
             if (type == "Hulpbehoevende")
             {
-                bool doqueryNeedy = dbAccount.NewAccount(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
-                
-                if (doqueryNeedy == true)
+                var doqueryNeedy = dbAccount.NewAccount(gebruikersnaam, wachtwoord, naam, adres, woonplaats, email,
+                    geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
+
+                if (doqueryNeedy)
                 {
                     MessageBox.Show("Registratie is gelukt");
                 }
@@ -322,9 +319,10 @@ namespace EyeCT4Participation
             }
             else if (type == "Vrijwilliger")
             {
-                bool doqueryVrijwilliger = dbAccount.NewAccount(gebruikersnaam, wachtwoord, naam, adres, woonplaats,email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
-               
-                if (doqueryVrijwilliger == true)
+                var doqueryVrijwilliger = dbAccount.NewAccount(gebruikersnaam, wachtwoord, naam, adres, woonplaats,
+                    email, geboortedatum, telefoonnummer, 1, geslacht, auto, 1, ov);
+
+                if (doqueryVrijwilliger)
                 {
                     MessageBox.Show("Registratie is gelukt");
                 }
@@ -350,48 +348,48 @@ namespace EyeCT4Participation
         {
             if (administration.LoginUser(tbInloggenGnaam.Text, tbInloggenWW.Text))
             {
-            if (administration.LoggedinUser != null)
-            {
+                if (administration.LoggedinUser != null)
+                {
                     if (administration.LoggedinUser.GetType() == typeof (Manager))
-                {
-                    TabControl.TabPages[0].Enabled = false;
-                    TabControl.TabPages[1].Enabled = false;
-                    TabControl.TabPages[2].Enabled = false;
-                    TabControl.TabPages[3].Enabled = false;
+                    {
+                        TabControl.TabPages[0].Enabled = false;
+                        TabControl.TabPages[1].Enabled = false;
+                        TabControl.TabPages[2].Enabled = false;
+                        TabControl.TabPages[3].Enabled = false;
 
-                    TabControl.TabPages[4].Enabled = true;
-                    TabControl.SelectTab(4);
+                        TabControl.TabPages[4].Enabled = true;
+                        TabControl.SelectTab(4);
                         MessageBox.Show("U bent ingelogd welkom");
-                    //TabControl.TabPages.Add(tabpageBeheer);
-                }
+                        //TabControl.TabPages.Add(tabpageBeheer);
+                    }
                     if (administration.LoggedinUser.GetType() == typeof (Volunteer))
-                {
-                    TabControl.TabPages[0].Enabled = false;
-                    TabControl.TabPages[4].Enabled = false;
-                    TabControl.TabPages[2].Enabled = false;
+                    {
+                        TabControl.TabPages[0].Enabled = false;
+                        TabControl.TabPages[4].Enabled = false;
+                        TabControl.TabPages[2].Enabled = false;
 
-                    TabControl.TabPages[1].Enabled = true;
-                    TabControl.TabPages[3].Enabled = true;
-                    TabControl.SelectTab(1);
+                        TabControl.TabPages[1].Enabled = true;
+                        TabControl.TabPages[3].Enabled = true;
+                        TabControl.SelectTab(1);
                         MessageBox.Show("U bent ingelogd welkom");
-                    //TabControl.TabPages.Remove(tabpageChat);
-                    //TabControl.TabPages.Remove(tabpageVrijwilliger);
-                }
+                        //TabControl.TabPages.Remove(tabpageChat);
+                        //TabControl.TabPages.Remove(tabpageVrijwilliger);
+                    }
                     if (administration.LoggedinUser.GetType() == typeof (Needy))
                     {
-                    TabControl.TabPages[0].Enabled = false;
-                    TabControl.TabPages[1].Enabled = false;
-                    TabControl.TabPages[4].Enabled = false;
+                        TabControl.TabPages[0].Enabled = false;
+                        TabControl.TabPages[1].Enabled = false;
+                        TabControl.TabPages[4].Enabled = false;
 
-                    TabControl.TabPages[2].Enabled = true;
-                    TabControl.TabPages[3].Enabled = true;
-                    TabControl.SelectTab(2);
+                        TabControl.TabPages[2].Enabled = true;
+                        TabControl.TabPages[3].Enabled = true;
+                        TabControl.SelectTab(2);
                         MessageBox.Show("U bent ingelogd welkom");
-                    //TabControl.TabPages.Remove(tabpageChat);
-                    //TabControl.TabPages.Remove(tabpageHulpbehoevende);
-                }
-                tbInloggenGnaam.Clear();
-                tbInloggenWW.Clear();
+                        //TabControl.TabPages.Remove(tabpageChat);
+                        //TabControl.TabPages.Remove(tabpageHulpbehoevende);
+                    }
+                    tbInloggenGnaam.Clear();
+                    tbInloggenWW.Clear();
                 }
             }
             else
@@ -403,18 +401,18 @@ namespace EyeCT4Participation
         private void btnRegistratieOK_Click(object sender, EventArgs e)
         {
             if
-            (
-                    tbRegistratieGnaam.Text != "" &&
-                    tbRegistratieWW.Text != "" &&
-                    tbRegistratieNaam.Text != "" &&
-                    tbRegistratieAdres.Text != "" &&
-                    tbRegistratieWplaats.Text != "" &&
-                    tbRegistratieEmail.Text != ""
-            )
+                (
+                tbRegistratieGnaam.Text != "" &&
+                tbRegistratieWW.Text != "" &&
+                tbRegistratieNaam.Text != "" &&
+                tbRegistratieAdres.Text != "" &&
+                tbRegistratieWplaats.Text != "" &&
+                tbRegistratieEmail.Text != ""
+                )
             {
-                int registratiegeslacht = 2;
-                int auto = 0;
-                int ov = 0;
+                var registratiegeslacht = 2;
+                var auto = 0;
+                var ov = 0;
                 if (cbRegistratieAuto.Checked)
                 {
                     auto = 1;
@@ -430,7 +428,7 @@ namespace EyeCT4Participation
                 }
                 else if (Convert.ToString(cbRegistratieGeslacht.SelectedItem) == "Vrouw")
                 {
-                     registratiegeslacht = 1;
+                    registratiegeslacht = 1;
                 }
                 Registreer(
                     tbRegistratieGnaam.Text,
@@ -447,24 +445,22 @@ namespace EyeCT4Participation
                     ov
                     );
             }
-
-            
         }
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Account loggedinaccount = administration.LoggedinUser;
+            var loggedinaccount = administration.LoggedinUser;
             if (loggedinaccount != null)
             {
-                if (TabControl.SelectedTab.Text == "Beheer" && loggedinaccount.GetType() == typeof(Manager))
+                if (TabControl.SelectedTab.Text == "Beheer" && loggedinaccount.GetType() == typeof (Manager))
                 {
                     BeheerRefresh();
                 }
-                if (TabControl.SelectedTab.Text == "Vrijwilliger" && loggedinaccount.GetType() == typeof(Volunteer))
+                if (TabControl.SelectedTab.Text == "Vrijwilliger" && loggedinaccount.GetType() == typeof (Volunteer))
                 {
                     VolunteerRefresh();
                 }
-                if (TabControl.SelectedTab.Text == "Hulpbehoevende" && loggedinaccount.GetType() == typeof(Needy))
+                if (TabControl.SelectedTab.Text == "Hulpbehoevende" && loggedinaccount.GetType() == typeof (Needy))
                 {
                     NeedyRefresh();
                 }
@@ -473,17 +469,17 @@ namespace EyeCT4Participation
                     ChatRefresh();
                 }
             }
-
         }
 
         private void btnNeedyHelprequest_Click(object sender, EventArgs e)
         {
-            bool urgent = cbNeedyUrgent.Checked;
-            string message = tbNeedyHelprequestDesctiption.Text;
-            string locatie = tbNeedyLocation.Text;
+            var urgent = cbNeedyUrgent.Checked;
+            var message = tbNeedyHelprequestDesctiption.Text;
+            var locatie = tbNeedyLocation.Text;
             if (message != "")
             {
-                if ((administration.LoggedinUser as Needy).AddHelpRequest(message, locatie, dtpNeedyStartdate.Value, dtpNeedyEnddate.Value, cbNeedyUrgent.Checked, Convert.ToInt32(nudNeedyVolunteers.Value)))
+                if ((administration.LoggedinUser as Needy).AddHelpRequest(message, locatie, dtpNeedyStartdate.Value,
+                    dtpNeedyEnddate.Value, cbNeedyUrgent.Checked, Convert.ToInt32(nudNeedyVolunteers.Value)))
                 {
                     MessageBox.Show("Hulpvraag verzonden");
                 }
@@ -498,7 +494,9 @@ namespace EyeCT4Participation
         {
             if (lbVolunteerHelprequest.SelectedItem != null)
             {
-                if(((HelpRequest)lbVolunteerHelprequest.SelectedItem).AddVolunteer((Volunteer)administration.LoggedinUser))
+                if (
+                    ((HelpRequest) lbVolunteerHelprequest.SelectedItem).AddVolunteer(
+                        (Volunteer) administration.LoggedinUser))
                 {
                     MessageBox.Show("Inschrijven gelukt.");
                 }
@@ -507,7 +505,7 @@ namespace EyeCT4Participation
 
         private void btnVolunteerReviewReact_Click(object sender, EventArgs e)
         {
-            string reaction = tbVolunteerReviewReaction.Text;
+            var reaction = tbVolunteerReviewReaction.Text;
             if (lbVolunteerReview.SelectedItem != null && reaction != "")
             {
                 if (((Review) lbVolunteerReview.SelectedItem).AddReaction(reaction))
@@ -519,10 +517,11 @@ namespace EyeCT4Participation
 
         private void btnChatSend_Click(object sender, EventArgs e)
         {
-            string message = tbChatMessage.Text;
+            var message = tbChatMessage.Text;
             if (message != "" && currentConversation != null)
             {
-                Chat chat = new Chat(dbChat.getLatestId("Chat"), message, DateTime.Now, administration.LoggedinUser, currentConversation, true);
+                var chat = new Chat(dbChat.getLatestId("Chat"), message, DateTime.Now, administration.LoggedinUser,
+                    currentConversation, true);
                 if (dbChat.SendMessage(chat))
                 {
                     lbChatConversation.Items.Add(chat);
@@ -543,7 +542,7 @@ namespace EyeCT4Participation
                 currentConversation = lbChatConversations.SelectedItem as Account;
                 lblActiveConversation.Text = Convert.ToString(currentConversation.Name);
                 lbChatConversation.Items.Clear();
-                foreach (Chat chat in dbChat.Conversation(administration.LoggedinUser, currentConversation))
+                foreach (var chat in dbChat.Conversation(administration.LoggedinUser, currentConversation))
                 {
                     lbChatConversation.Items.Add(chat);
                 }
@@ -582,20 +581,22 @@ namespace EyeCT4Participation
 
         private void btnNeedyReview_Click(object sender, EventArgs e)
         {
-            string reviewdesc = tbNeedyReviewDescription.Text;
-            if (administration.LoggedinUser != null && cbNeedyReviewUser.SelectedItem != null && reviewdesc != "" && lbNeedyHelprequests.SelectedItem != null)
+            var reviewdesc = tbNeedyReviewDescription.Text;
+            if (administration.LoggedinUser != null && cbNeedyReviewUser.SelectedItem != null && reviewdesc != "" &&
+                lbNeedyHelprequests.SelectedItem != null)
             {
-                if ((administration.LoggedinUser as Needy).AddReview(Convert.ToInt32(nudNeedyReviewScore.Value), reviewdesc,cbNeedyReviewUser .SelectedItem as Volunteer, lbNeedyHelprequests.SelectedItem as HelpRequest))
+                if ((administration.LoggedinUser as Needy).AddReview(Convert.ToInt32(nudNeedyReviewScore.Value),
+                    reviewdesc, cbNeedyReviewUser.SelectedItem as Volunteer,
+                    lbNeedyHelprequests.SelectedItem as HelpRequest))
                 {
-
                 }
             }
-
-            }
+        }
 
         private void btnAccountVerwijderen_Click(object sender, EventArgs e)
         {
-            DialogResult verwijderaccount = MessageBox.Show("Weet u zeker dat u uw account wilt verwijderen?", "", MessageBoxButtons.YesNo);
+            var verwijderaccount = MessageBox.Show("Weet u zeker dat u uw account wilt verwijderen?", "",
+                MessageBoxButtons.YesNo);
 
             if (verwijderaccount == DialogResult.Yes)
             {
@@ -611,6 +612,5 @@ namespace EyeCT4Participation
                 }
             }
         }
-      
     }
 }
