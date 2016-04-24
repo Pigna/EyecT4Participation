@@ -7,6 +7,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using EyeCT4Participation.Database;
@@ -15,7 +16,8 @@ namespace EyeCT4Participation
 {
     public partial class MainForm : Form
     {
-        
+        private static System.Timers.Timer aTimer;
+
         DBaccount dbAccount = new DBaccount();
         DBhelprequest databaseHelprequest = new DBhelprequest();
         DBchat dbChat = new DBchat();
@@ -25,7 +27,12 @@ namespace EyeCT4Participation
         {
             InitializeComponent();
             administration = new Administration();
-            
+
+            aTimer = new System.Timers.Timer(10000); // refresh timer in miliseconds
+            aTimer.Elapsed += OnTimeEvent;
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
+
             TabControl.TabPages[1].Enabled = false;
             TabControl.TabPages[2].Enabled = false;
             TabControl.TabPages[3].Enabled = false;
@@ -37,6 +44,27 @@ namespace EyeCT4Participation
             TabControl.TabPages.Remove(tabpageVrijwilliger);
              */
         }
+
+        private void OnTimeEvent(object source, System.Timers.ElapsedEventArgs e)
+        {
+            if (currentConversation != null)
+            {
+                this.lbChatConversation.Invoke((Action) (() =>
+                {
+
+                    lbChatConversation.Items.Clear();
+                    foreach (Chat chat in dbChat.Conversation(administration.LoggedinUser, currentConversation))
+                    {
+                        lbChatConversation.Items.Add(chat);
+                    }
+                })
+                    )
+                    ;
+            }
+
+
+        }
+
         private void btnBeheerFilter_Click(object sender, EventArgs e)
         {
             string filter = tbBeheerFilter.Text;
@@ -520,7 +548,9 @@ namespace EyeCT4Participation
 
                 }
             }
+           
 
         }
+      
     }
 }
