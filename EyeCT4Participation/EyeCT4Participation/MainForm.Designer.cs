@@ -64,6 +64,12 @@
             this.lblRegistratieWW = new System.Windows.Forms.Label();
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
             this.tabpageVrijwilliger = new System.Windows.Forms.TabPage();
+            this.btnVrijwilligerBeschikbaarheidToevoegen = new System.Windows.Forms.Button();
+            this.cbVrijwilligerDagdeel = new System.Windows.Forms.ComboBox();
+            this.cbVrijwilligerDag = new System.Windows.Forms.ComboBox();
+            this.lblVrijwilligerDagdeel = new System.Windows.Forms.Label();
+            this.lblVrijwilligerDag = new System.Windows.Forms.Label();
+            this.lblVrijwilligerBeschikbaarheid = new System.Windows.Forms.Label();
             this.btnVrijwilligerVerwijderen = new System.Windows.Forms.Button();
             this.btnVrijwilligerUitloggen = new System.Windows.Forms.Button();
             this.btnVolunteerReviewReact = new System.Windows.Forms.Button();
@@ -74,6 +80,8 @@
             this.lbVolunteerReview = new System.Windows.Forms.ListBox();
             this.lbVolunteerHelprequest = new System.Windows.Forms.ListBox();
             this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
+            this.lbNeedyRating = new System.Windows.Forms.Label();
+            this.lbNeedyReviewVolunteer = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dtpNeedyStartdate = new System.Windows.Forms.DateTimePicker();
             this.lbNeedyVolunteers = new System.Windows.Forms.Label();
@@ -115,8 +123,7 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
-            this.lbNeedyReviewVolunteer = new System.Windows.Forms.ListBox();
-            this.lbNeedyRating = new System.Windows.Forms.Label();
+            this.lbVrijwilligerBeschikbaarheid = new System.Windows.Forms.ListBox();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -496,6 +503,13 @@
             // 
             // tabpageVrijwilliger
             // 
+            this.tabpageVrijwilliger.Controls.Add(this.lbVrijwilligerBeschikbaarheid);
+            this.tabpageVrijwilliger.Controls.Add(this.btnVrijwilligerBeschikbaarheidToevoegen);
+            this.tabpageVrijwilliger.Controls.Add(this.cbVrijwilligerDagdeel);
+            this.tabpageVrijwilliger.Controls.Add(this.cbVrijwilligerDag);
+            this.tabpageVrijwilliger.Controls.Add(this.lblVrijwilligerDagdeel);
+            this.tabpageVrijwilliger.Controls.Add(this.lblVrijwilligerDag);
+            this.tabpageVrijwilliger.Controls.Add(this.lblVrijwilligerBeschikbaarheid);
             this.tabpageVrijwilliger.Controls.Add(this.btnVrijwilligerVerwijderen);
             this.tabpageVrijwilliger.Controls.Add(this.btnVrijwilligerUitloggen);
             this.tabpageVrijwilliger.Controls.Add(this.btnVolunteerReviewReact);
@@ -512,6 +526,71 @@
             this.tabpageVrijwilliger.TabIndex = 1;
             this.tabpageVrijwilliger.Text = "Vrijwilliger";
             this.tabpageVrijwilliger.UseVisualStyleBackColor = true;
+            // 
+            // btnVrijwilligerBeschikbaarheidToevoegen
+            // 
+            this.btnVrijwilligerBeschikbaarheidToevoegen.Location = new System.Drawing.Point(823, 246);
+            this.btnVrijwilligerBeschikbaarheidToevoegen.Name = "btnVrijwilligerBeschikbaarheidToevoegen";
+            this.btnVrijwilligerBeschikbaarheidToevoegen.Size = new System.Drawing.Size(103, 45);
+            this.btnVrijwilligerBeschikbaarheidToevoegen.TabIndex = 23;
+            this.btnVrijwilligerBeschikbaarheidToevoegen.Text = "Beschikbaarheid toevoegen";
+            this.btnVrijwilligerBeschikbaarheidToevoegen.UseVisualStyleBackColor = true;
+            this.btnVrijwilligerBeschikbaarheidToevoegen.Click += new System.EventHandler(this.btnVrijwilligerBeschikbaarheidToevoegen_Click);
+            // 
+            // cbVrijwilligerDagdeel
+            // 
+            this.cbVrijwilligerDagdeel.FormattingEnabled = true;
+            this.cbVrijwilligerDagdeel.Items.AddRange(new object[] {
+            "Ochtend",
+            "Middag",
+            "Avond"});
+            this.cbVrijwilligerDagdeel.Location = new System.Drawing.Point(675, 270);
+            this.cbVrijwilligerDagdeel.Name = "cbVrijwilligerDagdeel";
+            this.cbVrijwilligerDagdeel.Size = new System.Drawing.Size(121, 21);
+            this.cbVrijwilligerDagdeel.TabIndex = 22;
+            // 
+            // cbVrijwilligerDag
+            // 
+            this.cbVrijwilligerDag.FormattingEnabled = true;
+            this.cbVrijwilligerDag.Items.AddRange(new object[] {
+            "Maandag",
+            "Dinsdag",
+            "Woensdag",
+            "Donderdag",
+            "Vrijdag",
+            "Zaterdag",
+            "Zondag"});
+            this.cbVrijwilligerDag.Location = new System.Drawing.Point(675, 217);
+            this.cbVrijwilligerDag.Name = "cbVrijwilligerDag";
+            this.cbVrijwilligerDag.Size = new System.Drawing.Size(121, 21);
+            this.cbVrijwilligerDag.TabIndex = 21;
+            // 
+            // lblVrijwilligerDagdeel
+            // 
+            this.lblVrijwilligerDagdeel.AutoSize = true;
+            this.lblVrijwilligerDagdeel.Location = new System.Drawing.Point(672, 254);
+            this.lblVrijwilligerDagdeel.Name = "lblVrijwilligerDagdeel";
+            this.lblVrijwilligerDagdeel.Size = new System.Drawing.Size(47, 13);
+            this.lblVrijwilligerDagdeel.TabIndex = 20;
+            this.lblVrijwilligerDagdeel.Text = "Dagdeel";
+            // 
+            // lblVrijwilligerDag
+            // 
+            this.lblVrijwilligerDag.AutoSize = true;
+            this.lblVrijwilligerDag.Location = new System.Drawing.Point(672, 201);
+            this.lblVrijwilligerDag.Name = "lblVrijwilligerDag";
+            this.lblVrijwilligerDag.Size = new System.Drawing.Size(27, 13);
+            this.lblVrijwilligerDag.TabIndex = 19;
+            this.lblVrijwilligerDag.Text = "Dag";
+            // 
+            // lblVrijwilligerBeschikbaarheid
+            // 
+            this.lblVrijwilligerBeschikbaarheid.AutoSize = true;
+            this.lblVrijwilligerBeschikbaarheid.Location = new System.Drawing.Point(672, 171);
+            this.lblVrijwilligerBeschikbaarheid.Name = "lblVrijwilligerBeschikbaarheid";
+            this.lblVrijwilligerBeschikbaarheid.Size = new System.Drawing.Size(86, 13);
+            this.lblVrijwilligerBeschikbaarheid.TabIndex = 17;
+            this.lblVrijwilligerBeschikbaarheid.Text = "Beschikbaarheid";
             // 
             // btnVrijwilligerVerwijderen
             // 
@@ -621,6 +700,23 @@
             this.tabpageHulpbehoevende.TabIndex = 3;
             this.tabpageHulpbehoevende.Text = "Hulpbehoevende";
             this.tabpageHulpbehoevende.UseVisualStyleBackColor = true;
+            // 
+            // lbNeedyRating
+            // 
+            this.lbNeedyRating.AutoSize = true;
+            this.lbNeedyRating.Location = new System.Drawing.Point(305, 416);
+            this.lbNeedyRating.Name = "lbNeedyRating";
+            this.lbNeedyRating.Size = new System.Drawing.Size(38, 13);
+            this.lbNeedyRating.TabIndex = 29;
+            this.lbNeedyRating.Text = "Rating";
+            // 
+            // lbNeedyReviewVolunteer
+            // 
+            this.lbNeedyReviewVolunteer.FormattingEnabled = true;
+            this.lbNeedyReviewVolunteer.Location = new System.Drawing.Point(308, 224);
+            this.lbNeedyReviewVolunteer.Name = "lbNeedyReviewVolunteer";
+            this.lbNeedyReviewVolunteer.Size = new System.Drawing.Size(299, 82);
+            this.lbNeedyReviewVolunteer.TabIndex = 28;
             // 
             // button1
             // 
@@ -1039,22 +1135,13 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
-            // lbNeedyReviewVolunteer
+            // lbVrijwilligerBeschikbaarheid
             // 
-            this.lbNeedyReviewVolunteer.FormattingEnabled = true;
-            this.lbNeedyReviewVolunteer.Location = new System.Drawing.Point(308, 224);
-            this.lbNeedyReviewVolunteer.Name = "lbNeedyReviewVolunteer";
-            this.lbNeedyReviewVolunteer.Size = new System.Drawing.Size(299, 82);
-            this.lbNeedyReviewVolunteer.TabIndex = 28;
-            // 
-            // lbNeedyRating
-            // 
-            this.lbNeedyRating.AutoSize = true;
-            this.lbNeedyRating.Location = new System.Drawing.Point(305, 416);
-            this.lbNeedyRating.Name = "lbNeedyRating";
-            this.lbNeedyRating.Size = new System.Drawing.Size(38, 13);
-            this.lbNeedyRating.TabIndex = 29;
-            this.lbNeedyRating.Text = "Rating";
+            this.lbVrijwilligerBeschikbaarheid.FormattingEnabled = true;
+            this.lbVrijwilligerBeschikbaarheid.Location = new System.Drawing.Point(676, 306);
+            this.lbVrijwilligerBeschikbaarheid.Name = "lbVrijwilligerBeschikbaarheid";
+            this.lbVrijwilligerBeschikbaarheid.Size = new System.Drawing.Size(120, 147);
+            this.lbVrijwilligerBeschikbaarheid.TabIndex = 24;
             // 
             // MainForm
             // 
@@ -1171,6 +1258,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbNeedyRating;
         private System.Windows.Forms.ListBox lbNeedyReviewVolunteer;
+        private System.Windows.Forms.Label lblVrijwilligerDagdeel;
+        private System.Windows.Forms.Label lblVrijwilligerDag;
+        private System.Windows.Forms.Label lblVrijwilligerBeschikbaarheid;
+        private System.Windows.Forms.Button btnVrijwilligerBeschikbaarheidToevoegen;
+        private System.Windows.Forms.ComboBox cbVrijwilligerDagdeel;
+        private System.Windows.Forms.ComboBox cbVrijwilligerDag;
+        private System.Windows.Forms.ListBox lbVrijwilligerBeschikbaarheid;
     }
 }
 

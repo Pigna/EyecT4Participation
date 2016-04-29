@@ -14,9 +14,11 @@ namespace EyeCT4Participation
         private readonly Administration administration;
         private Account currentConversation;
         private DBhelprequest databaseHelprequest = new DBhelprequest();
+        private Volunteer volunteer;
 
         private readonly DBaccount dbAccount = new DBaccount();
         private readonly DBchat dbChat = new DBchat();
+        private readonly DBvolunteer dbVolunteer = new DBvolunteer();
 
         public MainForm()
         {
@@ -146,6 +148,7 @@ namespace EyeCT4Participation
                     administration.ListRefresh();
                     lbVolunteerReview.Items.Clear();
                     lbVolunteerHelprequest.Items.Clear();
+                    lbVrijwilligerBeschikbaarheid.Items.Clear();
                     foreach (var helprequest in administration.listHelprequests)
                     {
                         lbVolunteerHelprequest.Items.Add(helprequest);
@@ -155,10 +158,13 @@ namespace EyeCT4Participation
                     {
                         lbVolunteerReview.Items.Add(review);
                     }
+                    foreach (var beschikbaarheid in (administration.LoggedinUser as Volunteer).getListBeschikbaarheid())
+                    {
+                        lbVrijwilligerBeschikbaarheid.Items.Add(beschikbaarheid);
+                    }
                 }
             }
         }
-
         /// <summary>
         ///     Refresh interface of Chat
         /// </summary>
@@ -670,6 +676,34 @@ namespace EyeCT4Participation
             foreach (Volunteer volunteer in help.ListVolunteers)
             {
                 lbNeedyReviewVolunteer.Items.Add(volunteer);
+            }
+        }
+
+        private void btnVrijwilligerBeschikbaarheidToevoegen_Click(object sender, EventArgs e)
+        {
+            if (cbVrijwilligerDag.SelectedItem != null)
+            {
+                if (cbVrijwilligerDagdeel.SelectedItem != null)
+                {
+                    if ((administration.LoggedinUser as Volunteer).AddBeschikbaarheid(dbVolunteer.getLatestId("beschikbaarheid"),
+                        Convert.ToString(cbVrijwilligerDag.SelectedItem), Convert.ToString(cbVrijwilligerDagdeel.SelectedItem),administration.LoggedinUser.id))
+                    {
+                        lbVrijwilligerBeschikbaarheid.Items.Clear();
+                        foreach (Beschikbaarheid b in (administration.LoggedinUser as Volunteer).getListBeschikbaarheid())
+                        {
+                            lbVrijwilligerBeschikbaarheid.Items.Add(b);
+                        }
+                        MessageBox.Show("Beschikbaarheid is succesvol ingesteld");
+                    }
+                }
+                else
+                {
+                        MessageBox.Show("U bent vergeten een dagdeel te selecteren. Selecteer een dagdeel.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("U bent vergeten een dag te selecteren. Selecteer een dag.");
             }
         }
     }
