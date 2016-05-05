@@ -141,6 +141,7 @@ namespace EyeCT4Participation
         /// </summary>
         private void VolunteerRefresh()
         {
+            string dag = "";
             if (administration.LoggedinUser != null)
             {
                 if (administration.LoggedinUser.GetType() == typeof (Volunteer))
@@ -149,10 +150,6 @@ namespace EyeCT4Participation
                     lbVolunteerReview.Items.Clear();
                     lbVolunteerHelprequest.Items.Clear();
                     lbVrijwilligerBeschikbaarheid.Items.Clear();
-                    foreach (var helprequest in administration.listHelprequests)
-                    {
-                        lbVolunteerHelprequest.Items.Add(helprequest);
-                    }
 
                     foreach (var review in ((Volunteer) administration.LoggedinUser).getListReview())
                     {
@@ -161,6 +158,69 @@ namespace EyeCT4Participation
                     foreach (var beschikbaarheid in (administration.LoggedinUser as Volunteer).getListBeschikbaarheid())
                     {
                         lbVrijwilligerBeschikbaarheid.Items.Add(beschikbaarheid);
+                    }
+                    foreach (Beschikbaarheid b in dbVolunteer.GetBeschikbaarheidList())
+                    {
+                        if (b.Dag == 0)
+                        {
+                            dag = "Zondag";
+                        }
+                        if (b.Dag == 1)
+                        {
+                            dag = "Maandag";
+                        }
+                        if (b.Dag == 2)
+                        {
+                            dag = "Dinsdag";
+                        }
+                        if (b.Dag == 3)
+                        {
+                            dag = "Woensdag";
+                        }
+                        if (b.Dag == 4)
+                        {
+                            dag = "Donderdag";
+                        }
+                        if (b.Dag == 5)
+                        {
+                            dag = "Vrijdag";
+                        }
+                        if (b.Dag == 6)
+                        {
+                            dag = "Zaterdag";
+                        }
+
+                        foreach (var helprequest in administration.listHelprequests)
+                        {
+                            if (helprequest.Date.DayOfWeek == DayOfWeek.Sunday && dag == "Zondag")
+                            {
+                                lbVolunteerHelprequest.Items.Add(helprequest);
+                            }
+                            if (helprequest.Date.DayOfWeek == DayOfWeek.Monday && dag == "Maandag")
+                            {
+                                lbVolunteerHelprequest.Items.Add(helprequest);
+                            }
+                            if (helprequest.Date.DayOfWeek == DayOfWeek.Tuesday && dag == "Dinsdag")
+                            {
+                                lbVolunteerHelprequest.Items.Add(helprequest);
+                            }
+                            if (helprequest.Date.DayOfWeek == DayOfWeek.Wednesday && dag == "Woensdag")
+                            {
+                                lbVolunteerHelprequest.Items.Add(helprequest);
+                            }
+                            if (helprequest.Date.DayOfWeek == DayOfWeek.Thursday && dag == "Donderdag")
+                            {
+                                lbVolunteerHelprequest.Items.Add(helprequest);
+                            }
+                            if (helprequest.Date.DayOfWeek == DayOfWeek.Friday && dag == "Vrijdag")
+                            {
+                                lbVolunteerHelprequest.Items.Add(helprequest);
+                            }
+                            if (helprequest.Date.DayOfWeek == DayOfWeek.Saturday && dag == "Zaterdag")
+                            {
+                                lbVolunteerHelprequest.Items.Add(helprequest);
+                            }
+                        }
                     }
                 }
             }

@@ -5,7 +5,6 @@ namespace EyeCT4Participation.Database
 {
     internal class DBvolunteer : DB
     {
-        Volunteer volunteer;
         public bool AddBeschikbaarheid(Beschikbaarheid beschikbaarheid) // replace user with the data u want to add/ change to the table
         {
             try
