@@ -765,6 +765,7 @@ namespace EyeCT4Participation
             {
                 MessageBox.Show("U bent vergeten een dag te selecteren. Selecteer een dag.");
             }
+            VolunteerRefresh();
         }
     }
 }
