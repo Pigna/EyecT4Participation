@@ -689,7 +689,7 @@ namespace EyeCT4Participation
                         Convert.ToString(cbVrijwilligerDag.SelectedItem), Convert.ToString(cbVrijwilligerDagdeel.SelectedItem),administration.LoggedinUser.id))
                     {
                         lbVrijwilligerBeschikbaarheid.Items.Clear();
-                        foreach (Beschikbaarheid b in (administration.LoggedinUser as Volunteer).getListBeschikbaarheid())
+                        foreach (string b in (administration.LoggedinUser as Volunteer).getListBeschikbaarheid())
                         {
                             lbVrijwilligerBeschikbaarheid.Items.Add(b);
                         }

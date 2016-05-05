@@ -38,8 +38,8 @@ namespace EyeCT4Participation
             return false;
         }
 
-        enum Dagen { Zondag,Maandag,Dinsdag,Woensdag,Donderdag,Vrijdag,Zaterdag}
-        enum Dagdelen { Ochtend,Middag,Avond}
+        public enum Dagen { Zondag,Maandag,Dinsdag,Woensdag,Donderdag,Vrijdag,Zaterdag}
+        public enum Dagdelen { Ochtend,Middag,Avond}
 
         /// <summary>
         /// Beschikbaarheid aangeven
@@ -108,10 +108,60 @@ namespace EyeCT4Participation
             }
         }
 
-        public List<Beschikbaarheid> getListBeschikbaarheid()
+        public List<string> getListBeschikbaarheid()
         {
+            List<string> list = new List<string>();  
             beschikbaarheidList = dbVolunteer.GetBeschikbaarheidList();
-            return beschikbaarheidList;
+            string dag = "";
+            string dagdeel = "";
+            foreach (Beschikbaarheid b in beschikbaarheidList)
+            {
+                if (b.Dag == 0)
+                {
+                    dag = Convert.ToString(Dagen.Zondag);
+                }
+                if (b.Dag == 1)
+                {
+                    dag = Convert.ToString(Dagen.Maandag);
+                }
+                if (b.Dag == 2)
+                {
+                    dag = Convert.ToString(Dagen.Dinsdag);
+                }
+                if (b.Dag == 3)
+                {
+                    dag = Convert.ToString(Dagen.Woensdag);
+                }
+                if (b.Dag == 4)
+                {
+                    dag = Convert.ToString(Dagen.Donderdag);
+                }
+                if (b.Dag == 5)
+                {
+                    dag = Convert.ToString(Dagen.Vrijdag);
+                }
+                if (b.Dag == 6)
+                {
+                    dag = Convert.ToString(Dagen.Zaterdag);
+                }
+                if (b.Dagdeel == 0)
+                {
+                    dagdeel = Convert.ToString(Dagdelen.Ochtend);
+                }
+                if (b.Dagdeel == 1)
+                {
+                    dagdeel = Convert.ToString(Dagdelen.Middag);
+                }
+                if (b.Dagdeel == 2)
+                {
+                    dagdeel = Convert.ToString(Dagdelen.Avond);
+                }
+                if (dag != "" && dagdeel != "")
+                {
+                    list.Add(dag + " " + dagdeel); 
+                }
+            }
+            return list;
         }
         /// <summary>
         /// Lijst met review

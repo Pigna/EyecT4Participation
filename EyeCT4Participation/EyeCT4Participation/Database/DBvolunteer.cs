@@ -5,6 +5,7 @@ namespace EyeCT4Participation.Database
 {
     internal class DBvolunteer : DB
     {
+        Volunteer volunteer;
         public bool AddBeschikbaarheid(Beschikbaarheid beschikbaarheid) // replace user with the data u want to add/ change to the table
         {
             try
@@ -28,7 +29,6 @@ namespace EyeCT4Participation.Database
             foreach (var results in QueryX) //look for all posseble results in the query result.
             {
                 Beschikbaarheid beschikbaar = new Beschikbaarheid(Convert.ToInt32(results["id"]), Convert.ToInt32(results["dag"]), Convert.ToInt32(results["dagdeel"]),Convert.ToInt32(results["gebruikerid"]));
-
                 ret.Add(beschikbaar);
                 //add each result to the created list, if the list if for a class, u need to add 'new class_name' infront of the convert
             }
