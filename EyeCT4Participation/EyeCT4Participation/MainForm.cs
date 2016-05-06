@@ -15,6 +15,7 @@ namespace EyeCT4Participation
         private Account currentConversation;
         private DBhelprequest databaseHelprequest = new DBhelprequest();
         private Volunteer volunteer;
+        private HelpRequest helprequest;
 
         private readonly DBaccount dbAccount = new DBaccount();
         private readonly DBchat dbChat = new DBchat();
@@ -764,6 +765,14 @@ namespace EyeCT4Participation
                 MessageBox.Show("U bent vergeten een dag te selecteren. Selecteer een dag.");
             }
             VolunteerRefresh();
+        }
+
+        private void btnVrijwilligerRapporteren_Click(object sender, EventArgs e)
+        {
+            if (lbVolunteerHelprequest.SelectedItem != null)
+            {
+              helprequest.RapportHelprequest(lbVolunteerHelprequest.SelectedItem as HelpRequest,administration.LoggedinUser as Volunteer);
+            }
         }
     }
 }
