@@ -10,7 +10,7 @@ namespace EyeCT4Participation
         public List<Volunteer> ListVolunteers = new List<Volunteer>();
 
         public HelpRequest(int id, string question, DateTime date, bool urgency, bool active, Needy needy,
-            List<Volunteer> ListVolunteers)
+            List<Volunteer> listVolunteers)
         {
             this.id = id;
             Question = question;
@@ -18,9 +18,9 @@ namespace EyeCT4Participation
             Urgency = urgency;
             Active = active;
             Needy = needy;
-            foreach (var volunteer in ListVolunteers)
+            foreach (var volunteer in listVolunteers)
             {
-                AddVolunteer(volunteer);
+                ListVolunteers.Add(volunteer);
             }
         }
 

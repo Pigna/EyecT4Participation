@@ -9,7 +9,6 @@ namespace EyeCT4Participation.Database
         public Account GetQueryLogIn(string username, string password) //name of ur query
         {
             Account retAccount = null;
-            var ret = new List<string>(); //result of query will end up in here
             var LogInQuery =
                 getQuery("SELECT * FROM Gebruiker WHERE Gebruikersnaam = '" + username + "' AND Wachtwoord ='" + password + "' AND actief = 1");
                 //replace your query with te example query, replace 'QueryX' with a clear name.

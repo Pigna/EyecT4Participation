@@ -156,16 +156,15 @@ namespace EyeCT4Participation.Database
         /// <returns></returns>
         public List<HelpRequest> ListHelpRequest()
         {
-            var requestslist = new List<HelpRequest>();
-            Needy needyAccount = null;
-            var acccountList = new List<Volunteer>();
-            var ret = new List<Chat>(); //result of query will end up in here
+            var requestslist = new List<HelpRequest>();//result of query will end up in here
             var Query1 = getQuery("SELECT * FROM HULPVRAAG WHERE actief != 0");
             //replace your query with te example query, replace 'QueryX' with a clear name.
 
 
             foreach (var results in Query1) //look for all posseble results in the query result.
             {
+                Needy needyAccount = null;
+                var acccountList = new List<Volunteer>();
                 var Query2 =
                     getQuery(
                         "SELECT * FROM GEBRUIKER WHERE actief != 0 AND type = 1 AND ID IN (SELECT HULPBEHOEVENDEID FROM HULPVRAAG WHERE ID = " +

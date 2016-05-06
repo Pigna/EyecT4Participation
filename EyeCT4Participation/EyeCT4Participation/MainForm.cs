@@ -63,42 +63,40 @@ namespace EyeCT4Participation
                 lbBeheerHulpaanvraag.Items.Clear();
                 lbBeheerBeoordeling.Items.Clear();
                 var filterinput = new List<string>();
+                var ListFiltered = new List<Account>();
                 if (filter.Contains(';'))
                 {
                     filterinput.AddRange(filter.Split(';'));
-                    var ListFiltered = administration.ListFilterAccount(filterinput);
-                    foreach (var account in ListFiltered)
-                    {
-                        lbBeheerAccount.Items.Add(account);
-                        foreach (var chat in administration.listChats)
-                        {
-                            if (ListFiltered.Contains(chat.sender) && ListFiltered.Contains(chat.receiver))
-                            {
-                                lbBeheerChat.Items.Add(chat);
-                            }
-                        }
-                        foreach (var helprequest in administration.listHelprequests)
-                        {
-                            if (helprequest.Needy == account || helprequest.ListVolunteers.Contains(account))
-                            {
-                                lbBeheerHulpaanvraag.Items.Add(helprequest);
-                            }
-                        }
-                        foreach (var review in administration.listReviews)
-                        {
-                            if (review.Needy == account || review.Volunteer == account)
-                            {
-                                lbBeheerBeoordeling.Items.Add(review);
-                            }
-                        }
-                    }
+                    ListFiltered = administration.ListFilterAccount(filterinput);
                 }
                 else
                 {
                     filterinput.Add(filter);
-                    foreach (var account in administration.ListFilterAccount(filterinput))
+                    ListFiltered = administration.ListFilterAccount(filterinput);
+                }
+                foreach (var account in ListFiltered)
+                {
+                    lbBeheerAccount.Items.Add(account);
+                    foreach (var chat in administration.listChats)
                     {
-                        lbBeheerAccount.Items.Add(account);
+                        if (ListFiltered.Contains(chat.sender) && ListFiltered.Contains(chat.receiver))
+                        {
+                            lbBeheerChat.Items.Add(chat);
+                        }
+                    }
+                    foreach (var helprequest in administration.listHelprequests)
+                    {
+                        if (helprequest.Needy == account || helprequest.ListVolunteers.Contains(account))
+                        {
+                            lbBeheerHulpaanvraag.Items.Add(helprequest);
+                        }
+                    }
+                    foreach (var review in administration.listReviews)
+                    {
+                        if (review.Needy == account || review.Volunteer == account)
+                        {
+                            lbBeheerBeoordeling.Items.Add(review);
+                        }
                     }
                 }
             }
