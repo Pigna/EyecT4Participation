@@ -60,6 +60,11 @@ namespace EyeCT4Participation
             return false;
         }
 
+        public void RapportHelprequest(HelpRequest helprequest, Volunteer volunteer)
+        {
+            //???
+        }
+
         public override string ToString()
         {
             var volunteers = "";

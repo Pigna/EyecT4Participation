@@ -64,6 +64,7 @@
             this.lblRegistratieWW = new System.Windows.Forms.Label();
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
             this.tabpageVrijwilliger = new System.Windows.Forms.TabPage();
+            this.lbVrijwilligerBeschikbaarheid = new System.Windows.Forms.ListBox();
             this.btnVrijwilligerBeschikbaarheidToevoegen = new System.Windows.Forms.Button();
             this.cbVrijwilligerDagdeel = new System.Windows.Forms.ComboBox();
             this.cbVrijwilligerDag = new System.Windows.Forms.ComboBox();
@@ -123,7 +124,7 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
-            this.lbVrijwilligerBeschikbaarheid = new System.Windows.Forms.ListBox();
+            this.btnVrijwilligerRapporteren = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -503,6 +504,7 @@
             // 
             // tabpageVrijwilliger
             // 
+            this.tabpageVrijwilliger.Controls.Add(this.btnVrijwilligerRapporteren);
             this.tabpageVrijwilliger.Controls.Add(this.lbVrijwilligerBeschikbaarheid);
             this.tabpageVrijwilliger.Controls.Add(this.btnVrijwilligerBeschikbaarheidToevoegen);
             this.tabpageVrijwilliger.Controls.Add(this.cbVrijwilligerDagdeel);
@@ -526,6 +528,14 @@
             this.tabpageVrijwilliger.TabIndex = 1;
             this.tabpageVrijwilliger.Text = "Vrijwilliger";
             this.tabpageVrijwilliger.UseVisualStyleBackColor = true;
+            // 
+            // lbVrijwilligerBeschikbaarheid
+            // 
+            this.lbVrijwilligerBeschikbaarheid.FormattingEnabled = true;
+            this.lbVrijwilligerBeschikbaarheid.Location = new System.Drawing.Point(676, 306);
+            this.lbVrijwilligerBeschikbaarheid.Name = "lbVrijwilligerBeschikbaarheid";
+            this.lbVrijwilligerBeschikbaarheid.Size = new System.Drawing.Size(120, 147);
+            this.lbVrijwilligerBeschikbaarheid.TabIndex = 24;
             // 
             // btnVrijwilligerBeschikbaarheidToevoegen
             // 
@@ -1135,13 +1145,15 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
-            // lbVrijwilligerBeschikbaarheid
+            // btnVrijwilligerRapporteren
             // 
-            this.lbVrijwilligerBeschikbaarheid.FormattingEnabled = true;
-            this.lbVrijwilligerBeschikbaarheid.Location = new System.Drawing.Point(676, 306);
-            this.lbVrijwilligerBeschikbaarheid.Name = "lbVrijwilligerBeschikbaarheid";
-            this.lbVrijwilligerBeschikbaarheid.Size = new System.Drawing.Size(120, 147);
-            this.lbVrijwilligerBeschikbaarheid.TabIndex = 24;
+            this.btnVrijwilligerRapporteren.Location = new System.Drawing.Point(6, 306);
+            this.btnVrijwilligerRapporteren.Name = "btnVrijwilligerRapporteren";
+            this.btnVrijwilligerRapporteren.Size = new System.Drawing.Size(103, 45);
+            this.btnVrijwilligerRapporteren.TabIndex = 25;
+            this.btnVrijwilligerRapporteren.Text = "Hulpvraag rapporteren";
+            this.btnVrijwilligerRapporteren.UseVisualStyleBackColor = true;
+            this.btnVrijwilligerRapporteren.Click += new System.EventHandler(this.btnVrijwilligerRapporteren_Click);
             // 
             // MainForm
             // 
@@ -1265,6 +1277,7 @@
         private System.Windows.Forms.ComboBox cbVrijwilligerDagdeel;
         private System.Windows.Forms.ComboBox cbVrijwilligerDag;
         private System.Windows.Forms.ListBox lbVrijwilligerBeschikbaarheid;
+        private System.Windows.Forms.Button btnVrijwilligerRapporteren;
     }
 }
 
