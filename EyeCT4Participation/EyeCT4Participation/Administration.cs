@@ -37,6 +37,14 @@ namespace EyeCT4Participation
                 phonenumber, birthdate, geslacht, active);
             listAccounts.Add(newVolunteer);
         }
+        public bool UpdateAccount(Account account)
+        {
+            if (dbadministration.UpdateAccount(account))
+            {
+                return true;
+            }
+            return false;
+        }
         /// <summary>
         /// Lijsten
         /// </summary>

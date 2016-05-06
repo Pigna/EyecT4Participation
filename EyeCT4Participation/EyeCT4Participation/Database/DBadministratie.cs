@@ -394,7 +394,33 @@ namespace EyeCT4Participation.Database
 
         public bool UpdateAccount(Account account)
         {
-            return false;
+            try
+            {
+                int geslacht = 0;
+                if(account.Geslacht == "Man")
+                {
+                    geslacht = 1;
+                }
+                string query; // the query will end up in here
+                query = "UPDATE GEBRUIKER ";
+                query += "SET ";
+                query += "NAAM = '" + account.Name + "', ";
+                query += "GEBRUIKERSNAAM = '" + account.Username + "', ";
+                query += "WACHTWOORD = '" + account.Password + "', ";
+                query += "EMAIL = '" + account.Email + "', ";
+                query += "GEBOORTEDATUM = to_date('" + account.Birthdate.ToString("MM-dd-yyyy hh:mm") + "','MM-DD-YYYY hh24:MI'), ";
+                query += "ADRES = '" + account.Adress + "', ";
+                query += "WOONPLAATS = '" + account.Residence + "', ";
+                query += "TELEFOONNUMMER = " + account.PhoneNumber + ", ";
+                query += "GESLACHT = " + geslacht + " ";
+                query += "WHERE ID = '" + account.id + "' ";
+                doQuery(query); //query will be activated
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

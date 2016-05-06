@@ -97,6 +97,7 @@ namespace EyeCT4Participation
                         }
 
                     }
+                    //Fill helprequest list from search results
                     foreach (var helprequest in administration.listHelprequests)
                     {
                         //helprequest.ListVolunteers.Contains(account)
@@ -105,6 +106,7 @@ namespace EyeCT4Participation
                             lbBeheerHulpaanvraag.Items.Add(helprequest);
                         }
                     }
+                    //Fill review list from search results
                     foreach (var review in administration.listReviews)
                     {
                         if (review.Needy.id == account.id || review.Volunteer.id == account.id)
@@ -355,6 +357,18 @@ namespace EyeCT4Participation
 
         private void btnBeheerAccountAanpassen_Click(object sender, EventArgs e)
         {
+            if(lbBeheerAccount.SelectedItem != null)
+            {
+                using (EditUser editUserForm = new EditUser(lbBeheerAccount.SelectedItem as Account))
+                {
+                    if (editUserForm.ShowDialog() == DialogResult.OK)
+                    {
+                        MessageBox.Show("Gebruiker is aangepast.");
+                        BeheerRefresh();
+                    }
+                }
+            }
+
         }
 
         /// <summary>
