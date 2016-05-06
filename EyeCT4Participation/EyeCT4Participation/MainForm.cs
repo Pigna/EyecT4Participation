@@ -68,33 +68,46 @@ namespace EyeCT4Participation
                 if (filter.Contains(';'))
                 {
                     filterinput.AddRange(filter.Split(';'));
-                    ListFiltered = administration.ListFilterAccount(filterinput);
                 }
                 else
                 {
                     filterinput.Add(filter);
-                    ListFiltered = administration.ListFilterAccount(filterinput);
                 }
+                ListFiltered = administration.ListFilterAccount(filterinput);
                 foreach (var account in ListFiltered)
                 {
                     lbBeheerAccount.Items.Add(account);
                     foreach (var chat in administration.listChats)
                     {
-                        if (ListFiltered.Contains(chat.sender) && ListFiltered.Contains(chat.receiver))
+                        if(ListFiltered.Count() > 1) //Kijk of er naar meer accounts wordt gezocht.
                         {
-                            lbBeheerChat.Items.Add(chat);
+                            //check of account voor komt in lijst met chats -Sender -Reciever (aan de hand van id)
+                            if (ListFiltered.Any(prod => prod.id == chat.sender.id) && ListFiltered.Any(prod => prod.id == chat.receiver.id))
+                            {
+                                lbBeheerChat.Items.Add(chat);
+                            }
                         }
+                        else
+                        {
+                            //check of account voor komt in lijst met chats -Sender -Reciever (aan de hand van id)
+                            if (ListFiltered.Any(prod => prod.id == chat.sender.id) || ListFiltered.Any(item => item.id == chat.receiver.id))
+                            {
+                                lbBeheerChat.Items.Add(chat);
+                            }
+                        }
+
                     }
                     foreach (var helprequest in administration.listHelprequests)
                     {
-                        if (helprequest.Needy == account || helprequest.ListVolunteers.Contains(account))
+                        //helprequest.ListVolunteers.Contains(account)
+                        if (helprequest.Needy.id == account.id || helprequest.ListVolunteers.Any(item => item.id == account.id))
                         {
                             lbBeheerHulpaanvraag.Items.Add(helprequest);
                         }
                     }
                     foreach (var review in administration.listReviews)
                     {
-                        if (review.Needy == account || review.Volunteer == account)
+                        if (review.Needy.id == account.id || review.Volunteer.id == account.id)
                         {
                             lbBeheerBeoordeling.Items.Add(review);
                         }
