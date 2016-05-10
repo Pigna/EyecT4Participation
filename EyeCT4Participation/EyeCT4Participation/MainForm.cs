@@ -534,6 +534,10 @@ namespace EyeCT4Participation
                     ov
                     );
             }
+            else
+            {
+                MessageBox.Show("Vul alle gegevens in.");
+            }
         }
         /// <summary>
         /// Refresh wanneer je van tabpage verandert
@@ -614,9 +618,16 @@ namespace EyeCT4Participation
             var reaction = tbVolunteerReviewReaction.Text;
             if (lbVolunteerReview.SelectedItem != null && reaction != "")
             {
-                if (((Review) lbVolunteerReview.SelectedItem).AddReaction(reaction))
+                if(reaction.Length < 255)
                 {
-                    MessageBox.Show("Reactie geplaatst.");
+                    if (((Review)lbVolunteerReview.SelectedItem).AddReaction(reaction))
+                    {
+                        MessageBox.Show("Reactie geplaatst.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bericht is te groot.");
                 }
             }
         }
@@ -630,13 +641,25 @@ namespace EyeCT4Participation
             var message = tbChatMessage.Text;
             if (message != "" && currentConversation != null)
             {
-                var chat = new Chat(dbChat.getLatestId("Chat"), message, DateTime.Now, administration.LoggedinUser,
-                    currentConversation, true);
-                if (dbChat.SendMessage(chat))
+                if(message.Length < 255)
                 {
-                    lbChatConversation.Items.Add(chat);
-                    tbChatMessage.Clear();
+                    var chat = new Chat(dbChat.getLatestId("Chat"), message, DateTime.Now, administration.LoggedinUser,
+                        currentConversation, true);
+                    if (dbChat.SendMessage(chat))
+                    {
+                        lbChatConversation.Items.Add(chat);
+                        tbChatMessage.Clear();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Bericht mag niet groter zijn dan 255 tekens.");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecteer een chat en vul een bericht in.");
             }
         }
         /// <summary>
