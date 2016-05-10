@@ -224,5 +224,10 @@ namespace EyeCT4Participation.Database
                 return false; // if query fails, return a false.
             }
         }
+
+        public void ReportChat(Account selAccount, Account curAccount)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

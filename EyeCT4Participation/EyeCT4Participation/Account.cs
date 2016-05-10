@@ -37,9 +37,9 @@ namespace EyeCT4Participation
         {
             if (!Active)
             {
-                return id + " [D] " + Name + " ";
+                return  Name + " ";
             }
-            return id + " " + Name + " ";
+            return Name + " ";
         }
     }
 }

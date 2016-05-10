@@ -125,6 +125,7 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
+            this.btnChatReport = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -875,6 +876,7 @@
             // 
             // tabpageChat
             // 
+            this.tabpageChat.Controls.Add(this.btnChatReport);
             this.tabpageChat.Controls.Add(this.btnChatOpen);
             this.tabpageChat.Controls.Add(this.tbChatMessage);
             this.tabpageChat.Controls.Add(this.lbChatConversation);
@@ -1155,6 +1157,16 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
+            // btnChatReport
+            // 
+            this.btnChatReport.Location = new System.Drawing.Point(8, 567);
+            this.btnChatReport.Name = "btnChatReport";
+            this.btnChatReport.Size = new System.Drawing.Size(103, 44);
+            this.btnChatReport.TabIndex = 19;
+            this.btnChatReport.Text = "report chat";
+            this.btnChatReport.UseVisualStyleBackColor = true;
+            this.btnChatReport.Click += new System.EventHandler(this.btnChatReport_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1278,6 +1290,7 @@
         private System.Windows.Forms.ListBox lbVrijwilligerBeschikbaarheid;
         private System.Windows.Forms.Button btnVrijwilligerRapporteren;
         private System.Windows.Forms.Button btnNeedyHelprequestsDelete;
+        private System.Windows.Forms.Button btnChatReport;
     }
 }
 

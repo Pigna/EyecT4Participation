@@ -812,5 +812,17 @@ namespace EyeCT4Participation
                 NeedyRefresh();
             }
         }
+
+        private void btnChatReport_Click(object sender, EventArgs e)
+        {
+            Account selAccount = null;
+            Account curAccount = administration.LoggedinUser;
+            if (lbChatConversations.SelectedItem != null)
+            {
+                 selAccount = (Account) lbChatConversations.SelectedItem;
+                dbChat.ReportChat(selAccount, curAccount);
+
+            }
+        }
     }
 }
