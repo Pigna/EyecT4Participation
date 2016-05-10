@@ -64,6 +64,7 @@
             this.lblRegistratieWW = new System.Windows.Forms.Label();
             this.lblRegistratieGebruikersnaam = new System.Windows.Forms.Label();
             this.tabpageVrijwilliger = new System.Windows.Forms.TabPage();
+            this.btnVrijwilligerRapporteren = new System.Windows.Forms.Button();
             this.lbVrijwilligerBeschikbaarheid = new System.Windows.Forms.ListBox();
             this.btnVrijwilligerBeschikbaarheidToevoegen = new System.Windows.Forms.Button();
             this.cbVrijwilligerDagdeel = new System.Windows.Forms.ComboBox();
@@ -81,6 +82,7 @@
             this.lbVolunteerReview = new System.Windows.Forms.ListBox();
             this.lbVolunteerHelprequest = new System.Windows.Forms.ListBox();
             this.tabpageHulpbehoevende = new System.Windows.Forms.TabPage();
+            this.btnNeedyHelprequestsDelete = new System.Windows.Forms.Button();
             this.lbNeedyRating = new System.Windows.Forms.Label();
             this.lbNeedyReviewVolunteer = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -91,7 +93,6 @@
             this.btnHulpUitloggen = new System.Windows.Forms.Button();
             this.tbNeedyReviewDescription = new System.Windows.Forms.RichTextBox();
             this.dtpNeedyEnddate = new System.Windows.Forms.DateTimePicker();
-            this.btnNeedyHelprequestsDelete = new System.Windows.Forms.Button();
             this.lbNeedyHelprequests = new System.Windows.Forms.ListBox();
             this.cbNeedyUrgent = new System.Windows.Forms.CheckBox();
             this.btnNeedyReview = new System.Windows.Forms.Button();
@@ -124,7 +125,6 @@
             this.btnBeheerAccountAanpassen = new System.Windows.Forms.Button();
             this.lbBeheerAccount = new System.Windows.Forms.ListBox();
             this.lbVolunteerVolunteer = new System.Windows.Forms.ListBox();
-            this.btnVrijwilligerRapporteren = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.tabpageLogin.SuspendLayout();
             this.tabpageVrijwilliger.SuspendLayout();
@@ -529,6 +529,16 @@
             this.tabpageVrijwilliger.Text = "Vrijwilliger";
             this.tabpageVrijwilliger.UseVisualStyleBackColor = true;
             // 
+            // btnVrijwilligerRapporteren
+            // 
+            this.btnVrijwilligerRapporteren.Location = new System.Drawing.Point(6, 306);
+            this.btnVrijwilligerRapporteren.Name = "btnVrijwilligerRapporteren";
+            this.btnVrijwilligerRapporteren.Size = new System.Drawing.Size(103, 45);
+            this.btnVrijwilligerRapporteren.TabIndex = 25;
+            this.btnVrijwilligerRapporteren.Text = "Hulpvraag rapporteren";
+            this.btnVrijwilligerRapporteren.UseVisualStyleBackColor = true;
+            this.btnVrijwilligerRapporteren.Click += new System.EventHandler(this.btnVrijwilligerRapporteren_Click);
+            // 
             // lbVrijwilligerBeschikbaarheid
             // 
             this.lbVrijwilligerBeschikbaarheid.FormattingEnabled = true;
@@ -686,6 +696,7 @@
             // 
             // tabpageHulpbehoevende
             // 
+            this.tabpageHulpbehoevende.Controls.Add(this.btnNeedyHelprequestsDelete);
             this.tabpageHulpbehoevende.Controls.Add(this.lbNeedyRating);
             this.tabpageHulpbehoevende.Controls.Add(this.lbNeedyReviewVolunteer);
             this.tabpageHulpbehoevende.Controls.Add(this.button1);
@@ -696,7 +707,6 @@
             this.tabpageHulpbehoevende.Controls.Add(this.btnHulpUitloggen);
             this.tabpageHulpbehoevende.Controls.Add(this.tbNeedyReviewDescription);
             this.tabpageHulpbehoevende.Controls.Add(this.dtpNeedyEnddate);
-            this.tabpageHulpbehoevende.Controls.Add(this.btnNeedyHelprequestsDelete);
             this.tabpageHulpbehoevende.Controls.Add(this.lbNeedyHelprequests);
             this.tabpageHulpbehoevende.Controls.Add(this.cbNeedyUrgent);
             this.tabpageHulpbehoevende.Controls.Add(this.btnNeedyReview);
@@ -710,6 +720,16 @@
             this.tabpageHulpbehoevende.TabIndex = 3;
             this.tabpageHulpbehoevende.Text = "Hulpbehoevende";
             this.tabpageHulpbehoevende.UseVisualStyleBackColor = true;
+            // 
+            // btnNeedyHelprequestsDelete
+            // 
+            this.btnNeedyHelprequestsDelete.Location = new System.Drawing.Point(613, 108);
+            this.btnNeedyHelprequestsDelete.Name = "btnNeedyHelprequestsDelete";
+            this.btnNeedyHelprequestsDelete.Size = new System.Drawing.Size(102, 45);
+            this.btnNeedyHelprequestsDelete.TabIndex = 30;
+            this.btnNeedyHelprequestsDelete.Text = "verwijder vraag";
+            this.btnNeedyHelprequestsDelete.UseVisualStyleBackColor = true;
+            this.btnNeedyHelprequestsDelete.Click += new System.EventHandler(this.btnNeedyHelprequestsDelete_Click_1);
             // 
             // lbNeedyRating
             // 
@@ -793,16 +813,6 @@
             this.dtpNeedyEnddate.Name = "dtpNeedyEnddate";
             this.dtpNeedyEnddate.Size = new System.Drawing.Size(187, 20);
             this.dtpNeedyEnddate.TabIndex = 19;
-            // 
-            // btnNeedyHelprequestsDelete
-            // 
-            this.btnNeedyHelprequestsDelete.Location = new System.Drawing.Point(613, 224);
-            this.btnNeedyHelprequestsDelete.Name = "btnNeedyHelprequestsDelete";
-            this.btnNeedyHelprequestsDelete.Size = new System.Drawing.Size(103, 45);
-            this.btnNeedyHelprequestsDelete.TabIndex = 18;
-            this.btnNeedyHelprequestsDelete.Text = "Verwijder";
-            this.btnNeedyHelprequestsDelete.UseVisualStyleBackColor = true;
-            this.btnNeedyHelprequestsDelete.Click += new System.EventHandler(this.btnNeedyHelprequestsDelete_Click);
             // 
             // lbNeedyHelprequests
             // 
@@ -1145,16 +1155,6 @@
             this.lbVolunteerVolunteer.Size = new System.Drawing.Size(120, 96);
             this.lbVolunteerVolunteer.TabIndex = 0;
             // 
-            // btnVrijwilligerRapporteren
-            // 
-            this.btnVrijwilligerRapporteren.Location = new System.Drawing.Point(6, 306);
-            this.btnVrijwilligerRapporteren.Name = "btnVrijwilligerRapporteren";
-            this.btnVrijwilligerRapporteren.Size = new System.Drawing.Size(103, 45);
-            this.btnVrijwilligerRapporteren.TabIndex = 25;
-            this.btnVrijwilligerRapporteren.Text = "Hulpvraag rapporteren";
-            this.btnVrijwilligerRapporteren.UseVisualStyleBackColor = true;
-            this.btnVrijwilligerRapporteren.Click += new System.EventHandler(this.btnVrijwilligerRapporteren_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1253,7 +1253,6 @@
         private System.Windows.Forms.TextBox tbVolunteerReviewReaction;
         private System.Windows.Forms.ListBox lbVolunteerReview;
         private System.Windows.Forms.ListBox lbVolunteerVolunteer;
-        private System.Windows.Forms.Button btnNeedyHelprequestsDelete;
         private System.Windows.Forms.ListBox lbNeedyHelprequests;
         private System.Windows.Forms.DateTimePicker dtpNeedyEnddate;
         private System.Windows.Forms.ListBox lbVolunteerHelprequest;
@@ -1278,6 +1277,7 @@
         private System.Windows.Forms.ComboBox cbVrijwilligerDag;
         private System.Windows.Forms.ListBox lbVrijwilligerBeschikbaarheid;
         private System.Windows.Forms.Button btnVrijwilligerRapporteren;
+        private System.Windows.Forms.Button btnNeedyHelprequestsDelete;
     }
 }
 

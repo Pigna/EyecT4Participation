@@ -73,10 +73,10 @@ namespace EyeCT4Participation
                 volunteers += volunteer.Name + ", ";
             }
             return
-                "" + Needy.Name + "; " +
-                "Vraag: " + Question + "; " +
-                "Datum: " + Date + "; " +
-                "Vrijwilligers: " + volunteers + "; ";
+                "" + Needy.Name + " - " +
+                "Datum: " + Date.Day + "-" + Date.Month + "-" + Date.Year +
+                " -- " + Question;
+
         }
     }
 }

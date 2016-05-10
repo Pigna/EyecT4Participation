@@ -573,12 +573,13 @@ namespace EyeCT4Participation
             var urgent = cbNeedyUrgent.Checked;
             var message = tbNeedyHelprequestDesctiption.Text;
             var locatie = tbNeedyLocation.Text;
-            if (message != "")
+            if (message != "" && (dtpNeedyStartdate.Value <= dtpNeedyEnddate.Value))
             {
                 if ((administration.LoggedinUser as Needy).AddHelpRequest(message, locatie, dtpNeedyStartdate.Value,
                     dtpNeedyEnddate.Value, cbNeedyUrgent.Checked, Convert.ToInt32(nudNeedyVolunteers.Value)))
                 {
                     MessageBox.Show("Hulpvraag verzonden");
+                    NeedyRefresh();
                 }
                 else
                 {
@@ -682,17 +683,7 @@ namespace EyeCT4Participation
         /// <param name="e"></param>
         private void btnNeedyHelprequestsDelete_Click(object sender, EventArgs e)
         {
-            if (lbNeedyHelprequests.SelectedItem != null)
-            {
-                if (administration.DeactivateHelpRequest(lbNeedyHelprequests.SelectedItem as HelpRequest))
-                {
-                    lbNeedyHelprequests.Items.Remove(lbNeedyHelprequests.SelectedItem);
-                }
-                else
-                {
-                    MessageBox.Show("Fout bij deactiveren Hulpvraag");
-                }
-            }
+
         }
         /// <summary>
         /// Klik event review
@@ -759,9 +750,12 @@ namespace EyeCT4Participation
         {
             lbNeedyReviewVolunteer.Items.Clear();
             HelpRequest help = ((HelpRequest)lbNeedyHelprequests.SelectedItem);
-            foreach (Volunteer volunteer in help.ListVolunteers)
+            if (help != null)
             {
-                lbNeedyReviewVolunteer.Items.Add(volunteer);
+                foreach (Volunteer volunteer in help.ListVolunteers)
+                {
+                    lbNeedyReviewVolunteer.Items.Add(volunteer);
+                }
             }
         }
 
@@ -799,6 +793,23 @@ namespace EyeCT4Participation
             if (lbVolunteerHelprequest.SelectedItem != null)
             {
               helprequest.RapportHelprequest(lbVolunteerHelprequest.SelectedItem as HelpRequest,administration.LoggedinUser as Volunteer);
+            }
+        }
+
+        private void btnNeedyHelprequestsDelete_Click_1(object sender, EventArgs e)
+        {
+            if (lbNeedyHelprequests.SelectedItem != null)
+            {
+                if (administration.DeactivateHelpRequest(lbNeedyHelprequests.SelectedItem as HelpRequest))
+                {
+                    lbNeedyHelprequests.Items.Remove(lbNeedyHelprequests.SelectedItem);
+                    MessageBox.Show("vraag is verwijderd");
+                }
+                else
+                {
+                    MessageBox.Show("Fout bij deactiveren Hulpvraag");
+                }
+                NeedyRefresh();
             }
         }
     }
