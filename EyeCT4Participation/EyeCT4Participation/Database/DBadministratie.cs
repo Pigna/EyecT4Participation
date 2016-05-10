@@ -333,6 +333,12 @@ namespace EyeCT4Participation.Database
                 query += "SET ACTIEF = 0 ";
                 query += "WHERE id = '" + account.id + "' ";
                 doQuery(query); //query will be activated
+                query = "UPDATE HULPVRAAG SET ACTIEF = 0 WHERE HULPBEHOEVENDEID = '" + account.id + "'";
+                doQuery(query); //DISABLE all helprequests from user that is beging deactivated.
+                query = "UPDATE REVIEW SET ACTIEF = 0 WHERE ONTVANGERID = '" + account.id + "' OR VERZENDERID = '" + account.id + "'";
+                doQuery(query); // disable all reviews from deactivating user.
+                query = "UPDATE CHAT SET ACTIEF = 0 WHERE ONTVANGERID = '" + account.id + "' OR VERZENDERID = '" + account.id + "'";
+                doQuery(query); // disable all reviews from deactivating user.
                 return true;
             }
             catch

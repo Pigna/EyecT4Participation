@@ -113,7 +113,7 @@ namespace EyeCT4Participation.Database
             var QueryY =
                 getQuery(
                     "SELECT * FROM Gebruiker gb WHERE gb.id IN (SELECT gebruikerid FROM gebruiker_hulpvraag gh JOIN hulpvraag ON gh.hulpvraagid = hulpvraag.id WHERE hulpbehoevendeid = " +
-                    needy.id + ")"); //replace your query with te example query, replace 'QueryX' with a clear name.
+                    needy.id + ") AND ACTIEF = 1"); //replace your query with te example query, replace 'QueryX' with a clear name.
             var ret = new List<Account>(); //result of query will end up in here
             foreach (var results in QueryY) //look for all posseble results in the query result.
             {
@@ -163,7 +163,7 @@ namespace EyeCT4Participation.Database
             var QueryY =
                 getQuery(
                     "SELECT * FROM Gebruiker gb WHERE gb.id IN ( SELECT hulpbehoevendeid FROM gebruiker_hulpvraag gh JOIN hulpvraag ON gh.hulpvraagid = hulpvraag.id WHERE gebruikerid = " +
-                    volunteer.id + ")"); //replace your query with te example query, replace 'QueryX' with a clear name.
+                    volunteer.id + ") AND ACTIEF = 1"); //replace your query with te example query, replace 'QueryX' with a clear name.
             var ret = new List<Account>(); //result of query will end up in here
             foreach (var results in QueryY) //look for all posseble results in the query result.
             {
